@@ -3,3 +3,45 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
+h1 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h2 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h3 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.caption {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
