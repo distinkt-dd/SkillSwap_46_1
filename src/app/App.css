@@ -10,14 +10,14 @@ h1 {
   font-weight: 500;
   font-size: 32px;
   font-family: "Jost", sans-serif;
-  line-height: 1.25;  
+  line-height: 1.25;
 }
 
 h2 {
   font-weight: 500;
   font-size: 24px;
   font-family: "Jost", sans-serif;
-  line-height: 1.166;
+  line-height: 1.17;
 }
 
 h3 {
@@ -45,5 +45,5 @@ body {
   font-weight: 400;
   font-size: 12px;
   font-family: "Roboto", sans-serif;
-  line-height: 1.333;
+  line-height: 1.33;
 }
