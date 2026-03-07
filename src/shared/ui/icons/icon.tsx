@@ -1,0 +1,119 @@
+import React from "react";
+import type { IconProps, IconsMap } from "./types";
+
+import {
+  AddIcon,
+  ArrowLeftIcon,
+  ArrowSquareLeftIcon,
+  ArrowSquareRightIcon,
+  BookIcon,
+  BriefcaseIcon,
+  CalendarIcon,
+  CheckboxDoneIcon,
+  CheckboxEmptyIcon,
+  CheckboxRemoveIcon,
+  ChevronDownIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+  ClockIcon,
+  CountIcon,
+  CrossIcon,
+  DoneIcon,
+  EditIcon,
+  EyeSlashIcon,
+  EyeIcon,
+  FilterSquareIcon,
+  GalleryAddIcon,
+  GalleryEditIcon,
+  GlobalIcon,
+  HomeIcon,
+  IdeaIcon,
+  LifestyleIcon,
+  LikeIcon,
+  LogoutIcon,
+  MessageTextIcon,
+  MoonIcon,
+  MoreSquareIcon,
+  NotificationIcon,
+  PalleteIcon,
+  PlusCircleIcon,
+  RadioButtonActiveIcon,
+  RadioButtonEmptyIcon,
+  RequestIcon,
+  ScrollIcon,
+  ScrollSquareIcon,
+  SearchIcon,
+  ShareIcon,
+  SortIcon,
+  SunIcon,
+  UserCircleIcon,
+  UserIcon,
+} from "@shared/assets";
+
+const icons: IconsMap = {
+  add: AddIcon,
+  arrowLeft: ArrowLeftIcon,
+  arrowSquareLeft: ArrowSquareLeftIcon,
+  arrowSquareRight: ArrowSquareRightIcon,
+  book: BookIcon,
+  briefcase: BriefcaseIcon,
+  calendar: CalendarIcon,
+  checkboxDone: CheckboxDoneIcon,
+  checkboxEmpty: CheckboxEmptyIcon,
+  checkboxRemove: CheckboxRemoveIcon,
+  chevronDown: ChevronDownIcon,
+  chevronRight: ChevronRightIcon,
+  chevronUp: ChevronUpIcon,
+  clock: ClockIcon,
+  count: CountIcon,
+  cross: CrossIcon,
+  done: DoneIcon,
+  edit: EditIcon,
+  eyeSlash: EyeSlashIcon,
+  eye: EyeIcon,
+  filterSquare: FilterSquareIcon,
+  galleryAdd: GalleryAddIcon,
+  galleryEdit: GalleryEditIcon,
+  global: GlobalIcon,
+  home: HomeIcon,
+  idea: IdeaIcon,
+  lifestyle: LifestyleIcon,
+  like: LikeIcon,
+  logout: LogoutIcon,
+  messageText: MessageTextIcon,
+  moon: MoonIcon,
+  moreSquare: MoreSquareIcon,
+  notification: NotificationIcon,
+  pallete: PalleteIcon,
+  plusCircle: PlusCircleIcon,
+  radioButtonActive: RadioButtonActiveIcon,
+  radioButtonEmpty: RadioButtonEmptyIcon,
+  request: RequestIcon,
+  scroll: ScrollIcon,
+  scrollSquare: ScrollSquareIcon,
+  search: SearchIcon,
+  share: ShareIcon,
+  sort: SortIcon,
+  sun: SunIcon,
+  userCircle: UserCircleIcon,
+  user: UserIcon,
+} as const;
+
+export const IconUI: React.FC<IconProps> = ({
+  name,
+  size = 24,
+  className,
+  ...props
+}) => {
+  const IconComponent = icons[name];
+  if (!IconComponent) return null;
+
+  return (
+    <IconComponent
+      className={className}
+      width={size}
+      height={size}
+      {...props}
+    />
+  );
+};
