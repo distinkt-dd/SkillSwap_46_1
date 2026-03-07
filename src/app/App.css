@@ -5,43 +5,43 @@
 }
 
 h1 {
-  font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-size: 32px;
-  line-height: 40px;
+  font-family: "Jost", sans-serif;
+  line-height: 1.25;  
 }
 
 h2 {
-  font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-size: 24px;
-  line-height: 28px;
+  font-family: "Jost", sans-serif;
+  line-height: 1.166;
 }
 
 h3 {
-  font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
+  font-family: "Jost", sans-serif;
+  line-height: 1.2;
 }
 
 h4 {
-  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
 }
 
 .caption {
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.333;
 }
