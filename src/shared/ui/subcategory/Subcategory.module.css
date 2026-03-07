@@ -1,0 +1,37 @@
+@import url("../../../app/styles/variables.css");
+
+div {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.tagBusiness {
+  background-color: var(--color-tag-business);
+}
+
+.tagCreative {
+  background-color: var(--color-tag-creative);
+}
+
+.tagLanguages {
+  background-color: var(--color-tag-languages);
+}
+
+.tagEducation {
+  background-color: var(--color-tag-education);
+}
+
+.tagHome {
+  background-color: var(--color-tag-home);
+}
+
+.tagHealth {
+  background-color: var(--color-tag-health);
+}
+
+.tagOther {
+  background-color: var(--color-tag-other);
+}
