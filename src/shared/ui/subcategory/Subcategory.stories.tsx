@@ -6,5 +6,5 @@ export default {
 };
 
 export const Default = () => (
-  <Subcategory title="Английский язык" type="creative"></Subcategory>
+  <Subcategory title="Игра на гитаре" type="creative"></Subcategory>
 );
