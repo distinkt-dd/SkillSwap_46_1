@@ -1,11 +1,37 @@
 @import url("../../../app/styles/variables.css");
 
-div {
+.subcategory {
   display: flex;
   align-items: center;
+  width: fit-content;
   height: 32px;
   padding: 8px 12px;
   border-radius: 20px;
+}
+
+.subcategory p {
+  text-transform: lowercase;
+}
+
+.subcategory p::first-letter {
+  text-transform: uppercase;
+}
+
+.subcategoryIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.subcategoryIcon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
 }
 
 .tagBusiness {

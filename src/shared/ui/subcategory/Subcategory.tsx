@@ -12,12 +12,13 @@ export type TSubcategoryProps = {
     | "health"
     | "other";
   title: string;
+  icon?: React.ReactNode;
 };
 
 export const Subcategory: React.FC<TSubcategoryProps> = (
   props: TSubcategoryProps,
 ) => {
-  const { title, type } = props;
+  const { title, type, icon } = props;
   const getTagClass = (type: string) => {
     switch (type) {
       case "business":
@@ -38,8 +39,16 @@ export const Subcategory: React.FC<TSubcategoryProps> = (
   };
 
   return (
-    <div className={`${styles.div} ${getTagClass(type)}`}>
-      <p>{title}</p>
-    </div>
+    <>
+      {icon ? (
+        <div className={`${styles.subcategoryIcon} ${getTagClass(type)}`}>
+          {icon}
+        </div>
+      ) : (
+        <div className={`${styles.subcategory} ${getTagClass(type)}`}>
+          <p>{title}</p>
+        </div>
+      )}
+    </>
   );
 };
