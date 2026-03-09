@@ -1,19 +1,19 @@
-import React from "react";
-import styles from "./button.module.css";
-import type { ButtonProps } from "./types";
+import React from 'react';
+import styles from './button.module.css';
+import type { ButtonProps } from './types';
 
 export const Button: React.FC<ButtonProps> = ({
   icon,
-  iconPosition = "left",
-  variant = "primary",
+  iconPosition = 'left',
+  variant = 'primary',
   children,
   width,
-  className = "",
+  className = '',
   disabled = false,
   loading = false,
   style,
   href,
-  type = "button",
+  type = 'button',
   onClick,
 }) => {
   const variantClass = href ? styles.tertiary : styles[variant];
@@ -23,16 +23,11 @@ export const Button: React.FC<ButtonProps> = ({
     ...style,
   };
 
-  const classNames = [
-    styles.button,
-    variantClass,
-    loading && styles.loading,
-    className,
-  ]
+  const classNames = [styles.button, variantClass, loading && styles.loading, className]
     .filter(Boolean)
-    .join(" ");
+    .join(' ');
 
-  const Component = href ? "a" : "button";
+  const Component = href ? 'a' : 'button';
 
   const isDisabled = disabled || loading;
 
@@ -45,9 +40,9 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <Component {...componentProps}>
-      {icon && iconPosition === "left" && icon}
+      {icon && iconPosition === 'left' && icon}
       {children}
-      {icon && iconPosition === "right" && icon}
+      {icon && iconPosition === 'right' && icon}
     </Component>
   );
 };

@@ -1,5 +1,5 @@
-import React from "react";
-import type { IconProps, IconsMap } from "./types";
+import React from 'react';
+import type { IconProps, IconsMap } from './types';
 
 import {
   AddIcon,
@@ -48,7 +48,7 @@ import {
   SunIcon,
   UserCircleIcon,
   UserIcon,
-} from "@shared/assets";
+} from '@shared/assets';
 
 const icons: IconsMap = {
   add: AddIcon,
@@ -99,21 +99,9 @@ const icons: IconsMap = {
   user: UserIcon,
 } as const;
 
-export const IconUI: React.FC<IconProps> = ({
-  name,
-  size = 24,
-  className,
-  ...props
-}) => {
+export const IconUI: React.FC<IconProps> = ({ name, size = 24, className, ...props }) => {
   const IconComponent = icons[name];
   if (!IconComponent) return null;
 
-  return (
-    <IconComponent
-      className={className}
-      width={size}
-      height={size}
-      {...props}
-    />
-  );
+  return <IconComponent className={className} width={size} height={size} {...props} />;
 };

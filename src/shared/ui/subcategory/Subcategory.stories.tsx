@@ -1,13 +1,7 @@
-import { Subcategory, type TSubcategoryProps } from "./Subcategory";
+import { Subcategory, type TSubcategoryProps } from './Subcategory';
 
 const BusinessIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="none"
-    viewBox="0 0 24 24"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
     <path
       fill="#253017"
       d="M15.49 22H8.05c-4.298 0-5.098-2-5.303-3.944l-.697-7.451c-.103-.977-.13-2.419.837-3.498.837-.93 2.223-1.377 4.232-1.377h9.303c2.018 0 3.404.456 4.232 1.377.968 1.079.94 2.52.837 3.507l-.697 7.433C20.588 20 19.788 22 15.49 22M7.118 7.116c-1.572 0-2.65.307-3.2.921-.456.503-.604 1.275-.483 2.428l.697 7.451c.158 1.47.558 2.689 3.917 2.689h7.441c3.35 0 3.758-1.219 3.917-2.698l.697-7.433c.121-1.162-.027-1.934-.483-2.437-.55-.614-1.628-.92-3.2-.92z"
@@ -24,13 +18,7 @@ const BusinessIcon = () => (
 );
 
 const LanguageIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="none"
-    viewBox="0 0 24 24"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
     <path
       fill="#253017"
       d="M12 22C6.484 22 2 17.516 2 12S6.484 2 12 2s10 4.484 10 10-4.484 10-10 10m0-18.605c-4.744 0-8.605 3.86-8.605 8.605 0 4.744 3.86 8.605 8.605 8.605 4.744 0 8.605-3.86 8.605-8.605 0-4.744-3.86-8.605-8.605-8.605"
@@ -47,13 +35,7 @@ const LanguageIcon = () => (
 );
 
 const CreativeIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="none"
-    viewBox="0 0 24 24"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
     <path
       fill="#253017"
       d="M15.404 8.784a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5M10.906 7.971a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5M7.404 10.69a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5M6.435 14.906a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5M8.654 18.698a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"
@@ -68,13 +50,7 @@ const CreativeIcon = () => (
 );
 
 const EducationIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="none"
-    viewBox="0 0 24 24"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
     <path
       fill="#253017"
       d="M12 21.755c-.28 0-.558-.065-.79-.195-1.74-.95-4.8-1.954-6.717-2.205l-.27-.037C3.005 19.168 2 18.025 2 16.788V5.55c0-.735.288-1.404.819-1.888a2.52 2.52 0 0 1 1.944-.651c2.046.158 5.135 1.181 6.884 2.279l.223.13a.36.36 0 0 0 .26.01l.15-.094c1.748-1.097 4.836-2.14 6.892-2.316h.112a2.47 2.47 0 0 1 1.897.66c.53.484.819 1.154.819 1.889v11.228c0 1.246-1.005 2.381-2.233 2.53l-.306.037c-1.917.251-4.987 1.265-6.689 2.205-.223.13-.493.186-.772.186M4.54 4.397c-.298 0-.568.102-.782.297a1.15 1.15 0 0 0-.363.856v11.238c0 .548.475 1.079 1.005 1.153l.28.037c2.092.28 5.301 1.33 7.162 2.344.084.038.204.047.251.028 1.86-1.032 5.088-2.093 7.19-2.372l.317-.037c.53-.065 1.005-.605 1.005-1.153V5.56c0-.345-.13-.642-.363-.866a1.22 1.22 0 0 0-.893-.297h-.112c-1.776.158-4.642 1.116-6.204 2.093l-.15.102c-.51.316-1.236.316-1.73.01l-.223-.13c-1.59-.978-4.456-1.926-6.279-2.075z"
@@ -87,13 +63,7 @@ const EducationIcon = () => (
 );
 
 const HomeIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="none"
-    viewBox="0 0 24 24"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
     <path
       fill="#253017"
       d="M17.386 22H6.614C4.065 22 2 19.923 2 17.372v-6.9c0-1.267.781-2.86 1.786-3.642L8.8 2.919c1.507-1.174 3.916-1.23 5.48-.13l5.748 4.032C21.135 7.594 22 9.25 22 10.6v6.78A4.62 4.62 0 0 1 17.386 22M9.656 4.018l-5.014 3.91c-.66.522-1.247 1.705-1.247 2.543v6.9a3.23 3.23 0 0 0 3.219 3.232h10.772a3.22 3.22 0 0 0 3.219-3.222v-6.78c0-.893-.642-2.132-1.377-2.635l-5.749-4.032c-1.06-.745-2.81-.708-3.823.084"
@@ -106,13 +76,7 @@ const HomeIcon = () => (
 );
 
 const HealthIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="none"
-    viewBox="0 0 24 24"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
     <path
       stroke="#253017"
       stroke-linecap="round"
@@ -131,42 +95,34 @@ const HealthIcon = () => (
 );
 
 export default {
-  title: "Subcategory",
+  title: 'Subcategory',
   component: Subcategory,
   args: {
-    title: "Игра на гитаре",
-    type: "business",
+    title: 'Игра на гитаре',
+    type: 'business',
   },
   argTypes: {
     type: {
-      control: "select",
-      options: [
-        "business",
-        "languages",
-        "creative",
-        "education",
-        "home",
-        "health",
-        "other",
-      ],
+      control: 'select',
+      options: ['business', 'languages', 'creative', 'education', 'home', 'health', 'other'],
     },
     title: {
-      control: "text",
+      control: 'text',
     },
   },
 };
 
 export const Default = {
   args: {
-    title: "Игра на гитаре",
-    type: "creative",
+    title: 'Игра на гитаре',
+    type: 'creative',
   },
 };
 
 export const WithIcon = {
   args: {
-    title: "",
-    type: "business",
+    title: '',
+    type: 'business',
   },
   render: (args: TSubcategoryProps) => {
     const iconMap = {
@@ -176,30 +132,20 @@ export const WithIcon = {
       education: <EducationIcon />,
       home: <HomeIcon />,
       health: <HealthIcon />,
-      other: "⭐", // Заглушка для other
+      other: '⭐', // Заглушка для other
     };
-    const currentIcon = iconMap[args.type as keyof typeof iconMap] || "⭐";
+    const currentIcon = iconMap[args.type as keyof typeof iconMap] || '⭐';
 
-    return (
-      <Subcategory type={args.type} title={args.title} icon={currentIcon} />
-    );
+    return <Subcategory type={args.type} title={args.title} icon={currentIcon} />;
   },
 };
 
 export const AllIcons = {
   render: () => (
-    <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
       <Subcategory type="business" title="Бизнес" icon={<BusinessIcon />} />
-      <Subcategory
-        type="languages"
-        title="Иностранные языки"
-        icon={<LanguageIcon />}
-      />
-      <Subcategory
-        type="education"
-        title="Образование"
-        icon={<EducationIcon />}
-      />
+      <Subcategory type="languages" title="Иностранные языки" icon={<LanguageIcon />} />
+      <Subcategory type="education" title="Образование" icon={<EducationIcon />} />
       <Subcategory type="home" title="Дом" icon={<HomeIcon />} />
       <Subcategory type="health" title="Здоровье" icon={<HealthIcon />} />
       <Subcategory type="creative" title="Творчество" icon={<CreativeIcon />} />
