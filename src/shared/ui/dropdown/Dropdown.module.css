@@ -1,0 +1,309 @@
+@import url('../../../app/styles/variables.css');
+
+.container {
+  position: relative;
+  z-index: 10;
+  width: 436px;
+  font-family:
+    'Roboto',
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.container .label {
+  display: block;
+  margin: 0 0 4px;
+  color: var(--color-text);
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.container .dropdownWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.container .dropdownWrapper .inputWrapper {
+  position: relative;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 436px;
+  height: 48px;
+  margin: 0;
+  background: var(--color-card-input);
+  border: 1px solid var(--color-caption);
+  border-radius: 12px;
+  transform: none;
+  transition: all 0.2s;
+}
+
+.container .dropdownWrapper .inputWrapper * {
+  margin: 0;
+  transform: none;
+}
+
+.container .dropdownWrapper .inputWrapper.open {
+  border-bottom-color: transparent;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.container .dropdownWrapper .inputWrapper.disabled {
+  background-color: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+.container .dropdownWrapper .inputWrapper .input,
+.container .dropdownWrapper .inputWrapper .triggerButton {
+  flex: 1;
+  box-sizing: border-box;
+  height: 48px;
+  padding: 12px 20px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.container .dropdownWrapper .inputWrapper .input {
+  color: var(--color-text);
+}
+
+.container .dropdownWrapper .inputWrapper .input:disabled {
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
+
+.container .dropdownWrapper .inputWrapper .input::placeholder {
+  color: var(--color-caption);
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  opacity: 1;
+}
+
+.container .dropdownWrapper .inputWrapper .triggerButton {
+  text-align: left;
+  cursor: pointer;
+}
+
+.container .dropdownWrapper .inputWrapper .triggerButton:disabled {
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
+
+.container .dropdownWrapper .inputWrapper .triggerButton .value {
+  color: var(--color-text);
+}
+
+.container .dropdownWrapper .inputWrapper .placeholder {
+  color: var(--color-caption);
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.container .dropdownWrapper .inputWrapper .icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 48px;
+  padding-right: 20px;
+}
+
+/* Базовые селекторы (без состояний) */
+
+.container .dropdownWrapper .inputWrapper .icons .clearButton img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.container .dropdownWrapper .inputWrapper .icons .arrow img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option .optionName {
+  flex: 1;
+}
+
+/* Селекторы с состояниями */
+
+.container .dropdownWrapper .inputWrapper .icons .clearButton:hover img {
+  opacity: 1;
+}
+
+.container .dropdownWrapper .inputWrapper .icons .arrow:hover img {
+  opacity: 1;
+}
+
+.container .dropdownWrapper .inputWrapper .icons .arrow.open img {
+  transform: rotate(180deg);
+}
+
+.container .dropdownWrapper .inputWrapper .icons .clearButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.container .dropdownWrapper .inputWrapper .icons .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.container .dropdownWrapper .dropdown {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 12;
+  display: flex;
+  box-sizing: border-box;
+  width: 436px;
+  max-height: 240px;
+  overflow: hidden;
+  background: var(--color-card-input);
+  border: 1px solid var(--color-caption);
+  border-top: none;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent {
+  flex: 1;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent::-webkit-scrollbar {
+  display: none;
+}
+
+.container .dropdownWrapper .dropdown .customScrollbar {
+  position: relative;
+  flex-shrink: 0;
+  width: 4px;
+  margin: 2px 0;
+  background: transparent;
+}
+
+.container .dropdownWrapper .dropdown .customScrollbar .customScrollbarThumb {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 40px;
+  background: var(--color-toggle);
+  border-radius: 2px;
+  cursor: grab;
+  transition: background 0.2s;
+}
+
+.container .dropdownWrapper .dropdown .customScrollbar .customScrollbarThumb:active {
+  background: var(--color-caption);
+  cursor: grabbing;
+}
+
+.container .dropdownWrapper .dropdown .customScrollbar .customScrollbarThumb:hover {
+  background: var(--color-caption);
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList {
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option .checkbox {
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option .checkbox img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option .checkbox img:hover {
+  opacity: 1;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.selected .checkbox img {
+  opacity: 1;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: var(--color-text);
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option:hover {
+  background-color: var(--color-button-hover);
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.selected {
+  color: var(--color-link-button-pressed);
+  background-color: var(--color-button-hover);
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.selected .optionName {
+  color: var(--color-link-button-pressed);
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.noResults {
+  color: var(--color-caption);
+  cursor: default;
+}
+
+.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.noResults:hover {
+  background-color: transparent;
+}
