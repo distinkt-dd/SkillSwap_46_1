@@ -1,16 +1,13 @@
-import React from "react";
-import styles from "./toggler.module.css";
+import React from 'react';
+import styles from './toggler.module.css';
 
-export type TogglerProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  "type"
-> & {
+export type TogglerProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   label?: React.ReactNode;
 };
 
 export const Toggler: React.FC<TogglerProps> = ({
   label,
-  className = "",
+  className = '',
   id,
   disabled,
   ...inputProps
@@ -20,7 +17,7 @@ export const Toggler: React.FC<TogglerProps> = ({
 
   const classNames = [styles.root, disabled && styles.disabled, className]
     .filter(Boolean)
-    .join(" ");
+    .join(' ');
 
   return (
     <label htmlFor={inputId} className={classNames}>

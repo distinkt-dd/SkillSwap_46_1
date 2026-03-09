@@ -1,16 +1,13 @@
-import React from "react";
-import styles from "./radio.module.css";
+import React from 'react';
+import styles from './radio.module.css';
 
-export type RadioProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  "type"
-> & {
+export type RadioProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   label?: React.ReactNode;
 };
 
 export const Radio: React.FC<RadioProps> = ({
   label,
-  className = "",
+  className = '',
   id,
   disabled,
   ...inputProps
@@ -20,7 +17,7 @@ export const Radio: React.FC<RadioProps> = ({
 
   const classNames = [styles.root, disabled && styles.disabled, className]
     .filter(Boolean)
-    .join(" ");
+    .join(' ');
 
   return (
     <label htmlFor={inputId} className={classNames}>

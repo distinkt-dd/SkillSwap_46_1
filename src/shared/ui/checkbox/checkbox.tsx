@@ -1,10 +1,7 @@
-import React from "react";
-import styles from "./checkbox.module.css";
+import React from 'react';
+import styles from './checkbox.module.css';
 
-export type CheckboxProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  "type"
-> & {
+export type CheckboxProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   label?: React.ReactNode;
   isSubcategory?: boolean;
 };
@@ -12,7 +9,7 @@ export type CheckboxProps = Omit<
 export const Checkbox: React.FC<CheckboxProps> = ({
   label,
   isSubcategory = false,
-  className = "",
+  className = '',
   id,
   disabled,
   ...inputProps
@@ -27,7 +24,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     className,
   ]
     .filter(Boolean)
-    .join(" ");
+    .join(' ');
 
   return (
     <label htmlFor={inputId} className={classNames}>
