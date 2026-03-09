@@ -2,10 +2,9 @@ import React from 'react';
 import { useState, useRef, useEffect, useMemo } from 'react';
 import clsx from 'clsx';
 import styles from './Dropdown.module.css';
+import { Checkbox } from '../checkbox';
 import arrowIcon from '../../assets/icons/chevron-down.svg?url';
 import closeIcon from '../../assets/icons/cross.svg?url';
-import emptyCheckIcon from '../../assets/icons/checkbox-empty.svg?url';
-import doneCheckIcon from '../../assets/icons/checkbox-done.svg?url';
 
 export type DropdownOption = {
   id: string | number;
@@ -326,18 +325,18 @@ export const Dropdown = ({
                       className={clsx(styles.option, {
                         [styles.selected]: isSelected(option),
                       })}
-                      onClick={() => handleSelect(option)}
+                      onClick={() => mode === 'single' && handleSelect(option)}
                     >
                       {mode === 'multi' && (
-                        <span className={styles.checkbox}>
-                          {isSelected(option) ? (
-                            <img src={doneCheckIcon} alt="" />
-                          ) : (
-                            <img src={emptyCheckIcon} alt="" />
-                          )}
-                        </span>
+                        <Checkbox
+                          checked={isSelected(option)}
+                          onChange={() => handleSelect(option)}
+                          label={option.name}
+                        />
                       )}
-                      <span className={styles.optionName}>{option.name}</span>
+                      {mode === 'single' && (
+                        <span className={styles.optionName}>{option.name}</span>
+                      )}
                     </li>
                   ))
                 ) : (

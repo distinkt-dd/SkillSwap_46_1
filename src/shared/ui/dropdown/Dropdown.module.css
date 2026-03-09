@@ -4,30 +4,25 @@
   position: relative;
   z-index: 10;
   width: 436px;
-  font-family:
-    'Roboto',
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-.container .label {
+.label {
   display: block;
   margin: 0 0 4px;
   color: var(--color-text);
-  font-weight: 400;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
+  font:
+    400 16px/1.5 'Roboto',
+    sans-serif;
   letter-spacing: 0.02em;
 }
 
-.container .dropdownWrapper {
+.dropdownWrapper {
   position: relative;
   width: 100%;
 }
 
-.container .dropdownWrapper .inputWrapper {
+.inputWrapper {
   position: relative;
   z-index: 11;
   display: flex;
@@ -43,81 +38,77 @@
   transition: all 0.2s;
 }
 
-.container .dropdownWrapper .inputWrapper * {
+.inputWrapper * {
   margin: 0;
   transform: none;
 }
 
-.container .dropdownWrapper .inputWrapper.open {
+.inputWrapper.open {
   border-bottom-color: transparent;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: 12px 12px 0 0;
 }
 
-.container .dropdownWrapper .inputWrapper.disabled {
-  background-color: var(--color-disabled);
+.inputWrapper.disabled {
+  background: var(--color-disabled);
   cursor: not-allowed;
 }
 
-.container .dropdownWrapper .inputWrapper .input,
-.container .dropdownWrapper .inputWrapper .triggerButton {
+.input,
+.triggerButton {
   flex: 1;
   box-sizing: border-box;
   height: 48px;
   padding: 12px 20px;
-  font-weight: 400;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
+  font:
+    400 16px/1.5 'Roboto',
+    sans-serif;
   letter-spacing: 0.02em;
   background: transparent;
   border: none;
   outline: none;
 }
 
-.container .dropdownWrapper .inputWrapper .input {
+.input {
   color: var(--color-text);
 }
 
-.container .dropdownWrapper .inputWrapper .input:disabled {
+.input:disabled {
   color: var(--color-disabled-text);
   cursor: not-allowed;
 }
 
-.container .dropdownWrapper .inputWrapper .input::placeholder {
+.input::placeholder {
   color: var(--color-caption);
-  font-weight: 400;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
+  font:
+    400 16px/1.5 'Roboto',
+    sans-serif;
   letter-spacing: 0.02em;
   opacity: 1;
 }
 
-.container .dropdownWrapper .inputWrapper .triggerButton {
+.triggerButton {
   text-align: left;
   cursor: pointer;
 }
 
-.container .dropdownWrapper .inputWrapper .triggerButton:disabled {
+.triggerButton:disabled {
   color: var(--color-disabled-text);
   cursor: not-allowed;
 }
 
-.container .dropdownWrapper .inputWrapper .triggerButton .value {
+.value {
   color: var(--color-text);
 }
 
-.container .dropdownWrapper .inputWrapper .placeholder {
+.placeholder {
   color: var(--color-caption);
-  font-weight: 400;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
+  font:
+    400 16px/1.5 'Roboto',
+    sans-serif;
   letter-spacing: 0.02em;
 }
 
-.container .dropdownWrapper .inputWrapper .icons {
+.icons {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -125,43 +116,8 @@
   padding-right: 20px;
 }
 
-/* Базовые селекторы (без состояний) */
-
-.container .dropdownWrapper .inputWrapper .icons .clearButton img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.6;
-  transition: opacity 0.2s;
-}
-
-.container .dropdownWrapper .inputWrapper .icons .arrow img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.6;
-  transition:
-    transform 0.2s,
-    opacity 0.2s;
-}
-
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option .optionName {
-  flex: 1;
-}
-
-/* Селекторы с состояниями */
-
-.container .dropdownWrapper .inputWrapper .icons .clearButton:hover img {
-  opacity: 1;
-}
-
-.container .dropdownWrapper .inputWrapper .icons .arrow:hover img {
-  opacity: 1;
-}
-
-.container .dropdownWrapper .inputWrapper .icons .arrow.open img {
-  transform: rotate(180deg);
-}
-
-.container .dropdownWrapper .inputWrapper .icons .clearButton {
+.clearButton,
+.arrow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,17 +129,30 @@
   cursor: pointer;
 }
 
-.container .dropdownWrapper .inputWrapper .icons .arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.clearButton img,
+.arrow img {
   width: 20px;
   height: 20px;
-  padding: 0;
-  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
 }
 
-.container .dropdownWrapper .dropdown {
+.arrow img {
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.clearButton:hover img,
+.arrow:hover img {
+  opacity: 1;
+}
+
+.arrow.open img {
+  transform: rotate(180deg);
+}
+
+.dropdown {
   position: absolute;
   top: 48px;
   left: 0;
@@ -196,34 +165,37 @@
   background: var(--color-card-input);
   border: 1px solid var(--color-caption);
   border-top: none;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
+  border-radius: 0 0 12px 12px;
   box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent {
+.dropdownContent {
+  position: relative;
+  z-index: 10;
   flex: 1;
   max-height: 240px;
   overflow-y: auto;
   scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent::-webkit-scrollbar {
+.dropdownContent::-webkit-scrollbar {
   display: none;
 }
 
-.container .dropdownWrapper .dropdown .customScrollbar {
+.customScrollbar {
   position: relative;
+  z-index: 20;
+  display: block;
   flex-shrink: 0;
   width: 4px;
   margin: 2px 0;
   background: transparent;
 }
 
-.container .dropdownWrapper .dropdown .customScrollbar .customScrollbarThumb {
+.customScrollbarThumb {
   position: absolute;
   left: 0;
+  z-index: 21;
   width: 4px;
   height: 40px;
   background: var(--color-toggle);
@@ -232,78 +204,48 @@
   transition: background 0.2s;
 }
 
-.container .dropdownWrapper .dropdown .customScrollbar .customScrollbarThumb:active {
-  background: var(--color-caption);
-  cursor: grabbing;
-}
-
-.container .dropdownWrapper .dropdown .customScrollbar .customScrollbarThumb:hover {
+.customScrollbarThumb:active,
+.customScrollbarThumb:hover {
   background: var(--color-caption);
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList {
+.optionsList {
   margin: 0;
   padding: 4px 0;
   list-style: none;
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option .checkbox {
-  display: inline-flex;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option .checkbox img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.8;
-  transition: opacity 0.2s;
-}
-
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option .checkbox img:hover {
-  opacity: 1;
-}
-
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.selected .checkbox img {
-  opacity: 1;
-}
-
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option {
+.option {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: 8px 20px;
   color: var(--color-text);
-  font-weight: 400;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
+  font:
+    400 16px/1.5 'Roboto',
+    sans-serif;
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option:hover {
-  background-color: var(--color-button-hover);
+.option:hover {
+  background: var(--color-button-hover);
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.selected {
+.option.selected {
   color: var(--color-link-button-pressed);
-  background-color: var(--color-button-hover);
+  background: var(--color-button-hover);
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.selected .optionName {
-  color: var(--color-link-button-pressed);
+.optionName {
+  flex: 1;
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.noResults {
+.option.noResults {
   color: var(--color-caption);
   cursor: default;
 }
 
-.container .dropdownWrapper .dropdown .dropdownContent .optionsList .option.noResults:hover {
-  background-color: transparent;
+.option.noResults:hover {
+  background: transparent;
 }
