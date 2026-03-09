@@ -1,16 +1,14 @@
-import React from "react";
-import { Checkbox } from "./checkbox";
+import React from 'react';
+import { Checkbox } from './checkbox';
 
 export default {
-  title: "Checkbox",
+  title: 'Checkbox',
   component: Checkbox,
 };
 
 export const Default = () => <Checkbox label="Regular checkbox" />;
 
-export const Checked = () => (
-  <Checkbox label="Regular checked" checked readOnly />
-);
+export const Checked = () => <Checkbox label="Regular checked" checked readOnly />;
 
 export const Subcategory = () => (
   <Checkbox label="Subcategory checked" isSubcategory checked readOnly />
@@ -21,7 +19,7 @@ export const Controlled = () => {
 
   return (
     <Checkbox
-      label={checked ? "Enabled" : "Disabled"}
+      label={checked ? 'Enabled' : 'Disabled'}
       checked={checked}
       onChange={(event) => setChecked(event.target.checked)}
     />
