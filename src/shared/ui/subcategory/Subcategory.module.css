@@ -1,0 +1,63 @@
+@import url('../../../app/styles/variables.css');
+
+.subcategory {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.subcategory p {
+  text-transform: lowercase;
+}
+
+.subcategory p::first-letter {
+  text-transform: uppercase;
+}
+
+.subcategoryIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.subcategoryIcon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.tagBusiness {
+  background-color: var(--color-tag-business);
+}
+
+.tagCreative {
+  background-color: var(--color-tag-creative);
+}
+
+.tagLanguages {
+  background-color: var(--color-tag-languages);
+}
+
+.tagEducation {
+  background-color: var(--color-tag-education);
+}
+
+.tagHome {
+  background-color: var(--color-tag-home);
+}
+
+.tagHealth {
+  background-color: var(--color-tag-health);
+}
+
+.tagOther {
+  background-color: var(--color-tag-other);
+}
