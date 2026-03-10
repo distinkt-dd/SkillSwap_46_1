@@ -2126,6 +2126,30 @@
       "birthday": "1996-07-10",
       "cityId": 10,
       "subcategoriesIds": [33, 35, 16]
+    },
+    {
+      "id": "4aa3",
+      "name": "Alex",
+      "email": "sanekm1997@example.com",
+      "description": "Флорист, создаю цветочные композиции и букеты.",
+      "avatar": "https://api.dicebear.com/9.x/thumbs/svg?seed=polina2-losodkfkvclvxpdofdokk",
+      "gender": "male",
+      "birthday": "1997-01-19T00:00:00.000Z",
+      "cityId": 2,
+      "subcategoriesIds": [33, 35, 16],
+      "passwordHash": "$2b$10$1jSW63Hq/14vJO/Kj8.nCusfi7X5oRQKg6K92OW.VVApT9DAaRr0S"
+    },
+    {
+      "id": "4b5c",
+      "name": "Lexa",
+      "email": "lexablaze777@example.com",
+      "description": "Pinky girl",
+      "avatar": "https://api.dicebear.com/9.x/thumbs/svg?seed=polina2-losodkfkvclvxpdofdokk",
+      "gender": "female",
+      "birthday": "1997-01-19T00:00:00.000Z",
+      "cityId": 5,
+      "subcategoriesIds": [33],
+      "passwordHash": "$2b$10$k.6cl7eSZBA3UGVT8HnbZurlvisjEzgsug5TM59yrZZSo.dDjvTOS"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
