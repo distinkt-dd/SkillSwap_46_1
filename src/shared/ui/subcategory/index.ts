@@ -1,1 +1,1 @@
-export { Subcategory } from "./Subcategory";
+export { Subcategory } from './Subcategory';

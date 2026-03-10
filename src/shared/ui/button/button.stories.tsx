@@ -2,7 +2,7 @@ import { Button } from "./button";
 import { IconUI } from "../icons";
 
 export default {
-  title: "Button",
+  title: 'Button',
   component: Button,
   subcomponents: { IconUI },
   args: {
