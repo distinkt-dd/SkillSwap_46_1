@@ -1,12 +1,12 @@
-import React, { useId } from "react";
-import styles from "./input.module.css";
-import type { InputProps } from "./types";
+import React, { useId } from 'react';
+import styles from './input.module.css';
+import type { InputProps } from './types';
 
 export const Input: React.FC<InputProps> = ({
   value,
   onChange,
   onBlur,
-  type = "text",
+  type = 'text',
   name,
   id,
   placeholder,
@@ -18,10 +18,10 @@ export const Input: React.FC<InputProps> = ({
   error,
   success,
   hint,
-  variant = "default",
+  variant = 'default',
   fullWidth = false,
   width,
-  className = "",
+  className = '',
   style,
   leftIcon,
   rightIcon,
@@ -34,13 +34,9 @@ export const Input: React.FC<InputProps> = ({
   const generatedId = useId();
   const inputId = id || `input-${generatedId}`;
 
-  const wrapperClasses = [
-    styles.wrapper,
-    fullWidth && styles.fullWidth,
-    className,
-  ]
+  const wrapperClasses = [styles.wrapper, fullWidth && styles.fullWidth, className]
     .filter(Boolean)
-    .join(" ");
+    .join(' ');
 
   const inputClasses = [
     styles.input,
@@ -52,16 +48,16 @@ export const Input: React.FC<InputProps> = ({
     rightIcon && showRightIcon && styles.withRightIcon,
   ]
     .filter(Boolean)
-    .join(" ");
+    .join(' ');
 
   return (
     <div
       className={wrapperClasses}
       style={{
         ...(width && {
-          width: typeof width === "number" ? `${width}px` : width,
+          width: typeof width === 'number' ? `${width}px` : width,
         }),
-        ...(fullWidth && { width: "100%" }),
+        ...(fullWidth && { width: '100%' }),
         ...style,
       }}
     >
@@ -74,7 +70,7 @@ export const Input: React.FC<InputProps> = ({
       <div className={styles.inputWrapper}>
         {leftIcon && showLeftIcon && (
           <div
-            className={`${styles.icon} ${styles.leftIcon} ${onLeftIconClick ? styles.clickable : ""}`}
+            className={`${styles.icon} ${styles.leftIcon} ${onLeftIconClick ? styles.clickable : ''}`}
             onClick={onLeftIconClick}
           >
             {leftIcon}
@@ -83,7 +79,7 @@ export const Input: React.FC<InputProps> = ({
 
         <input
           id={inputId}
-          type={variant === "search" ? "text" : type}
+          type={variant === 'search' ? 'text' : type}
           name={name}
           value={value}
           onChange={onChange}
@@ -99,7 +95,7 @@ export const Input: React.FC<InputProps> = ({
 
         {rightIcon && showRightIcon && (
           <div
-            className={`${styles.icon} ${styles.rightIcon} ${onRightIconClick ? styles.clickable : ""}`}
+            className={`${styles.icon} ${styles.rightIcon} ${onRightIconClick ? styles.clickable : ''}`}
             onClick={onRightIconClick}
           >
             {rightIcon}
