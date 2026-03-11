@@ -1,15 +1,15 @@
-import type { Meta, StoryObj, Decorator } from "@storybook/react-vite";
-import { Input } from "./input";
-import { IconUI } from "@shared/ui";
-import "../../../app/styles/variables.css";
-import { useState } from "react";
+import type { Meta, StoryObj, Decorator } from '@storybook/react-vite';
+import { Input } from './input';
+import { IconUI } from '@shared/ui';
+import '../../../app/styles/variables.css';
+import { useState } from 'react';
 
 const withCustomBackground: Decorator = (Story) => (
   <div
     style={{
-      background: "var( --color-background)",
-      padding: "50px",
-      borderRadius: "8px",
+      background: 'var( --color-background)',
+      padding: '50px',
+      borderRadius: '8px',
     }}
   >
     <Story />
@@ -17,9 +17,9 @@ const withCustomBackground: Decorator = (Story) => (
 );
 
 const meta: Meta<typeof Input> = {
-  title: "UI/Input",
+  title: 'UI/Input',
   component: Input,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   decorators: [withCustomBackground],
   args: {
     width: 527,
@@ -33,16 +33,16 @@ export const Default: Story = {
   render: () => (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
       }}
     >
       <Input
         type="text"
         label="Имя"
         placeholder="Введите ваш пароль"
-        hint={"Пароль должен содержать не менее 8 знаков"}
+        hint={'Пароль должен содержать не менее 8 знаков'}
         rightIcon={<IconUI name="eye" size={24} />}
       />
       <Input
@@ -57,10 +57,10 @@ export const Default: Story = {
 
 export const DefaultInputError: Story = {
   args: {
-    label: "Имя",
-    placeholder: "Введите ваш пароль",
-    value: "Ошибка",
-    error: "Пароль должен содержать не менее 8 знаков",
+    label: 'Имя',
+    placeholder: 'Введите ваш пароль',
+    value: 'Ошибка',
+    error: 'Пароль должен содержать не менее 8 знаков',
     rightIcon: <IconUI name="eye" size={24} />,
     showLeftIcon: true,
     showRightIcon: true,
@@ -69,7 +69,7 @@ export const DefaultInputError: Story = {
 
 export const SearchWithClearInteractive: Story = {
   render: () => {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState('');
 
     return (
       <Input
@@ -81,7 +81,7 @@ export const SearchWithClearInteractive: Story = {
         rightIcon={<IconUI name="cross" size={24} />}
         showLeftIcon={true}
         showRightIcon={value.length > 0}
-        onRightIconClick={() => setValue("")}
+        onRightIconClick={() => setValue('')}
         width={527}
       />
     );
@@ -92,10 +92,10 @@ export const IconVisibilityTests: Story = {
   render: () => (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        width: "527px",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
+        width: '527px',
       }}
     >
       <Input
@@ -136,16 +136,16 @@ export const IconVisibilityTests: Story = {
 
 export const ConditionalIconVisibility: Story = {
   render: () => {
-    const [value1, setValue1] = useState("");
-    const [value2, setValue2] = useState("текст");
+    const [value1, setValue1] = useState('');
+    const [value2, setValue2] = useState('текст');
 
     return (
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-          width: "527px",
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+          width: '527px',
         }}
       >
         <Input
@@ -155,7 +155,7 @@ export const ConditionalIconVisibility: Story = {
           onChange={(e) => setValue1(e.target.value)}
           rightIcon={<IconUI name="cross" size={24} />}
           showRightIcon={value1.length > 0}
-          onRightIconClick={() => setValue1("")}
+          onRightIconClick={() => setValue1('')}
         />
         <Input
           label="Уже есть текст - крестик виден"
@@ -164,7 +164,7 @@ export const ConditionalIconVisibility: Story = {
           onChange={(e) => setValue2(e.target.value)}
           rightIcon={<IconUI name="cross" size={24} />}
           showRightIcon={value2.length > 0}
-          onRightIconClick={() => setValue2("")}
+          onRightIconClick={() => setValue2('')}
         />
       </div>
     );
@@ -175,10 +175,10 @@ export const AllTypes: Story = {
   render: () => (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        width: "527px",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
+        width: '527px',
       }}
     >
       <Input type="text" label="Text" placeholder="Обычный текст" />
