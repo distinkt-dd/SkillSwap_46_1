@@ -1,19 +1,19 @@
 import type { Meta, StoryObj, Decorator } from '@storybook/react-vite';
 import { Logo } from './logo';
-import * as Icons from '@shared/assets';
-
-const iconNames = Object.keys(Icons).map((key) => key.replace('Icon', '').toLowerCase());
+import { BrowserRouter } from 'react-router-dom';
 
 const withCustomBackground: Decorator = (Story) => (
-  <div
-    style={{
-      background: 'var( --color-background)',
-      padding: '50px',
-      borderRadius: '8px',
-    }}
-  >
-    <Story />
-  </div>
+  <BrowserRouter>
+    <div
+      style={{
+        background: 'var(--color-background)',
+        padding: '50px',
+        borderRadius: '8px',
+      }}
+    >
+      <Story />
+    </div>
+  </BrowserRouter>
 );
 
 const meta: Meta<typeof Logo> = {
@@ -22,33 +22,12 @@ const meta: Meta<typeof Logo> = {
   tags: ['autodocs'],
   decorators: [withCustomBackground],
   argTypes: {
-    caption: {
-      control: 'text',
-      description: 'Подпись рядом с логотипом',
-    },
-    href: {
-      control: 'text',
-      description: 'Ссылка, куда ведет логотип',
-    },
-    className: {
-      control: 'text',
-      description: 'Дополнительный CSS класс',
-    },
-    iconName: {
-      control: 'select',
-      description: 'Имя иконки из библиотеки',
-      options: iconNames,
-      mapping: iconNames.reduce(
-        (acc, name) => ({
-          ...acc,
-          [name]: name,
-        }),
-        {}
-      ),
-    },
-    iconSize: {
-      control: { type: 'range', min: 16, max: 120, step: 4 },
-      description: 'Размер иконки логотипа',
+    caption: { control: 'text' },
+    href: { control: 'text' },
+    iconSize: { control: { type: 'range', min: 16, max: 120 } },
+    linkType: { 
+      control: 'radio',
+      options: ['a', 'link', 'navlink']
     },
   },
 };
@@ -61,6 +40,34 @@ export const Default: Story = {
     caption: 'SkillSwap',
     href: '/',
     iconName: 'logo',
-    iconSize: 50,
+    iconSize: 40,
+  },
+};
+
+export const WithoutLink: Story = {
+  args: {
+    caption: 'SkillSwap',
+    iconName: 'logo',
+    iconSize: 40,
+  },
+};
+
+export const ExternalLink: Story = {
+  args: {
+    caption: 'SkillSwap',
+    href: 'https://example.com',
+    iconName: 'logo',
+    iconSize: 40,
+    linkType: 'a',
+  },
+};
+
+export const WithNavLink: Story = {
+  args: {
+    caption: 'SkillSwap',
+    href: '/',
+    iconName: 'logo',
+    iconSize: 40,
+    linkType: 'navlink',
   },
 };
