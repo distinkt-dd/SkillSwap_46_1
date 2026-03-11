@@ -1,5 +1,5 @@
-export type InputType = "text" | "email" | "password" | "number" | "tel";
-export type InputVariant = "default" | "search";
+export type InputType = 'text' | 'email' | 'password' | 'number' | 'tel';
+export type InputVariant = 'default' | 'search';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   value?: string;
