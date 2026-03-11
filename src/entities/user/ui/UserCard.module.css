@@ -1,0 +1,153 @@
+.userCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  background: #ffffff;
+  width: 324px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Лайк — абсолютно в правом верхнем углу */
+.favoriteWrapper {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.favoriteBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favoriteBtn svg {
+  fill: #253017;
+  transition: fill 0.2s;
+}
+
+.favoriteBtnActive svg {
+  fill: #abd27a;
+  stroke: #abd27a;
+  stroke-width: 2px;
+}
+
+/* User row */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: #f0f0f0;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.meta {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Секции тегов */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionLabel {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+/* Розовый — "может научить" */
+.tagTeach {
+  background: #f5e0e8;
+  color: #5a2d3a;
+}
+
+/* Голубой — "хочет научиться" */
+.tagLearn {
+  background: #ddeef5;
+  color: #1a3a4a;
+}
+
+/* Серый — "+N" */
+.tagMore {
+  background: #e8eaf0;
+  color: #444;
+}
+
+/* Кнопка */
+.detailsButton {
+  background: #abd27a;
+  color: #fff;
+  border: none;
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.description {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.featurePlaceholder {
+  display: inline-block;
+  vertical-align: middle;
+}
