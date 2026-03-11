@@ -25,9 +25,9 @@ const meta: Meta<typeof Logo> = {
     caption: { control: 'text' },
     href: { control: 'text' },
     iconSize: { control: { type: 'range', min: 16, max: 120 } },
-    linkType: { 
+    linkType: {
       control: 'radio',
-      options: ['a', 'link', 'navlink']
+      options: ['a', 'link', 'navlink'],
     },
   },
 };
