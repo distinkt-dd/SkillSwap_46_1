@@ -43,7 +43,7 @@ export const Logo: React.FC<LogoProps> = ({
       return (
         <NavLink
           to={href}
-          className={({ isActive }) => 
+          className={({ isActive }) =>
             `${styles.logo} ${className} ${isActive ? styles.active : ''}`
           }
           {...rest}
@@ -51,14 +51,14 @@ export const Logo: React.FC<LogoProps> = ({
           {content}
         </NavLink>
       );
-    
+
     case 'link':
       return (
         <Link to={href} className={`${styles.logo} ${className}`} {...rest}>
           {content}
         </Link>
       );
-    
+
     case 'a':
     default:
       return (
