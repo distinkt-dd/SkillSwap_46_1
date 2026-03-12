@@ -7,15 +7,12 @@ export default {
     size: 'medium',
   },
   argTypes: {
-    seed: {
+    src: {
       control: 'text',
     },
     size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
-    },
-    avatar: {
-      control: 'text',
     },
   },
 };

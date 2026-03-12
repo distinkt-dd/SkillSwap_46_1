@@ -1,16 +1,13 @@
-import { generateAvatar, generateRandomAvatar } from '@shared/utils/avatarGenerator';
 import type React from 'react';
 import styles from './Avatar.module.css';
 
 interface AvatarProps {
-  seed?: string;
-  avatar?: string;
+  src?: string;
   size: 'small' | 'medium' | 'large';
   onClick?: () => void;
 }
 
-export const Avatar: React.FC<AvatarProps> = ({ seed, size, onClick, avatar }) => {
-  const avatarSrc = seed ? generateAvatar(seed) : generateRandomAvatar();
+export const Avatar: React.FC<AvatarProps> = ({ src, size, onClick }) => {
   const getSizeClass = (size: string) => {
     switch (size) {
       case 'small':
@@ -23,24 +20,12 @@ export const Avatar: React.FC<AvatarProps> = ({ seed, size, onClick, avatar }) =
   };
 
   return (
-    <>
-      {avatar ? (
-        <img
-          src={avatar}
-          alt="Avatar"
-          className={`${getSizeClass(size)} ${styles.avatar}`}
-          onClick={onClick}
-          style={{ borderRadius: '50%' }}
-        />
-      ) : (
-        <img
-          src={avatarSrc}
-          alt="Avatar"
-          className={`${getSizeClass(size)} ${styles.avatar}`}
-          onClick={onClick}
-          style={{ borderRadius: '50%' }}
-        />
-      )}
-    </>
+    <img
+      src={src}
+      alt="Avatar"
+      className={`${getSizeClass(size)} ${styles.avatar}`}
+      onClick={onClick}
+      style={{ borderRadius: '50%' }}
+    />
   );
 };
