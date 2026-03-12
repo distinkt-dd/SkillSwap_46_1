@@ -1,26 +1,26 @@
-import { Button } from "./button";
-import { IconUI } from "../icons";
+import { Button } from './button';
+import { IconUI } from '../icons';
 
 export default {
   title: 'Button',
   component: Button,
   subcomponents: { IconUI },
   args: {
-    variant: "primary",
-    children: "Подробнее",
-    type: "button",
+    variant: 'primary',
+    children: 'Подробнее',
+    type: 'button',
   },
   argTypes: {
     variant: {
-      control: "select",
-      options: ["primary", "secondary", "tertiary"],
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
     },
     children: {
-      control: "text",
+      control: 'text',
     },
     icon: {
-      control: "select",
-      options: ["count", "arrowLeft", "cross", "clock", "eyeSlash"],
+      control: 'select',
+      options: ['count', 'arrowLeft', 'cross', 'clock', 'eyeSlash'],
       mapping: {
         count: <IconUI name="count" />,
         arrowLeft: <IconUI name="arrowLeft" />,
@@ -30,33 +30,33 @@ export default {
       },
     },
     iconPosition: {
-      control: "select",
-      option: ["left", "right"],
+      control: 'select',
+      option: ['left', 'right'],
     },
     width: {
-      control: "text",
+      control: 'text',
     },
     href: {
-      control: "text",
+      control: 'text',
     },
     className: {
-      control: "text",
+      control: 'text',
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
     },
     loading: {
-      control: "boolean",
+      control: 'boolean',
     },
     type: {
-      control: ["button", "submit", "reset"],
+      control: ['button', 'submit', 'reset'],
     },
   },
 };
 
 export const Default = {
   args: {
-    variant: "primary",
-    children: "Подробнее",
+    variant: 'primary',
+    children: 'Подробнее',
   },
 };
