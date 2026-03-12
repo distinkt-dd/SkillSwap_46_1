@@ -7,3 +7,5 @@ export { Checkbox } from './checkbox';
 export { Dropdown } from './dropdown';
 export type { DropdownProps, DropdownOption } from './dropdown';
 export { Avatar } from './avatar';
+export { Calendar } from './calendar';
+export type { CalendarProps } from './calendar';

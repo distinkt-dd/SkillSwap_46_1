@@ -78,6 +78,7 @@ export default {
         'global',
         'home',
         'idea',
+        'logo',
       ],
     },
     size: {
@@ -88,7 +89,7 @@ export default {
 
 export const Default = {
   args: {
-    name: 'add',
-    size: 24,
+    name: 'logo',
+    size: 40,
   },
 };
