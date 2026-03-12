@@ -11,34 +11,11 @@
   position: relative;
 }
 
-/* Лайк — абсолютно в правом верхнем углу */
+/* Слот избранного — абсолютно в правом верхнем углу */
 .favoriteWrapper {
   position: absolute;
   top: 16px;
   right: 16px;
-}
-
-.favoriteBtn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.favoriteBtn svg {
-  fill: #253017;
-  transition: fill 0.2s;
-}
-
-.favoriteBtnActive svg {
-  fill: #abd27a;
-  stroke: #abd27a;
-  stroke-width: 2px;
 }
 
 /* User row */
@@ -123,31 +100,8 @@
   color: #444;
 }
 
-/* Кнопка */
-.detailsButton {
-  background: #abd27a;
-  color: #fff;
-  border: none;
-  width: 100%;
-  height: 48px;
-  border-radius: 12px;
-  padding: 12px 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 500;
-  box-sizing: border-box;
-}
-
 .description {
   color: #444;
   font-size: 14px;
   line-height: 1.5;
-}
-
-.featurePlaceholder {
-  display: inline-block;
-  vertical-align: middle;
 }

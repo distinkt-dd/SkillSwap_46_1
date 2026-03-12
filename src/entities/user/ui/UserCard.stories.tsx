@@ -1,4 +1,6 @@
+import React, { useState } from 'react';
 import { UserCard } from './UserCard';
+import { FavoriteButton } from '@features/favorites';
 
 export default {
   title: 'Entities/UserCard',
@@ -16,21 +18,33 @@ export default {
 
 export const Catalog = {
   args: {
-    isFavorite: false,
     detailed: false,
   },
 };
 
-export const Favorite = {
+export const CatalogWithFavorite = {
+  render: (args: React.ComponentProps<typeof UserCard>) => {
+    const [active, setActive] = useState(false);
+    return (
+      <UserCard
+        {...args}
+        favoriteSlot={
+          <FavoriteButton
+            id={args.id}
+            isFavorite={active}
+            onToggle={() => setActive((v) => !v)}
+          />
+        }
+      />
+    );
+  },
   args: {
-    isFavorite: true,
     detailed: false,
   },
 };
 
 export const Detailed = {
   args: {
-    isFavorite: true,
     detailed: true,
     description:
       'Подробное описание: индивидуальные занятия игрой на барабанах для начинающих. Материал подбирается индивидуально, есть домашние задания.',

@@ -1,0 +1,23 @@
+.btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #253017;
+  transition: color 0.2s;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #abd27a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.active {
+  color: #abd27a;
+}
