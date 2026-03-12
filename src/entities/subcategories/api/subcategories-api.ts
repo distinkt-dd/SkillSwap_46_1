@@ -1,5 +1,5 @@
 import { Api } from '@shared/api';
-import type { TSubCategoriesResponse } from './types';
+import type { TSubCategory } from './types';
 
 const SUBCATEGORIES_ENDPOINT = 'subcategories';
 
@@ -8,7 +8,11 @@ export class SubCategoriesApi extends Api {
     super(SUBCATEGORIES_ENDPOINT);
   }
 
-  async getSubCategories(): Promise<TSubCategoriesResponse> {
-    return this.get<TSubCategoriesResponse>();
+  async getSubCategories(): Promise<TSubCategory[]> {
+    try {
+      return this.get<TSubCategory[]>();
+    } catch (error) {
+      throw new Error(`Ошибка получения подкатегорий: ${error}`);
+    }
   }
 }

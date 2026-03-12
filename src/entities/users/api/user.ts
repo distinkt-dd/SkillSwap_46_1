@@ -1,13 +1,12 @@
 import { Api } from '@shared/api';
-import type { TServerUser, TRegisterUser, TUpdateUser, TLoginUser, TUser } from './types';
-import {
-  passwordUpdateSchema,
-  userRegisterSchema,
-  usersArraySchema,
-  userUpdateSchema,
-  type UserValidatedData,
-  type UserValidatedUpdateData,
-} from './userValidate';
+import type {
+  TServerUser,
+  TRegisterUser,
+  TUpdateUser,
+  TLoginUser,
+  TUser,
+  TUpdateUserPass,
+} from './types';
 import * as yup from 'yup';
 import bcrypt from 'bcryptjs';
 
@@ -36,24 +35,52 @@ export class UserApi extends Api {
     }
   }
 
-  async getUsers(): Promise<TUser[]> {
+  async validateData<T>(data: T, schema: yup.Schema<T>): Promise<T> {
     try {
-      const response = await this.get<TUser[]>();
-      return await usersArraySchema.validate(response, {
+      return schema.validate(data, {
         stripUnknown: true,
         abortEarly: false,
       });
     } catch (error) {
-      throw new Error(`Данные с сервера не валидны: ${error}`);
+      if (error instanceof yup.ValidationError) {
+        const errors = error.inner.reduce(
+          (acc, err) => {
+            if (err.path) {
+              acc[err.path] = err.message;
+            }
+            return acc;
+          },
+          {} as Record<string, string>
+        );
+        throw new Error(`Ошибка валидации: ${JSON.stringify(errors)}`);
+      }
+      throw new Error(`Неизвестная ошибка:`);
+    }
+  }
+
+  async getUsers(): Promise<TUser[]> {
+    try {
+      return await this.get<TUser[]>();
+    } catch (error) {
+      throw new Error(`Ошибка получения пользователей: ${error}`);
+    }
+  }
+
+  async getUserById(id: string): Promise<TUser> {
+    try {
+      return await fetch(`${this.baseUrl}/${this.uri}/${id}`).then((response) =>
+        this.checkResponse<TServerUser>(response)
+      );
+    } catch (error) {
+      throw new Error(`Ошибка получения пользователя: ${error}`);
     }
   }
 
   async userLogin(data: TLoginUser): Promise<TUser> {
     try {
-      const res = await fetch(`${this.baseUrl}/${this.uri}?email=${data.email}`, {
-        method: 'GET',
-      });
-      const user = await this.checkResponse<TServerUser[]>(res);
+      const user = await fetch(`${this.baseUrl}/${this.uri}?email=${data.email}`).then((res) =>
+        this.checkResponse<TServerUser[]>(res)
+      );
       if (Array.isArray(user) && user.length === 0) {
         throw new Error('USER_NOT_FOUND');
       }
@@ -78,121 +105,61 @@ export class UserApi extends Api {
     }
   }
 
-  async userRegister(data: TRegisterUser): Promise<TUser> {
+  async userRegister(data: TRegisterUser): Promise<TServerUser> {
     try {
-      const validatedData: UserValidatedData = await userRegisterSchema.validate(data, {
-        abortEarly: false,
-        stripUnknown: true,
-      });
-      const res = await fetch(`${this.baseUrl}/${this.uri}?email=${data.email}`, {
-        method: 'GET',
-      });
-      const isUserExist = await this.checkResponse<TServerUser | []>(res);
+      const resGet = await fetch(`${this.baseUrl}/${this.uri}?email=${data.email}`).then((res) =>
+        this.checkResponse<TServerUser | []>(res)
+      );
 
-      if (Array.isArray(isUserExist) && isUserExist.length === 0) {
+      if (Array.isArray(resGet) && resGet.length === 0) {
         console.log('Register in process...');
-        const hashedPassword = await this.hashPassword(validatedData.password);
-
-        const { password, ...restData } = validatedData; // eslint-disable-line @typescript-eslint/no-unused-vars
+        const hashedPassword = await this.hashPassword(data.password);
+        const { password, ...restData } = data; // eslint-disable-line @typescript-eslint/no-unused-vars
         const hashedUser = {
           ...restData,
           passwordHash: hashedPassword,
         };
-        const res = await fetch(`${this.baseUrl}/${this.uri}`, {
+        const user = await fetch(`${this.baseUrl}/${this.uri}`, {
           method: 'POST',
           body: JSON.stringify(hashedUser),
-        });
-        const { passwordHash, ...newUser } = await this.checkResponse<TServerUser>(res); // eslint-disable-line @typescript-eslint/no-unused-vars
-        return newUser as TUser;
+        }).then((res) => this.checkResponse<TServerUser>(res));
+        return user as TServerUser;
       }
       throw new Error('Пользователь уже существует');
     } catch (error) {
-      if (error instanceof yup.ValidationError) {
-        const errors = error.inner.reduce(
-          (acc, err) => {
-            if (err.path) {
-              acc[err.path] = err.message;
-            }
-            return acc;
-          },
-          {} as Record<string, string>
-        );
-        throw new Error(`Ошибка валидации: ${JSON.stringify(errors)}`);
-      }
       throw new Error(`Ошибка регистрации пользователя: ${error}`);
     }
   }
 
-  async userPassUpdate(id: string, data: Pick<TRegisterUser, 'password'>): Promise<TServerUser> {
+  async userPassUpdate(data: TUpdateUserPass): Promise<TServerUser> {
     try {
-      const validatedData: Pick<TRegisterUser, 'password'> = await passwordUpdateSchema.validate(
-        data,
-        {
-          abortEarly: false,
-          stripUnknown: true,
-        }
-      );
-      const hashedPassword = await this.hashPassword(validatedData.password);
-      const res = await fetch(`${this.baseUrl}/${this.uri}/${id}`, {
+      const hashedPassword = await this.hashPassword(data.password);
+      return await fetch(`${this.baseUrl}/${this.uri}/${data.id}`, {
         method: 'PATCH',
         body: JSON.stringify({ passwordHash: hashedPassword }),
-      });
-
-      return this.checkResponse<TServerUser>(res);
+      }).then((res) => this.checkResponse<TServerUser>(res));
     } catch (error) {
-      if (error instanceof yup.ValidationError) {
-        const errors = error.inner.reduce(
-          (acc, err) => {
-            if (err.path) {
-              acc[err.path] = err.message;
-            }
-            return acc;
-          },
-          {} as Record<string, string>
-        );
-        throw new Error(`Ошибка валидации: ${JSON.stringify(errors)}`);
-      }
       throw new Error(`Ошибка изменения пароля пользователя: ${error}`);
     }
   }
 
-  async userDataUpdate(id: string, data: TUpdateUser): Promise<TUser> {
+  async userDataUpdate(data: TUpdateUser): Promise<TServerUser> {
     try {
-      const validatedData: UserValidatedUpdateData = await userUpdateSchema.validate(data, {
-        abortEarly: false,
-        stripUnknown: true,
-      });
-
-      const res = await fetch(`${this.baseUrl}/${this.uri}/${id}`, {
+      const user = await fetch(`${this.baseUrl}/${this.uri}/${data.id}`, {
         method: 'PATCH',
-        body: JSON.stringify(validatedData),
-      });
-
-      const { passwordHash, ...updatedUser } = await this.checkResponse<TServerUser>(res); // eslint-disable-line @typescript-eslint/no-unused-vars
-      return updatedUser as TUser;
+        body: JSON.stringify(data),
+      }).then((res) => this.checkResponse<TServerUser>(res));
+      return user as TServerUser;
     } catch (error) {
-      if (error instanceof yup.ValidationError) {
-        const errors = error.inner.reduce(
-          (acc, err) => {
-            if (err.path) {
-              acc[err.path] = err.message;
-            }
-            return acc;
-          },
-          {} as Record<string, string>
-        );
-        throw new Error(`Ошибка валидации: ${JSON.stringify(errors)}`);
-      }
       throw new Error(`Ошибка изменения данных пользователя: ${error}`);
     }
   }
 
   async userRemove(id: string): Promise<TServerUser> {
     try {
-      const res = await fetch(`${this.baseUrl}/${this.uri}/${id}`, {
+      return await fetch(`${this.baseUrl}/${this.uri}/${id}`, {
         method: 'DELETE',
-      });
-      return this.checkResponse<TServerUser>(res);
+      }).then((res) => this.checkResponse<TServerUser>(res));
     } catch (error) {
       throw new Error(`Ошибка удаления пользователя ${id}: ${error}`);
     }

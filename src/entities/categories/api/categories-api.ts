@@ -1,5 +1,5 @@
 import { Api } from '@shared/api';
-import type { TCategoriesResponse } from './types';
+import type { TCategory } from './types';
 
 const CATEGORIES_ENDPOINT = 'categories';
 
@@ -8,7 +8,11 @@ export class CategoriesApi extends Api {
     super(CATEGORIES_ENDPOINT);
   }
 
-  async getCategories(): Promise<TCategoriesResponse> {
-    return this.get<TCategoriesResponse>();
+  async getCategories(): Promise<TCategory[]> {
+    try {
+      return this.get<TCategory[]>();
+    } catch (error) {
+      throw new Error(`Ошибка получения категорий: ${error}`);
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { Api } from '@shared/api';
-import type { TCitiesResponse } from './types';
+import type { TCity } from './types';
 
 const CITIES_ENDPOINT = 'cities';
 
@@ -8,7 +8,11 @@ export class CitiesApi extends Api {
     super(CITIES_ENDPOINT);
   }
 
-  async getCities(): Promise<TCitiesResponse> {
-    return this.get<TCitiesResponse>();
+  async getCities(): Promise<TCity[]> {
+    try {
+      return this.get<TCity[]>();
+    } catch (error) {
+      throw new Error(`Ошибка получения городов: ${error}`);
+    }
   }
 }

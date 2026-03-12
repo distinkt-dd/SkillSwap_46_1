@@ -6,8 +6,8 @@ export interface TUser {
   avatar: string;
   gender: 'male' | 'female';
   birthday: Date;
-  cityId: number;
-  subcategoriesIds: number[];
+  cityId: string;
+  subcategoriesIds: (string | undefined)[];
 }
 
 export interface TServerUser extends TUser {
@@ -23,4 +23,9 @@ export type TLoginUser = {
   password: string;
 };
 
-export type TUpdateUser = Omit<Partial<TUser>, 'id' | 'subcategoriesIds'>;
+export type TUpdateUserPass = {
+  id: string;
+  password: string;
+};
+
+export type TUpdateUser = Omit<Partial<Omit<TUser, 'id'>>, 'subcategoriesIds'> & { id: string };
