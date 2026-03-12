@@ -32,6 +32,8 @@
     }
   },
   "dependencies": {
+    "@dicebear/collection": "^9.4.0",
+    "@dicebear/core": "^9.4.0",
     "@feature-sliced/steiger-plugin": "^0.5.7",
     "@reduxjs/toolkit": "^2.11.2",
     "date-fns": "^4.1.0",
