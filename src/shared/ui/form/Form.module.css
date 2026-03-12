@@ -4,9 +4,9 @@
   justify-content: center;
   gap: 24px;
   box-sizing: border-box;
-  width: 556px;
-  min-height: 692px;
+  width: 100%;
+  max-width: 556px;
   padding: 60px;
-  background-color: #ffffff;
+  background-color: red;
   border-radius: 12px;
 }
