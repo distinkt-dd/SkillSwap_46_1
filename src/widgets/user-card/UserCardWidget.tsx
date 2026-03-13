@@ -11,11 +11,7 @@ export const UserCardWidget: React.FC<UserCardWidgetProps> = (props) => {
     <UserCard
       {...props}
       favoriteSlot={
-        <FavoriteButton
-          id={props.id}
-          isFavorite={isFavorite(props.id)}
-          onToggle={toggleFavorite}
-        />
+        <FavoriteButton id={props.id} isFavorite={isFavorite(props.id)} onToggle={toggleFavorite} />
       }
     />
   );

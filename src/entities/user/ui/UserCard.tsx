@@ -33,11 +33,8 @@ export const UserCard: React.FC<UserCardProps> = ({
 
   return (
     <div className={styles.userCard}>
-
       {/* Слот для фичи избранного */}
-      {favoriteSlot && (
-        <div className={styles.favoriteWrapper}>{favoriteSlot}</div>
-      )}
+      {favoriteSlot && <div className={styles.favoriteWrapper}>{favoriteSlot}</div>}
 
       {/* Аватар + имя + локация/возраст */}
       <div className={styles.header}>
@@ -58,7 +55,9 @@ export const UserCard: React.FC<UserCardProps> = ({
           <div className={styles.sectionLabel}>Может научить:</div>
           <div className={styles.tags}>
             {canTeach.map((t) => (
-              <span key={t} className={`${styles.tag} ${styles.tagTeach}`}>{t}</span>
+              <span key={t} className={`${styles.tag} ${styles.tagTeach}`}>
+                {t}
+              </span>
             ))}
           </div>
         </div>
@@ -70,7 +69,9 @@ export const UserCard: React.FC<UserCardProps> = ({
           <div className={styles.sectionLabel}>Хочет научиться:</div>
           <div className={styles.tags}>
             {visibleLearn.map((t) => (
-              <span key={t} className={`${styles.tag} ${styles.tagLearn}`}>{t}</span>
+              <span key={t} className={`${styles.tag} ${styles.tagLearn}`}>
+                {t}
+              </span>
             ))}
             {hiddenCount > 0 && (
               <span className={`${styles.tag} ${styles.tagMore}`}>+{hiddenCount}</span>
@@ -85,9 +86,7 @@ export const UserCard: React.FC<UserCardProps> = ({
         </Button>
       )}
 
-      {detailed && description && (
-        <div className={styles.description}>{description}</div>
-      )}
+      {detailed && description && <div className={styles.description}>{description}</div>}
     </div>
   );
 };

@@ -1,17 +1,18 @@
 .userCard {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-sizing: border-box;
+  width: 324px;
   padding: 20px;
+  background: #ffffff;
   border: 1px solid #e6e6e6;
   border-radius: 12px;
-  background: #ffffff;
-  width: 324px;
-  box-sizing: border-box;
-  position: relative;
 }
 
 /* Слот избранного — абсолютно в правом верхнем углу */
+
 .favoriteWrapper {
   position: absolute;
   top: 16px;
@@ -19,6 +20,7 @@
 }
 
 /* User row */
+
 .header {
   display: flex;
   flex-direction: row;
@@ -27,35 +29,36 @@
 }
 
 .avatar {
+  flex-shrink: 0;
   width: 100px;
   height: 100px;
-  border-radius: 100px;
   background-color: #f0f0f0;
+  border-radius: 100px;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
 .body {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 4px;
-  flex: 1;
   min-width: 0;
 }
 
 .title {
-  font-weight: 700;
-  font-size: 20px;
   margin: 0;
   color: #1a1a1a;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .meta {
-  color: #666;
+  color: #666666;
   font-size: 14px;
 }
 
 /* Секции тегов */
+
 .section {
   display: flex;
   flex-direction: column;
@@ -63,45 +66,47 @@
 }
 
 .sectionLabel {
+  color: #1a1a1a;
   font-weight: 600;
   font-size: 15px;
-  color: #1a1a1a;
 }
 
 .tags {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 8px;
 }
 
 .tag {
-  border-radius: 20px;
+  display: inline-block;
   padding: 6px 14px;
   font-size: 13px;
-  display: inline-block;
+  border-radius: 20px;
 }
 
 /* Розовый — "может научить" */
+
 .tagTeach {
-  background: #f5e0e8;
   color: #5a2d3a;
+  background: #f5e0e8;
 }
 
 /* Голубой — "хочет научиться" */
+
 .tagLearn {
-  background: #ddeef5;
   color: #1a3a4a;
+  background: #ddeef5;
 }
 
 /* Серый — "+N" */
+
 .tagMore {
+  color: #444444;
   background: #e8eaf0;
-  color: #444;
 }
 
 .description {
-  color: #444;
+  color: #444444;
   font-size: 14px;
   line-height: 1.5;
 }

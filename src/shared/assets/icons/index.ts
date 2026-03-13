@@ -26,6 +26,7 @@ import { ReactComponent as HomeIcon } from './home.svg';
 import { ReactComponent as IdeaIcon } from './idea.svg';
 import { ReactComponent as LifestyleIcon } from './lifestyle.svg';
 import { ReactComponent as LikeIcon } from './like.svg';
+import { ReactComponent as LikeFilledIcon } from './like-filled.svg';
 import { ReactComponent as LogoutIcon } from './logout.svg';
 import { ReactComponent as MessageTextIcon } from './message-text.svg';
 import { ReactComponent as MoonIcon } from './moon.svg';
@@ -75,6 +76,7 @@ export {
   IdeaIcon,
   LifestyleIcon,
   LikeIcon,
+  LikeFilledIcon,
   LogoutIcon,
   MessageTextIcon,
   MoonIcon,

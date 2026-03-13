@@ -29,11 +29,7 @@ export const CatalogWithFavorite = {
       <UserCard
         {...args}
         favoriteSlot={
-          <FavoriteButton
-            id={args.id}
-            isFavorite={active}
-            onToggle={() => setActive((v) => !v)}
-          />
+          <FavoriteButton id={args.id} isFavorite={active} onToggle={() => setActive((v) => !v)} />
         }
       />
     );
