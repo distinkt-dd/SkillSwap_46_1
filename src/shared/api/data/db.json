@@ -158,17 +158,12 @@
     },
     {
       "id": "7",
-      "userId": "7",
-      "name": "Создание Telegram-бота",
-      "subcategoryId": "43",
-      "description": "Telegram-боты — мощный инструмент для бизнеса. Покажу, как создать бота для автоматизации заказов, поддержки клиентов или сбора лидов. Разберем кейсы из реальной практики и оптимизируем ваши бизнес-процессы.",
-      "images": [
-        "https://gxnockenqjnuyldrrcox.supabase.co/storage/v1/object/public/skill-images/skill-7-1.jpg",
-        "https://gxnockenqjnuyldrrcox.supabase.co/storage/v1/object/public/skill-images/skill-7-2.jpg",
-        "https://gxnockenqjnuyldrrcox.supabase.co/storage/v1/object/public/skill-images/skill-7-3.jpg",
-        "https://gxnockenqjnuyldrrcox.supabase.co/storage/v1/object/public/skill-images/skill-7-4.jpg"
-      ],
-      "userLikedIds": []
+      "userId": 7,
+      "name": "Немецкий язык для поездок в германию",
+      "subcategoryId": 20,
+      "description": "За короткий срок подготовлю вас к самостоятельному путешествию по немецкоязычным странам.",
+      "images": [],
+      "userLikedIds": [2, 4, 6, 8, 10, 12, 14]
     },
     {
       "id": "8",
