@@ -44,6 +44,7 @@ import { ReactComponent as SortIcon } from './sort.svg';
 import { ReactComponent as SunIcon } from './sun.svg';
 import { ReactComponent as UserCircleIcon } from './user-circle.svg';
 import { ReactComponent as UserIcon } from './user.svg';
+import { ReactComponent as LogoIcon } from './logo.svg';
 
 export {
   AddIcon,
@@ -92,4 +93,5 @@ export {
   SunIcon,
   UserCircleIcon,
   UserIcon,
+  LogoIcon,
 };
