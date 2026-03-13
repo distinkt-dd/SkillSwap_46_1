@@ -20,9 +20,7 @@ export const Input: React.FC<InputProps> = ({
   hint,
   variant = 'default',
   fullWidth = false,
-  width,
   className = '',
-  style,
   leftIcon,
   rightIcon,
   onLeftIconClick,
@@ -51,16 +49,7 @@ export const Input: React.FC<InputProps> = ({
     .join(' ');
 
   return (
-    <div
-      className={wrapperClasses}
-      style={{
-        ...(width && {
-          width: typeof width === 'number' ? `${width}px` : width,
-        }),
-        ...(fullWidth && { width: '100%' }),
-        ...style,
-      }}
-    >
+    <div className={wrapperClasses}>
       {label && (
         <label htmlFor={inputId} className={styles.label}>
           {label}
