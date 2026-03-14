@@ -17,3 +17,5 @@ export type {
   TUpdateUser,
   TUpdateUserPass,
 } from './api/types';
+
+export * from './model';
