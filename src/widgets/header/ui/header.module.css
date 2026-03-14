@@ -87,38 +87,104 @@
   transform: rotate(180deg);
 }
 
+/* Дропдаун меню по макету - 2 колонки */
+
 .dropdownMenu {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 94px;
+  left: 36px;
   z-index: 1000;
-  min-width: 200px;
-  margin-top: 8px;
-  padding: 8px 0;
-  background: white;
-  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Ровно 2 колонки */
+  gap: 40px; /* Расстояние между колонками */
+  width: 1136px;
+  max-height: 1040px;
+  padding: 60px; /* Отступы со всех сторон */
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #69735d;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 }
 
+/* Группа категорий */
+
+.categoryGroup {
+  margin-bottom: 0;
+  break-inside: avoid; /* Предотвращаем разрыв внутри категории */
+}
+
+/* Заголовок категории */
+
+.categoryTitle {
+  display: block;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  color: #1a1f16;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.categoryTitle:hover {
+  color: #2a5f2e;
+  background-color: #f5f5f5;
+}
+
+/* Список подкатегорий - все сразу, без "еще" */
+
+.subcategoriesList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none;
+}
+
+/* Элементы подкатегорий */
+
 .dropdownItem {
   display: block;
-  padding: 8px 16px;
+  padding: 8px 12px;
   color: #1a1f16;
   font-size: 14px;
-  white-space: nowrap;
+  white-space: normal;
   text-decoration: none;
+  border-radius: 6px;
   transition: background 0.2s;
 }
 
-/* .dropdownItem:hover {
+.dropdownItem:hover {
   color: #2a5f2e;
   background: #f5f5f5;
-} */
+}
+
+/* Убираем стили для "еще" так как они больше не нужны */
+
+.moreLink {
+  display: none;
+}
+
+/* Сообщения о загрузке и ошибках */
+
+.loadingMessage,
+.errorMessage {
+  grid-column: span 2; /* Растягиваем на 2 колонки */
+  padding: 60px;
+  color: #666666;
+  font-size: 16px;
+  text-align: center;
+}
+
+.errorMessage {
+  color: #d32f2f;
+}
 
 .searchInput {
   width: 100%;
-
-  /* min-width: 300px; */
 }
 
 .rightGroup {
@@ -127,13 +193,9 @@
   align-items: center;
 }
 
-/* Стили для авторизованного пользователя */
-
 .rightGroup.auth {
-  gap: 20px; /* Расстояние между иконками */
+  gap: 20px;
 }
-
-/* Стили для неавторизованного пользователя */
 
 .rightGroup:not(.auth) {
   gap: 32px;
@@ -144,24 +206,18 @@
   align-items: center;
 }
 
-/* Стили для авторизованного пользователя */
-
 .buttonsGroup.auth {
-  gap: 24px; /* Расстояние между пользователем и кнопкой "Выйти" */
+  gap: 24px;
 }
-
-/* Стили для неавторизованного пользователя */
 
 .buttonsGroup:not(.auth) {
   gap: 8px;
 }
 
-/* Блок с пользователем (имя + аватар) */
-
 .userBlock {
   display: flex;
   align-items: center;
-  gap: 8px; /* Расстояние между именем и аватаркой */
+  gap: 8px;
   color: #1a1f16;
   text-decoration: none;
 }

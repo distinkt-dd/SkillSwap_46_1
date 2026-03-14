@@ -1,20 +1,25 @@
-// widgets/header/ui/header.tsx
-import { useState } from 'react';
+// src/widgets/header/ui/header.tsx
+
 import type { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './header.module.css';
 import { Button, IconUI, Input, Logo, Avatar } from '@shared/ui';
-
-export type THeaderUIProps = {
-  userName?: string;
-  userAvatar?: string;
-};
+import type { THeaderUIProps } from './type';
 
 const cx = (isActive: boolean) => `${styles.navLink} ${isActive ? styles.navLink_active : ''}`;
 
-export const HeaderUI: FC<THeaderUIProps> = ({ userName, userAvatar }) => {
-  const [isSkillsOpen, setIsSkillsOpen] = useState(false);
-
+export const HeaderUI: FC<THeaderUIProps> = ({
+  userName,
+  userAvatar,
+  // Новые пропсы
+  isSkillsOpen = false,
+  onSkillsToggle,
+  categories = [],
+  isLoading = false,
+  error = null,
+  onCategoryClick,
+  onSubcategoryClick,
+}) => {
   const isAuth = !!userName;
 
   return (
@@ -30,24 +35,54 @@ export const HeaderUI: FC<THeaderUIProps> = ({ userName, userAvatar }) => {
               О проекте
             </NavLink>
 
-            <div
-              className={styles.navLinkWithDropdown}
-              onClick={() => setIsSkillsOpen(!isSkillsOpen)}
-            >
+            <div className={styles.navLinkWithDropdown} onClick={onSkillsToggle}>
               <span className={styles.navLinkText}>Все навыки</span>
               <IconUI name="chevronDown" className={isSkillsOpen ? styles.rotated : ''} />
 
               {isSkillsOpen && (
                 <div className={styles.dropdownMenu}>
-                  <NavLink to="/skills/react" className={styles.dropdownItem}>
-                    React
-                  </NavLink>
-                  <NavLink to="/skills/typescript" className={styles.dropdownItem}>
-                    TypeScript
-                  </NavLink>
-                  <NavLink to="/skills/nodejs" className={styles.dropdownItem}>
-                    Node.js
-                  </NavLink>
+                  {isLoading && <div className={styles.loadingMessage}>Загрузка...</div>}
+
+                  {error && <div className={styles.errorMessage}>{error}</div>}
+
+                  {!isLoading &&
+                    !error &&
+                    categories.map((category) => (
+                      <div key={category.id} className={styles.categoryGroup}>
+                        <NavLink
+                          to={`/category/${category.type}`}
+                          className={styles.categoryTitle}
+                          onClick={() => onCategoryClick?.(category.type)}
+                        >
+                          {category.name}
+                        </NavLink>
+
+                        {category.subcategories.length > 0 && (
+                          <div className={styles.subcategoriesList}>
+                            {category.subcategories.slice(0, 5).map((sub) => (
+                              <NavLink
+                                key={sub.id}
+                                to={`/skills/${sub.id}`}
+                                className={styles.dropdownItem}
+                                onClick={() => onSubcategoryClick?.(sub.id)}
+                              >
+                                {sub.name}
+                              </NavLink>
+                            ))}
+
+                            {category.subcategories.length > 5 && (
+                              <NavLink
+                                to={`/category/${category.type}`}
+                                className={styles.moreLink}
+                                onClick={() => onCategoryClick?.(category.type)}
+                              >
+                                Еще {category.subcategories.length - 5}...
+                              </NavLink>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                 </div>
               )}
             </div>

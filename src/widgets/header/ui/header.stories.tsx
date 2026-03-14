@@ -2,6 +2,7 @@
 import type { Meta, StoryObj, Decorator } from '@storybook/react-vite';
 import { MemoryRouter } from 'react-router-dom';
 import { HeaderUI } from './header';
+import { useSkillsMenu } from '../lib/useSkillsMenu';
 import { useState } from 'react';
 
 // Импортируем данные из db.json
@@ -40,23 +41,49 @@ type Story = StoryObj<typeof HeaderUI>;
 // Берем первого пользователя из db.json для примера
 const firstUser = dbData.users[0]; // Иван
 
+// Базовая история без пользователя
 export const LoggedOut: Story = {
-  args: {
-    userName: undefined,
-    userAvatar: undefined,
+  render: function Render() {
+    const { isOpen, toggleOpen, categories, isLoading, error } = useSkillsMenu();
+
+    return (
+      <HeaderUI
+        userName={undefined}
+        userAvatar={undefined}
+        isSkillsOpen={isOpen}
+        onSkillsToggle={toggleOpen}
+        categories={categories}
+        isLoading={isLoading}
+        error={error}
+      />
+    );
   },
 };
 
+// История с авторизованным пользователем
 export const LoggedIn: Story = {
-  args: {
-    userName: firstUser.name,
-    userAvatar: firstUser.avatar,
+  render: function Render() {
+    const { isOpen, toggleOpen, categories, isLoading, error } = useSkillsMenu();
+
+    return (
+      <HeaderUI
+        userName={firstUser.name}
+        userAvatar={firstUser.avatar}
+        isSkillsOpen={isOpen}
+        onSkillsToggle={toggleOpen}
+        categories={categories}
+        isLoading={isLoading}
+        error={error}
+      />
+    );
   },
 };
 
+// Интерактивная история с переключением пользователя
 export const Interactive: Story = {
   render: function Render() {
     const [user, setUser] = useState<typeof firstUser | null>(null);
+    const { isOpen, toggleOpen, categories, isLoading, error } = useSkillsMenu();
 
     const handleLogin = () => {
       setUser(firstUser);
@@ -67,8 +94,16 @@ export const Interactive: Story = {
     };
 
     return (
-      <div>
-        <HeaderUI userName={user?.name} userAvatar={user?.avatar} />
+      <div style={{ width: '100%' }}>
+        <HeaderUI
+          userName={user?.name}
+          userAvatar={user?.avatar}
+          isSkillsOpen={isOpen}
+          onSkillsToggle={toggleOpen}
+          categories={categories}
+          isLoading={isLoading}
+          error={error}
+        />
         <div
           style={{
             marginTop: '20px',
@@ -111,17 +146,26 @@ export const Interactive: Story = {
   },
 };
 
-// Дополнительная история для демонстрации другого пользователя
+// Демонстрация разных пользователей
 export const LoggedInAsDifferentUser: Story = {
   render: function Render() {
     const [user, setUser] = useState<typeof firstUser | null>(null);
+    const { isOpen, toggleOpen, categories, isLoading, error } = useSkillsMenu();
 
     // Берем разных пользователей
     const users = [dbData.users[0], dbData.users[1], dbData.users[2]]; // Иван, Анна, Дмитрий
 
     return (
-      <div>
-        <HeaderUI userName={user?.name} userAvatar={user?.avatar} />
+      <div style={{ width: '100%' }}>
+        <HeaderUI
+          userName={user?.name}
+          userAvatar={user?.avatar}
+          isSkillsOpen={isOpen}
+          onSkillsToggle={toggleOpen}
+          categories={categories}
+          isLoading={isLoading}
+          error={error}
+        />
         <div
           style={{
             marginTop: '20px',
