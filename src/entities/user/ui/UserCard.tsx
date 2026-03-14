@@ -38,7 +38,7 @@ export const UserCard: React.FC<UserCardProps> = ({
 
       {/* Аватар + имя + локация/возраст */}
       <div className={styles.header}>
-  <Avatar src={avatar} size="medium" />
+        <Avatar src={avatar} size="medium" />
         <div className={styles.body}>
           <h3 className={styles.title}>{name}</h3>
           {(location || age) && (

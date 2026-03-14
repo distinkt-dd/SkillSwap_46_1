@@ -1,49 +1,57 @@
 .btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #253017;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   transition: color 0.2s;
 }
 
 .btn:focus-visible {
+  border-radius: 4px;
   outline: 2px solid #abd27a;
   outline-offset: 2px;
-  border-radius: 4px;
 }
 
 .active {
-  color: #ABD27A;
+  color: #abd27a;
 }
 
 /* Make the SVG appear as an outline when inactive and fully filled when active */
+
 .btn svg,
 .btn svg * {
+  transition:
+    fill 0.15s ease,
+    stroke 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
+
   /* Default: allow the icon to use currentColor for fill so we can
      smoothly switch between outline and filled states. Keep transitions
      for color/paint changes. */
-  fill: currentColor !important;
+  fill: currentcolor !important;
   stroke: none !important;
-  transition: fill 0.15s ease, stroke 0.15s ease, color 0.15s ease, opacity 0.15s ease;
 }
 
 /* Inactive state: show only the outline (stroke) and make the fill transparent */
+
 .btn:not(.active) svg,
 .btn:not(.active) svg * {
   fill: none !important;
-  stroke: currentColor !important;
+  stroke: currentcolor !important;
   stroke-width: 1.2px;
 }
 
 /* Active state: fully fill the icon using the button color */
+
 .btn.active svg,
 .btn.active svg * {
-  fill: currentColor !important;
-  stroke: currentColor !important;
+  fill: currentcolor !important;
+  stroke: currentcolor !important;
 }
