@@ -8,3 +8,6 @@ export { Dropdown } from './dropdown';
 export type { DropdownProps, DropdownOption } from './dropdown';
 export { Notification } from './notification';
 export type { NotificationProps, NotificationType, NotificationVariant } from './notification';
+export { Avatar } from './avatar';
+export { Calendar } from './calendar';
+export type { CalendarProps } from './calendar';

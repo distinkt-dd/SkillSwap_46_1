@@ -26,6 +26,7 @@ import { ReactComponent as HomeIcon } from './home.svg';
 import { ReactComponent as IdeaIcon } from './idea.svg';
 import { ReactComponent as LifestyleIcon } from './lifestyle.svg';
 import { ReactComponent as LikeIcon } from './like.svg';
+import { ReactComponent as LikeFilledIcon } from './like-filled.svg';
 import { ReactComponent as LogoutIcon } from './logout.svg';
 import { ReactComponent as MessageTextIcon } from './message-text.svg';
 import { ReactComponent as MoonIcon } from './moon.svg';
@@ -44,6 +45,7 @@ import { ReactComponent as SortIcon } from './sort.svg';
 import { ReactComponent as SunIcon } from './sun.svg';
 import { ReactComponent as UserCircleIcon } from './user-circle.svg';
 import { ReactComponent as UserIcon } from './user.svg';
+import { ReactComponent as LogoIcon } from './logo.svg';
 
 export {
   AddIcon,
@@ -74,6 +76,7 @@ export {
   IdeaIcon,
   LifestyleIcon,
   LikeIcon,
+  LikeFilledIcon,
   LogoutIcon,
   MessageTextIcon,
   MoonIcon,
@@ -92,4 +95,5 @@ export {
   SunIcon,
   UserCircleIcon,
   UserIcon,
+  LogoIcon,
 };

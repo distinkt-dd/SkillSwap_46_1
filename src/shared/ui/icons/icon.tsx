@@ -30,6 +30,7 @@ import {
   IdeaIcon,
   LifestyleIcon,
   LikeIcon,
+  LikeFilledIcon,
   LogoutIcon,
   MessageTextIcon,
   MoonIcon,
@@ -48,6 +49,7 @@ import {
   SunIcon,
   UserCircleIcon,
   UserIcon,
+  LogoIcon,
 } from '@shared/assets';
 
 const icons: IconsMap = {
@@ -79,6 +81,7 @@ const icons: IconsMap = {
   idea: IdeaIcon,
   lifestyle: LifestyleIcon,
   like: LikeIcon,
+  likeFilled: LikeFilledIcon,
   logout: LogoutIcon,
   messageText: MessageTextIcon,
   moon: MoonIcon,
@@ -97,6 +100,7 @@ const icons: IconsMap = {
   sun: SunIcon,
   userCircle: UserCircleIcon,
   user: UserIcon,
+  logo: LogoIcon,
 } as const;
 
 export const IconUI: React.FC<IconProps> = ({ name, size = 24, className, ...props }) => {
