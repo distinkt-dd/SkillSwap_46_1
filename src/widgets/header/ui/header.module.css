@@ -5,12 +5,13 @@
   width: 1440px;
   padding: 0 36px;
   font-family: 'Roboto', sans-serif;
+  letter-spacing: 2%;
   background: #f9faf7;
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 32px;
   width: 100%;
@@ -20,7 +21,6 @@
 
 .leftSection {
   display: flex;
-  flex-shrink: 0;
   align-items: center;
   gap: 36px;
 }
@@ -29,7 +29,6 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  letter-spacing: 2%;
 }
 
 .navLink {
@@ -111,31 +110,64 @@
   transition: background 0.2s;
 }
 
-.dropdownItem:hover {
+/* .dropdownItem:hover {
   color: #2a5f2e;
   background: #f5f5f5;
-}
+} */
 
 .searchInput {
-  flex: 1;
-  min-width: 300px;
-  max-width: 527px;
+  width: 100%;
+
+  /* min-width: 300px; */
 }
 
 .rightGroup {
   display: flex;
-  flex-shrink: 0;
-  justify-content: flex-end;
+  justify-self: end;
   align-items: center;
+}
+
+/* Стили для авторизованного пользователя */
+
+.rightGroup.auth {
+  gap: 20px; /* Расстояние между иконками */
+}
+
+/* Стили для неавторизованного пользователя */
+
+.rightGroup:not(.auth) {
   gap: 32px;
-  min-width: 200px;
 }
 
 .buttonsGroup {
   display: flex;
-  flex-shrink: 0;
   align-items: center;
+}
+
+/* Стили для авторизованного пользователя */
+
+.buttonsGroup.auth {
+  gap: 24px; /* Расстояние между пользователем и кнопкой "Выйти" */
+}
+
+/* Стили для неавторизованного пользователя */
+
+.buttonsGroup:not(.auth) {
   gap: 8px;
+}
+
+/* Блок с пользователем (имя + аватар) */
+
+.userBlock {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Расстояние между именем и аватаркой */
+  color: #1a1f16;
+  text-decoration: none;
+}
+
+.userBlock:hover {
+  color: #2a5f2e;
 }
 
 .buttonLink {
@@ -146,23 +178,7 @@
 .profileLink {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #1a1f16;
-  font-size: 16px;
-  white-space: nowrap;
   text-decoration: none;
-}
-
-.profileLink:hover {
-  color: #2a5f2e;
-}
-
-.userName {
-  white-space: nowrap;
-}
-
-.icon_active {
-  color: #2a5f2e;
 }
 
 .logo {
