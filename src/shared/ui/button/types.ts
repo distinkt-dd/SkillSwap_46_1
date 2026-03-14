@@ -1,6 +1,6 @@
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
 
-export interface ButtonProps {
+export interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
   variant?: ButtonVariant;
   children: React.ReactNode;
   icon?: React.ReactNode;
