@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from '@shared/ui';
+import { Button, Avatar, Subcategory } from '@shared/ui';
 import styles from './UserCard.module.css';
 
 export type UserCardProps = {
@@ -38,7 +38,7 @@ export const UserCard: React.FC<UserCardProps> = ({
 
       {/* Аватар + имя + локация/возраст */}
       <div className={styles.header}>
-        <img src={avatar} alt={`${name} avatar`} className={styles.avatar} />
+  <Avatar src={avatar} size="medium" />
         <div className={styles.body}>
           <h3 className={styles.title}>{name}</h3>
           {(location || age) && (
@@ -55,9 +55,9 @@ export const UserCard: React.FC<UserCardProps> = ({
           <div className={styles.sectionLabel}>Может научить:</div>
           <div className={styles.tags}>
             {canTeach.map((t) => (
-              <span key={t} className={`${styles.tag} ${styles.tagTeach}`}>
-                {t}
-              </span>
+              <div key={t} className={styles.tagWrapper}>
+                <Subcategory title={t} type="other" />
+              </div>
             ))}
           </div>
         </div>
@@ -69,12 +69,12 @@ export const UserCard: React.FC<UserCardProps> = ({
           <div className={styles.sectionLabel}>Хочет научиться:</div>
           <div className={styles.tags}>
             {visibleLearn.map((t) => (
-              <span key={t} className={`${styles.tag} ${styles.tagLearn}`}>
-                {t}
-              </span>
+              <div key={t} className={styles.tagWrapper}>
+                <Subcategory title={t} type="other" />
+              </div>
             ))}
             {hiddenCount > 0 && (
-              <span className={`${styles.tag} ${styles.tagMore}`}>+{hiddenCount}</span>
+              <div className={`${styles.tag} ${styles.tagMore}`}>+{hiddenCount}</div>
             )}
           </div>
         </div>
