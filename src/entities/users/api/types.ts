@@ -4,7 +4,7 @@ export interface TUser {
   email: string;
   description: string;
   avatar: string;
-  gender: 'male' | 'female';
+  gender: string;
   birthday: Date;
   cityId: string;
   subcategoriesIds: (string | undefined)[];

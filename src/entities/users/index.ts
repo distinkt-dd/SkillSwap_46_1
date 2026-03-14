@@ -1,13 +1,12 @@
 export { UserApi } from './api/user';
 
 export {
-  userResponseSchema,
-  usersArraySchema,
-  userUpdateSchema,
-  passwordUpdateSchema,
+  getUsersSchema,
+  getUserByIdSchema,
+  userPassUpdateSchema,
+  userDataUpdateSchema,
   userRegisterSchema,
-  type UserValidatedUpdateData,
-  type UserValidatedData,
+  userLoginSchema,
 } from './api/userValidate';
 
 export type {

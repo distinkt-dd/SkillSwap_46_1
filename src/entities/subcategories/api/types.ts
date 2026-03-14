@@ -1,5 +1,5 @@
 export type TSubCategory = {
   id: string;
   name: string;
-  categoryId: number;
+  categoryId: string;
 };
