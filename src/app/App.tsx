@@ -5,7 +5,7 @@ import {
   selectedUserIsResponse,
   userLoginSchema,
   type TLoginUser,
-} from '@entities/users';
+} from '@entities/user';
 import { useFormValidation } from '@shared/api';
 import { Button, Input } from '@shared/ui';
 import Form from '@shared/ui/form';

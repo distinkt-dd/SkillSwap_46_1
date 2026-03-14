@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TUser } from '../api/types';
-import { login } from '../model/actions';
+import { login } from './actions';
 
 type TUserInitialState = {
   user: TUser | null;
