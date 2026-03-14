@@ -7,7 +7,6 @@ import type {
   TUser,
   TUpdateUserPass,
 } from './types';
-import * as yup from 'yup';
 import bcrypt from 'bcryptjs';
 
 const USER_ENDPOINT = 'users';
@@ -32,29 +31,6 @@ export class UserApi extends Api {
       return await bcrypt.compare(plainPassword, hashedPassword);
     } catch (error) {
       throw new Error(`Ошибка сравнения паролей: ${error}`);
-    }
-  }
-
-  async validateData<T>(data: T, schema: yup.Schema<T>): Promise<T> {
-    try {
-      return schema.validate(data, {
-        stripUnknown: true,
-        abortEarly: false,
-      });
-    } catch (error) {
-      if (error instanceof yup.ValidationError) {
-        const errors = error.inner.reduce(
-          (acc, err) => {
-            if (err.path) {
-              acc[err.path] = err.message;
-            }
-            return acc;
-          },
-          {} as Record<string, string>
-        );
-        throw new Error(`Ошибка валидации: ${JSON.stringify(errors)}`);
-      }
-      throw new Error(`Неизвестная ошибка:`);
     }
   }
 

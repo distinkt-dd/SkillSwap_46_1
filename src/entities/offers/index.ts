@@ -1,13 +1,10 @@
 export { OffersApi } from './api/offers';
 
 export {
-  offersSchema,
-  offersCreateSchema,
-  offersUpdateSchema,
-  offersArraySchema,
-  type TOfferFromSchema,
-  type OfferCreateValidData,
-  type OfferUpdateValidData,
+  getOffersSchema,
+  getOfferByIdSchema,
+  createOfferSchema,
+  offerDataUpdateSchema,
 } from './api/offersValidate';
 
 export type { TOffer, TOfferCreate, TOfferUpdate } from './api/types';

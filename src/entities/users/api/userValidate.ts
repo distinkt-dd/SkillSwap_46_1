@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const userResponseSchema = yup.object({
+export const userSchema = yup.object({
   id: yup
     .string()
     .required()
@@ -8,10 +8,7 @@ export const userResponseSchema = yup.object({
   name: yup.string().required('Имя отсутствует'),
   email: yup.string().email('Некорректный email').required('Email обязателен'),
   description: yup.string().required('Описание обязательно'),
-  gender: yup
-    .string()
-    .oneOf(['male', 'female'], 'Пол должен быть "male" или "female"')
-    .required('Пол обязателен для заполнения'),
+  gender: yup.string().required('Пол обязателен для заполнения'),
   birthday: yup.date().min(new Date('1900-01-01')).max(new Date('2100-01-01')).required(),
   cityId: yup
     .string()
@@ -24,20 +21,20 @@ export const userResponseSchema = yup.object({
   avatar: yup.string().required(),
 });
 
-export const usersArraySchema = yup.array().of(userResponseSchema).required().min(0);
-
-export const userUpdateSchema = userResponseSchema.omit(['id']);
-
-export const passwordUpdateSchema = yup.object({
-  password: yup.string().required().min(8, 'Пароль должен содержать минимум 8 символов'),
-  // .max(50, 'Пароль не может быть длиннее 50 символов')
-  // .matches(/[A-Z]/, 'Пароль должен содержать хотя бы одну заглавную букву')
-  // .matches(/[a-z]/, 'Пароль должен содержать хотя бы одну строчную букву')
-  // .matches(/[0-9]/, 'Пароль должен содержать хотя бы одну цифру')
-  // .matches(/[!@#$%^&*]/, 'Пароль должен содержать хотя бы один спецсимвол (!@#$%^&*)'),
-});
-
-export const userRegisterSchema = userUpdateSchema.concat(passwordUpdateSchema);
-
-export type UserValidatedUpdateData = yup.InferType<typeof userUpdateSchema>;
-export type UserValidatedData = yup.InferType<typeof userRegisterSchema>;
+export const userPassUpdateSchema = yup
+  .object({
+    password: yup.string().required().min(8, 'Пароль должен содержать минимум 8 символов'),
+    // .max(50, 'Пароль не может быть длиннее 50 символов')
+    // .matches(/[A-Z]/, 'Пароль должен содержать хотя бы одну заглавную букву')
+    // .matches(/[a-z]/, 'Пароль должен содержать хотя бы одну строчную букву')
+    // .matches(/[0-9]/, 'Пароль должен содержать хотя бы одну цифру')
+    // .matches(/[!@#$%^&*]/, 'Пароль должен содержать хотя бы один спецсимвол (!@#$%^&*)'),
+  })
+  .concat(userSchema.pick(['id']));
+export const getUserByIdSchema = userSchema;
+export const getUsersSchema = yup.array().of(userSchema).required().min(0);
+export const userDataUpdateSchema = userSchema
+  .pick(['id'])
+  .concat(userSchema.partial().omit(['id']));
+export const userLoginSchema = userSchema.pick(['email']).concat(userPassUpdateSchema.omit(['id']));
+export const userRegisterSchema = userSchema.concat(userPassUpdateSchema).omit(['id']);

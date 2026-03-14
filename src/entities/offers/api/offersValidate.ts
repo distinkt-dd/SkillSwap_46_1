@@ -1,6 +1,5 @@
 import * as yup from 'yup';
 
-//getOfferById
 export const offersSchema = yup.object({
   id: yup
     .string()
@@ -42,11 +41,9 @@ export const offersSchema = yup.object({
     .default([]),
 });
 
-export const offersCreateSchema = offersSchema.omit(['userId', 'userLikedIds', 'id']);
-export const offersUpdateSchema = offersSchema.omit(['userId', 'userLikedIds']);
-
-export type TOfferFromSchema = yup.InferType<typeof offersSchema>;
-export type OfferCreateValidData = yup.InferType<typeof offersCreateSchema>;
-export type OfferUpdateValidData = yup.InferType<typeof offersUpdateSchema>;
-
-export const offersArraySchema = yup.array().of(offersSchema).required().min(0);
+export const getOffersSchema = yup.array().of(offersSchema).required().min(0);
+export const getOfferByIdSchema = offersSchema;
+export const createOfferSchema = offersSchema.omit(['id', 'userLikedIds', 'userId']);
+export const offerDataUpdateSchema = offersSchema
+  .pick(['id'])
+  .concat(offersSchema.partial().omit(['id']));

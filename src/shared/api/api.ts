@@ -10,9 +10,8 @@ export class Api {
     res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
 
   protected async get<TResponse>(): Promise<TResponse> {
-    const res = await fetch(`${this.baseUrl}/${this.uri}`, {
-      method: 'GET',
-    });
-    return await this.checkResponse<TResponse>(res);
+    return await fetch(`${this.baseUrl}/${this.uri}`).then((res) =>
+      this.checkResponse<TResponse>(res)
+    );
   }
 }
