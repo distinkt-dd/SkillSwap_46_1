@@ -36,6 +36,7 @@ export type DropdownProps = {
   className?: string;
   /** Включить поиск */
   searchable?: boolean;
+  error?: string;
 };
 
 export const Dropdown = ({
@@ -51,6 +52,7 @@ export const Dropdown = ({
   disabled = false,
   className,
   searchable = false,
+  error,
 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -286,7 +288,7 @@ export const Dropdown = ({
               )}
             </button>
           )}
-
+          {error && <p className={styles.error}>{error}</p>}
           <div className={styles.icons}>
             {variant === 'clearable' &&
               ((mode === 'single' && value) || (mode === 'multi' && values.length > 0)) && (
