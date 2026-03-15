@@ -1,7 +1,8 @@
+import { citiesSlice } from '@entities/cities';
 import { userSlice } from '@entities/user';
 import { combineSlices, configureStore } from '@reduxjs/toolkit';
 
-const rootReducer = combineSlices(userSlice);
+const rootReducer = combineSlices(userSlice, citiesSlice);
 
 export const store = configureStore({
   reducer: rootReducer,
