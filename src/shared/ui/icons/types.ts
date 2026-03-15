@@ -37,6 +37,7 @@ export type IconsMap = {
   idea: React.FC<SVGProps<SVGSVGElement>>;
   lifestyle: React.FC<SVGProps<SVGSVGElement>>;
   like: React.FC<SVGProps<SVGSVGElement>>;
+  likeFilled: React.FC<SVGProps<SVGSVGElement>>;
   logout: React.FC<SVGProps<SVGSVGElement>>;
   messageText: React.FC<SVGProps<SVGSVGElement>>;
   moon: React.FC<SVGProps<SVGSVGElement>>;

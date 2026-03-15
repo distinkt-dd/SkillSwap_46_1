@@ -1,11 +1,8 @@
-// src/widgets/header/ui/type.ts
-
-import type { CategoryWithSubcategories } from '../model/types';
+import type { CategoryWithSubcategories } from './categories/types';
 
 export type THeaderUIProps = {
   userName?: string;
   userAvatar?: string;
-  // Новые пропсы для навыков
   isSkillsOpen?: boolean;
   onSkillsToggle?: () => void;
   categories?: CategoryWithSubcategories[];
@@ -13,4 +10,6 @@ export type THeaderUIProps = {
   error?: string | null;
   onCategoryClick?: (categoryType: string) => void;
   onSubcategoryClick?: (subcategoryId: string) => void;
+  variant?: 'default' | 'pure';
+  onClose?: () => void;
 };

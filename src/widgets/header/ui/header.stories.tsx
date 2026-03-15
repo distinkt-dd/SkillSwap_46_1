@@ -1,14 +1,12 @@
-// widgets/header/ui/header.stories.tsx
 import type { Meta, StoryObj, Decorator } from '@storybook/react-vite';
 import { MemoryRouter } from 'react-router-dom';
-import { HeaderUI } from './header';
-import { useSkillsMenu } from '../lib/useSkillsMenu';
+import { Header } from './header';
 import { useState } from 'react';
-
-// Импортируем данные из db.json
+import '../../../app/App.css';
+import type { CategoryWithSubcategories } from './categories/types';
 import dbData from '../../../shared/api/data/db.json';
+import { Button } from '@shared/index';
 
-// Декоратор для правильного фона и центрирования
 const withBackground: Decorator = (Story) => (
   <MemoryRouter>
     <div
@@ -25,8 +23,23 @@ const withBackground: Decorator = (Story) => (
   </MemoryRouter>
 );
 
-const meta: Meta<typeof HeaderUI> = {
-  component: HeaderUI,
+const transformCategories = (): CategoryWithSubcategories[] => {
+  return dbData.categories.map((cat) => ({
+    id: cat.id,
+    type: cat.type,
+    name: cat.name,
+    subcategories: dbData.subcategories
+      .filter((sub) => sub.categoryId === cat.id)
+      .map((sub) => ({
+        id: sub.id,
+        name: sub.name,
+        categoryId: sub.categoryId,
+      })),
+  }));
+};
+
+const meta: Meta<typeof Header> = {
+  component: Header,
   title: 'Widgets/Header',
   tags: ['autodocs'],
   parameters: {
@@ -36,54 +49,51 @@ const meta: Meta<typeof HeaderUI> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof HeaderUI>;
+type Story = StoryObj<typeof Header>;
 
-// Берем первого пользователя из db.json для примера
-const firstUser = dbData.users[0]; // Иван
+const firstUser = dbData.users[0];
+const allCategories = transformCategories();
 
-// Базовая история без пользователя
 export const LoggedOut: Story = {
   render: function Render() {
-    const { isOpen, toggleOpen, categories, isLoading, error } = useSkillsMenu();
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-      <HeaderUI
+      <Header
         userName={undefined}
         userAvatar={undefined}
         isSkillsOpen={isOpen}
-        onSkillsToggle={toggleOpen}
-        categories={categories}
-        isLoading={isLoading}
-        error={error}
+        onSkillsToggle={() => setIsOpen(!isOpen)}
+        categories={allCategories}
+        isLoading={false}
+        error={null}
       />
     );
   },
 };
 
-// История с авторизованным пользователем
 export const LoggedIn: Story = {
   render: function Render() {
-    const { isOpen, toggleOpen, categories, isLoading, error } = useSkillsMenu();
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-      <HeaderUI
+      <Header
         userName={firstUser.name}
         userAvatar={firstUser.avatar}
         isSkillsOpen={isOpen}
-        onSkillsToggle={toggleOpen}
-        categories={categories}
-        isLoading={isLoading}
-        error={error}
+        onSkillsToggle={() => setIsOpen(!isOpen)}
+        categories={allCategories}
+        isLoading={false}
+        error={null}
       />
     );
   },
 };
 
-// Интерактивная история с переключением пользователя
 export const Interactive: Story = {
   render: function Render() {
     const [user, setUser] = useState<typeof firstUser | null>(null);
-    const { isOpen, toggleOpen, categories, isLoading, error } = useSkillsMenu();
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleLogin = () => {
       setUser(firstUser);
@@ -94,15 +104,15 @@ export const Interactive: Story = {
     };
 
     return (
-      <div style={{ width: '100%' }}>
-        <HeaderUI
+      <div>
+        <Header
           userName={user?.name}
           userAvatar={user?.avatar}
           isSkillsOpen={isOpen}
-          onSkillsToggle={toggleOpen}
-          categories={categories}
-          isLoading={isLoading}
-          error={error}
+          onSkillsToggle={() => setIsOpen(!isOpen)}
+          categories={allCategories}
+          isLoading={false}
+          error={null}
         />
         <div
           style={{
@@ -115,56 +125,38 @@ export const Interactive: Story = {
             zIndex: 9999,
           }}
         >
-          <button
+          <Button
+            variant="tertiary"
             onClick={handleLogout}
             style={{
-              padding: '8px 16px',
-              background: '#f0f0f0',
               border: '1px solid #ccc',
-              borderRadius: '4px',
-              cursor: 'pointer',
             }}
           >
             Выйти
-          </button>
-          <button
-            onClick={handleLogin}
-            style={{
-              padding: '8px 16px',
-              background: '#2A5F2E',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-            }}
-          >
-            Войти как {firstUser.name}
-          </button>
+          </Button>
+          <Button onClick={handleLogin}>Войти как {firstUser.name}</Button>
         </div>
       </div>
     );
   },
 };
 
-// Демонстрация разных пользователей
 export const LoggedInAsDifferentUser: Story = {
   render: function Render() {
     const [user, setUser] = useState<typeof firstUser | null>(null);
-    const { isOpen, toggleOpen, categories, isLoading, error } = useSkillsMenu();
-
-    // Берем разных пользователей
-    const users = [dbData.users[0], dbData.users[1], dbData.users[2]]; // Иван, Анна, Дмитрий
+    const [isOpen, setIsOpen] = useState(false);
+    const users = [dbData.users[0], dbData.users[1], dbData.users[2]];
 
     return (
-      <div style={{ width: '100%' }}>
-        <HeaderUI
+      <div>
+        <Header
           userName={user?.name}
           userAvatar={user?.avatar}
           isSkillsOpen={isOpen}
-          onSkillsToggle={toggleOpen}
-          categories={categories}
-          isLoading={isLoading}
-          error={error}
+          onSkillsToggle={() => setIsOpen(!isOpen)}
+          categories={allCategories}
+          isLoading={false}
+          error={null}
         />
         <div
           style={{
@@ -178,35 +170,96 @@ export const LoggedInAsDifferentUser: Story = {
             flexDirection: 'column',
           }}
         >
-          <button
-            onClick={() => setUser(null)}
-            style={{
-              padding: '8px 16px',
-              background: '#f0f0f0',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              cursor: 'pointer',
-            }}
-          >
+          <Button onClick={() => setUser(null)} variant="tertiary">
             Выйти
-          </button>
+          </Button>
           {users.map((u) => (
-            <button
-              key={u.id}
-              onClick={() => setUser(u)}
-              style={{
-                padding: '8px 16px',
-                background: u === user ? '#2A5F2E' : '#e0e0e0',
-                color: u === user ? 'white' : '#1A1F16',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer',
-              }}
-            >
+            <Button key={u.id} onClick={() => setUser(u)}>
               Войти как {u.name}
-            </button>
+            </Button>
           ))}
         </div>
+      </div>
+    );
+  },
+};
+
+export const MenuOpen: Story = {
+  render: function Render() {
+    const [isOpen, setIsOpen] = useState(true);
+
+    return (
+      <Header
+        userName={firstUser.name}
+        userAvatar={firstUser.avatar}
+        isSkillsOpen={isOpen}
+        onSkillsToggle={() => setIsOpen(!isOpen)}
+        categories={allCategories}
+        isLoading={false}
+        error={null}
+      />
+    );
+  },
+};
+
+export const Loading: Story = {
+  render: function Render() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+      <Header
+        userName={firstUser.name}
+        userAvatar={firstUser.avatar}
+        isSkillsOpen={isOpen}
+        onSkillsToggle={() => setIsOpen(!isOpen)}
+        categories={[]}
+        isLoading={true}
+        error={null}
+      />
+    );
+  },
+};
+
+export const Error: Story = {
+  render: function Render() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+      <Header
+        userName={firstUser.name}
+        userAvatar={firstUser.avatar}
+        isSkillsOpen={isOpen}
+        onSkillsToggle={() => setIsOpen(!isOpen)}
+        categories={[]}
+        isLoading={false}
+        error="Ошибка загрузки категорий"
+      />
+    );
+  },
+};
+
+export const Pure: Story = {
+  args: {
+    variant: 'pure',
+    onClose: () => console.log('Close clicked'),
+  },
+};
+
+export const PureInteractive: Story = {
+  render: function Render() {
+    const [isOpen, setIsOpen] = useState(true);
+
+    if (!isOpen) {
+      return (
+        <div style={{ padding: 40, textAlign: 'center' }}>
+          <Button onClick={() => setIsOpen(true)}>Открыть хедер в Pure-режиме</Button>
+        </div>
+      );
+    }
+
+    return (
+      <div>
+        <Header variant="pure" onClose={() => setIsOpen(false)} />
       </div>
     );
   },

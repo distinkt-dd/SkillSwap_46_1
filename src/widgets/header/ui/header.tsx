@@ -1,17 +1,14 @@
-// src/widgets/header/ui/header.tsx
-
 import type { FC } from 'react';
+import { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './header.module.css';
 import { Button, IconUI, Input, Logo, Avatar } from '@shared/ui';
+import { CategoriesDropdown } from './categories';
 import type { THeaderUIProps } from './type';
 
-const cx = (isActive: boolean) => `${styles.navLink} ${isActive ? styles.navLink_active : ''}`;
-
-export const HeaderUI: FC<THeaderUIProps> = ({
+export const Header: FC<THeaderUIProps> = ({
   userName,
   userAvatar,
-  // Новые пропсы
   isSkillsOpen = false,
   onSkillsToggle,
   categories = [],
@@ -19,8 +16,66 @@ export const HeaderUI: FC<THeaderUIProps> = ({
   error = null,
   onCategoryClick,
   onSubcategoryClick,
+  variant = 'default',
+  onClose,
 }) => {
   const isAuth = !!userName;
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (triggerRef.current && triggerRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        onSkillsToggle?.();
+      }
+    };
+
+    if (isSkillsOpen) {
+      setTimeout(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+      }, 100);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSkillsOpen, onSkillsToggle]);
+
+  useEffect(() => {
+    if (isSkillsOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isSkillsOpen]);
+
+  if (variant === 'pure') {
+    return (
+      <header className={styles.header}>
+        <nav className={styles.pureNav}>
+          <NavLink to="/" className={styles.logo}>
+            <Logo />
+          </NavLink>
+          <Button
+            variant="tertiary"
+            onClick={onClose}
+            iconPosition="right"
+            icon={<IconUI name="cross" />}
+            width={147}
+          >
+            Закрыть
+          </Button>
+        </nav>
+      </header>
+    );
+  }
 
   return (
     <header className={styles.header}>
@@ -31,58 +86,25 @@ export const HeaderUI: FC<THeaderUIProps> = ({
           </NavLink>
 
           <div className={styles.navLinks}>
-            <NavLink to="/about" className={({ isActive }) => cx(isActive)}>
-              О проекте
-            </NavLink>
+            <NavLink to="/about">О проекте</NavLink>
 
-            <div className={styles.navLinkWithDropdown} onClick={onSkillsToggle}>
-              <span className={styles.navLinkText}>Все навыки</span>
-              <IconUI name="chevronDown" className={isSkillsOpen ? styles.rotated : ''} />
+            <div ref={triggerRef} className={styles.navLinkWithDropdown} onClick={onSkillsToggle}>
+              <span>Все навыки</span>
+              <IconUI name="chevronDown" />
 
               {isSkillsOpen && (
-                <div className={styles.dropdownMenu}>
+                <div ref={dropdownRef} className={styles.dropdownMenu}>
                   {isLoading && <div className={styles.loadingMessage}>Загрузка...</div>}
 
                   {error && <div className={styles.errorMessage}>{error}</div>}
 
-                  {!isLoading &&
-                    !error &&
-                    categories.map((category) => (
-                      <div key={category.id} className={styles.categoryGroup}>
-                        <NavLink
-                          to={`/category/${category.type}`}
-                          className={styles.categoryTitle}
-                          onClick={() => onCategoryClick?.(category.type)}
-                        >
-                          {category.name}
-                        </NavLink>
-
-                        {category.subcategories.length > 0 && (
-                          <div className={styles.subcategoriesList}>
-                            {category.subcategories.slice(0, 5).map((sub) => (
-                              <NavLink
-                                key={sub.id}
-                                to={`/skills/${sub.id}`}
-                                className={styles.dropdownItem}
-                                onClick={() => onSubcategoryClick?.(sub.id)}
-                              >
-                                {sub.name}
-                              </NavLink>
-                            ))}
-
-                            {category.subcategories.length > 5 && (
-                              <NavLink
-                                to={`/category/${category.type}`}
-                                className={styles.moreLink}
-                                onClick={() => onCategoryClick?.(category.type)}
-                              >
-                                Еще {category.subcategories.length - 5}...
-                              </NavLink>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                  {!isLoading && !error && (
+                    <CategoriesDropdown
+                      categories={categories}
+                      onCategoryClick={onCategoryClick}
+                      onSubcategoryClick={onSubcategoryClick}
+                    />
+                  )}
                 </div>
               )}
             </div>
@@ -93,7 +115,7 @@ export const HeaderUI: FC<THeaderUIProps> = ({
           leftIcon={<IconUI name="search" />}
           placeholder="Искать навык"
           className={styles.searchInput}
-          variant="default"
+          variant="search"
           fullWidth
         />
 
@@ -114,10 +136,14 @@ export const HeaderUI: FC<THeaderUIProps> = ({
             ) : (
               <>
                 <NavLink to="/login" className={styles.buttonLink}>
-                  <Button variant="secondary">Войти</Button>
+                  <Button variant="secondary" width={98}>
+                    Войти
+                  </Button>
                 </NavLink>
                 <NavLink to="/register" className={styles.buttonLink}>
-                  <Button variant="primary">Зарегистрироваться</Button>
+                  <Button variant="primary" width={208}>
+                    Зарегистрироваться
+                  </Button>
                 </NavLink>
               </>
             )}
