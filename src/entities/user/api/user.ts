@@ -81,7 +81,7 @@ export class UserApi extends Api {
     }
   }
 
-  async userRegister(data: TRegisterUser): Promise<TServerUser> {
+  async userRegister(data: TRegisterUser): Promise<TServerUser | TUser> {
     try {
       const resGet = await fetch(`${this.baseUrl}/${this.uri}?email=${data.email}`).then((res) =>
         this.checkResponse<TServerUser | []>(res)
@@ -99,7 +99,10 @@ export class UserApi extends Api {
           method: 'POST',
           body: JSON.stringify(hashedUser),
         }).then((res) => this.checkResponse<TServerUser>(res));
-        return user as TServerUser;
+
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { passwordHash, ...userWithOutPassword } = user;
+        return userWithOutPassword as TUser;
       }
       throw new Error('Пользователь уже существует');
     } catch (error) {
@@ -119,13 +122,15 @@ export class UserApi extends Api {
     }
   }
 
-  async userDataUpdate(data: TUpdateUser): Promise<TServerUser> {
+  async userDataUpdate(data: TUpdateUser): Promise<TServerUser | TUser> {
     try {
       const user = await fetch(`${this.baseUrl}/${this.uri}/${data.id}`, {
         method: 'PATCH',
         body: JSON.stringify(data),
       }).then((res) => this.checkResponse<TServerUser>(res));
-      return user as TServerUser;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { passwordHash, ...userWithOutPassword } = user;
+      return userWithOutPassword as TUser;
     } catch (error) {
       throw new Error(`Ошибка изменения данных пользователя: ${error}`);
     }
