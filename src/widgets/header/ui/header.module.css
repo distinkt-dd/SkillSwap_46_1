@@ -1,0 +1,167 @@
+.header {
+  position: relative;
+  box-sizing: border-box;
+  width: 1440px;
+  padding: 0 36px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 2%;
+  background: var(--color-background);
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  min-height: 104px;
+  margin: 0 auto;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text);
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navLinkWithDropdown {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text);
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.navLinkWithDropdown svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 94px;
+  left: 36px;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 1136px;
+  max-height: 1040px;
+  padding: 60px;
+  overflow-y: auto;
+  background: var(--color-card-input);
+  border: 1px solid var(--color-caption);
+  border-radius: 12px;
+}
+
+.loadingMessage,
+.errorMessage {
+  grid-column: span 2;
+  padding: 60px;
+  color: var(--color-caption);
+  font-size: 16px;
+  text-align: center;
+}
+
+.errorMessage {
+  color: var(--color-error);
+}
+
+.rightGroup {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+}
+
+.rightGroup.auth {
+  gap: 20px;
+}
+
+.rightGroup:not(.auth) {
+  gap: 32px;
+}
+
+.buttonsGroup {
+  display: flex;
+  align-items: center;
+}
+
+.buttonsGroup.auth {
+  gap: 24px;
+}
+
+.buttonsGroup:not(.auth) {
+  gap: 8px;
+}
+
+.userBlock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.userBlock:hover {
+  color: var(--color-link-button-pressed);
+}
+
+.buttonLink {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.profileLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.themeIcon,
+.notificationIcon,
+.likeIcon {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.pureNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 84px;
+  margin: 0 auto;
+}
