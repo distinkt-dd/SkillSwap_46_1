@@ -14,3 +14,4 @@ declare global {
   type RootState = ReturnType<typeof rootReducer>;
   type AppDispatch = typeof store.dispatch;
 }
+
