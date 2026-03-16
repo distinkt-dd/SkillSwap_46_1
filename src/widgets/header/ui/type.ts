@@ -1,8 +1,6 @@
 import type { CategoryWithSubcategories } from './categories/types';
 
 export type THeaderUIProps = {
-  userName?: string;
-  userAvatar?: string;
   isSkillsOpen?: boolean;
   onSkillsToggle?: () => void;
   categories?: CategoryWithSubcategories[];
