@@ -1,4 +1,5 @@
 import {
+  checkUserAuth,
   login,
   register,
   selectedUser,
@@ -27,6 +28,10 @@ export const App = () => {
   const user = useSelector(selectedUser);
   const error = useSelector(selectedUserError);
   const isResponse = useSelector(selectedUserIsResponse);
+
+  useEffect(() => {
+    dispatch(checkUserAuth());
+  }, [dispatch]);
 
   useEffect(() => {
     console.log('user: ', user);

@@ -10,12 +10,31 @@ import type {
 import bcrypt from 'bcryptjs';
 
 const USER_ENDPOINT = 'users';
+const USER_STORAGE_KEY = 'user';
 
 export class UserApi extends Api {
   private readonly saltRounds: number = 10;
 
   constructor() {
     super(USER_ENDPOINT);
+  }
+
+  private saveUserToStorage(user: TUser): void {
+    localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user));
+  }
+
+  getUserFromStorage(): TUser | null {
+    const rawUser = localStorage.getItem(USER_STORAGE_KEY);
+
+    if (!rawUser) {
+      return null;
+    }
+    try {
+      return JSON.parse(rawUser) as TUser;
+    } catch {
+      localStorage.removeItem(USER_STORAGE_KEY);
+      return null;
+    }
   }
 
   private async hashPassword(data: string): Promise<string> {
@@ -64,7 +83,11 @@ export class UserApi extends Api {
       if (!passIsEqual) throw new Error('INVALID_PASSWORD');
 
       const { passwordHash, ...userWithoutPassword } = user[0]; // eslint-disable-line @typescript-eslint/no-unused-vars
-      return userWithoutPassword as TUser;
+      const preparedUser = userWithoutPassword as TUser;
+
+      this.saveUserToStorage(preparedUser);
+
+      return preparedUser;
     } catch (error) {
       if (error instanceof Error) {
         switch (error.message) {
@@ -102,7 +125,11 @@ export class UserApi extends Api {
 
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { passwordHash, ...userWithOutPassword } = user;
-        return userWithOutPassword as TUser;
+        const preparedUser = userWithOutPassword as TUser;
+
+        this.saveUserToStorage(preparedUser);
+
+        return preparedUser;
       }
       throw new Error('Пользователь уже существует');
     } catch (error) {
