@@ -5,10 +5,10 @@ import styles from './header.module.css';
 import { Button, IconUI, Input, Logo, Avatar } from '@shared/ui';
 import { CategoriesDropdown } from './categories';
 import type { THeaderUIProps } from './type';
+import { selectedUser } from '@entities/user';
+import { useSelector } from '@shared/store';
 
-export const Header: FC<THeaderUIProps> = ({
-  userName,
-  userAvatar,
+export const Header: FC<Partial<THeaderUIProps>> = ({
   isSkillsOpen = false,
   onSkillsToggle,
   categories = [],
@@ -19,7 +19,9 @@ export const Header: FC<THeaderUIProps> = ({
   variant = 'default',
   onClose,
 }) => {
-  const isAuth = !!userName;
+  const user = useSelector(selectedUser);
+  const isAuth = !!user;
+  
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
@@ -95,9 +97,7 @@ export const Header: FC<THeaderUIProps> = ({
               {isSkillsOpen && (
                 <div ref={dropdownRef} className={styles.dropdownMenu}>
                   {isLoading && <div className={styles.loadingMessage}>Загрузка...</div>}
-
                   {error && <div className={styles.errorMessage}>{error}</div>}
-
                   {!isLoading && !error && (
                     <CategoriesDropdown
                       categories={categories}
@@ -129,8 +129,8 @@ export const Header: FC<THeaderUIProps> = ({
                 <IconUI name="like" className={styles.likeIcon} />
 
                 <NavLink to="/profile" className={styles.userBlock}>
-                  <span className={styles.userName}>{userName}</span>
-                  <Avatar src={userAvatar} size="small" />
+                  <span className={styles.userName}>{user?.name}</span>
+                  <Avatar src={user?.avatar} size="small" />
                 </NavLink>
               </>
             ) : (

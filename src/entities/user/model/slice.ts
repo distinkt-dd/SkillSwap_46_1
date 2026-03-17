@@ -23,6 +23,10 @@ export const userSlice = createSlice({
     setUser: (state, action: PayloadAction<TUser>) => {
       state.user = action.payload;
     },
+    clearUser: (state) => {
+      state.user = null;
+      localStorage.removeItem('user');
+    },
     setIsAuthChecked: (state, action: PayloadAction<boolean>) => {
       state.isAuthChecked = action.payload;
     },
@@ -107,7 +111,7 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUser, setIsAuthChecked } = userSlice.actions;
+export const { setUser, clearUser, setIsAuthChecked } = userSlice.actions;
 export const {
   selectedUser,
   selectedUserIsAuthChecked,
