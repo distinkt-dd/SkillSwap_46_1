@@ -25,6 +25,10 @@ export const register = createAsyncThunk<TUser, TRegisterUser>(
   }
 );
 
+export const checkUserAuth = createAsyncThunk<TUser | null>('user/checkUserAuth', async () => {
+  return userApi.getUserFromStorage();
+});
+
 export const updatePassword = createAsyncThunk<TServerUser, TUpdateUserPass>(
   'user/updatePass',
   async (payload: TUpdateUserPass) => {
