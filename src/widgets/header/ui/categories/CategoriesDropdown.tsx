@@ -21,7 +21,7 @@ const categoryConfig: Record<
 };
 
 const getCategoryConfig = (categoryType: string) => {
-  return categoryConfig[categoryType] || { icon: 'briefcase', type: 'other' };
+  return categoryConfig[categoryType];
 };
 
 type CategoriesProps = {
@@ -36,35 +36,43 @@ export const CategoriesDropdown: FC<CategoriesProps> = ({
   onSubcategoryClick,
 }) => {
   return (
-    <>
+    <div className={styles.categoriesDropdown}>
       {categories.map((category) => {
         const config = getCategoryConfig(category.type);
+        const hasSubcategories = category.subcategories && category.subcategories.length > 0;
 
         return (
-          <div key={category.id}>
-            <div className={styles.categoryTitle} onClick={() => onCategoryClick?.(category.type)}>
-              <Subcategory
-                type={config.type}
-                title={category.name}
-                icon={<IconUI name={config.icon} />}
-              />
-              <span className={styles.categoryTitleText}>{category.name}</span>
+          <div key={category.id} className={styles.categoryGroup}>
+            <div 
+              className={styles.categoryTitle}
+              onClick={() => onCategoryClick?.(category.type)}
+            >
+              <div className={styles.categoryIcon}>
+                <Subcategory
+                  type={config.type}
+                  title={category.name}
+                  icon={<IconUI name={config.icon} />}
+                />
+              </div>
+              <span className={styles.categoryName}>{category.name}</span>
             </div>
 
-            <div className={styles.subcategoriesList}>
-              {category.subcategories.map((sub) => (
-                <div
-                  key={sub.id}
-                  className={styles.dropdownItem}
-                  onClick={() => onSubcategoryClick?.(sub.id)}
-                >
-                  {sub.name}
-                </div>
-              ))}
-            </div>
+            {hasSubcategories && (
+              <div className={styles.subcategoriesList}>
+                {category.subcategories.map((sub) => (
+                  <div
+                    key={sub.id}
+                    className={styles.dropdownItem}
+                    onClick={() => onSubcategoryClick?.(sub.id)}
+                  >
+                    {sub.name}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         );
       })}
-    </>
+    </div>
   );
 };

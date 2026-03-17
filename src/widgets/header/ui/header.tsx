@@ -21,7 +21,7 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
 }) => {
   const user = useSelector(selectedUser);
   const isAuth = !!user;
-  
+
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
@@ -93,22 +93,22 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
             <div ref={triggerRef} className={styles.navLinkWithDropdown} onClick={onSkillsToggle}>
               <span>Все навыки</span>
               <IconUI name="chevronDown" />
-
-              {isSkillsOpen && (
-                <div ref={dropdownRef} className={styles.dropdownMenu}>
-                  {isLoading && <div className={styles.loadingMessage}>Загрузка...</div>}
-                  {error && <div className={styles.errorMessage}>{error}</div>}
-                  {!isLoading && !error && (
-                    <CategoriesDropdown
-                      categories={categories}
-                      onCategoryClick={onCategoryClick}
-                      onSubcategoryClick={onSubcategoryClick}
-                    />
-                  )}
-                </div>
-              )}
             </div>
           </div>
+
+          {isSkillsOpen && (
+            <div ref={dropdownRef} className={styles.dropdownWrapper}>
+              {isLoading && <div>Загрузка...</div>}
+              {error && <div>{error}</div>}
+              {!isLoading && !error && (
+                <CategoriesDropdown
+                  categories={categories}
+                  onCategoryClick={onCategoryClick}
+                  onSubcategoryClick={onSubcategoryClick}
+                />
+              )}
+            </div>
+          )}
         </div>
 
         <Input
