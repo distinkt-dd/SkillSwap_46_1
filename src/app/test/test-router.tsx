@@ -1,3 +1,4 @@
+// src/app/providers/router/test-router.tsx
 import { createBrowserRouter } from 'react-router-dom';
 import {
   TempHome,
@@ -7,35 +8,42 @@ import {
   TempRegister,
   TempNotFound,
 } from './temp-test-components';
-import { LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
+import { LayoutAuth,  LayoutPure } from '@pages/index';
 
 export const testRouter = createBrowserRouter([
   {
     path: '/',
-    element: <LayoutNauth><TempHome /></LayoutNauth>,
+    // Для главной страницы используем LayoutAuth (с категориями)
+    element: <LayoutAuth><TempHome /></LayoutAuth>,
   },
   {
     path: '/about',
-    element: <LayoutNauth><TempAbout /></LayoutNauth>,
+    // Для страницы "О проекте" тоже LayoutAuth
+    element: <LayoutAuth><TempAbout /></LayoutAuth>,
   },
   {
     path: '/dashboard',
+    // Для защищенных страниц используем LayoutAuth
     element: <LayoutAuth><TempDashboard /></LayoutAuth>,
   },
   {
     path: '/profile',
+    // Для профиля тоже LayoutAuth
     element: <LayoutAuth><TempDashboard /></LayoutAuth>,
   },
   {
     path: '/login',
+    // Для логина используем LayoutPure (чистый хедер)
     element: <LayoutPure><TempLogin /></LayoutPure>,
   },
   {
     path: '/register',
+    // Для регистрации тоже LayoutPure
     element: <LayoutPure><TempRegister /></LayoutPure>,
   },
   {
     path: '*',
-    element: <LayoutNauth><TempNotFound /></LayoutNauth>,
+    // Для 404 используем LayoutAuth (с категориями)
+    element: <LayoutAuth><TempNotFound /></LayoutAuth>,
   },
 ]);
