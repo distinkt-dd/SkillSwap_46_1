@@ -61,95 +61,99 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
   if (variant === 'pure') {
     return (
       <header className={styles.header}>
-        <nav className={styles.pureNav}>
-          <NavLink to="/" className={styles.logo}>
-            <Logo />
-          </NavLink>
-          <Button
-            variant="tertiary"
-            onClick={onClose}
-            iconPosition="right"
-            icon={<IconUI name="cross" />}
-            width={147}
-          >
-            Закрыть
-          </Button>
-        </nav>
+        <div className="container">
+          <nav className={styles.pureNav}>
+            <NavLink to="/" className={styles.logo}>
+              <Logo />
+            </NavLink>
+            <Button
+              variant="tertiary"
+              onClick={onClose}
+              iconPosition="right"
+              icon={<IconUI name="cross" />}
+              width={147}
+            >
+              Закрыть
+            </Button>
+          </nav>
+        </div>
       </header>
     );
   }
 
   return (
     <header className={styles.header}>
-      <nav className={styles.nav}>
-        <div className={styles.leftSection}>
-          <NavLink to="/" className={styles.logo}>
-            <Logo />
-          </NavLink>
+      <div className="container">
+        <nav className={styles.nav}>
+          <div className={styles.leftSection}>
+            <NavLink to="/" className={styles.logo}>
+              <Logo />
+            </NavLink>
 
-          <div className={styles.navLinks}>
-            <NavLink to="/about">О проекте</NavLink>
+            <div className={styles.navLinks}>
+              <NavLink to="/about">О проекте</NavLink>
 
-            <div ref={triggerRef} className={styles.navLinkWithDropdown} onClick={onSkillsToggle}>
-              <span>Все навыки</span>
-              <IconUI name="chevronDown" />
+              <div ref={triggerRef} className={styles.navLinkWithDropdown} onClick={onSkillsToggle}>
+                <span>Все навыки</span>
+                <IconUI name="chevronDown" />
+              </div>
             </div>
-          </div>
 
-          {isSkillsOpen && (
-            <div ref={dropdownRef} className={styles.dropdownWrapper}>
-              {isLoading && <div>Загрузка...</div>}
-              {error && <div>{error}</div>}
-              {!isLoading && !error && (
-                <CategoriesDropdown
-                  categories={categories}
-                  onCategoryClick={onCategoryClick}
-                  onSubcategoryClick={onSubcategoryClick}
-                />
-              )}
-            </div>
-          )}
-        </div>
-
-        <Input
-          leftIcon={<IconUI name="search" />}
-          placeholder="Искать навык"
-          className={styles.searchInput}
-          variant="search"
-          fullWidth
-        />
-
-        <div className={`${styles.rightGroup} ${isAuth ? styles.auth : ''}`}>
-          <IconUI name={isAuth ? 'sun' : 'moon'} className={styles.themeIcon} />
-
-          <div className={`${styles.buttonsGroup} ${isAuth ? styles.auth : ''}`}>
-            {isAuth ? (
-              <>
-                <IconUI name="notification" className={styles.notificationIcon} />
-                <IconUI name="like" className={styles.likeIcon} />
-
-                <NavLink to="/profile" className={styles.userBlock}>
-                  <span className={styles.userName}>{user?.name}</span>
-                  <Avatar src={user?.avatar} size="small" />
-                </NavLink>
-              </>
-            ) : (
-              <>
-                <NavLink to="/login" className={styles.buttonLink}>
-                  <Button variant="secondary" width={98}>
-                    Войти
-                  </Button>
-                </NavLink>
-                <NavLink to="/registration" className={styles.buttonLink}>
-                  <Button variant="primary" width={208}>
-                    Зарегистрироваться
-                  </Button>
-                </NavLink>
-              </>
+            {isSkillsOpen && (
+              <div ref={dropdownRef} className={styles.dropdownWrapper}>
+                {isLoading && <div>Загрузка...</div>}
+                {error && <div>{error}</div>}
+                {!isLoading && !error && (
+                  <CategoriesDropdown
+                    categories={categories}
+                    onCategoryClick={onCategoryClick}
+                    onSubcategoryClick={onSubcategoryClick}
+                  />
+                )}
+              </div>
             )}
           </div>
-        </div>
-      </nav>
+
+          <Input
+            leftIcon={<IconUI name="search" />}
+            placeholder="Искать навык"
+            className={styles.searchInput}
+            variant="search"
+            fullWidth
+          />
+
+          <div className={`${styles.rightGroup} ${isAuth ? styles.auth : ''}`}>
+            <IconUI name={isAuth ? 'sun' : 'moon'} className={styles.themeIcon} />
+
+            <div className={`${styles.buttonsGroup} ${isAuth ? styles.auth : ''}`}>
+              {isAuth ? (
+                <>
+                  <IconUI name="notification" className={styles.notificationIcon} />
+                  <IconUI name="like" className={styles.likeIcon} />
+
+                  <NavLink to="/profile" className={styles.userBlock}>
+                    <span className={styles.userName}>{user?.name}</span>
+                    <Avatar src={user?.avatar} size="small" />
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  <NavLink to="/login" className={styles.buttonLink}>
+                    <Button variant="secondary" width={98}>
+                      Войти
+                    </Button>
+                  </NavLink>
+                  <NavLink to="/registration" className={styles.buttonLink}>
+                    <Button variant="primary" width={208}>
+                      Зарегистрироваться
+                    </Button>
+                  </NavLink>
+                </>
+              )}
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 };

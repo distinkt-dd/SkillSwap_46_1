@@ -10,8 +10,17 @@ import {
   TempRegister,
 } from './test/temp-test-components';
 import { ProtectedRoute } from './router/ProtectedRoute';
+import { useDispatch } from '@shared/store';
+import { useEffect } from 'react';
+import { getSubcategories } from '@entities/index';
+import { getCategories } from '@entities/categories/model';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCategories());
+    dispatch(getSubcategories());
+  }, [dispatch]);
   return (
     <>
       <Routes>
