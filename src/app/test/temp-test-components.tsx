@@ -1,10 +1,15 @@
-import { useDispatch } from '@shared/store';
-import { setUser, clearUser } from '@entities/user';
+import { useDispatch, useSelector } from '@shared/store';
+import { setUser, clearUser, selectedUser } from '@entities/user';
 import { Button } from '@shared/ui';
+import { useEffect } from 'react';
 
 export const TempHome = () => {
   const dispatch = useDispatch();
+  const user = useSelector(selectedUser);
 
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
   const handleTestLogin = () => {
     dispatch(
       setUser({

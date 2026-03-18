@@ -48,3 +48,9 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.33;
 }
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
