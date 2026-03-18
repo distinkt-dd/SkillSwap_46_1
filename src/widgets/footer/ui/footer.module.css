@@ -1,0 +1,37 @@
+.footer {
+  width: 100%;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.linksList {
+  text-align: start;
+  display: grid;
+  justify-content: end;
+  grid-template-columns: 324px 324px 324px;
+  grid-template-rows: 24px 24px;
+  column-gap: 24px;
+  row-gap: 12px;
+}
+
+.link {
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.copiright {
+  color: var(--text-color);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
