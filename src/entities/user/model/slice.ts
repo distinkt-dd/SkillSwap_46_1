@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TUser } from '../api/types';
-import { checkUserAuth, login, register, updateDateUser, updatePassword } from './actions';
+import { login, register, updateDateUser, updatePassword } from './actions';
 
 type TUserInitialState = {
   user: TUser | null;
@@ -13,7 +13,7 @@ const userInitialState: TUserInitialState = {
   user: null,
   error: '',
   isResponse: false,
-  isAuthChecked: false,
+  isAuthChecked: true,
 };
 
 export const userSlice = createSlice({
@@ -39,20 +39,6 @@ export const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(checkUserAuth.pending, (state) => {
-        state.isAuthChecked = false;
-        state.error = '';
-      })
-      .addCase(checkUserAuth.fulfilled, (state, action) => {
-        state.user = action.payload;
-        state.isAuthChecked = true;
-        state.error = '';
-      })
-      .addCase(checkUserAuth.rejected, (state, action) => {
-        state.user = null;
-        state.isAuthChecked = true;
-        state.error = action.error.message as string;
-      })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isAuthChecked = true;

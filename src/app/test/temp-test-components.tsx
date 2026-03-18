@@ -14,7 +14,7 @@ export const TempHome = () => {
         email: 'ivan@example.com',
         description: 'Тестовый пользователь',
         gender: 'male',
-        birthday: new Date('2000-01-02'),
+        birthday: new Date('2000-01-02').toISOString(),
         cityId: '1',
         subcategoriesIds: ['1', '2', '3'],
       })
@@ -55,7 +55,7 @@ export const TempDashboard = () => {
         email: 'ivan@example.com',
         description: 'Тестовый пользователь',
         gender: 'male',
-        birthday: new Date('2000-01-02'),
+        birthday: new Date('2000-01-02').toISOString(),
         cityId: '1',
         subcategoriesIds: ['1', '2', '3'],
       })
