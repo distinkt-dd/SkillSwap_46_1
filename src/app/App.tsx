@@ -1,6 +1,8 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
+import { ErrorPage, LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
+import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
+import { useSelector } from '@shared/store';
 
 import {
   TempAbout,
@@ -21,6 +23,10 @@ export const App = () => {
     dispatch(getCategories());
     dispatch(getSubcategories());
   }, [dispatch]);
+
+  const user = useSelector(selectedUser);
+  const authChecked = useSelector(selectedUserIsAuthChecked);
+  const ErrorLayout = user && authChecked ? LayoutAuth : LayoutNauth;
   return (
     <>
       <Routes>
@@ -68,6 +74,22 @@ export const App = () => {
                 <TempDashboard />
               </LayoutAuth>
             </ProtectedRoute>
+          }
+        />
+        <Route
+          path="500"
+          element={
+            <ErrorLayout>
+              <ErrorPage variant="500" />
+            </ErrorLayout>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <ErrorLayout>
+              <ErrorPage variant="404" />
+            </ErrorLayout>
           }
         />
       </Routes>
