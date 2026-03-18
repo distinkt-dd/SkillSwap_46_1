@@ -49,9 +49,7 @@ export const LayoutNauth: FC<LayoutNauthProps> = ({ children }) => {
         onCategoryClick={handleCategoryClick}
         onSubcategoryClick={handleSubcategoryClick}
       />
-      <main className={styles.content}>
-        {children}
-      </main>
+      <main className={styles.content}>{children}</main>
       <Footer />
     </div>
   );

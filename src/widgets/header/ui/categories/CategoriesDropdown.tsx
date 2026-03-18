@@ -43,10 +43,7 @@ export const CategoriesDropdown: FC<CategoriesProps> = ({
 
         return (
           <div key={category.id} className={styles.categoryGroup}>
-            <div 
-              className={styles.categoryTitle}
-              onClick={() => onCategoryClick?.(category.type)}
-            >
+            <div className={styles.categoryTitle} onClick={() => onCategoryClick?.(category.type)}>
               <div className={styles.categoryIcon}>
                 <Subcategory
                   type={config.type}

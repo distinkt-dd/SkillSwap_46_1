@@ -6,17 +6,19 @@ export const TempHome = () => {
   const dispatch = useDispatch();
 
   const handleTestLogin = () => {
-    dispatch(setUser({
-      id: "1",
-      name: "Иван",
-      avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=ivan-losodkfkvclvxpdofdokk",
-      email: "ivan@example.com",
-      description: "Тестовый пользователь",
-      gender: "male",
-      birthday: new Date("2000-01-02"),
-      cityId: "1",
-      subcategoriesIds: ["1", "2", "3"]
-    }));
+    dispatch(
+      setUser({
+        id: '1',
+        name: 'Иван',
+        avatar: 'https://api.dicebear.com/9.x/thumbs/svg?seed=ivan-losodkfkvclvxpdofdokk',
+        email: 'ivan@example.com',
+        description: 'Тестовый пользователь',
+        gender: 'male',
+        birthday: new Date('2000-01-02'),
+        cityId: '1',
+        subcategoriesIds: ['1', '2', '3'],
+      })
+    );
   };
 
   const handleTestLogout = () => {
@@ -28,7 +30,7 @@ export const TempHome = () => {
       <h1>Главная страница (неавторизованный)</h1>
       <p>Этот макет использует LayoutNauth</p>
       <p>Хедер должен показывать кнопки Войти и Зарегистрироваться</p>
-      
+
       <div style={{ marginTop: '20px', display: 'flex', gap: '10px' }}>
         <Button variant="primary" onClick={handleTestLogin}>
           Тестовый логин (Иван)
@@ -45,17 +47,19 @@ export const TempDashboard = () => {
   const dispatch = useDispatch();
 
   const handleTestLogin = () => {
-    dispatch(setUser({
-      id: "1",
-      name: "Иван",
-      avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=ivan-losodkfkvclvxpdofdokk",
-      email: "ivan@example.com",
-      description: "Тестовый пользователь",
-      gender: "male",
-      birthday: new Date("2000-01-02"),
-      cityId: "1",
-      subcategoriesIds: ["1", "2", "3"]
-    }));
+    dispatch(
+      setUser({
+        id: '1',
+        name: 'Иван',
+        avatar: 'https://api.dicebear.com/9.x/thumbs/svg?seed=ivan-losodkfkvclvxpdofdokk',
+        email: 'ivan@example.com',
+        description: 'Тестовый пользователь',
+        gender: 'male',
+        birthday: new Date('2000-01-02'),
+        cityId: '1',
+        subcategoriesIds: ['1', '2', '3'],
+      })
+    );
   };
 
   const handleTestLogout = () => {
@@ -67,7 +71,7 @@ export const TempDashboard = () => {
       <h1>Дашборд (авторизованный)</h1>
       <p>Этот макет использует LayoutAuth</p>
       <p>Хедер должен показывать имя пользователя и аватар</p>
-      
+
       <div style={{ marginTop: '20px', display: 'flex', gap: '10px' }}>
         <Button variant="primary" onClick={handleTestLogin}>
           Тестовый логин (Иван)
