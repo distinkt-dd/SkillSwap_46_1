@@ -17,9 +17,7 @@ export const LayoutPure: FC<LayoutPureProps> = ({ children }) => {
   return (
     <div className={styles.layout}>
       <Header variant="pure" onClose={handleClose} />
-      <main className={styles.content}>
-        {children}
-      </main>
+      <main className={styles.content}>{children}</main>
     </div>
   );
 };
