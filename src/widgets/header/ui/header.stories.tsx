@@ -78,12 +78,7 @@ export const LoggedOut: Story = {
     }, []);
 
     return (
-      <Header
-        isSkillsOpen={false}
-        categories={allCategories}
-        isLoading={false}
-        error={null}
-      />
+      <Header isSkillsOpen={false} categories={allCategories} isLoading={false} error={null} />
     );
   },
 };
@@ -98,21 +93,11 @@ export const LoggedIn: Story = {
     }, []);
 
     return (
-      <Header
-        isSkillsOpen={false}
-        categories={allCategories}
-        isLoading={false}
-        error={null}
-      />
+      <Header isSkillsOpen={false} categories={allCategories} isLoading={false} error={null} />
     );
   },
 };
 
 export const Pure: Story = {
-  render: () => (
-    <Header
-      variant="pure"
-      onClose={() => console.log('Close clicked')}
-    />
-  ),
+  render: () => <Header variant="pure" onClose={() => console.log('Close clicked')} />,
 };
