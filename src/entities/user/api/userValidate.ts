@@ -9,7 +9,7 @@ export const userSchema = yup.object({
   email: yup.string().email('Некорректный email').required('Email обязателен'),
   description: yup.string().required('Описание обязательно'),
   gender: yup.string().required('Пол обязателен для заполнения'),
-  birthday: yup.date().min(new Date('1900-01-01')).max(new Date('2100-01-01')).required(),
+  birthday: yup.string().required('Заполните дату'),
   cityId: yup
     .string()
     .required('Отсутсвует город')
@@ -23,8 +23,8 @@ export const userSchema = yup.object({
 
 export const userPassUpdateSchema = yup
   .object({
-    password: yup.string().required().min(8, 'Пароль должен содержать минимум 8 символов'),
-    // .max(50, 'Пароль не может быть длиннее 50 символов')
+    password: yup.string().required('Введите пароль').min(8, 'Более 8 символов'),
+    // .max(50, 'Менее 50 символов')
     // .matches(/[A-Z]/, 'Пароль должен содержать хотя бы одну заглавную букву')
     // .matches(/[a-z]/, 'Пароль должен содержать хотя бы одну строчную букву')
     // .matches(/[0-9]/, 'Пароль должен содержать хотя бы одну цифру')

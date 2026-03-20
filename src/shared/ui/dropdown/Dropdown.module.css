@@ -2,14 +2,13 @@
 
 .container {
   position: relative;
-  z-index: 10;
-  width: 436px;
+  width: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
 .label {
   display: block;
-  margin: 0 0 4px;
+  margin: 0 0 8px;
   color: var(--color-text);
   font:
     400 16px/1.5 'Roboto',
@@ -24,11 +23,10 @@
 
 .inputWrapper {
   position: relative;
-  z-index: 11;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  width: 436px;
+  width: 100%;
   height: 48px;
   margin: 0;
   background: var(--color-card-input);
@@ -156,10 +154,10 @@
   position: absolute;
   top: 48px;
   left: 0;
-  z-index: 12;
+  z-index: 10;
   display: flex;
   box-sizing: border-box;
-  width: 436px;
+  width: 100%;
   max-height: 240px;
   overflow: hidden;
   background: var(--color-card-input);
@@ -171,7 +169,6 @@
 
 .dropdownContent {
   position: relative;
-  z-index: 10;
   flex: 1;
   max-height: 240px;
   overflow-y: auto;
@@ -184,7 +181,6 @@
 
 .customScrollbar {
   position: relative;
-  z-index: 20;
   display: block;
   flex-shrink: 0;
   width: 4px;
@@ -195,7 +191,6 @@
 .customScrollbarThumb {
   position: absolute;
   left: 0;
-  z-index: 21;
   width: 4px;
   height: 40px;
   background: var(--color-toggle);

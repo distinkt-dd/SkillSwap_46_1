@@ -1,6 +1,8 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
+import { useDispatch } from '@shared/store';
+import { fetchCities } from '@entities/cities/model/actions';
 
 import {
   TempAbout,
@@ -10,8 +12,14 @@ import {
   TempRegister,
 } from './test/temp-test-components';
 import { ProtectedRoute } from './router/ProtectedRoute';
+import { useEffect } from 'react';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCities());
+  });
   return (
     <>
       <Routes>

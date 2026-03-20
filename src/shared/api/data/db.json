@@ -590,7 +590,7 @@
       "id": "1",
       "name": "Иван",
       "email": "ivan@example.com",
-      "passwordHash": "$2a$12$VHoG12ltV0oQq2R8wJv7GOXmMSNkw4kFDybn.jACo1AiSSZB./enq",
+      "passwordHash": "$2b$10$S4M.8fDzvIjHkSS.vxag.e5JZ4Q67SNeBtoNEUJj.zfrRyg/6Bpve",
       "description": "Привет! Люблю ритм, кофе по утрам и людей, которые не боятся пробовать новое",
       "avatar": "https://api.dicebear.com/9.x/thumbs/svg?seed=ivan-losodkfkvclvxpdofdokk",
       "gender": "male",

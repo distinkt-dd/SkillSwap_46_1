@@ -12,3 +12,4 @@ export type { NotificationProps, NotificationType, NotificationVariant } from '.
 export { Avatar } from './avatar';
 export { Calendar } from './calendar';
 export type { CalendarProps } from './calendar';
+export { TextAreaUI } from './textarea';

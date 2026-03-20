@@ -15,6 +15,7 @@ export type DropdownProps = {
   /** Список опций */
   options: DropdownOption[];
   /** Выбранное значение (для single mode) */
+  name?: string;
   value?: DropdownOption | null;
   /** Выбранные значения (для multi mode) */
   values?: DropdownOption[];
