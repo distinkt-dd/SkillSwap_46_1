@@ -1,10 +1,15 @@
-import { useDispatch } from '@shared/store';
-import { setUser, clearUser } from '@entities/user';
+import { useDispatch, useSelector } from '@shared/store';
+import { setUser, clearUser, selectedUser } from '@entities/user';
 import { Button } from '@shared/ui';
+import { useEffect } from 'react';
 
 export const TempHome = () => {
   const dispatch = useDispatch();
+  const user = useSelector(selectedUser);
 
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
   const handleTestLogin = () => {
     dispatch(
       setUser({
@@ -14,7 +19,7 @@ export const TempHome = () => {
         email: 'ivan@example.com',
         description: 'Тестовый пользователь',
         gender: 'male',
-        birthday: new Date('2000-01-02'),
+        birthday: new Date('2000-01-02').toISOString(),
         cityId: '1',
         subcategoriesIds: ['1', '2', '3'],
       })
@@ -55,7 +60,7 @@ export const TempDashboard = () => {
         email: 'ivan@example.com',
         description: 'Тестовый пользователь',
         gender: 'male',
-        birthday: new Date('2000-01-02'),
+        birthday: new Date('2000-01-02').toISOString(),
         cityId: '1',
         subcategoriesIds: ['1', '2', '3'],
       })

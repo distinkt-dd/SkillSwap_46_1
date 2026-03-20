@@ -1,4 +1,4 @@
-import type { FC, ReactElement } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { selectedUser, selectedUserIsAuthChecked } from '@entities/user';
 import { useSelector } from '@shared/store';
@@ -12,17 +12,17 @@ export const ProtectedRoute: FC<TProtectedRouteProps> = ({ children, onlyUnAuth 
   const user = useSelector(selectedUser);
   const isAuthChecked = useSelector(selectedUserIsAuthChecked);
   const location = useLocation();
-
   if (!isAuthChecked) {
-    return null;
+    return <></>;
   }
 
   if (!onlyUnAuth && !user) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/login" state={{ from: location }} />;
   }
 
   if (onlyUnAuth && user) {
-    return <Navigate to="/" replace />;
+    const { from } = location.state ?? { from: { pathname: '/' } };
+    return <Navigate to={from} />;
   }
 
   return children;
