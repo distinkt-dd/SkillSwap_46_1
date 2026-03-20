@@ -4,18 +4,13 @@ import { ErrorPage, LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
 import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
 
-import {
-  TempAbout,
-  TempDashboard,
-  TempHome,
-  TempLogin,
-  TempRegister,
-} from './test/temp-test-components';
+import { TempAbout, TempHome, TempLogin, TempRegister } from './test/temp-test-components';
 import { ProtectedRoute } from './router/ProtectedRoute';
 import { useDispatch } from '@shared/store';
 import { useEffect } from 'react';
 import { getSubcategories } from '@entities/index';
 import { getCategories } from '@entities/categories/model';
+import { LayoutProfile } from '@pages/layouts';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -70,9 +65,39 @@ export const App = () => {
           path="/profile"
           element={
             <ProtectedRoute>
-              <LayoutAuth>
-                <TempDashboard />
-              </LayoutAuth>
+              <LayoutProfile>Профиль</LayoutProfile>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/my-skills"
+          element={
+            <ProtectedRoute>
+              <LayoutProfile>Мои Навыки</LayoutProfile>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <ProtectedRoute>
+              <LayoutProfile>Избранное</LayoutProfile>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/my-exchanges"
+          element={
+            <ProtectedRoute>
+              <LayoutProfile>Мои обмены</LayoutProfile>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/requests"
+          element={
+            <ProtectedRoute>
+              <LayoutProfile>Заявки</LayoutProfile>
             </ProtectedRoute>
           }
         />
