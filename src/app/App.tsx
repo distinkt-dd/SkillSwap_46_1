@@ -11,6 +11,8 @@ import { useEffect } from 'react';
 import { getSubcategories } from '@entities/index';
 import { getCategories } from '@entities/categories/model';
 import { LayoutProfile } from '@pages/layouts';
+import { fetchCities } from '@entities/cities/model/actions';
+import { ProfileForm } from '@widgets/profile/ui';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -66,7 +68,9 @@ export const App = () => {
           path="/profile"
           element={
             <ProtectedRoute>
-              <LayoutProfile>Профиль</LayoutProfile>
+              <LayoutProfile>
+                <ProfileForm />
+              </LayoutProfile>
             </ProtectedRoute>
           }
         />

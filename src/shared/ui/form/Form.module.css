@@ -12,6 +12,6 @@
 
 .error {
   color: var(--color-error);
-  text-align: center;
   font-size: 12px;
+  text-align: center;
 }
