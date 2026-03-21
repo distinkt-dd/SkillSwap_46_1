@@ -17,13 +17,12 @@ export const useFilteredUsers = ({
   subcategories = [],
   filters,
 }: UseFilteredUsersProps) => {
-  
   const filteredUsers = useMemo(() => {
     if (!users.length || !offers.length) {
       return [];
     }
 
-    return users.filter(user => {
+    return users.filter((user) => {
       // Фильтр по полу
       if (filters.gender && user.gender !== filters.gender) {
         return false;
@@ -40,40 +39,47 @@ export const useFilteredUsers = ({
       }
 
       // Получаем все подкатегории для выбранных навыков
-      const selectedSubcategoryIds = filters.skillIds.filter(id => 
-        subcategories.some(sub => sub.id === id)
+      const selectedSubcategoryIds = filters.skillIds.filter((id) =>
+        subcategories.some((sub) => sub.id === id)
       );
 
       // Фильтр по режиму
       switch (filters.mode) {
         case 'wantToLearn':
-          return user.subcategoriesIds?.some((subId): subId is string => 
-            subId !== undefined && selectedSubcategoryIds.includes(subId)
-          ) ?? false;
+          return (
+            user.subcategoriesIds?.some(
+              (subId): subId is string =>
+                subId !== undefined && selectedSubcategoryIds.includes(subId)
+            ) ?? false
+          );
 
         case 'canTeach':
-          const userOffers = offers.filter(offer => offer?.userId === user.id);
-          return userOffers.some(offer => 
-            offer && selectedSubcategoryIds.includes(offer.subcategoryId)
+          // eslint-disable-next-line
+          const userOffers = offers.filter((offer) => offer?.userId === user.id);
+          return userOffers.some(
+            (offer) => offer && selectedSubcategoryIds.includes(offer.subcategoryId)
           );
 
         case 'all':
         default:
-          const wantsToLearn = user.subcategoriesIds?.some((subId): subId is string => 
-            subId !== undefined && selectedSubcategoryIds.includes(subId)
-          ) ?? false;
-          
+          // eslint-disable-next-line
+          const wantsToLearn =
+            user.subcategoriesIds?.some(
+              (subId): subId is string =>
+                subId !== undefined && selectedSubcategoryIds.includes(subId)
+            ) ?? false;
+          // eslint-disable-next-line
           const canTeach = offers
-            .filter(offer => offer?.userId === user.id)
-            .some(offer => offer && selectedSubcategoryIds.includes(offer.subcategoryId));
-          
+            .filter((offer) => offer?.userId === user.id)
+            .some((offer) => offer && selectedSubcategoryIds.includes(offer.subcategoryId));
+
           return wantsToLearn || canTeach;
       }
     });
   }, [users, offers, subcategories, filters]);
 
-  return { 
-    filteredUsers, 
-    filteredCount: filteredUsers.length 
+  return {
+    filteredUsers,
+    filteredCount: filteredUsers.length,
   };
 };
