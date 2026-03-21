@@ -3,6 +3,7 @@ import { setUser, clearUser, selectedUser } from '@entities/user';
 import { Button } from '@shared/ui';
 import { ProfileForm } from '@widgets/profile/ui';
 import { useEffect } from 'react';
+import { RegisterForm } from '@widgets/register/ui';
 
 export const TempHome = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ export const TempHome = () => {
   useEffect(() => {
     console.log(user);
   }, [user]);
+
   const handleTestLogin = () => {
     dispatch(
       setUser({
@@ -102,13 +104,7 @@ export const TempLogin = () => (
   </div>
 );
 
-export const TempRegister = () => (
-  <div style={{ padding: '20px', background: 'white', borderRadius: '8px' }}>
-    <h1>Регистрация</h1>
-    <p>Макет использует LayoutPure</p>
-    <p>Хедер должен быть только с логотипом и кнопкой "Закрыть"</p>
-  </div>
-);
+export const TempRegister = () => <RegisterForm />;
 
 export const TempAbout = () => (
   <div style={{ padding: '20px' }}>

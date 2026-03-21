@@ -8,3 +8,5 @@ export {
 } from './api/offersValidate';
 
 export type { TOffer, TOfferCreate, TOfferUpdate } from './api/types';
+
+export * from './model';

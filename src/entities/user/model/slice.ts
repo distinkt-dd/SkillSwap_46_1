@@ -32,6 +32,10 @@ export const userSlice = createSlice({
     setIsAuthChecked: (state, action: PayloadAction<boolean>) => {
       state.isAuthChecked = action.payload;
     },
+    // FIX: новый экшен — ручной сброс серверной ошибки
+    clearUserError: (state) => {
+      state.error = '';
+    },
   },
   selectors: {
     selectedUser: (state) => state.user,
@@ -114,7 +118,8 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUser, clearUser, setIsAuthChecked } = userSlice.actions;
+export const { setUser, clearUser, setIsAuthChecked, clearUserError } = userSlice.actions;
+
 export const {
   selectedUser,
   selectedUsers,

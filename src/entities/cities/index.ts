@@ -11,3 +11,5 @@ export {
   setSelectedCityById,
   selectSelectedCity,
 } from './model/slice';
+
+export { fetchCities } from './model/actions';
