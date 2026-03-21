@@ -11,10 +11,10 @@ interface ILayoutProfileProps {
 export const LayoutProfile: FC<ILayoutProfileProps> = ({ children }: ILayoutProfileProps) => {
   return (
     <LayoutAuth>
-      <section>
+      <section className={clsx(styles.profileSection)}>
         <div className={clsx('container', styles.layoutProfile)}>
           <NavAside />
-          <div className="">{children}</div>
+          <div className={clsx(styles.content)}>{children}</div>
         </div>
       </section>
     </LayoutAuth>
