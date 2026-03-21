@@ -1,0 +1,31 @@
+.genderFilter {
+  margin-bottom: 24px;
+}
+
+.genderFilter h4 {
+  margin: 0 0 16px 0;
+  color: var(--color-text, #253017);
+  font-family: 'Jost', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  vertical-align: middle;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.options [class*="label"] {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--color-text, #253017);
+}
