@@ -10,7 +10,17 @@ type TUserInitialState = {
 };
 
 const userInitialState: TUserInitialState = {
-  user: null,
+  user: {
+    id: '1',
+    name: 'Иван',
+    avatar: 'https://api.dicebear.com/9.x/thumbs/svg?seed=ivan-losodkfkvclvxpdofdokk',
+    email: 'ivan@example.com',
+    description: 'Тестовый пользователь',
+    gender: 'male',
+    birthday: new Date('2000-01-02').toISOString(),
+    cityId: '1',
+    subcategoriesIds: ['1', '2', '3'],
+  },
   error: '',
   isResponse: false,
   isAuthChecked: true,

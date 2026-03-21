@@ -1,26 +1,20 @@
 import type { FC, ReactNode } from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Footer, Header } from '@widgets/index';
-import { useDispatch, useSelector } from '@shared/store';
-import { getCategories } from '@entities/categories/model/actions';
-import { getSubcategories } from '@entities/subcategories/model/actions';
+import { useSelector } from '@shared/store';
 import styles from './LayoutNauth.module.css';
+import { selectedCategories } from '@entities/categories/model';
+import { selectedSubcategories } from '@entities/subcategories';
 
 interface LayoutNauthProps {
   children: ReactNode;
 }
 
 export const LayoutNauth: FC<LayoutNauthProps> = ({ children }) => {
-  const dispatch = useDispatch();
   const [isSkillsOpen, setIsSkillsOpen] = useState(false);
 
-  const categories = useSelector((state) => state.categories?.categories || []);
-  const subcategories = useSelector((state) => state.subcategories?.subcategories || []);
-
-  useEffect(() => {
-    dispatch(getCategories());
-    dispatch(getSubcategories());
-  }, [dispatch]);
+  const categories = useSelector(selectedCategories);
+  const subcategories = useSelector(selectedSubcategories);
 
   const categoriesWithSubcategories = categories.map((category) => ({
     ...category,

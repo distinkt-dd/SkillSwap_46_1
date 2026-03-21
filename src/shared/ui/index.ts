@@ -13,3 +13,4 @@ export { Avatar } from './avatar';
 export { Calendar } from './calendar';
 export type { CalendarProps } from './calendar';
 export { TextAreaUI } from './textarea';
+export { SidebarItem, type TSidebarItemUIProps } from './sidebar-item';
