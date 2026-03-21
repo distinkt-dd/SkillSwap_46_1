@@ -50,6 +50,7 @@ import {
   UserCircleIcon,
   UserIcon,
   LogoIcon,
+  RefreshIcon,
 } from '@shared/assets';
 
 const icons: IconsMap = {
@@ -101,6 +102,7 @@ const icons: IconsMap = {
   userCircle: UserCircleIcon,
   user: UserIcon,
   logo: LogoIcon,
+  refresh: RefreshIcon,
 } as const;
 
 export const IconUI: React.FC<IconProps> = ({ name, size = 24, className, ...props }) => {

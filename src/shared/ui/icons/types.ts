@@ -57,4 +57,5 @@ export type IconsMap = {
   userCircle: React.FC<SVGProps<SVGSVGElement>>;
   user: React.FC<SVGProps<SVGSVGElement>>;
   logo: React.FC<SVGProps<SVGSVGElement>>;
+  refresh: React.FC<SVGProps<SVGSVGElement>>;
 };
