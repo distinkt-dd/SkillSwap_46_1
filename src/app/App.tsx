@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { ErrorPage, LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
+import { DevelopmentPage, ErrorPage, LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
 import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
 
@@ -94,7 +94,9 @@ export const App = () => {
           path="/my-exchanges"
           element={
             <ProtectedRoute>
-              <LayoutProfile>Мои обмены</LayoutProfile>
+              <LayoutProfile>
+                <DevelopmentPage />
+              </LayoutProfile>
             </ProtectedRoute>
           }
         />
@@ -102,7 +104,9 @@ export const App = () => {
           path="/requests"
           element={
             <ProtectedRoute>
-              <LayoutProfile>Заявки</LayoutProfile>
+              <LayoutProfile>
+                <DevelopmentPage />
+              </LayoutProfile>
             </ProtectedRoute>
           }
         />
