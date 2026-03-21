@@ -6,7 +6,6 @@ export const generateAvatar = (seed?: string): string => {
 
   const avatar = createAvatar(thumbs, {
     seed: avatarSeed,
-    size: 128,
   });
 
   return avatar.toDataUri();

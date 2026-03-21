@@ -17,6 +17,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getSubcategories());
+    dispatch(fetchCities());
   }, [dispatch]);
 
   const user = useSelector(selectedUser);

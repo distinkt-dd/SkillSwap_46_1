@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from '@shared/store';
 import { setUser, clearUser, selectedUser } from '@entities/user';
 import { Button } from '@shared/ui';
+import { ProfileForm } from '@widgets/profile/ui';
 import { useEffect } from 'react';
 
 export const TempHome = () => {
@@ -72,20 +73,23 @@ export const TempDashboard = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Дашборд (авторизованный)</h1>
-      <p>Этот макет использует LayoutAuth</p>
-      <p>Хедер должен показывать имя пользователя и аватар</p>
+    <>
+      <div style={{ padding: '20px' }}>
+        <h1>Дашборд (авторизованный)</h1>
+        <p>Этот макет использует LayoutAuth</p>
+        <p>Хедер должен показывать имя пользователя и аватар</p>
 
-      <div style={{ marginTop: '20px', display: 'flex', gap: '10px' }}>
-        <Button variant="primary" onClick={handleTestLogin}>
-          Тестовый логин (Иван)
-        </Button>
-        <Button variant="secondary" onClick={handleTestLogout}>
-          Тестовый логаут
-        </Button>
+        <div style={{ marginTop: '20px', display: 'flex', gap: '10px' }}>
+          <Button variant="primary" onClick={handleTestLogin}>
+            Тестовый логин (Иван)
+          </Button>
+          <Button variant="secondary" onClick={handleTestLogout}>
+            Тестовый логаут
+          </Button>
+        </div>
       </div>
-    </div>
+      <ProfileForm></ProfileForm>
+    </>
   );
 };
 
