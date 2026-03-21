@@ -1,3 +1,27 @@
+.avatarContainer {
+  position: relative;
+  height: min-content;
+  aspect-ratio: 1/1;
+}
+
+.avatarButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  inline-size: 56px;
+  block-size: 56px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 100%;
+  max-width: 244px;
+  height: 100%;
+  max-height: 244px;
+  aspect-ratio: 1/1;
+}
+
 .avatar:hover {
   cursor: pointer;
 }
@@ -13,6 +37,8 @@
 }
 
 .largeSize {
-  width: 244px;
-  height: 244px;
+  min-width: 100px;
+  max-width: 244px;
+  min-height: 100px;
+  max-height: 244px;
 }

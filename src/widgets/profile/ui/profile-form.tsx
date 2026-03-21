@@ -140,7 +140,6 @@ export const ProfileForm: FC = () => {
       setUserPassword('');
       passHook.clearErrors();
     } catch (error) {
-      // Обработка ошибки
       setFormError(error instanceof Error ? error.message : 'Ошибка сохранения');
       setTimeout(() => {
         setFormError(null);
@@ -319,12 +318,12 @@ export const ProfileForm: FC = () => {
             {isSubmitting ? 'Сохранение...' : 'Сохранить'}
           </Button>
         </div>
-        <div className={styles.avatarContainer}>
-          <Avatar size={'large'} src={localUserState?.avatar} className={styles.avatar} />
-          <Button className={styles.avatarButton} onClick={handleAvatarChange}>
-            {<IconUI name="galleryEdit" />}
-          </Button>
-        </div>
+        <Avatar
+          editable
+          size={'large'}
+          src={localUserState?.avatar}
+          avatarChangeBtnClick={handleAvatarChange}
+        />
       </div>
     </Form>
   );
