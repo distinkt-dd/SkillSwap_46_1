@@ -3,7 +3,7 @@
   padding: 24px;
   background: var(--color-card-input, #ffffff);
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
 }
 
 .header {
@@ -16,9 +16,9 @@
 .header h3 {
   margin: 0;
   color: var(--color-text, #253017);
-  font-family: 'Jost', 'Arial', sans-serif;
   font-weight: 500;
   font-size: 24px;
+  font-family: 'Jost', 'Arial', sans-serif;
   line-height: 1.17;
   letter-spacing: -0.01em;
   vertical-align: middle;
@@ -27,9 +27,9 @@
 .filterCount {
   margin-left: 4px;
   color: var(--color-caption, #69735d);
-  font-family: 'Jost', 'Arial', sans-serif;
   font-weight: 500;
   font-size: 24px;
+  font-family: 'Jost', 'Arial', sans-serif;
   line-height: 1.17;
   letter-spacing: -0.01em;
   vertical-align: middle;
@@ -39,13 +39,13 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  padding: 0;
   color: #508826;
-  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 14px;
+  font-family: 'Roboto', 'Arial', sans-serif;
   line-height: 1.43;
   letter-spacing: 0.02em;
-  padding: 0;
   background: transparent;
   border: none;
   cursor: pointer;

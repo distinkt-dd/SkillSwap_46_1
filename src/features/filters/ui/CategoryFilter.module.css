@@ -3,11 +3,11 @@
 }
 
 .categoryFilter h4 {
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
   color: var(--color-text, #253017);
-  font-family: 'Jost', 'Arial', sans-serif;
   font-weight: 500;
   font-size: 20px;
+  font-family: 'Jost', 'Arial', sans-serif;
   line-height: 1.2;
   letter-spacing: -0.01em;
   vertical-align: middle;
@@ -20,11 +20,11 @@
 .categoryHeader {
   display: flex;
   align-items: center;
-  cursor: pointer;
   padding: 8px 0;
-  border-radius: 8px;
-  transition: background-color 0.2s;
   color: var(--color-text, #253017);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .categoryHeader:hover {
@@ -39,54 +39,54 @@
   width: 100%;
 }
 
-.categoryCheckbox [class*="label"] {
-  font-family: 'Roboto', 'Arial', sans-serif;
+.categoryCheckbox [class*='label'] {
+  color: var(--color-text, #253017);
   font-weight: 400;
   font-size: 16px;
+  font-family: 'Roboto', 'Arial', sans-serif;
   line-height: 1.5;
   letter-spacing: 0.02em;
   vertical-align: middle;
   cursor: pointer;
-  color: var(--color-text, #253017);
 }
 
 .subcategories {
-  margin-left: 28px;
-  padding-left: 12px;
   display: flex;
   flex-direction: column;
+  margin-left: 28px;
+  padding-left: 12px;
 }
 
 .subcategoryCheckbox {
-  margin-bottom: 8px;
   display: flex;
   align-items: center;
   width: 100%;
+  margin-bottom: 8px;
 }
 
 .subcategoryCheckbox:last-child {
   margin-bottom: 0;
 }
 
-.subcategoryCheckbox [class*="label"] {
-  font-family: 'Roboto', 'Arial', sans-serif;
+.subcategoryCheckbox [class*='label'] {
+  color: var(--color-text, #253017);
   font-weight: 400;
   font-size: 16px;
+  font-family: 'Roboto', 'Arial', sans-serif;
   line-height: 1.5;
   letter-spacing: 0.02em;
   vertical-align: middle;
   cursor: pointer;
-  color: var(--color-text, #253017);
 }
 
 .showAllButton {
-  margin-top: 12px;
-  width: 100%;
   justify-content: center;
+  width: 100%;
+  margin-top: 12px;
   color: var(--color-link-button-pressed, #508826);
-  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 16px;
+  font-family: 'Roboto', 'Arial', sans-serif;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }

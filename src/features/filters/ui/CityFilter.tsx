@@ -20,19 +20,14 @@ export const CityFilter: React.FC<CityFilterProps> = ({
   onCityToggle,
   onShowAllClick,
 }) => {
-  const visibleCities = showAllCities 
-    ? cities 
-    : cities.slice(0, INITIAL_VISIBLE_CITIES);
+  const visibleCities = showAllCities ? cities : cities.slice(0, INITIAL_VISIBLE_CITIES);
 
   return (
     <div className={styles.cityFilter}>
       <h4>Город</h4>
-      
-      <div 
-        className={styles.citiesList}
-        style={showAllCities ? { maxHeight: 'none' } : {}}
-      >
-        {visibleCities.map(city => (
+
+      <div className={styles.citiesList} style={showAllCities ? { maxHeight: 'none' } : {}}>
+        {visibleCities.map((city) => (
           <Checkbox
             key={city.id}
             label={city.name}
@@ -44,8 +39,8 @@ export const CityFilter: React.FC<CityFilterProps> = ({
       </div>
 
       {cities.length > INITIAL_VISIBLE_CITIES && (
-        <Button 
-          variant="tertiary" 
+        <Button
+          variant="tertiary"
           onClick={onShowAllClick}
           icon={<IconUI name={showAllCities ? 'chevronUp' : 'chevronDown'} />}
           iconPosition="right"

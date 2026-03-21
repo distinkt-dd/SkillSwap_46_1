@@ -27,13 +27,13 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
 }) => {
   useEffect(() => {
     if (showAllCategories) {
-      categories.forEach(category => {
+      categories.forEach((category) => {
         if (!expandedCategories.includes(category.id)) {
           onCategoryToggle(category.id);
         }
       });
     } else {
-      categories.forEach(category => {
+      categories.forEach((category) => {
         if (expandedCategories.includes(category.id)) {
           onCategoryToggle(category.id);
         }
@@ -44,17 +44,15 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   return (
     <div className={styles.categoryFilter}>
       <h4>Навыки</h4>
-      
-      {categories.map(category => {
-        const categorySubcategories = subcategories.filter(
-          sub => sub.categoryId === category.id
-        );
+
+      {categories.map((category) => {
+        const categorySubcategories = subcategories.filter((sub) => sub.categoryId === category.id);
         const isExpanded = expandedCategories.includes(category.id);
 
         return (
           <div key={category.id} className={styles.category}>
             {/* Категория - с isSubcategory для минуса */}
-            <div 
+            <div
               className={styles.categoryHeader}
               onClick={() => onCategoryToggle(category.id)}
               role="button"
@@ -72,7 +70,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
             {/* Подкатегории - обычные чекбоксы с галочкой */}
             {isExpanded && (
               <div className={styles.subcategories}>
-                {categorySubcategories.map(sub => (
+                {categorySubcategories.map((sub) => (
                   <Checkbox
                     key={sub.id}
                     label={sub.name}
@@ -87,8 +85,8 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
         );
       })}
 
-      <Button 
-        variant="tertiary" 
+      <Button
+        variant="tertiary"
         onClick={onShowAllClick}
         icon={<IconUI name={showAllCategories ? 'chevronUp' : 'chevronDown'} />}
         iconPosition="right"

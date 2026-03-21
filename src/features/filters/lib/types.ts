@@ -6,7 +6,7 @@ export type FiltersState = {
   cityIds: string[];
   skillIds: string[];
   expandedCategories: string[];
-  showAllCategories: boolean;  // Должно быть
+  showAllCategories: boolean; // Должно быть
   showAllCities: boolean;
 };
 
@@ -16,7 +16,7 @@ export type FiltersActions = {
   toggleCity: (cityId: string) => void;
   toggleSkill: (skillId: string) => void;
   toggleCategory: (categoryId: string) => void;
-  toggleShowAllCategories: () => void;  // Должно быть
+  toggleShowAllCategories: () => void; // Должно быть
   toggleShowAllCities: () => void;
   resetFilters: () => void;
 };
@@ -27,6 +27,6 @@ export const initialFiltersState: FiltersState = {
   cityIds: [],
   skillIds: [],
   expandedCategories: [],
-  showAllCategories: false,  // Должно быть
+  showAllCategories: false, // Должно быть
   showAllCities: false,
 };

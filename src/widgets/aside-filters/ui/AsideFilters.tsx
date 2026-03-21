@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo } from 'react';
-import { 
+import {
   ModeTabs,
   CategoryFilter,
   GenderFilter,
   CityFilter,
   useFilters,
-  type FiltersState 
+  type FiltersState,
 } from '@features/filters';
 import { Button, IconUI } from '@shared/ui';
 import type { TCategory } from '@entities/categories';
@@ -50,8 +50,8 @@ export const AsideFilters: React.FC<AsideFiltersProps> = ({
             <span className={styles.filterCount}>({selectedValuesCount})</span>
           )}
         </h3>
-        <Button 
-          variant="tertiary" 
+        <Button
+          variant="tertiary"
           onClick={actions.resetFilters}
           className={styles.resetButton}
           icon={<IconUI name="cross" size={20} />}
