@@ -1,5 +1,6 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+
+import { Navigate, Route, Routes } from 'react-router-dom';
 import {
   DevelopmentPage,
   ErrorPage,
@@ -9,23 +10,24 @@ import {
   LoginPage,
   OfferPage,
 } from '@pages/index';
+
 import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
 import { Catalog } from '@pages/catalog/ui';
 
-import { TempAbout, TempRegister } from './test/temp-test-components';
+import { TempAbout } from './test/temp-test-components';
+import { RegisterForm } from '@widgets/register/ui';
 import { ProtectedRoute } from './router/ProtectedRoute';
 import { useDispatch } from '@shared/store';
 import { useEffect } from 'react';
-import { getSubcategories } from '@entities/index';
+import { getSubcategories, fetchCities, getOffers } from '@entities/index';
 import { getCategories } from '@entities/categories/model';
 import { LayoutProfile } from '@pages/layouts';
-import { fetchCities } from '@entities/cities/model/actions';
 import { ProfileForm } from '@widgets/profile/ui';
-import { getOffers } from '@entities/offers/model';
 
 export const App = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getSubcategories());
@@ -36,9 +38,11 @@ export const App = () => {
   const user = useSelector(selectedUser);
   const authChecked = useSelector(selectedUserIsAuthChecked);
   const ErrorLayout = user && authChecked ? LayoutAuth : LayoutNauth;
+
   return (
     <>
       <Routes>
+        {/* Главная и каталог */}
         <Route
           path="/"
           element={
@@ -55,6 +59,8 @@ export const App = () => {
             </LayoutAuth>
           }
         />
+
+        {/* Оффер */}
         <Route
           path="/offers/:id"
           element={
@@ -63,6 +69,8 @@ export const App = () => {
             </LayoutNauth>
           }
         />
+
+        {/* Тестовые страницы */}
         <Route
           path="/about"
           element={
@@ -71,6 +79,8 @@ export const App = () => {
             </LayoutNauth>
           }
         />
+
+        {/* Авторизация */}
         <Route
           path="/login"
           element={
@@ -81,16 +91,28 @@ export const App = () => {
             </ProtectedRoute>
           }
         />
+
+        {/* === ТВОЯ РЕГИСТРАЦИЯ === */}
         <Route
           path="/registration"
           element={
             <ProtectedRoute onlyUnAuth>
+              <Navigate to="/registration/1" replace />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/registration/:step"
+          element={
+            <ProtectedRoute onlyUnAuth>
               <LayoutPure>
-                <TempRegister />
+                <RegisterForm />
               </LayoutPure>
             </ProtectedRoute>
           }
         />
+
+        {/* Профиль */}
         <Route
           path="/profile"
           element={
@@ -101,6 +123,8 @@ export const App = () => {
             </ProtectedRoute>
           }
         />
+
+        {/* Заглушки для других разделов */}
         <Route
           path="/my-skills"
           element={
@@ -137,6 +161,8 @@ export const App = () => {
             </ProtectedRoute>
           }
         />
+
+        {/* Ошибки */}
         <Route
           path="500"
           element={
