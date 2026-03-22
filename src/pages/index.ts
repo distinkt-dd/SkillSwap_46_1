@@ -3,3 +3,4 @@ export { LayoutNauth } from './layouts/layout-nauth/LayoutNauth.tsx';
 export { LayoutPure } from './layouts/layout-pure/LayoutPure.tsx';
 export { ErrorPage } from './errorPage';
 export { DevelopmentPage } from './development';
+export { LoginPage } from './login';

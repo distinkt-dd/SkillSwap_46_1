@@ -47,8 +47,12 @@ import { ReactComponent as UserCircleIcon } from './user-circle.svg';
 import { ReactComponent as UserIcon } from './user.svg';
 import { ReactComponent as LogoIcon } from './logo.svg';
 import { ReactComponent as RefreshIcon } from './refresh.svg';
+import { ReactComponent as GoogleIcon } from './google.svg';
+import { ReactComponent as AppleIcon } from './apple.svg';
 
 export {
+  GoogleIcon,
+  AppleIcon,
   AddIcon,
   ArrowLeftIcon,
   ArrowSquareLeftIcon,
