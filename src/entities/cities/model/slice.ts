@@ -30,6 +30,8 @@ export const citiesSlice = createSlice({
   selectors: {
     selectCities: (state) => state.cities,
     selectSelectedCity: (state) => state.selectedCity,
+    selectCitiesIsLoading: (state) => state.isLoading,
+    selectCitiesError: (state) => state.error,
   },
   extraReducers: (builder) => {
     builder
@@ -48,5 +50,6 @@ export const citiesSlice = createSlice({
   },
 });
 
-export const { selectCities, selectSelectedCity } = citiesSlice.selectors;
+export const { selectCities, selectSelectedCity, selectCitiesIsLoading, selectCitiesError } =
+  citiesSlice.selectors;
 export const { setCities, setSelectedCityById } = citiesSlice.actions;

@@ -3,8 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import { DevelopmentPage, ErrorPage, LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
 import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
+import { Catalog } from '@pages/catalog/ui';
 
-import { TempAbout, TempHome, TempLogin, TempRegister } from './test/temp-test-components';
+import {
+  TempAbout,
+  TempLogin,
+  TempRegister,
+} from './test/temp-test-components';
 import { ProtectedRoute } from './router/ProtectedRoute';
 import { useDispatch } from '@shared/store';
 import { useEffect } from 'react';
@@ -31,9 +36,17 @@ export const App = () => {
         <Route
           path="/"
           element={
-            <LayoutNauth>
-              <TempHome />
-            </LayoutNauth>
+            <LayoutAuth>
+              <Catalog />
+            </LayoutAuth>
+          }
+        />
+        <Route
+          path="/catalog"
+          element={
+            <LayoutAuth>
+              <Catalog />
+            </LayoutAuth>
           }
         />
         <Route

@@ -1,11 +1,40 @@
+/* В layout-auth.module.css */
 .layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+.headerContainer {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-background);
+}
+
 .content {
   display: flex;
   flex: 1;
+  width: 100%;
+  max-width: 1440px;
   padding: 20px;
+  margin-top: 104px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.footerContainer {
+  width: 100%;
+  margin-top: 60px;
+  height: 232px;
+  background: var(--color-background);
+  display: flex;
+  justify-content: center;
+}
+
+.footerContainer > * {
+  width: 100%;
+  max-width: 1440px;
 }

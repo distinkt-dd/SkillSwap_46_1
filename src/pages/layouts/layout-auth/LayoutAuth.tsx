@@ -1,4 +1,3 @@
-// src/app/layouts/LayoutAuth/LayoutAuth.tsx
 import type { FC, ReactNode } from 'react';
 import { useState } from 'react';
 import { Footer, Header } from '@widgets/index';
@@ -36,16 +35,20 @@ export const LayoutAuth: FC<LayoutAuthProps> = ({ children }) => {
 
   return (
     <div className={styles.layout}>
-      <Header
-        variant="default"
-        isSkillsOpen={isSkillsOpen}
-        onSkillsToggle={handleSkillsToggle}
-        categories={categoriesWithSubcategories}
-        onCategoryClick={handleCategoryClick}
-        onSubcategoryClick={handleSubcategoryClick}
-      />
+      <div className={styles.headerContainer}>
+        <Header
+          variant="default"
+          isSkillsOpen={isSkillsOpen}
+          onSkillsToggle={handleSkillsToggle}
+          categories={categoriesWithSubcategories}
+          onCategoryClick={handleCategoryClick}
+          onSubcategoryClick={handleSubcategoryClick}
+        />
+      </div>
       <main className={styles.content}>{children}</main>
-      <Footer />
+      <div className={styles.footerContainer}>
+        <Footer />
+      </div>
     </div>
   );
 };

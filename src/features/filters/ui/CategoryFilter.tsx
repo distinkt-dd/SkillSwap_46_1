@@ -39,6 +39,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
         }
       });
     }
+
   }, [showAllCategories]);
 
   return (

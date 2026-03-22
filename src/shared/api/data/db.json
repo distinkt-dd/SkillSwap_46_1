@@ -109,7 +109,7 @@
       "subcategoryId": "4",
       "description": "Помогу вам сформировать сильный личный бренд, разработать стратегию продвижения и повысить узнаваемость среди целевой аудитории.",
       "images": ["https://example.com/image1.png"],
-      "userLikedIds": []
+      "userLikedIds": ["2", "5", "7"]
     },
     {
       "id": "2",
@@ -118,7 +118,7 @@
       "subcategoryId": "6",
       "description": "Научу вас грамотно планировать своё время, расставлять приоритеты и успевать больше.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["1"]
     },
     {
       "id": "3",
@@ -127,7 +127,7 @@
       "subcategoryId": "3",
       "description": "Поделюсь проверенными техниками успешных переговоров и заключения сделок в сегменте B2B.",
       "images": ["https://example.com/image2.png", "https://example.com/image3.png"],
-      "userLikedIds": []
+      "userLikedIds": ["4", "6", "8", "10"]
     },
     {
       "id": "4",
@@ -145,7 +145,7 @@
       "subcategoryId": "7",
       "description": "Покажу, как применять гибкий подход управления проектами и повышать эффективность команды.",
       "images": ["https://example.com/image4.png"],
-      "userLikedIds": []
+      "userLikedIds": ["3", "9"]
     },
     {
       "id": "6",
@@ -154,7 +154,7 @@
       "subcategoryId": "8",
       "description": "Расскажу пошагово, как запустить успешный стартап с минимальными рисками и инвестициями.",
       "images": ["https://example.com/image5.png"],
-      "userLikedIds": []
+      "userLikedIds": ["2", "11", "14"]
     },
     {
       "id": "7",
@@ -163,7 +163,7 @@
       "subcategoryId": 20,
       "description": "За короткий срок подготовлю вас к самостоятельному путешествию по немецкоязычным странам.",
       "images": [],
-      "userLikedIds": [2, 4, 6, 8, 10, 12, 14]
+      "userLikedIds": ["1", "4", "6", "8", "10", "12", "14"]
     },
     {
       "id": "8",
@@ -172,7 +172,7 @@
       "subcategoryId": "9",
       "description": "Научу рисовать пейзажи и портреты акварельными красками, раскрою секреты смешивания цветов и передачи настроения.",
       "images": ["https://example.com/image6.png"],
-      "userLikedIds": []
+      "userLikedIds": ["5"]
     },
     {
       "id": "9",
@@ -181,7 +181,7 @@
       "subcategoryId": "10",
       "description": "Проведу мастер-класс по созданию выразительных портретов, научу правильно выставлять свет и обрабатывать снимки.",
       "images": ["https://example.com/image7.png"],
-      "userLikedIds": []
+      "userLikedIds": ["2", "3", "7"]
     },
     {
       "id": "10",
@@ -199,7 +199,7 @@
       "subcategoryId": "12",
       "description": "Научу основам написания музыки и звукорежиссуры, поможем записать качественный трек.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["9", "10"]
     },
     {
       "id": "12",
@@ -208,7 +208,7 @@
       "subcategoryId": "13",
       "description": "Проведу тренинг по актёрскому мастерству, раскрытие творческого потенциала и работа над голосом.",
       "images": ["https://example.com/image9.png"],
-      "userLikedIds": []
+      "userLikedIds": ["1", "6", "11", "15"]
     },
     {
       "id": "13",
@@ -217,7 +217,7 @@
       "subcategoryId": "14",
       "description": "Научу писать интересные истории и привлекать внимание читателей.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["2"]
     },
     {
       "id": "14",
@@ -226,7 +226,7 @@
       "subcategoryId": "15",
       "description": "Проведу арт-терапевтические сеансы для снятия стресса и эмоционального восстановления.",
       "images": ["https://example.com/image10.png"],
-      "userLikedIds": []
+      "userLikedIds": ["3", "4", "5", "8"]
     },
     {
       "id": "15",
@@ -244,7 +244,7 @@
       "subcategoryId": "17",
       "description": "Быстро подтяну ваш разговорный английский, подготовлю к путешествию или деловой поездке.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["7", "12"]
     },
     {
       "id": "17",
@@ -253,7 +253,7 @@
       "subcategoryId": "18",
       "description": "Начнём изучение французского языка с нуля, освоим базовые конструкции и повседневную лексику.",
       "images": ["https://example.com/image12.png"],
-      "userLikedIds": []
+      "userLikedIds": ["2", "9", "13"]
     },
     {
       "id": "18",
@@ -262,7 +262,7 @@
       "subcategoryId": "19",
       "description": "Научу свободно общаться на испанском языке, разберём грамматику и культурные особенности.",
       "images": ["https://example.com/image13.png"],
-      "userLikedIds": []
+      "userLikedIds": ["1"]
     },
     {
       "id": "19",
@@ -271,7 +271,7 @@
       "subcategoryId": "20",
       "description": "За короткий срок подготовлю вас к самостоятельному путешествию по немецкоязычным странам.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["6", "8"]
     },
     {
       "id": "20",
@@ -280,7 +280,7 @@
       "subcategoryId": "21",
       "description": "Научу эффективному деловому общению на китайском языке, познакомлю с особенностями культуры Китая.",
       "images": ["https://example.com/image14.png"],
-      "userLikedIds": []
+      "userLikedIds": ["4", "10", "14", "16"]
     },
     {
       "id": "21",
@@ -298,7 +298,7 @@
       "subcategoryId": "23",
       "description": "Индивидуальная подготовка к экзамену IELTS, отработаем каждый аспект экзамена.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["3", "11"]
     },
     {
       "id": "23",
@@ -307,7 +307,7 @@
       "subcategoryId": "24",
       "description": "Программа личностного роста и развития уверенности в себе, прокачаю вашу харизму и умение вести команду.",
       "images": ["https://example.com/image16.png"],
-      "userLikedIds": []
+      "userLikedIds": ["5", "7", "9", "12", "15"]
     },
     {
       "id": "24",
@@ -316,7 +316,7 @@
       "subcategoryId": "25",
       "description": "Методики быстрого запоминания больших объёмов информации, улучшение памяти и концентрации внимания.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["2"]
     },
     {
       "id": "25",
@@ -334,7 +334,7 @@
       "subcategoryId": "29",
       "description": "Определим цели вашей карьеры, составим индивидуальный план профессионального развития.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["1", "4", "8"]
     },
     {
       "id": "27",
@@ -343,7 +343,7 @@
       "subcategoryId": "30",
       "description": "Научу быстро и удобно организовать пространство квартиры, избавимся от беспорядка навсегда.",
       "images": ["https://example.com/image18.png"],
-      "userLikedIds": []
+      "userLikedIds": ["6"]
     },
     {
       "id": "28",
@@ -352,7 +352,7 @@
       "subcategoryId": "31",
       "description": "Научу рационально распределять семейный бюджет, экономить и копить деньги.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["2", "3", "5", "7"]
     },
     {
       "id": "29",
@@ -370,7 +370,7 @@
       "subcategoryId": "33",
       "description": "Научу ухаживать за домашними цветами, подбирать подходящие виды растений и поддерживать зелёный уголок дома.",
       "images": [],
-      "userLikedIds": []
+      "userLikedIds": ["9", "10", "11"]
     }
   ],
   "subcategories": [
