@@ -7,6 +7,7 @@ import {
   LayoutNauth,
   LayoutPure,
   LoginPage,
+  OfferPage,
 } from '@pages/index';
 import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
@@ -20,6 +21,7 @@ import { getCategories } from '@entities/categories/model';
 import { LayoutProfile } from '@pages/layouts';
 import { fetchCities } from '@entities/cities/model/actions';
 import { ProfileForm } from '@widgets/profile/ui';
+import { getOffers } from '@entities/offers/model';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -27,6 +29,7 @@ export const App = () => {
     dispatch(getCategories());
     dispatch(getSubcategories());
     dispatch(fetchCities());
+    dispatch(getOffers());
   }, [dispatch]);
 
   const user = useSelector(selectedUser);
@@ -40,6 +43,14 @@ export const App = () => {
           element={
             <LayoutNauth>
               <TempHome />
+            </LayoutNauth>
+          }
+        />
+        <Route
+          path="/offers/:id"
+          element={
+            <LayoutNauth>
+              <OfferPage />
             </LayoutNauth>
           }
         />

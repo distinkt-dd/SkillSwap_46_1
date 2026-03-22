@@ -4,3 +4,4 @@ export { LayoutPure } from './layouts/layout-pure/LayoutPure.tsx';
 export { ErrorPage } from './errorPage';
 export { DevelopmentPage } from './development';
 export { LoginPage } from './login';
+export { OfferPage } from './offer';

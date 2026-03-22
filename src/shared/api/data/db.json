@@ -108,7 +108,13 @@
       "name": "Создание личного бренда",
       "subcategoryId": "4",
       "description": "Помогу вам сформировать сильный личный бренд, разработать стратегию продвижения и повысить узнаваемость среди целевой аудитории.",
-      "images": ["https://example.com/image1.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -117,7 +123,13 @@
       "name": "Основы тайм-менеджмента",
       "subcategoryId": "6",
       "description": "Научу вас грамотно планировать своё время, расставлять приоритеты и успевать больше.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -126,7 +138,13 @@
       "name": "Эффективные продажи B2B",
       "subcategoryId": "3",
       "description": "Поделюсь проверенными техниками успешных переговоров и заключения сделок в сегменте B2B.",
-      "images": ["https://example.com/image2.png", "https://example.com/image3.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -135,7 +153,13 @@
       "name": "Разработка резюме премиум-класса",
       "subcategoryId": "5",
       "description": "Сделаю ваше резюме ярким, убедительным и привлекательным для работодателей.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -144,7 +168,13 @@
       "name": "Управление проектами Agile-методом",
       "subcategoryId": "7",
       "description": "Покажу, как применять гибкий подход управления проектами и повышать эффективность команды.",
-      "images": ["https://example.com/image4.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -153,7 +183,13 @@
       "name": "Запуск собственного стартапа",
       "subcategoryId": "8",
       "description": "Расскажу пошагово, как запустить успешный стартап с минимальными рисками и инвестициями.",
-      "images": ["https://example.com/image5.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -162,7 +198,13 @@
       "name": "Немецкий язык для поездок в германию",
       "subcategoryId": 20,
       "description": "За короткий срок подготовлю вас к самостоятельному путешествию по немецкоязычным странам.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": [2, 4, 6, 8, 10, 12, 14]
     },
     {
@@ -171,7 +213,13 @@
       "name": "Рисунок акварелью",
       "subcategoryId": "9",
       "description": "Научу рисовать пейзажи и портреты акварельными красками, раскрою секреты смешивания цветов и передачи настроения.",
-      "images": ["https://example.com/image6.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -180,7 +228,13 @@
       "name": "Портретная фотография",
       "subcategoryId": "10",
       "description": "Проведу мастер-класс по созданию выразительных портретов, научу правильно выставлять свет и обрабатывать снимки.",
-      "images": ["https://example.com/image7.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -189,7 +243,13 @@
       "name": "Монтаж видеороликов",
       "subcategoryId": "11",
       "description": "Обучу монтажу профессиональных видеороликов, покажу приёмы обработки и добавления эффектов.",
-      "images": ["https://example.com/image8.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -198,7 +258,13 @@
       "name": "Создание музыкальных треков",
       "subcategoryId": "12",
       "description": "Научу основам написания музыки и звукорежиссуры, поможем записать качественный трек.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -207,7 +273,13 @@
       "name": "Постановочная актёрская игра",
       "subcategoryId": "13",
       "description": "Проведу тренинг по актёрскому мастерству, раскрытие творческого потенциала и работа над голосом.",
-      "images": ["https://example.com/image9.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -216,7 +288,13 @@
       "name": "Креативный сторителлинг",
       "subcategoryId": "14",
       "description": "Научу писать интересные истории и привлекать внимание читателей.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -225,7 +303,13 @@
       "name": "Арт-терапевтические сессии",
       "subcategoryId": "15",
       "description": "Проведу арт-терапевтические сеансы для снятия стресса и эмоционального восстановления.",
-      "images": ["https://example.com/image10.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -234,7 +318,13 @@
       "name": "Интерьерный декор своими руками",
       "subcategoryId": "16",
       "description": "Научу создавать оригинальные декоративные изделия для вашего дома.",
-      "images": ["https://example.com/image11.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -243,7 +333,13 @@
       "name": "Интенсивный английский разговорный уровень",
       "subcategoryId": "17",
       "description": "Быстро подтяну ваш разговорный английский, подготовлю к путешествию или деловой поездке.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -252,7 +348,13 @@
       "name": "Французский язык для начинающих",
       "subcategoryId": "18",
       "description": "Начнём изучение французского языка с нуля, освоим базовые конструкции и повседневную лексику.",
-      "images": ["https://example.com/image12.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -261,7 +363,13 @@
       "name": "Практический испанский язык",
       "subcategoryId": "19",
       "description": "Научу свободно общаться на испанском языке, разберём грамматику и культурные особенности.",
-      "images": ["https://example.com/image13.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -270,7 +378,13 @@
       "name": "Немецкий язык для туристов",
       "subcategoryId": "20",
       "description": "За короткий срок подготовлю вас к самостоятельному путешествию по немецкоязычным странам.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -279,7 +393,13 @@
       "name": "Китайский язык для бизнеса",
       "subcategoryId": "21",
       "description": "Научу эффективному деловому общению на китайском языке, познакомлю с особенностями культуры Китая.",
-      "images": ["https://example.com/image14.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -288,7 +408,13 @@
       "name": "Японский язык для аниме-фанатов",
       "subcategoryId": "22",
       "description": "Изучайте японский язык весело и интересно вместе с любимыми героями японских мультфильмов!",
-      "images": ["https://example.com/image15.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -297,7 +423,13 @@
       "name": "Подготовка к IELTS",
       "subcategoryId": "23",
       "description": "Индивидуальная подготовка к экзамену IELTS, отработаем каждый аспект экзамена.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -306,7 +438,13 @@
       "name": "Развитие лидерских качеств",
       "subcategoryId": "24",
       "description": "Программа личностного роста и развития уверенности в себе, прокачаю вашу харизму и умение вести команду.",
-      "images": ["https://example.com/image16.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -315,7 +453,13 @@
       "name": "Эффективные методы запоминания",
       "subcategoryId": "25",
       "description": "Методики быстрого запоминания больших объёмов информации, улучшение памяти и концентрации внимания.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -324,7 +468,13 @@
       "name": "Скорочтение и быстрое восприятие информации",
       "subcategoryId": "27",
       "description": "Повышение скорости чтения и качества усвоения прочитанного материала.",
-      "images": ["https://example.com/image17.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -333,7 +483,13 @@
       "name": "Коучинг карьерного роста",
       "subcategoryId": "29",
       "description": "Определим цели вашей карьеры, составим индивидуальный план профессионального развития.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -342,7 +498,13 @@
       "name": "Организация домашнего пространства",
       "subcategoryId": "30",
       "description": "Научу быстро и удобно организовать пространство квартиры, избавимся от беспорядка навсегда.",
-      "images": ["https://example.com/image18.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -351,7 +513,13 @@
       "name": "Семейный бюджет и финансовое планирование",
       "subcategoryId": "31",
       "description": "Научу рационально распределять семейный бюджет, экономить и копить деньги.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -360,7 +528,13 @@
       "name": "Готовим итальянские блюда дома",
       "subcategoryId": "32",
       "description": "Научу готовить настоящие итальянские блюда легко и вкусно прямо у вас дома.",
-      "images": ["https://example.com/image19.png"],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     },
     {
@@ -369,7 +543,13 @@
       "name": "Уход за комнатными растениями",
       "subcategoryId": "33",
       "description": "Научу ухаживать за домашними цветами, подбирать подходящие виды растений и поддерживать зелёный уголок дома.",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": []
     }
   ],

@@ -49,6 +49,8 @@ export const UserCard: React.FC<UserCardProps> = ({
         </div>
       </div>
 
+      {description && <div className={styles.description}>{description}</div>}
+
       {/* Может научить */}
       {canTeach.length > 0 && (
         <div className={styles.section}>
@@ -80,7 +82,7 @@ export const UserCard: React.FC<UserCardProps> = ({
         </div>
       )}
 
-      {!detailed && (
+      {detailed && (
         <Button variant="primary" width="100%">
           Подробнее
         </Button>
