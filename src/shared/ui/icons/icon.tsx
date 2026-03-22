@@ -51,9 +51,13 @@ import {
   UserIcon,
   LogoIcon,
   RefreshIcon,
+  AppleIcon,
+  GoogleIcon,
 } from '@shared/assets';
 
 const icons: IconsMap = {
+  google: GoogleIcon,
+  apple: AppleIcon,
   add: AddIcon,
   arrowLeft: ArrowLeftIcon,
   arrowSquareLeft: ArrowSquareLeftIcon,
