@@ -18,7 +18,7 @@ export const useFilteredUsers = ({
   filters,
 }: UseFilteredUsersProps) => {
   const filteredUsers = useMemo(() => {
-    if (!users.length || !offers.length) {
+    if (!users.length) {
       return [];
     }
 
@@ -53,27 +53,26 @@ export const useFilteredUsers = ({
             ) ?? false
           );
 
-        case 'canTeach':
-          // eslint-disable-next-line
+        case 'canTeach': {
           const userOffers = offers.filter((offer) => offer?.userId === user.id);
           return userOffers.some(
             (offer) => offer && selectedSubcategoryIds.includes(offer.subcategoryId)
           );
+        }
 
         case 'all':
-        default:
-          // eslint-disable-next-line
+        default: {
           const wantsToLearn =
             user.subcategoriesIds?.some(
               (subId): subId is string =>
                 subId !== undefined && selectedSubcategoryIds.includes(subId)
             ) ?? false;
-          // eslint-disable-next-line
           const canTeach = offers
             .filter((offer) => offer?.userId === user.id)
             .some((offer) => offer && selectedSubcategoryIds.includes(offer.subcategoryId));
 
           return wantsToLearn || canTeach;
+        }
       }
     });
   }, [users, offers, subcategories, filters]);

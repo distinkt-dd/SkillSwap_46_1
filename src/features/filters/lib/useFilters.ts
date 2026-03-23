@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import type { FilterMode, FiltersState, FiltersActions } from './types';
 import { initialFiltersState } from './types';
 
@@ -63,9 +63,8 @@ export const useFilters = (): [FiltersState, FiltersActions] => {
     setFilters(initialFiltersState);
   }, []);
 
-  return [
-    filters,
-    {
+  const actions = useMemo<FiltersActions>(
+    () => ({
       setMode,
       setGender,
       toggleCity,
@@ -74,6 +73,18 @@ export const useFilters = (): [FiltersState, FiltersActions] => {
       toggleShowAllCategories,
       toggleShowAllCities,
       resetFilters,
-    },
-  ];
+    }),
+    [
+      setMode,
+      setGender,
+      toggleCity,
+      toggleSkill,
+      toggleCategory,
+      toggleShowAllCategories,
+      toggleShowAllCities,
+      resetFilters,
+    ]
+  );
+
+  return [filters, actions];
 };
