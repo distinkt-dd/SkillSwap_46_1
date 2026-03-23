@@ -9,6 +9,8 @@ export interface IconProps {
 export type IconName = keyof IconsMap;
 
 export type IconsMap = {
+  google: React.FC<SVGProps<SVGSVGElement>>;
+  apple: React.FC<SVGProps<SVGSVGElement>>;
   add: React.FC<SVGProps<SVGSVGElement>>;
   arrowLeft: React.FC<SVGProps<SVGSVGElement>>;
   arrowSquareLeft: React.FC<SVGProps<SVGSVGElement>>;

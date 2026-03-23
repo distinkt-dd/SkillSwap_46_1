@@ -1,15 +1,26 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { DevelopmentPage, ErrorPage, LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
+import {
+  DevelopmentPage,
+  ErrorPage,
+  LayoutAuth,
+  LayoutNauth,
+  LayoutPure,
+  LoginPage,
+} from '@pages/index';
 import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
 import { Catalog } from '@pages/catalog/ui';
 
+<<<<<<< feature/add_сatalog
 import {
   TempAbout,
   TempLogin,
   TempRegister,
 } from './test/temp-test-components';
+=======
+import { TempAbout, TempHome, TempRegister } from './test/temp-test-components';
+>>>>>>> dev
 import { ProtectedRoute } from './router/ProtectedRoute';
 import { useDispatch } from '@shared/store';
 import { useEffect } from 'react';
@@ -62,7 +73,7 @@ export const App = () => {
           element={
             <ProtectedRoute onlyUnAuth>
               <LayoutPure>
-                <TempLogin />
+                <LoginPage />
               </LayoutPure>
             </ProtectedRoute>
           }

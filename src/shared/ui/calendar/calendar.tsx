@@ -25,7 +25,7 @@ const MONTHS_RU = [
 
 type CalendarInputProps = {
   value?: string;
-  onClick?: React.MouseEventHandler<HTMLInputElement>;
+  onClick?: React.MouseEventHandler<HTMLElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
