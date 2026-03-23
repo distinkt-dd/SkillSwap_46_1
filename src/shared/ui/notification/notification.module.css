@@ -18,7 +18,6 @@
   display: flex;
   flex-direction: column;
   width: 436px;
-  min-height: 104px;
   background: transparent;
   border: none;
 }
