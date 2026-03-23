@@ -13,15 +13,7 @@ import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
 import { Catalog } from '@pages/catalog/ui';
 
-<<<<<<< feature/add_сatalog
-import {
-  TempAbout,
-  TempLogin,
-  TempRegister,
-} from './test/temp-test-components';
-=======
-import { TempAbout, TempHome, TempRegister } from './test/temp-test-components';
->>>>>>> dev
+import { TempAbout, TempRegister } from './test/temp-test-components';
 import { ProtectedRoute } from './router/ProtectedRoute';
 import { useDispatch } from '@shared/store';
 import { useEffect } from 'react';

@@ -29,9 +29,7 @@ export const CatalogList: FC<CatalogListProps> = ({
         const prev = items[index - 1];
         const showSectionHeading =
           item.variant === 'section' &&
-          (index === 0 ||
-            prev.variant !== 'section' ||
-            prev.section !== item.section);
+          (index === 0 || prev.variant !== 'section' || prev.section !== item.section);
 
         const isLastElement = index === items.length - 1;
 
@@ -54,4 +52,3 @@ export const CatalogList: FC<CatalogListProps> = ({
     </div>
   );
 };
-

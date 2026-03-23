@@ -117,78 +117,78 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
             <div className={styles.navLinks}>
               <NavLink to="/about">О проекте</NavLink>
 
-            <button
-              ref={triggerRef}
-              type="button"
-              className={styles.navLinkWithDropdown}
-              onClick={onSkillsToggle}
-              aria-expanded={isSkillsOpen}
-              aria-controls="skills-dropdown"
-            >
-              <span>Все навыки</span>
-              <IconUI name="chevronDown" />
-            </button>
-          </div>
-
-          {isDropdownMounted && (
-            <div
-              id="skills-dropdown"
-              ref={dropdownRef}
-              className={`${styles.dropdownWrapper} ${
-                isDropdownVisible ? styles.dropdownOpen : styles.dropdownClosing
-              }`}
-            >
-              {isLoading && <div>Загрузка...</div>}
-              {error && <div>{error}</div>}
-              {!isLoading && !error && (
-                <CategoriesDropdown
-                  categories={categories}
-                  onCategoryClick={onCategoryClick}
-                  onSubcategoryClick={onSubcategoryClick}
-                />
-              )}
+              <button
+                ref={triggerRef}
+                type="button"
+                className={styles.navLinkWithDropdown}
+                onClick={onSkillsToggle}
+                aria-expanded={isSkillsOpen}
+                aria-controls="skills-dropdown"
+              >
+                <span>Все навыки</span>
+                <IconUI name="chevronDown" />
+              </button>
             </div>
-          )}
-        </div>
 
-        <Input
-          leftIcon={<IconUI name="search" />}
-          placeholder="Искать навык"
-          className={styles.searchInput}
-          variant="search"
-          fullWidth
-        />
-
-        <div className={`${styles.rightGroup} ${isAuth ? styles.auth : ''}`}>
-          <IconUI name={isAuth ? 'sun' : 'moon'} className={styles.themeIcon} />
-
-          <div className={`${styles.buttonsGroup} ${isAuth ? styles.auth : ''}`}>
-            {isAuth ? (
-              <>
-                <IconUI name="notification" className={styles.notificationIcon} />
-                <IconUI name="like" className={styles.likeIcon} />
-
-                <NavLink to="/profile" className={styles.userBlock}>
-                  <span className={styles.userName}>{user?.name}</span>
-                  <Avatar src={user?.avatar} size="small" />
-                </NavLink>
-              </>
-            ) : (
-              <>
-                <NavLink to="/login" className={styles.buttonLink}>
-                  <Button variant="secondary" width={98}>
-                    Войти
-                  </Button>
-                </NavLink>
-                <NavLink to="/register" className={styles.buttonLink}>
-                  <Button variant="primary" width={208}>
-                    Зарегистрироваться
-                  </Button>
-                </NavLink>
-              </>
+            {isDropdownMounted && (
+              <div
+                id="skills-dropdown"
+                ref={dropdownRef}
+                className={`${styles.dropdownWrapper} ${
+                  isDropdownVisible ? styles.dropdownOpen : styles.dropdownClosing
+                }`}
+              >
+                {isLoading && <div>Загрузка...</div>}
+                {error && <div>{error}</div>}
+                {!isLoading && !error && (
+                  <CategoriesDropdown
+                    categories={categories}
+                    onCategoryClick={onCategoryClick}
+                    onSubcategoryClick={onSubcategoryClick}
+                  />
+                )}
+              </div>
             )}
           </div>
-        </div>
+
+          <Input
+            leftIcon={<IconUI name="search" />}
+            placeholder="Искать навык"
+            className={styles.searchInput}
+            variant="search"
+            fullWidth
+          />
+
+          <div className={`${styles.rightGroup} ${isAuth ? styles.auth : ''}`}>
+            <IconUI name={isAuth ? 'sun' : 'moon'} className={styles.themeIcon} />
+
+            <div className={`${styles.buttonsGroup} ${isAuth ? styles.auth : ''}`}>
+              {isAuth ? (
+                <>
+                  <IconUI name="notification" className={styles.notificationIcon} />
+                  <IconUI name="like" className={styles.likeIcon} />
+
+                  <NavLink to="/profile" className={styles.userBlock}>
+                    <span className={styles.userName}>{user?.name}</span>
+                    <Avatar src={user?.avatar} size="small" />
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  <NavLink to="/login" className={styles.buttonLink}>
+                    <Button variant="secondary" width={98}>
+                      Войти
+                    </Button>
+                  </NavLink>
+                  <NavLink to="/register" className={styles.buttonLink}>
+                    <Button variant="primary" width={208}>
+                      Зарегистрироваться
+                    </Button>
+                  </NavLink>
+                </>
+              )}
+            </div>
+          </div>
         </nav>
       </div>
     </header>

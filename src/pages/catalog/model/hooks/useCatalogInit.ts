@@ -33,6 +33,5 @@ export const useCatalogInit = (): void => {
     if (isEmptyArray(offers)) {
       dispatch(getOffers());
     }
-
   }, [dispatch, users?.length, subcategories?.length, cities?.length, offers?.length]);
 };

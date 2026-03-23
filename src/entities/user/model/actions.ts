@@ -43,9 +43,6 @@ export const updateDateUser = createAsyncThunk<TUser, TUpdateUser>(
   }
 );
 
-export const fetchUsers = createAsyncThunk<TUser[]>(
-  'user/fetchUsers',
-  async () => {
-    return await userApi.getUsers();
-  }
-);
+export const fetchUsers = createAsyncThunk<TUser[]>('user/fetchUsers', async () => {
+  return await userApi.getUsers();
+});

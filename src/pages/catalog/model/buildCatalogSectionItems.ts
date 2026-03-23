@@ -33,7 +33,10 @@ export type CatalogSectionBuckets = {
   recommended: TUser[];
 };
 
-export const partitionCatalogSections = (users: TUser[], offers: TOffer[]): CatalogSectionBuckets => {
+export const partitionCatalogSections = (
+  users: TUser[],
+  offers: TOffer[]
+): CatalogSectionBuckets => {
   if (!users.length) {
     return { popular: [], newUsers: [], recommended: [] };
   }
@@ -63,7 +66,10 @@ export const partitionCatalogSections = (users: TUser[], offers: TOffer[]): Cata
   };
 };
 
-export const buildCatalogSectionItems = (users: TUser[], offers: TOffer[]): CatalogDisplayItem[] => {
+export const buildCatalogSectionItems = (
+  users: TUser[],
+  offers: TOffer[]
+): CatalogDisplayItem[] => {
   const { popular, newUsers, recommended } = partitionCatalogSections(users, offers);
   const out: CatalogDisplayItem[] = [];
   const pushSection = (section: CatalogSectionId, list: TUser[]) => {

@@ -28,7 +28,6 @@ export const AsideFilters: React.FC<AsideFiltersProps> = ({
   filters,
   actions,
 }) => {
-
   // Подсчет количества выбранных значений в фильтрах
   const selectedValuesCount = useMemo(() => {
     let count = 0;

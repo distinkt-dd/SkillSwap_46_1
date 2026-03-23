@@ -2,36 +2,36 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100%;
   box-sizing: border-box;
+  height: 100%;
   padding: 32px 36px;
   background-color: var(--color-card-input);
 }
 
 .container {
   display: flex;
-  height: 100%;
   justify-content: space-between;
   align-items: flex-start;
   gap: 24px;
+  height: 100%;
 }
 
 .leftColumn {
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: flex-start;
+  height: 100%;
 }
 
 .content {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 32px;
-  flex: 1;
   min-width: 0;
 }
 
-@media (min-width: 1440px) {
+@media (width >= 1440px) {
   .container {
     display: grid;
     grid-template-columns: 348px minmax(0, 1fr);
@@ -65,26 +65,26 @@
   letter-spacing: 0.5px;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .linksList {
     grid-template-columns: repeat(2, minmax(180px, 1fr));
   }
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .footer {
     height: auto;
   }
 
   .container {
-    height: auto;
     flex-direction: column;
     gap: 20px;
+    height: auto;
   }
 
   .leftColumn {
-    height: auto;
     gap: 16px;
+    height: auto;
   }
 
   .copiright {

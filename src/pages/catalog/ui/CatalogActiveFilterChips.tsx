@@ -109,7 +109,6 @@ export const CatalogActiveFilterChips: FC<CatalogActiveFilterChipsProps> = ({
           </li>
         ))}
       </ul>
-     
     </div>
   );
 };

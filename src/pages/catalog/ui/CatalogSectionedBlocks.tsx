@@ -51,11 +51,11 @@ export const CatalogSectionedBlocks: FC<CatalogSectionedBlocksProps> = ({
             {popular.length > PREVIEW_COUNT && (
               <Button
                 type="button"
-                variant='tertiary'
+                variant="tertiary"
                 onClick={onTogglePopular}
                 aria-expanded={showAllPopular}
                 icon={<IconUI name="chevronRight" />}
-                iconPosition='right'
+                iconPosition="right"
               >
                 {showAllPopular ? 'Свернуть' : 'Смотреть все'}
               </Button>
@@ -85,11 +85,11 @@ export const CatalogSectionedBlocks: FC<CatalogSectionedBlocksProps> = ({
             {newUsers.length > PREVIEW_COUNT && (
               <Button
                 type="button"
-                variant='tertiary'
+                variant="tertiary"
                 onClick={onToggleNew}
                 aria-expanded={showAllNew}
                 icon={<IconUI name="chevronRight" />}
-                iconPosition='right'
+                iconPosition="right"
               >
                 {showAllNew ? 'Свернуть' : 'Смотреть все'}
               </Button>
