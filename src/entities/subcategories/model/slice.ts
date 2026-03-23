@@ -24,6 +24,9 @@ export const subcategoriesSlice = createSlice({
   },
   selectors: {
     selectedSubcategories: (state) => state.subcategories,
+    selectedSubcategoriesById: (state) => (id: string) => {
+      return state.subcategories.find((item) => item.id === id);
+    },
     selectedSubcategoriesError: (state) => state.error,
     selectedSubcategoriesIsResponse: (state) => state.isResponse,
   },
@@ -47,6 +50,7 @@ export const subcategoriesSlice = createSlice({
 export const { clearSubcategoriesError } = subcategoriesSlice.actions;
 
 export const {
+  selectedSubcategoriesById,
   selectedSubcategories,
   selectedSubcategoriesError,
   selectedSubcategoriesIsResponse,

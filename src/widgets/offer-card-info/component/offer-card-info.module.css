@@ -1,0 +1,7 @@
+.offerCardInfo__container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  inline-size: 100%;
+  block-size: 100%;
+}

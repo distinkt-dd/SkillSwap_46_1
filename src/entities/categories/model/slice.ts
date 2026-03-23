@@ -24,6 +24,9 @@ export const categoriesSlice = createSlice({
   },
   selectors: {
     selectedCategories: (state) => state.categories,
+    selectedCategoriesById: (state) => (id: string) => {
+      return state.categories.find((item) => item.id === id);
+    },
     selectedCategoriesError: (state) => state.error,
     selectedCategoriesIsResponse: (state) => state.isResponse,
   },
@@ -46,8 +49,12 @@ export const categoriesSlice = createSlice({
 
 export const { clearCategoriesError } = categoriesSlice.actions;
 
-export const { selectedCategories, selectedCategoriesError, selectedCategoriesIsResponse } =
-  categoriesSlice.selectors;
+export const {
+  selectedCategories,
+  selectedCategoriesById,
+  selectedCategoriesError,
+  selectedCategoriesIsResponse,
+} = categoriesSlice.selectors;
 
 export const selectCategoryById = (categoryId: string) =>
   createSelector(
