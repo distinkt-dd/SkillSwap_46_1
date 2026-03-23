@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import {
   ModeTabs,
   CategoryFilter,
   GenderFilter,
   CityFilter,
-  useFilters,
   type FiltersState,
+  type FiltersActions,
 } from '@features/filters';
 import { Button, IconUI } from '@shared/ui';
 import type { TCategory } from '@entities/categories';
@@ -17,29 +17,27 @@ interface AsideFiltersProps {
   categories: TCategory[];
   subcategories: TSubCategory[];
   cities: TCity[];
-  onFiltersChange: (filters: FiltersState) => void;
+  filters: FiltersState;
+  actions: FiltersActions;
 }
 
 export const AsideFilters: React.FC<AsideFiltersProps> = ({
   categories,
   subcategories,
   cities,
-  onFiltersChange,
+  filters,
+  actions,
 }) => {
-  const [filters, actions] = useFilters();
-
-  useEffect(() => {
-    onFiltersChange(filters);
-  }, [filters, onFiltersChange]);
 
   // Подсчет количества выбранных значений в фильтрах
   const selectedValuesCount = useMemo(() => {
     let count = 0;
+    if (filters.mode !== 'all') count += 1;
     count += filters.cityIds.length;
     count += filters.skillIds.length;
     if (filters.gender !== null) count += 1;
     return count;
-  }, [filters.cityIds, filters.skillIds, filters.gender]);
+  }, [filters.mode, filters.cityIds, filters.skillIds, filters.gender]);
 
   return (
     <aside className={styles.asideFilters}>

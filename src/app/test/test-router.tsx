@@ -1,7 +1,5 @@
-// src/app/providers/router/test-router.tsx
 import { createBrowserRouter } from 'react-router-dom';
 import {
-  TempHome,
   TempAbout,
   TempDashboard,
   TempLogin,
@@ -9,20 +7,21 @@ import {
   TempNotFound,
 } from './temp-test-components';
 import { LayoutAuth, LayoutPure } from '@pages/index';
+import { ProtectedRoute } from '../router/ProtectedRoute'; // ← импортируем защиту
+import { Catalog } from '@pages/catalog/ui'; // ← импортируем каталог
 
 export const testRouter = createBrowserRouter([
   {
     path: '/',
-    // Для главной страницы используем LayoutAuth (с категориями)
+    // Главная страница с каталогом
     element: (
       <LayoutAuth>
-        <TempHome />
+        <Catalog />
       </LayoutAuth>
     ),
   },
   {
     path: '/about',
-    // Для страницы "О проекте" тоже LayoutAuth
     element: (
       <LayoutAuth>
         <TempAbout />
@@ -31,43 +30,58 @@ export const testRouter = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    // Для защищенных страниц используем LayoutAuth
+    // Защищенный маршрут
     element: (
-      <LayoutAuth>
-        <TempDashboard />
-      </LayoutAuth>
+      <ProtectedRoute>
+        <LayoutAuth>
+          <TempDashboard />
+        </LayoutAuth>
+      </ProtectedRoute>
     ),
   },
   {
     path: '/profile',
-    // Для профиля тоже LayoutAuth
+    // Защищенный маршрут
     element: (
-      <LayoutAuth>
-        <TempDashboard />
-      </LayoutAuth>
+      <ProtectedRoute>
+        <LayoutAuth>
+          <TempDashboard />
+        </LayoutAuth>
+      </ProtectedRoute>
     ),
   },
   {
     path: '/login',
-    // Для логина используем LayoutPure (чистый хедер)
+    // Только для неавторизованных
     element: (
-      <LayoutPure>
-        <TempLogin />
-      </LayoutPure>
+      <ProtectedRoute onlyUnAuth>
+        <LayoutPure>
+          <TempLogin />
+        </LayoutPure>
+      </ProtectedRoute>
     ),
   },
   {
     path: '/register',
-    // Для регистрации тоже LayoutPure
+    // Только для неавторизованных
     element: (
-      <LayoutPure>
-        <TempRegister />
-      </LayoutPure>
+      <ProtectedRoute onlyUnAuth>
+        <LayoutPure>
+          <TempRegister />
+        </LayoutPure>
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/catalog',
+    element: (
+      <LayoutAuth>
+        <Catalog />
+      </LayoutAuth>
     ),
   },
   {
     path: '*',
-    // Для 404 используем LayoutAuth (с категориями)
     element: (
       <LayoutAuth>
         <TempNotFound />

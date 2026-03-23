@@ -10,4 +10,5 @@ export type THeaderUIProps = {
   onSubcategoryClick?: (subcategoryId: string) => void;
   variant?: 'default' | 'pure';
   onClose?: () => void;
+  className?: string;
 };

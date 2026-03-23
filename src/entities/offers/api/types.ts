@@ -6,6 +6,10 @@ export interface TOffer {
   description: string;
   images: (string | undefined)[];
   userLikedIds: (string | undefined)[];
+  /** ISO-строка даты создания (для сортировки «новые» офферы) */
+  createdAt?: string;
+  /** ISO-строка даты обновления */
+  updatedAt?: string;
 }
 
 export type TOfferCreate = Omit<TOffer, 'id' | 'userId' | 'userLikedIds'>;

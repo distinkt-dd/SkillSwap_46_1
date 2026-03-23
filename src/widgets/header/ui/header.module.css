@@ -46,6 +46,9 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: var(--color-text);
   font-size: 16px;
   font-family: inherit;
@@ -64,6 +67,23 @@
   top: 94px;
   left: 36px;
   z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  will-change: opacity, transform;
+}
+
+.dropdownOpen {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdownClosing {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
 }
 
 .rightGroup {

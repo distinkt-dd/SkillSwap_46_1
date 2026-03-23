@@ -66,7 +66,7 @@ const convertToTUser = (user: typeof firstUser): TUser => ({
   description: user.description,
   avatar: user.avatar,
   gender: user.gender as 'male' | 'female',
-  birthday: new Date(user.birthday),
+  birthday: user.birthday,
   cityId: user.cityId,
   subcategoriesIds: user.subcategoriesIds,
 });
