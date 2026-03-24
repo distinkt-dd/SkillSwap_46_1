@@ -1,9 +1,11 @@
-import { useRef } from 'react';
-import { Dropdown, Input, Calendar, IconUI } from '@shared/ui';
+import { Dropdown, Input, Calendar } from '@shared/ui';
 import { useSelector } from '@shared/store';
 import { selectCities } from '@entities/cities';
 import { selectedSubcategories } from '@entities/subcategories';
 import { selectedCategories as selectCategoriesState } from '@entities/categories/model';
+import { generateRandomAvatar } from '@shared/index';
+import * as yup from 'yup';
+import { step2Schema } from '../model/schemas';
 import type { RegisterFormData } from '../model/types';
 import type { DropdownOption } from '@shared/ui';
 import styles from './register.module.css';
@@ -12,6 +14,7 @@ type Props = {
   data: RegisterFormData;
   onChange: (patch: Partial<RegisterFormData>) => void;
   errors: Record<string, string>;
+  onErrorChange?: (patch: Record<string, string>) => void;
 };
 
 const GENDER_OPTIONS: DropdownOption[] = [
@@ -19,9 +22,7 @@ const GENDER_OPTIONS: DropdownOption[] = [
   { id: 'female', name: 'Женский' },
 ];
 
-export const RegisterStep2 = ({ data, onChange, errors }: Props) => {
-  const avatarInputRef = useRef<HTMLInputElement>(null);
-
+export const RegisterStep2 = ({ data, onChange, errors, onErrorChange }: Props) => {
   const cities = useSelector(selectCities) ?? [];
   const categories = useSelector(selectCategoriesState);
   const subcategories = useSelector(selectedSubcategories);
@@ -48,17 +49,39 @@ export const RegisterStep2 = ({ data, onChange, errors }: Props) => {
     data.subcategoriesIds.includes(String(s.id))
   );
 
-  const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      onChange({
-        avatar: reader.result as string,
-        avatarIsCustom: true,
-      });
-    };
-    reader.readAsDataURL(file);
+  const validateField = async (field: string, value: unknown) => {
+    if (!onErrorChange) return;
+    try {
+      await step2Schema.validateAt(field, { ...data, [field]: value });
+      onErrorChange({ [field]: '' });
+    } catch (err) {
+      if (err instanceof yup.ValidationError) {
+        onErrorChange({ [field]: err.message });
+      }
+    }
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    onChange({ name: value });
+    void validateField('name', value);
+  };
+
+  const handleBirthdayChange = (date: Date | null) => {
+    onChange({ birthday: date });
+    void validateField('birthday', date);
+  };
+
+  const handleGenderChange = (opt: DropdownOption | null) => {
+    const value = (opt?.id as 'male' | 'female') ?? '';
+    onChange({ gender: value });
+    void validateField('gender', value);
+  };
+
+  const handleCityChange = (opt: DropdownOption | null) => {
+    const value = String(opt?.id ?? '');
+    onChange({ cityId: value });
+    void validateField('cityId', value);
   };
 
   const handleCategoryChange = (opts: DropdownOption[]) => {
@@ -80,42 +103,41 @@ export const RegisterStep2 = ({ data, onChange, errors }: Props) => {
     });
   };
 
+  const handleSubcatsChange = (opts: DropdownOption[]) => {
+    const ids = opts.map((o) => String(o.id));
+    onChange({ subcategoriesIds: ids });
+    void validateField('subcategoriesIds', ids);
+  };
+
+  const handleRegenerateAvatar = () => {
+    onChange({ avatar: generateRandomAvatar() });
+  };
+
   return (
     <>
       <div className={styles.avatarSection}>
         <div
           className={styles.avatarCircle}
-          onClick={() => avatarInputRef.current?.click()}
+          onClick={handleRegenerateAvatar}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => e.key === 'Enter' && avatarInputRef.current?.click()}
-          aria-label="Загрузить аватар"
+          onKeyDown={(e) => e.key === 'Enter' && handleRegenerateAvatar()}
+          aria-label="Сгенерировать новый аватар"
+          title="Нажмите, чтобы сгенерировать новый аватар"
         >
-          {/*
-           * FIX: data.avatar теперь всегда непустой (сгенерирован в RegisterForm),
-           * показываем изображение всегда — SVG-заглушка не нужна.
-           */}
           <img src={data.avatar} alt="Аватар" className={styles.avatarPreview} />
-          <div className={styles.avatarBadge}>
-            {/* FIX: 'add' → 'edit' для автогенерированного аватара,
-                чтобы подсказать пользователю что можно заменить */}
-            <IconUI name={data.avatarIsCustom ? 'done' : 'edit'} size={12} />
+          <div className={styles.avatarBadge} aria-hidden="true">
+            🔀
           </div>
         </div>
-        <input
-          ref={avatarInputRef}
-          type="file"
-          accept="image/*"
-          className={styles.fileInputHidden}
-          onChange={handleAvatarChange}
-        />
+        <span className={styles.avatarHint}>Нажмите, чтобы сменить аватар</span>
       </div>
 
       <div className={styles.zField60}>
         <Input
           label="Имя"
           value={data.name}
-          onChange={(e) => onChange({ name: e.target.value })}
+          onChange={handleNameChange}
           error={errors.name}
           placeholder="Введите ваше имя"
           fullWidth
@@ -127,7 +149,7 @@ export const RegisterStep2 = ({ data, onChange, errors }: Props) => {
           <Calendar
             label="Дата рождения"
             value={data.birthday}
-            onChange={(date) => onChange({ birthday: date })}
+            onChange={handleBirthdayChange}
             placeholder="дд.мм.гггг"
             maxDate={new Date()}
             width="100%"
@@ -144,9 +166,7 @@ export const RegisterStep2 = ({ data, onChange, errors }: Props) => {
               placeholder="Не указан"
               options={GENDER_OPTIONS}
               value={selectedGender}
-              onChange={(opt) =>
-                onChange({ gender: (opt?.id as 'male' | 'female') ?? '' })
-              }
+              onChange={handleGenderChange}
               variant="clearable"
             />
             {errors.gender && (
@@ -162,7 +182,7 @@ export const RegisterStep2 = ({ data, onChange, errors }: Props) => {
           placeholder="Не указан"
           options={cityOptions}
           value={selectedCity}
-          onChange={(opt) => onChange({ cityId: String(opt?.id ?? '') })}
+          onChange={handleCityChange}
           searchable
           variant="clearable"
         />
@@ -189,9 +209,7 @@ export const RegisterStep2 = ({ data, onChange, errors }: Props) => {
           placeholder="Выберите подкатегорию"
           options={filteredSubcategoryOptions}
           values={selectedSubcats}
-          onValuesChange={(opts) =>
-            onChange({ subcategoriesIds: opts.map((o) => String(o.id)) })
-          }
+          onValuesChange={handleSubcatsChange}
           mode="multi"
           variant="clearable"
         />

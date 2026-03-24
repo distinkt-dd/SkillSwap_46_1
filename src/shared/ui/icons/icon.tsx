@@ -3,6 +3,7 @@ import type { IconProps, IconsMap } from './types';
 
 import {
   AddIcon,
+  AppleIcon,
   ArrowLeftIcon,
   ArrowSquareLeftIcon,
   ArrowSquareRightIcon,
@@ -32,6 +33,7 @@ import {
   LifestyleIcon,
   LikeIcon,
   LikeFilledIcon,
+  LogoIcon,
   LogoutIcon,
   MessageTextIcon,
   MoonIcon,
@@ -41,6 +43,7 @@ import {
   PlusCircleIcon,
   RadioButtonActiveIcon,
   RadioButtonEmptyIcon,
+  RefreshIcon,
   RequestIcon,
   ScrollIcon,
   ScrollSquareIcon,
@@ -50,9 +53,6 @@ import {
   SunIcon,
   UserCircleIcon,
   UserIcon,
-  LogoIcon,
-  RefreshIcon,
-  AppleIcon,
   GoogleIcon,
 } from '@shared/assets';
 

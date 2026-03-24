@@ -1,5 +1,5 @@
 import { ReactComponent as AddIcon } from './add.svg';
-import { ReactComponent as ArrowLeftIcon } from './arrow-left.svg';
+import { ReactComponent as ArrowLeftIcon } from './arrow-square-left.svg';
 import { ReactComponent as ArrowSquareLeftIcon } from './arrow-square-left.svg';
 import { ReactComponent as ArrowSquareRightIcon } from './arrow-square-right.svg';
 import { ReactComponent as BookIcon } from './book.svg';
@@ -37,6 +37,7 @@ import { ReactComponent as PalleteIcon } from './palette.svg';
 import { ReactComponent as PlusCircleIcon } from './plus-circle.svg';
 import { ReactComponent as RadioButtonActiveIcon } from './radiobutton-active.svg';
 import { ReactComponent as RadioButtonEmptyIcon } from './radiobutton-empty.svg';
+import { ReactComponent as RefreshIcon } from './refresh.svg';
 import { ReactComponent as RequestIcon } from './request.svg';
 import { ReactComponent as ScrollIcon } from './scroll-1.svg';
 import { ReactComponent as ScrollSquareIcon } from './scroll.svg';
@@ -47,14 +48,12 @@ import { ReactComponent as SunIcon } from './sun.svg';
 import { ReactComponent as UserCircleIcon } from './user-circle.svg';
 import { ReactComponent as UserIcon } from './user.svg';
 import { ReactComponent as LogoIcon } from './logo.svg';
-import { ReactComponent as RefreshIcon } from './refresh.svg';
 import { ReactComponent as GoogleIcon } from './google.svg';
 import { ReactComponent as AppleIcon } from './apple.svg';
 
 export {
-  GoogleIcon,
-  AppleIcon,
   AddIcon,
+  AppleIcon,
   ArrowLeftIcon,
   ArrowSquareLeftIcon,
   ArrowSquareRightIcon,
@@ -84,6 +83,7 @@ export {
   LifestyleIcon,
   LikeIcon,
   LikeFilledIcon,
+  LogoIcon,
   LogoutIcon,
   MessageTextIcon,
   MoonIcon,
@@ -93,6 +93,7 @@ export {
   PlusCircleIcon,
   RadioButtonActiveIcon,
   RadioButtonEmptyIcon,
+  RefreshIcon,
   RequestIcon,
   ScrollIcon,
   ScrollSquareIcon,
@@ -102,6 +103,5 @@ export {
   SunIcon,
   UserCircleIcon,
   UserIcon,
-  LogoIcon,
-  RefreshIcon,
+  GoogleIcon,
 };
