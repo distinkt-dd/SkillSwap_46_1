@@ -7,6 +7,7 @@ import { CategoriesDropdown } from './categories';
 import type { THeaderUIProps } from './type';
 import { selectedUser } from '@entities/user';
 import { useSelector } from '@shared/store';
+import { NotificationWrapper } from '@widgets/notifications/ui/Notification';
 
 export const Header: FC<Partial<THeaderUIProps>> = ({
   isSkillsOpen = false,
@@ -23,9 +24,12 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
   const isAuth = !!user;
   const [isDropdownMounted, setIsDropdownMounted] = useState(isSkillsOpen);
   const [isDropdownVisible, setIsDropdownVisible] = useState(isSkillsOpen);
+  const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const notificationRef = useRef<HTMLDivElement>(null);
+  const notificationTriggerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let closeTimer: number | undefined;
@@ -79,6 +83,31 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
     };
   }, [isSkillsOpen, onSkillsToggle]);
 
+  // Handle click outside for notification wrapper
+  useEffect(() => {
+    const handleClickOutsideNotification = (event: MouseEvent) => {
+      // Check if click is on notification icon wrapper
+      if (
+        notificationTriggerRef.current &&
+        notificationTriggerRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+
+      // Check if click is inside notification wrapper
+      if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
+        setIsNotificationOpen(false);
+      }
+    };
+
+    if (!isNotificationOpen) return;
+    document.addEventListener('mousedown', handleClickOutsideNotification);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideNotification);
+    };
+  }, [isNotificationOpen]);
+
   // Для дропдауна "Все навыки" не блокируем скролл страницы:
   // иначе меняется доступная ширина контента и карточки "поджимаются".
 
@@ -107,7 +136,13 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
 
   return (
     <header className={styles.header}>
-      <div className="container">
+      <div className={`container ${styles.headerContainer}`}>
+        {isNotificationOpen && (
+          <div ref={notificationRef} className={styles.notificationWrapper}>
+            <NotificationWrapper />
+          </div>
+        )}
+
         <nav className={styles.nav}>
           <div className={styles.leftSection}>
             <NavLink to="/" className={styles.logo}>
@@ -165,9 +200,16 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
             <div className={`${styles.buttonsGroup} ${isAuth ? styles.auth : ''}`}>
               {isAuth ? (
                 <>
-                  <IconUI name="notification" className={styles.notificationIcon} />
-                  <IconUI name="like" className={styles.likeIcon} />
-
+                  <div
+                    ref={notificationTriggerRef}
+                    className={styles.notificationIconWrapper}
+                    onClick={() => setIsNotificationOpen(!isNotificationOpen)}
+                  >
+                    <IconUI name="notification" className={styles.notificationIcon} />
+                  </div>
+                  <NavLink to="/favorites">
+                    <IconUI name="like" className={styles.likeIcon} />
+                  </NavLink>
                   <NavLink to="/profile" className={styles.userBlock}>
                     <span className={styles.userName}>{user?.name}</span>
                     <Avatar src={user?.avatar} size="small" />

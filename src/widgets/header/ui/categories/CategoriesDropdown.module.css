@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   width: 1136px;
-  max-height: 1040px;
+  max-height: 800px;
   padding: 60px;
   overflow-y: auto;
   background: var(--color-card-input);

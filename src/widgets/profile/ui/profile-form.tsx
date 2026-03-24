@@ -14,7 +14,7 @@ import {
 } from '@shared/ui';
 import {
   selectedUser,
-  setUser,
+  updateDateUser,
   updatePassword,
   userDataUpdateSchema,
   userPassUpdateSchema,
@@ -154,8 +154,7 @@ export const ProfileForm: FC = () => {
     try {
       const validForm = await userHook.validateForm(localUserState);
       if (validForm) {
-        dispatch(setUser(localUserState));
-        // dispatch(userUpdateThunk(formValue));
+        dispatch(updateDateUser(localUserState));
       }
     } catch (error) {
       setFormError(error instanceof Error ? error.message : 'Ошибка сохранения');
@@ -304,7 +303,7 @@ export const ProfileForm: FC = () => {
             placeholder="Расскажите о себе"
             rightIcon={<IconUI name="edit" />}
             showRightIcon={true}
-            maxLength={20}
+            maxLength={200}
             value={localUserState?.description}
             onChange={inputOnChangeHandler}
             error={userHook.errors?.description}
