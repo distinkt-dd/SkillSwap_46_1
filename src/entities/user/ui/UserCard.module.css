@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 20px;
   box-sizing: border-box;
-  width: 324px;
+  min-width: 324px;
   min-inline-size: 320px;
   padding: 20px;
   background: #ffffff;

@@ -2,8 +2,12 @@ import * as React from 'react';
 import { Button, Avatar, Subcategory, IconUI } from '@shared/ui';
 import styles from './UserCard.module.css';
 import type { TCategory } from '@entities/categories';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from '@shared/store';
+import { selectedOffers } from '@entities/offers/model';
+import clsx from 'clsx';
 
-type CategoryType = TCategory['type'];
+export type CategoryType = TCategory['type'];
 
 // Тип для навыка с категорией
 export type SkillItem = {
@@ -23,6 +27,7 @@ export type UserCardProps = {
   description?: string;
   favoriteSlot?: React.ReactNode;
   likesCount?: number;
+  className?: string;
 };
 
 const MAX_VISIBLE_TAGS = 2;
@@ -48,6 +53,7 @@ const getYearWord = (age: number): string => {
 };
 
 export const UserCard: React.FC<UserCardProps> = ({
+  id,
   name,
   avatar,
   location,
@@ -58,12 +64,15 @@ export const UserCard: React.FC<UserCardProps> = ({
   description,
   favoriteSlot,
   likesCount = 0,
+  className,
 }) => {
   const visibleLearn = wantsToLearn.slice(0, MAX_VISIBLE_TAGS);
   const hiddenCount = wantsToLearn.length - MAX_VISIBLE_TAGS;
+  const offers = useSelector(selectedOffers);
+  const currentOffer = offers.find((item) => item.userId === id);
 
   return (
-    <div className={styles.userCard}>
+    <div className={clsx(styles.userCard, className)}>
       <div className={styles.likesWrapper}>
         <IconUI name="like" className={styles.likesIcon} />
         <span className={styles.likesCount}>{likesCount}</span>
@@ -103,7 +112,7 @@ export const UserCard: React.FC<UserCardProps> = ({
 
       {/* Хочет научиться */}
       {wantsToLearn.length > 0 && (
-        <div className={styles.section}>
+        <div className={clsx(styles.section, styles.wantsTeach)}>
           <div className={styles.sectionLabel}>Хочет научиться:</div>
           <div className={styles.tags}>
             {visibleLearn.map((skill) => (
@@ -118,13 +127,15 @@ export const UserCard: React.FC<UserCardProps> = ({
         </div>
       )}
 
-      {detailed && (
-        <Button variant="primary" width="100%">
-          Подробнее
-        </Button>
+      {detailed ? (
+        <NavLink to={`/offers/${currentOffer?.id}`}>
+          <Button variant="primary" width="100%">
+            Подробнее
+          </Button>
+        </NavLink>
+      ) : (
+        <div></div>
       )}
-
-      {detailed && description && <div className={styles.description}>{description}</div>}
     </div>
   );
 };

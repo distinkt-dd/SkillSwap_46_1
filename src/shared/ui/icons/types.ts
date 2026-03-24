@@ -22,6 +22,7 @@ export type IconsMap = {
   checkboxEmpty: React.FC<SVGProps<SVGSVGElement>>;
   checkboxRemove: React.FC<SVGProps<SVGSVGElement>>;
   chevronDown: React.FC<SVGProps<SVGSVGElement>>;
+  chevronLeft: React.FC<SVGProps<SVGSVGElement>>;
   chevronRight: React.FC<SVGProps<SVGSVGElement>>;
   chevronUp: React.FC<SVGProps<SVGSVGElement>>;
   clock: React.FC<SVGProps<SVGSVGElement>>;
