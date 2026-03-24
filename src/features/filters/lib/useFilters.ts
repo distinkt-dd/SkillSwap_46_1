@@ -1,9 +1,14 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import type { FilterMode, FiltersState, FiltersActions } from './types';
 import { initialFiltersState } from './types';
+import { getInitialFiltersState, writeFiltersToStorage } from './filtersStorage';
 
 export const useFilters = (): [FiltersState, FiltersActions] => {
-  const [filters, setFilters] = useState<FiltersState>(initialFiltersState);
+  const [filters, setFilters] = useState<FiltersState>(getInitialFiltersState);
+
+  useEffect(() => {
+    writeFiltersToStorage(filters);
+  }, [filters]);
 
   const setMode = useCallback((mode: FilterMode) => {
     setFilters((prev) => ({ ...prev, mode }));
@@ -45,12 +50,9 @@ export const useFilters = (): [FiltersState, FiltersActions] => {
     setFilters((prev) => {
       const newShowAllCategories = !prev.showAllCategories;
 
-      // Здесь мы не можем получить categories, поэтому просто меняем флаг
-      // А сам компонент CategoryFilter будет решать, что показывать
       return {
         ...prev,
         showAllCategories: newShowAllCategories,
-        // Не меняем expandedCategories здесь, это сделает компонент
       };
     });
   }, []);

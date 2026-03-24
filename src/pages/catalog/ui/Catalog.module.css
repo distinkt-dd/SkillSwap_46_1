@@ -173,6 +173,15 @@
   margin: 0;
 }
 
+.sectionSeeAllChevron {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+}
+
+.sectionSeeAllChevronExpanded {
+  transform: rotate(90deg);
+}
+
 .seeAllButton:hover {
   opacity: 0.85;
 }
