@@ -58,9 +58,11 @@ export const App = () => {
         <Route
           path="/offers/:id"
           element={
-            <LayoutNauth>
-              <OfferPage />
-            </LayoutNauth>
+            <ProtectedRoute>
+              <LayoutAuth>
+                <OfferPage />
+              </LayoutAuth>
+            </ProtectedRoute>
           }
         />
         <Route

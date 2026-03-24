@@ -1,10 +1,12 @@
 import type { FC } from 'react';
-// import React, { useMemo, useRef, useState } from 'react';
+import { useMemo } from 'react';
 import styles from './offer-card-info.module.css';
-import { selectedUser, UserCard } from '@entities/user';
+import { selectedUser, selectedUsers, UserCard } from '@entities/user';
+import type { SkillItem } from '@entities/user/ui/UserCard';
 import { useSelector } from '@shared/store';
 import { selectedSubcategories } from '@entities/subcategories/model/slice';
 import { selectCities } from '@entities/cities/model/slice';
+import { selectedCategories } from '@entities/categories/model/slice';
 
 import { OfferCardUI } from '@widgets/offer-card/ui';
 import type { TOffer } from '@entities/offers/api/types';
@@ -14,36 +16,57 @@ type TOfferCardInfo = {
 };
 
 export const OfferCardInfo: FC<TOfferCardInfo> = ({ offer }) => {
-  const user = useSelector(selectedUser);
-  //Перенести логику в компонент USERCARD
+  const sessionUser = useSelector(selectedUser);
+  const users = useSelector(selectedUsers);
   const subCategories = useSelector(selectedSubcategories);
+  const categories = useSelector(selectedCategories);
   const cities = useSelector(selectCities);
 
-  //Перенести логику в компонент USERCARD
-  const wantsSubCategories = subCategories
-    .filter((sub) => user?.subcategoriesIds.includes(sub.id))
-    .map((item) => item.name);
-  const canSubCategories = subCategories
-    .filter((sub) => offer.subcategoryId.includes(sub.id))
-    .map((item) => item.name);
-  const city = cities?.find((sub) => sub.id === user?.cityId);
+  const offerAuthor = useMemo(() => {
+    const uid = String(offer.userId);
+    const fromList = users.find((u) => String(u.id) === uid);
+    if (fromList) return fromList;
+    if (sessionUser && String(sessionUser.id) === uid) return sessionUser;
+    return null;
+  }, [users, sessionUser, offer.userId]);
 
-  if (!user || !offer) {
-    return;
+  const { canTeach, wantsToLearn } = useMemo(() => {
+    const teachSub = subCategories.find((sub) => sub.id === offer.subcategoryId);
+    const teachCategory = teachSub
+      ? categories.find((c) => c.id === teachSub.categoryId)
+      : undefined;
+    const can: SkillItem[] = teachSub
+      ? [{ name: teachSub.name, type: teachCategory?.type ?? 'other' }]
+      : [];
+
+    const wants: SkillItem[] = (offerAuthor?.subcategoriesIds ?? [])
+      .map((subId) => {
+        const sub = subCategories.find((s) => s.id === subId);
+        if (!sub) return null;
+        const cat = categories.find((c) => c.id === sub.categoryId);
+        return { name: sub.name, type: cat?.type ?? 'other' } satisfies SkillItem;
+      })
+      .filter((item): item is SkillItem => item !== null);
+
+    return { canTeach: can, wantsToLearn: wants };
+  }, [offer.subcategoryId, offerAuthor?.subcategoriesIds, subCategories, categories]);
+
+  const city = cities?.find((c) => c.id === offerAuthor?.cityId);
+
+  if (!offerAuthor) {
+    return <p className={styles.offerCardInfo__loading}>Загрузка данных пользователя…</p>;
   }
 
   return (
     <div className={styles.offerCardInfo__container}>
       <UserCard
-        id={user.id}
-        name={user.name}
-        avatar={user.avatar}
+        id={offerAuthor.id}
+        name={offerAuthor.name}
+        avatar={offerAuthor.avatar}
         location={city?.name}
-        // age={user.birthday}
-        canTeach={canSubCategories}
-        wantsToLearn={wantsSubCategories}
-        description={user.description}
-        // favoriteSlot
+        canTeach={canTeach}
+        wantsToLearn={wantsToLearn}
+        description={offerAuthor.description}
       />
       <OfferCardUI offer={offer} />
     </div>

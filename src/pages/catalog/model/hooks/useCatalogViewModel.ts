@@ -35,7 +35,7 @@ import type { CatalogDisplayItem } from '../types';
 const EMPTY_CITIES: TCity[] = [];
 
 const ITEMS_PER_PAGE = 3;
-const LOADING_DELAY_MS = 3000;
+const LOADING_DELAY_MS = 200;
 
 export type CatalogViewModel = {
   users: TUser[];

@@ -23,6 +23,8 @@ export type UserCardProps = {
   description?: string;
   favoriteSlot?: React.ReactNode;
   likesCount?: number;
+  /** Обработчик кнопки «Подробнее» (при `detailed`) */
+  onDetailsClick?: () => void;
 };
 
 const MAX_VISIBLE_TAGS = 2;
@@ -58,6 +60,7 @@ export const UserCard: React.FC<UserCardProps> = ({
   description,
   favoriteSlot,
   likesCount = 0,
+  onDetailsClick, // Добален обработчик клика для кнопки "Подробнее"
 }) => {
   const visibleLearn = wantsToLearn.slice(0, MAX_VISIBLE_TAGS);
   const hiddenCount = wantsToLearn.length - MAX_VISIBLE_TAGS;
@@ -119,7 +122,7 @@ export const UserCard: React.FC<UserCardProps> = ({
       )}
 
       {detailed && (
-        <Button variant="primary" width="100%">
+        <Button variant="primary" width="100%" type="button" onClick={onDetailsClick}>
           Подробнее
         </Button>
       )}
