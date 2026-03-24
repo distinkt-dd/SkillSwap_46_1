@@ -25,7 +25,7 @@ const MONTHS_RU = [
 
 type CalendarInputProps = {
   value?: string;
-  onClick?: React.MouseEventHandler<HTMLInputElement>;
+  onClick?: React.MouseEventHandler<HTMLElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
@@ -70,7 +70,7 @@ const CalendarInput = React.forwardRef<HTMLInputElement, CalendarInputProps>(
           disabled={disabled || readOnly}
           aria-label="Открыть календарь"
         >
-          <IconUI name="calendar" size={20} />
+          <IconUI name="calendar" size={24} />
         </button>
       </div>
     </div>
@@ -92,6 +92,7 @@ export type CalendarProps = {
   width?: number | string;
   name?: string;
   id?: string;
+  error?: string | undefined;
 };
 
 export const Calendar: React.FC<CalendarProps> = ({
@@ -107,6 +108,7 @@ export const Calendar: React.FC<CalendarProps> = ({
   width,
   name,
   id,
+  error,
 }) => {
   const generatedId = useId();
   const inputId = id ?? `calendar-${generatedId}`;
@@ -180,7 +182,7 @@ export const Calendar: React.FC<CalendarProps> = ({
     >
       <DatePicker
         selected={draftDate}
-        onChange={(date) => setDraftDate(date as Date | null)}
+        onChange={(date: Date | null) => setDraftDate(date as Date | null)}
         open={isOpen}
         onInputClick={() => {
           if (canInteract) {
@@ -262,6 +264,7 @@ export const Calendar: React.FC<CalendarProps> = ({
           />
         }
       />
+      {error && <div className={styles.errorMessage}>{error}</div>}
     </div>
   );
 };

@@ -11,6 +11,9 @@ import { Input } from '@shared/ui';
 import Form from '@shared/ui/form';
 import { useState, type ChangeEvent } from 'react';
 import { useDispatch, useSelector } from '@shared/store';
+import styles from './login.module.css';
+import clsx from 'clsx';
+import { NavLink } from 'react-router-dom';
 
 interface LoginFormProps {
   onSuccess?: () => void;
@@ -54,6 +57,25 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
 
   return (
     <Form onSubmit={handleSubmit} error={error}>
+      <Button
+        className={clsx(styles.social)}
+        type="button"
+        variant="secondary"
+        icon={<IconUI name="google" />}
+      >
+        Продолжить с Google
+      </Button>
+      <Button
+        className={clsx(styles.social)}
+        type="button"
+        variant="secondary"
+        icon={<IconUI name="apple" />}
+      >
+        Продолжить с Apple
+      </Button>
+
+      <hr className={clsx(styles.hr)} />
+
       <Input
         value={formData.email}
         label="Email"
@@ -80,6 +102,10 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
       <Button type="submit" disabled={getCounterErrors(errors) > 0 || isResponse}>
         {isResponse ? 'Вход...' : 'Войти'}
       </Button>
+      <NavLink className={clsx(styles.navlink)} to="/registration">
+        {' '}
+        Зарегистрироваться{' '}
+      </NavLink>
     </Form>
   );
 };

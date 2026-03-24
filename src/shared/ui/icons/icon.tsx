@@ -14,6 +14,7 @@ import {
   CheckboxRemoveIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  ChevronLeftIcon,
   ChevronUpIcon,
   ClockIcon,
   CountIcon,
@@ -50,9 +51,14 @@ import {
   UserCircleIcon,
   UserIcon,
   LogoIcon,
+  RefreshIcon,
+  AppleIcon,
+  GoogleIcon,
 } from '@shared/assets';
 
 const icons: IconsMap = {
+  google: GoogleIcon,
+  apple: AppleIcon,
   add: AddIcon,
   arrowLeft: ArrowLeftIcon,
   arrowSquareLeft: ArrowSquareLeftIcon,
@@ -65,6 +71,7 @@ const icons: IconsMap = {
   checkboxRemove: CheckboxRemoveIcon,
   chevronDown: ChevronDownIcon,
   chevronRight: ChevronRightIcon,
+  chevronLeft: ChevronLeftIcon,
   chevronUp: ChevronUpIcon,
   clock: ClockIcon,
   count: CountIcon,
@@ -101,6 +108,7 @@ const icons: IconsMap = {
   userCircle: UserCircleIcon,
   user: UserIcon,
   logo: LogoIcon,
+  refresh: RefreshIcon,
 } as const;
 
 export const IconUI: React.FC<IconProps> = ({ name, size = 24, className, ...props }) => {

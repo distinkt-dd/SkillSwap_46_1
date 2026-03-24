@@ -1,9 +1,10 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TUser } from '../api/types';
-import { login, register, updateDateUser, updatePassword } from './actions';
+import { login, register, updateDateUser, updatePassword, fetchUsers } from './actions';
 
 type TUserInitialState = {
   user: TUser | null;
+  users: TUser[];
   error: string | '';
   isResponse: boolean;
   isAuthChecked: boolean;
@@ -11,6 +12,7 @@ type TUserInitialState = {
 
 const userInitialState: TUserInitialState = {
   user: null,
+  users: [],
   error: '',
   isResponse: false,
   isAuthChecked: true,
@@ -33,6 +35,7 @@ export const userSlice = createSlice({
   },
   selectors: {
     selectedUser: (state) => state.user,
+    selectedUsers: (state) => state.users,
     selectedUserIsAuthChecked: (state) => state.isAuthChecked,
     selectedUserIsResponse: (state) => state.isResponse,
     selectedUserError: (state) => state.error,
@@ -85,6 +88,20 @@ export const userSlice = createSlice({
         state.isResponse = false;
         state.error = '';
       })
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.users = action.payload;
+        state.isResponse = false;
+        state.error = '';
+      })
+
+      .addCase(fetchUsers.pending, (state) => {
+        state.isResponse = true;
+        state.error = '';
+      })
+      .addCase(fetchUsers.rejected, (state, action) => {
+        state.error = action.error.message as string;
+        state.isResponse = false;
+      })
       .addCase(updateDateUser.pending, (state) => {
         state.isResponse = true;
         state.error = '';
@@ -100,6 +117,7 @@ export const userSlice = createSlice({
 export const { setUser, clearUser, setIsAuthChecked } = userSlice.actions;
 export const {
   selectedUser,
+  selectedUsers,
   selectedUserIsAuthChecked,
   selectedUserIsResponse,
   selectedUserError,

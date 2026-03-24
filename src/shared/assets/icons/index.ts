@@ -10,6 +10,7 @@ import { ReactComponent as CheckboxEmptyIcon } from './checkbox-empty.svg';
 import { ReactComponent as CheckboxRemoveIcon } from './checkbox-remove.svg';
 import { ReactComponent as ChevronDownIcon } from './chevron-down.svg';
 import { ReactComponent as ChevronRightIcon } from './chevron-right.svg';
+import { ReactComponent as ChevronLeftIcon } from './chevron-left.svg';
 import { ReactComponent as ChevronUpIcon } from './chevron-up.svg';
 import { ReactComponent as ClockIcon } from './clock.svg';
 import { ReactComponent as CountIcon } from './count.svg';
@@ -46,8 +47,13 @@ import { ReactComponent as SunIcon } from './sun.svg';
 import { ReactComponent as UserCircleIcon } from './user-circle.svg';
 import { ReactComponent as UserIcon } from './user.svg';
 import { ReactComponent as LogoIcon } from './logo.svg';
+import { ReactComponent as RefreshIcon } from './refresh.svg';
+import { ReactComponent as GoogleIcon } from './google.svg';
+import { ReactComponent as AppleIcon } from './apple.svg';
 
 export {
+  GoogleIcon,
+  AppleIcon,
   AddIcon,
   ArrowLeftIcon,
   ArrowSquareLeftIcon,
@@ -60,6 +66,7 @@ export {
   CheckboxRemoveIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  ChevronLeftIcon,
   ChevronUpIcon,
   ClockIcon,
   CountIcon,
@@ -96,4 +103,5 @@ export {
   UserCircleIcon,
   UserIcon,
   LogoIcon,
+  RefreshIcon,
 };

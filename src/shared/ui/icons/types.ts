@@ -9,6 +9,8 @@ export interface IconProps {
 export type IconName = keyof IconsMap;
 
 export type IconsMap = {
+  google: React.FC<SVGProps<SVGSVGElement>>;
+  apple: React.FC<SVGProps<SVGSVGElement>>;
   add: React.FC<SVGProps<SVGSVGElement>>;
   arrowLeft: React.FC<SVGProps<SVGSVGElement>>;
   arrowSquareLeft: React.FC<SVGProps<SVGSVGElement>>;
@@ -20,6 +22,7 @@ export type IconsMap = {
   checkboxEmpty: React.FC<SVGProps<SVGSVGElement>>;
   checkboxRemove: React.FC<SVGProps<SVGSVGElement>>;
   chevronDown: React.FC<SVGProps<SVGSVGElement>>;
+  chevronLeft: React.FC<SVGProps<SVGSVGElement>>;
   chevronRight: React.FC<SVGProps<SVGSVGElement>>;
   chevronUp: React.FC<SVGProps<SVGSVGElement>>;
   clock: React.FC<SVGProps<SVGSVGElement>>;
@@ -57,4 +60,5 @@ export type IconsMap = {
   userCircle: React.FC<SVGProps<SVGSVGElement>>;
   user: React.FC<SVGProps<SVGSVGElement>>;
   logo: React.FC<SVGProps<SVGSVGElement>>;
+  refresh: React.FC<SVGProps<SVGSVGElement>>;
 };

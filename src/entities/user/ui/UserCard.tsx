@@ -1,6 +1,19 @@
 import * as React from 'react';
-import { Button, Avatar, Subcategory } from '@shared/ui';
+import { Button, Avatar, Subcategory, IconUI } from '@shared/ui';
 import styles from './UserCard.module.css';
+import type { TCategory } from '@entities/categories';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from '@shared/store';
+import { selectedOffers } from '@entities/offers/model';
+import clsx from 'clsx';
+
+export type CategoryType = TCategory['type'];
+
+// Тип для навыка с категорией
+export type SkillItem = {
+  name: string;
+  type: CategoryType | 'other';
+};
 
 export type UserCardProps = {
   id: string;
@@ -8,16 +21,39 @@ export type UserCardProps = {
   avatar?: string;
   location?: string;
   age?: number;
-  canTeach?: string[];
-  wantsToLearn?: string[];
+  canTeach?: SkillItem[];
+  wantsToLearn?: SkillItem[];
   detailed?: boolean;
   description?: string;
   favoriteSlot?: React.ReactNode;
+  likesCount?: number;
+  className?: string;
 };
 
 const MAX_VISIBLE_TAGS = 2;
 
+// Функция для склонения слова "год"
+const getYearWord = (age: number): string => {
+  const lastDigit = age % 10;
+  const lastTwoDigits = age % 100;
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+    return 'лет';
+  }
+
+  if (lastDigit === 1) {
+    return 'год';
+  }
+
+  if (lastDigit >= 2 && lastDigit <= 4) {
+    return 'года';
+  }
+
+  return 'лет';
+};
+
 export const UserCard: React.FC<UserCardProps> = ({
+  id,
   name,
   avatar,
   location,
@@ -27,12 +63,21 @@ export const UserCard: React.FC<UserCardProps> = ({
   detailed = false,
   description,
   favoriteSlot,
+  likesCount = 0,
+  className,
 }) => {
   const visibleLearn = wantsToLearn.slice(0, MAX_VISIBLE_TAGS);
   const hiddenCount = wantsToLearn.length - MAX_VISIBLE_TAGS;
+  const offers = useSelector(selectedOffers);
+  const currentOffer = offers.find((item) => item.userId === id);
 
   return (
-    <div className={styles.userCard}>
+    <div className={clsx(styles.userCard, className)}>
+      <div className={styles.likesWrapper}>
+        <IconUI name="like" className={styles.likesIcon} />
+        <span className={styles.likesCount}>{likesCount}</span>
+      </div>
+
       {/* Слот для фичи избранного */}
       {favoriteSlot && <div className={styles.favoriteWrapper}>{favoriteSlot}</div>}
 
@@ -43,20 +88,22 @@ export const UserCard: React.FC<UserCardProps> = ({
           <h3 className={styles.title}>{name}</h3>
           {(location || age) && (
             <div className={styles.meta}>
-              {[location, age ? `${age} год` : null].filter(Boolean).join(', ')}
+              {[location, age ? `${age} ${getYearWord(age)}` : null].filter(Boolean).join(', ')}
             </div>
           )}
         </div>
       </div>
+
+      {description && <div className={styles.description}>{description}</div>}
 
       {/* Может научить */}
       {canTeach.length > 0 && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Может научить:</div>
           <div className={styles.tags}>
-            {canTeach.map((t) => (
-              <div key={t} className={styles.tagWrapper}>
-                <Subcategory title={t} type="other" />
+            {canTeach.map((skill) => (
+              <div key={skill.name} className={styles.tagWrapper}>
+                <Subcategory title={skill.name} type={skill.type} />
               </div>
             ))}
           </div>
@@ -65,12 +112,12 @@ export const UserCard: React.FC<UserCardProps> = ({
 
       {/* Хочет научиться */}
       {wantsToLearn.length > 0 && (
-        <div className={styles.section}>
+        <div className={clsx(styles.section, styles.wantsTeach)}>
           <div className={styles.sectionLabel}>Хочет научиться:</div>
           <div className={styles.tags}>
-            {visibleLearn.map((t) => (
-              <div key={t} className={styles.tagWrapper}>
-                <Subcategory title={t} type="other" />
+            {visibleLearn.map((skill) => (
+              <div key={skill.name} className={styles.tagWrapper}>
+                <Subcategory title={skill.name} type={skill.type} />
               </div>
             ))}
             {hiddenCount > 0 && (
@@ -80,13 +127,15 @@ export const UserCard: React.FC<UserCardProps> = ({
         </div>
       )}
 
-      {!detailed && (
-        <Button variant="primary" width="100%">
-          Подробнее
-        </Button>
+      {detailed ? (
+        <NavLink to={`/offers/${currentOffer?.id}`}>
+          <Button variant="primary" width="100%">
+            Подробнее
+          </Button>
+        </NavLink>
+      ) : (
+        <div></div>
       )}
-
-      {detailed && description && <div className={styles.description}>{description}</div>}
     </div>
   );
 };

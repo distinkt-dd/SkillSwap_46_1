@@ -1,16 +1,22 @@
 @import url('../../../app/styles/variables.css');
 
 .subcategory {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  box-sizing: border-box;
   width: fit-content;
-  height: 32px;
+  max-width: 100%;
+  min-height: 32px;
   padding: 8px 12px;
+  font-size: 12px;
   border-radius: 20px;
 }
 
 .subcategory p {
+  margin: 0;
+  line-height: 1.2;
   text-transform: lowercase;
+  word-break: break-word; /* stylelint-disable-line declaration-property-value-keyword-no-deprecated */
 }
 
 .subcategory p::first-letter {

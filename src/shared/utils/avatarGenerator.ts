@@ -1,18 +1,18 @@
-import { createAvatar } from '@dicebear/core';
-import { thumbs } from '@dicebear/collection';
+const AVATAR_STYLES = [
+  'adventurer',
+  'adventurer-neutral',
+  'identicon',
+  'micah',
+  'lorelei',
+  'open-peeps',
+  'personas',
+  'shapes',
+  'pixel-art',
+] as const;
 
-export const generateAvatar = (seed?: string): string => {
-  const avatarSeed = seed || Math.random().toString(36).substring(7);
+export const generateRandomAvatar = (seed?: string): string => {
+  const randomSeed = seed || Math.random().toString(36).substring(2, 10);
+  const randomStyle = AVATAR_STYLES[Math.floor(Math.random() * AVATAR_STYLES.length)];
 
-  const avatar = createAvatar(thumbs, {
-    seed: avatarSeed,
-    size: 128,
-  });
-
-  return avatar.toDataUri();
-};
-
-export const generateRandomAvatar = (): string => {
-  const randomSeed = Math.random().toString(36).substring(7);
-  return generateAvatar(randomSeed);
+  return `https://api.dicebear.com/9.x/${randomStyle}/svg?seed=${randomSeed}`;
 };

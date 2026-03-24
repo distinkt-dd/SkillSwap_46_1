@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './Form.module.css';
+import clsx from 'clsx';
 
 export interface FormProps {
   onSubmit: () => void;
   children: React.ReactNode;
-  error?: string;
+  error?: string | null;
 }
 
 export const Form = ({ onSubmit, children, error }: FormProps) => {
@@ -14,7 +15,7 @@ export const Form = ({ onSubmit, children, error }: FormProps) => {
   };
 
   return (
-    <form className={`${styles.form}`} onSubmit={handleSubmit}>
+    <form className={clsx(styles.form)} onSubmit={handleSubmit}>
       {children}
       {error && <p className={styles.error}>{error}</p>}
     </form>

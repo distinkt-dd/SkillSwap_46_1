@@ -7,8 +7,11 @@ import clsx from 'clsx';
 export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <div className={clsx(styles.footer, 'container')}>
-        <Logo />
+      <div className={clsx(styles.container, 'container')}>
+        <div className={styles.leftColumn}>
+          <Logo />
+          <span className={styles.copiright}>SkillSwap - 2025</span>
+        </div>
         <div className={styles.content}>
           <ul className={styles.linksList}>
             {/*<li className={styles.link}>
@@ -36,11 +39,8 @@ export const Footer: React.FC = () => {
               <a href="#null">Пользовательское соглашение</a>
             </li>
           </ul>
-          <span className={styles.copiright}>SkillSwap - 2025</span>
         </div>
       </div>
     </footer>
   );
 };
-
-export default Footer;

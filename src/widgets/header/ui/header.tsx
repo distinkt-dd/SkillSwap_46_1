@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './header.module.css';
 import { Button, IconUI, Input, Logo, Avatar } from '@shared/ui';
@@ -7,6 +7,7 @@ import { CategoriesDropdown } from './categories';
 import type { THeaderUIProps } from './type';
 import { selectedUser } from '@entities/user';
 import { useSelector } from '@shared/store';
+import { NotificationWrapper } from '@widgets/notifications/ui/Notification';
 
 export const Header: FC<Partial<THeaderUIProps>> = ({
   isSkillsOpen = false,
@@ -21,9 +22,47 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
 }) => {
   const user = useSelector(selectedUser);
   const isAuth = !!user;
+  const [isDropdownMounted, setIsDropdownMounted] = useState(isSkillsOpen);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(isSkillsOpen);
+  const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const notificationRef = useRef<HTMLDivElement>(null);
+  const notificationTriggerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let closeTimer: number | undefined;
+    let openRaf: number | undefined;
+    let closeRaf: number | undefined;
+
+    if (isSkillsOpen) {
+      // Переводим setState в RAF, чтобы избежать синхронного setState внутри эффекта.
+      openRaf = window.requestAnimationFrame(() => {
+        setIsDropdownMounted(true);
+        setIsDropdownVisible(true);
+      });
+    } else if (isDropdownMounted) {
+      closeRaf = window.requestAnimationFrame(() => {
+        setIsDropdownVisible(false);
+      });
+      closeTimer = window.setTimeout(() => {
+        setIsDropdownMounted(false);
+      }, 220);
+    }
+
+    return () => {
+      if (closeTimer) {
+        window.clearTimeout(closeTimer);
+      }
+      if (openRaf) {
+        window.cancelAnimationFrame(openRaf);
+      }
+      if (closeRaf) {
+        window.cancelAnimationFrame(closeRaf);
+      }
+    };
+  }, [isSkillsOpen, isDropdownMounted]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -36,27 +75,41 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
       }
     };
 
-    if (isSkillsOpen) {
-      setTimeout(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-      }, 100);
-    }
+    if (!isSkillsOpen) return;
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isSkillsOpen, onSkillsToggle]);
 
+  // Handle click outside for notification wrapper
   useEffect(() => {
-    if (isSkillsOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
+    const handleClickOutsideNotification = (event: MouseEvent) => {
+      // Check if click is on notification icon wrapper
+      if (
+        notificationTriggerRef.current &&
+        notificationTriggerRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+
+      // Check if click is inside notification wrapper
+      if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
+        setIsNotificationOpen(false);
+      }
     };
-  }, [isSkillsOpen]);
+
+    if (!isNotificationOpen) return;
+    document.addEventListener('mousedown', handleClickOutsideNotification);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideNotification);
+    };
+  }, [isNotificationOpen]);
+
+  // Для дропдауна "Все навыки" не блокируем скролл страницы:
+  // иначе меняется доступная ширина контента и карточки "поджимаются".
 
   if (variant === 'pure') {
     return (
@@ -83,7 +136,13 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
 
   return (
     <header className={styles.header}>
-      <div className="container">
+      <div className={`container ${styles.headerContainer}`}>
+        {isNotificationOpen && (
+          <div ref={notificationRef} className={styles.notificationWrapper}>
+            <NotificationWrapper />
+          </div>
+        )}
+
         <nav className={styles.nav}>
           <div className={styles.leftSection}>
             <NavLink to="/" className={styles.logo}>
@@ -93,14 +152,27 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
             <div className={styles.navLinks}>
               <NavLink to="/about">О проекте</NavLink>
 
-              <div ref={triggerRef} className={styles.navLinkWithDropdown} onClick={onSkillsToggle}>
+              <button
+                ref={triggerRef}
+                type="button"
+                className={styles.navLinkWithDropdown}
+                onClick={onSkillsToggle}
+                aria-expanded={isSkillsOpen}
+                aria-controls="skills-dropdown"
+              >
                 <span>Все навыки</span>
                 <IconUI name="chevronDown" />
-              </div>
+              </button>
             </div>
 
-            {isSkillsOpen && (
-              <div ref={dropdownRef} className={styles.dropdownWrapper}>
+            {isDropdownMounted && (
+              <div
+                id="skills-dropdown"
+                ref={dropdownRef}
+                className={`${styles.dropdownWrapper} ${
+                  isDropdownVisible ? styles.dropdownOpen : styles.dropdownClosing
+                }`}
+              >
                 {isLoading && <div>Загрузка...</div>}
                 {error && <div>{error}</div>}
                 {!isLoading && !error && (
@@ -128,9 +200,16 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
             <div className={`${styles.buttonsGroup} ${isAuth ? styles.auth : ''}`}>
               {isAuth ? (
                 <>
-                  <IconUI name="notification" className={styles.notificationIcon} />
-                  <IconUI name="like" className={styles.likeIcon} />
-
+                  <div
+                    ref={notificationTriggerRef}
+                    className={styles.notificationIconWrapper}
+                    onClick={() => setIsNotificationOpen(!isNotificationOpen)}
+                  >
+                    <IconUI name="notification" className={styles.notificationIcon} />
+                  </div>
+                  <NavLink to="/favorites">
+                    <IconUI name="like" className={styles.likeIcon} />
+                  </NavLink>
                   <NavLink to="/profile" className={styles.userBlock}>
                     <span className={styles.userName}>{user?.name}</span>
                     <Avatar src={user?.avatar} size="small" />
@@ -143,7 +222,7 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
                       Войти
                     </Button>
                   </NavLink>
-                  <NavLink to="/registration" className={styles.buttonLink}>
+                  <NavLink to="/register" className={styles.buttonLink}>
                     <Button variant="primary" width={208}>
                       Зарегистрироваться
                     </Button>

@@ -1,40 +1,68 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { ErrorPage, LayoutAuth, LayoutNauth, LayoutPure } from '@pages/index';
-import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
-import { useSelector } from '@shared/store';
-
 import {
-  TempAbout,
-  TempDashboard,
-  TempHome,
-  TempLogin,
-  TempRegister,
-} from './test/temp-test-components';
+  DevelopmentPage,
+  ErrorPage,
+  LayoutAuth,
+  LayoutNauth,
+  LayoutPure,
+  LoginPage,
+  OfferPage,
+} from '@pages/index';
+import { fetchUsers, selectedUser, selectedUserIsAuthChecked } from '@entities/index';
+import { useSelector } from '@shared/store';
+import { Catalog } from '@pages/catalog/ui';
+
+import { TempAbout, TempRegister } from './test/temp-test-components';
 import { ProtectedRoute } from './router/ProtectedRoute';
 import { useDispatch } from '@shared/store';
 import { useEffect } from 'react';
 import { getSubcategories } from '@entities/index';
 import { getCategories } from '@entities/categories/model';
+import { LayoutProfile } from '@pages/layouts';
+import { fetchCities } from '@entities/cities/model/actions';
+import { ProfileForm } from '@widgets/profile/ui';
+import { getOffers } from '@entities/offers/model';
 
 export const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getSubcategories());
+    dispatch(fetchCities());
+    dispatch(getOffers());
+    dispatch(fetchUsers());
   }, [dispatch]);
 
   const user = useSelector(selectedUser);
   const authChecked = useSelector(selectedUserIsAuthChecked);
   const ErrorLayout = user && authChecked ? LayoutAuth : LayoutNauth;
+  // const userApi = new UserApi()
+  // console.log(await userApi.hashPassword('password'));
   return (
     <>
       <Routes>
         <Route
           path="/"
           element={
+            <LayoutAuth>
+              <Catalog />
+            </LayoutAuth>
+          }
+        />
+        <Route
+          path="/catalog"
+          element={
+            <LayoutAuth>
+              <Catalog />
+            </LayoutAuth>
+          }
+        />
+        <Route
+          path="/offers/:id"
+          element={
             <LayoutNauth>
-              <TempHome />
+              <OfferPage />
             </LayoutNauth>
           }
         />
@@ -51,7 +79,7 @@ export const App = () => {
           element={
             <ProtectedRoute onlyUnAuth>
               <LayoutPure>
-                <TempLogin />
+                <LoginPage />
               </LayoutPure>
             </ProtectedRoute>
           }
@@ -70,9 +98,45 @@ export const App = () => {
           path="/profile"
           element={
             <ProtectedRoute>
-              <LayoutAuth>
-                <TempDashboard />
-              </LayoutAuth>
+              <LayoutProfile>
+                <ProfileForm />
+              </LayoutProfile>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/my-skills"
+          element={
+            <ProtectedRoute>
+              <LayoutProfile>Мои Навыки</LayoutProfile>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <ProtectedRoute>
+              <LayoutProfile>Избранное</LayoutProfile>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/my-exchanges"
+          element={
+            <ProtectedRoute>
+              <LayoutProfile>
+                <DevelopmentPage />
+              </LayoutProfile>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/requests"
+          element={
+            <ProtectedRoute>
+              <LayoutProfile>
+                <DevelopmentPage />
+              </LayoutProfile>
             </ProtectedRoute>
           }
         />

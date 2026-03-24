@@ -1,4 +1,6 @@
-export { LayoutAuth } from './layouts/layout-auth/LayoutAuth.tsx';
-export { LayoutNauth } from './layouts/layout-nauth/LayoutNauth.tsx';
-export { LayoutPure } from './layouts/layout-pure/LayoutPure.tsx';
 export { ErrorPage } from './errorPage';
+export { DevelopmentPage } from './development';
+export { LayoutAuth, LayoutNauth, LayoutPure } from './layouts';
+export { Catalog } from './catalog/ui';
+export { LoginPage } from './login';
+export { OfferPage } from './offer';
