@@ -1,10 +1,7 @@
-import { forwardRef, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { forwardRef } from 'react';
 import { UserCard } from '@entities/user/ui';
 import type { TUser } from '@entities/user/api/types';
 import type { SkillItem } from '@entities/user/ui/UserCard';
-import { selectedOffers } from '@entities/offers/model';
-import { useSelector } from '@shared/store';
 import { calculateAge } from '@shared/index';
 import styles from './Catalog.module.css';
 
@@ -18,9 +15,6 @@ export type CatalogUserCardProps = {
 
 export const CatalogUserCard = forwardRef<HTMLDivElement, CatalogUserCardProps>(
   ({ user, buildSkillItem, getCanTeachData, getCityName, getLikesCount }, ref) => {
-    const navigate = useNavigate();
-    const offers = useSelector(selectedOffers);
-
     const wantsToLearn: SkillItem[] = (user.subcategoriesIds || [])
       .filter((id): id is string => typeof id === 'string')
       .map((id) => buildSkillItem(id))
@@ -28,11 +22,6 @@ export const CatalogUserCard = forwardRef<HTMLDivElement, CatalogUserCardProps>(
 
     const canTeach = getCanTeachData(user.id);
     const likesCount = getLikesCount(user.id);
-
-    const firstOfferId = useMemo(() => {
-      const uid = String(user.id);
-      return offers.find((offer) => String(offer.userId) === uid)?.id;
-    }, [offers, user.id]);
 
     return (
       <div ref={ref} className={styles.cardWrapper}>
@@ -45,10 +34,7 @@ export const CatalogUserCard = forwardRef<HTMLDivElement, CatalogUserCardProps>(
           wantsToLearn={wantsToLearn}
           canTeach={canTeach}
           likesCount={likesCount}
-          detailed={true}
-          onDetailsClick={
-            firstOfferId ? () => navigate(`/offers/${firstOfferId}`) : undefined
-          }
+          description={user.description}
         />
       </div>
     );

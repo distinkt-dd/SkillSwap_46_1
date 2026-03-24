@@ -49,7 +49,14 @@ export const Catalog: FC = () => {
     return <div className={styles.loading}>Загрузка...</div>;
   }
 
-  const isEmptyResult = !isAnyLoading && !firstError && users.length === 0;
+  if (!isAnyLoading && !firstError && users.length === 0) {
+    return (
+      <div className={styles.empty}>
+        <h2 className={styles.emptyTitle}>Карточки не нашли</h2>
+        <p className={styles.emptyText}>Попробуйте изменить фильтры или зайти позже.</p>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>
@@ -94,21 +101,14 @@ export const Catalog: FC = () => {
                   Подходящие предложения: {users.length}
                 </h2>
               </div>
-              {isEmptyResult ? (
-                <div className={styles.empty}>
-                  <h2 className={styles.emptyTitle}>Карточки не найдены</h2>
-                  <p className={styles.emptyText}>Попробуйте изменить фильтры или зайти позже.</p>
-                </div>
-              ) : (
-                <CatalogList
-                  items={displayedCatalogItems}
-                  lastElementRef={lastElementRef}
-                  buildSkillItem={buildSkillItem}
-                  getCanTeachData={getCanTeachData}
-                  getCityName={getCityName}
-                  getLikesCount={getLikesCount}
-                />
-              )}
+              <CatalogList
+                items={displayedCatalogItems}
+                lastElementRef={lastElementRef}
+                buildSkillItem={buildSkillItem}
+                getCanTeachData={getCanTeachData}
+                getCityName={getCityName}
+                getLikesCount={getLikesCount}
+              />
             </Fragment>
           )}
 

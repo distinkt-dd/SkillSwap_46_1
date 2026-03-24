@@ -16,7 +16,7 @@ interface UseInfiniteScrollResult<T> {
 export function useInfiniteScroll<T>({
   items,
   itemsPerPage,
-  loadingDelay = 200,
+  loadingDelay = 10000,
 }: UseInfiniteScrollOptions<T>): UseInfiniteScrollResult<T> {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);

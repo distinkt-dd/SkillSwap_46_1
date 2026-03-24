@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import clsx from 'clsx';
 import type { TUser } from '@entities/user/api/types';
 import type { SkillItem } from '@entities/user/ui/UserCard';
 import { CATALOG_SECTION_TITLES, type CatalogDisplayItem } from '../model/types';
@@ -55,19 +54,10 @@ export const CatalogSectionedBlocks: FC<CatalogSectionedBlocksProps> = ({
                 variant="tertiary"
                 onClick={onTogglePopular}
                 aria-expanded={showAllPopular}
-                icon={
-                  <IconUI
-                    name="chevronRight"
-                    size={24}
-                    className={clsx(
-                      styles.sectionSeeAllChevron,
-                      showAllPopular && styles.sectionSeeAllChevronExpanded
-                    )}
-                  />
-                }
+                icon={<IconUI name="chevronRight" />}
                 iconPosition="right"
               >
-                Смотреть все
+                {showAllPopular ? 'Свернуть' : 'Смотреть все'}
               </Button>
             )}
           </div>
@@ -98,19 +88,10 @@ export const CatalogSectionedBlocks: FC<CatalogSectionedBlocksProps> = ({
                 variant="tertiary"
                 onClick={onToggleNew}
                 aria-expanded={showAllNew}
-                icon={
-                  <IconUI
-                    name="chevronRight"
-                    size={24}
-                    className={clsx(
-                      styles.sectionSeeAllChevron,
-                      showAllNew && styles.sectionSeeAllChevronExpanded
-                    )}
-                  />
-                }
+                icon={<IconUI name="chevronRight" />}
                 iconPosition="right"
               >
-                Смотреть все
+                {showAllNew ? 'Свернуть' : 'Смотреть все'}
               </Button>
             )}
           </div>
