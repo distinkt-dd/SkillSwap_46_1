@@ -10,6 +10,7 @@ import { ReactComponent as CheckboxEmptyIcon } from './checkbox-empty.svg';
 import { ReactComponent as CheckboxRemoveIcon } from './checkbox-remove.svg';
 import { ReactComponent as ChevronDownIcon } from './chevron-down.svg';
 import { ReactComponent as ChevronRightIcon } from './chevron-right.svg';
+import { ReactComponent as ChevronLeftIcon } from './chevron-left.svg';
 import { ReactComponent as ChevronUpIcon } from './chevron-up.svg';
 import { ReactComponent as ClockIcon } from './clock.svg';
 import { ReactComponent as CountIcon } from './count.svg';
@@ -65,6 +66,7 @@ export {
   CheckboxRemoveIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  ChevronLeftIcon,
   ChevronUpIcon,
   ClockIcon,
   CountIcon,

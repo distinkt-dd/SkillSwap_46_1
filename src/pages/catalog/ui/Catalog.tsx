@@ -49,11 +49,11 @@ export const Catalog: FC = () => {
     return <div className={styles.loading}>Загрузка...</div>;
   }
 
-  if (!isAnyLoading && !firstError && users.length === 0) {
+  if (!isAnyLoading && firstError) {
     return (
       <div className={styles.empty}>
         <h2 className={styles.emptyTitle}>Карточки не нашли</h2>
-        <p className={styles.emptyText}>Попробуйте изменить фильтры или зайти позже.</p>
+        <p className={styles.emptyText}>Ошибка загрузки страницы</p>
       </div>
     );
   }
@@ -101,14 +101,21 @@ export const Catalog: FC = () => {
                   Подходящие предложения: {users.length}
                 </h2>
               </div>
-              <CatalogList
-                items={displayedCatalogItems}
-                lastElementRef={lastElementRef}
-                buildSkillItem={buildSkillItem}
-                getCanTeachData={getCanTeachData}
-                getCityName={getCityName}
-                getLikesCount={getLikesCount}
-              />
+              {users.length !== 0 ? (
+                <CatalogList
+                  items={displayedCatalogItems}
+                  lastElementRef={lastElementRef}
+                  buildSkillItem={buildSkillItem}
+                  getCanTeachData={getCanTeachData}
+                  getCityName={getCityName}
+                  getLikesCount={getLikesCount}
+                />
+              ) : (
+                <div className={styles.empty}>
+                  <h2 className={styles.emptyTitle}>Карточки не нашли</h2>
+                  <p className={styles.emptyText}>Попробуйте изменить фильтры или зайти позже.</p>
+                </div>
+              )}
             </Fragment>
           )}
 
