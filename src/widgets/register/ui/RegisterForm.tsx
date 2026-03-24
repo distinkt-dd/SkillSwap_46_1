@@ -45,7 +45,6 @@ const clearSavedData = (): void => {
   }
 };
 
-// FIX #1: аватар генерируется сразу, чтобы step2Schema (avatar: required) всегда проходила
 const initialData: RegisterFormData = {
   email: '',
   password: '',
@@ -181,12 +180,10 @@ export const RegisterForm = () => {
   const isLoading = useSelector(selectedUserIsResponse);
   const serverError = useSelector(selectedUserError);
 
-  // FIX #2: флаг для подавления серверной ошибки при смене шага
   const [suppressServerError, setSuppressServerError] = useState(false);
 
   const [data, setData] = useState<RegisterFormData>(() => {
     const saved = loadSavedData();
-    // FIX #1: если в черновике аватара нет (старая версия) — генерируем
     if (!saved.avatar) {
       saved.avatar = generateRandomAvatar();
     }
@@ -208,14 +205,12 @@ export const RegisterForm = () => {
         navigate(`/registration/${targetStep}`, { replace: true });
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     saveData(data);
   }, [data]);
 
-  // FIX #2: при смене шага скрываем серверную ошибку и сбрасываем локальные
   useEffect(() => {
     setErrors({});
     setSuppressServerError(true);
@@ -223,6 +218,10 @@ export const RegisterForm = () => {
 
   const updateData = (patch: Partial<RegisterFormData>) => {
     setData((prev) => ({ ...prev, ...patch }));
+  };
+
+  const updateErrors = (patch: Record<string, string>) => {
+    setErrors((prev) => ({ ...prev, ...patch }));
   };
 
   const validateStep = async (): Promise<boolean> => {
@@ -266,11 +265,9 @@ export const RegisterForm = () => {
   const handleConfirm = async () => {
     if (isLoading) return;
 
-    // FIX #2: показываем ошибки снова при попытке отправки
     setSuppressServerError(false);
 
     const gender = data.gender as Gender;
-    // FIX #1: аватар гарантированно есть, запасной генератор не нужен
     const avatar = data.avatar;
 
     const result = await dispatch(
@@ -310,7 +307,6 @@ export const RegisterForm = () => {
   };
 
   const illustration = STEP_ILLUSTRATIONS[step];
-  // FIX #2: показываем серверную ошибку только если не заглушена
   const showServerError = !suppressServerError && !!serverError;
 
   return (
@@ -329,9 +325,30 @@ export const RegisterForm = () => {
 
       <div className={styles.registerCard}>
         <div className={styles.registerFormColumn}>
-          {step === 1 && <RegisterStep1 data={data} onChange={updateData} errors={errors} />}
-          {step === 2 && <RegisterStep2 data={data} onChange={updateData} errors={errors} />}
-          {step === 3 && <RegisterStep3 data={data} onChange={updateData} errors={errors} />}
+          {step === 1 && (
+            <RegisterStep1
+              data={data}
+              onChange={updateData}
+              errors={errors}
+              onErrorChange={updateErrors}
+            />
+          )}
+          {step === 2 && (
+            <RegisterStep2
+              data={data}
+              onChange={updateData}
+              errors={errors}
+              onErrorChange={updateErrors}
+            />
+          )}
+          {step === 3 && (
+            <RegisterStep3
+              data={data}
+              onChange={updateData}
+              errors={errors}
+              onErrorChange={updateErrors}
+            />
+          )}
 
           {showServerError && (
             <span className={styles.fieldError}>{serverError}</span>

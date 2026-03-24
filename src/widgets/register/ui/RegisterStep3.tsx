@@ -3,6 +3,8 @@ import { Input, Dropdown, IconUI } from '@shared/ui';
 import { useSelector } from '@shared/store';
 import { selectedSubcategories } from '@entities/subcategories';
 import { selectedCategories } from '@entities/categories/model';
+import * as yup from 'yup';
+import { step3Schema } from '../model/schemas';
 import type { RegisterFormData } from '../model/types';
 import styles from './register.module.css';
 
@@ -10,10 +12,10 @@ type Props = {
   data: RegisterFormData;
   onChange: (patch: Partial<RegisterFormData>) => void;
   errors: Record<string, string>;
+  onErrorChange?: (patch: Record<string, string>) => void;
 };
 
 const MAX_IMAGES = 5;
-
 const MAX_FILE_BYTES = 1 * 1024 * 1024;
 
 const fileToDataUrl = (file: File): Promise<string> => {
@@ -30,7 +32,7 @@ const fileToDataUrl = (file: File): Promise<string> => {
   });
 };
 
-export const RegisterStep3 = ({ data, onChange, errors }: Props) => {
+export const RegisterStep3 = ({ data, onChange, errors, onErrorChange }: Props) => {
   const categories = useSelector(selectedCategories);
   const subcategories = useSelector(selectedSubcategories);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -52,13 +54,52 @@ export const RegisterStep3 = ({ data, onChange, errors }: Props) => {
       (s) => String(s.id) === String(data.offerSubcategoryId)
     ) ?? null;
 
+  const validateField = async (field: string, value: unknown) => {
+    if (!onErrorChange) return;
+    try {
+      await step3Schema.validateAt(field, { ...data, [field]: value });
+      onErrorChange({ [field]: '' });
+    } catch (err) {
+      if (err instanceof yup.ValidationError) {
+        onErrorChange({ [field]: err.message });
+      }
+    }
+  };
+
+  const handleOfferNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    onChange({ offerName: value });
+    void validateField('offerName', value);
+  };
+
+  const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    onChange({ offerDescription: value });
+    void validateField('offerDescription', value);
+  };
+
+  const handleCategoryChange = (opt: { id: string | number; name: string } | null) => {
+    const value = String(opt?.id ?? '');
+    onChange({
+      offerCategoryId: value,
+      offerSubcategoryId: '',
+    });
+    void validateField('offerCategoryId', value);
+    onErrorChange?.({ offerSubcategoryId: '' });
+  };
+
+  const handleSubcategoryChange = (opt: { id: string | number; name: string } | null) => {
+    const value = String(opt?.id ?? '');
+    onChange({ offerSubcategoryId: value });
+    void validateField('offerSubcategoryId', value);
+  };
+
   const handleFiles = async (files: FileList | null) => {
     if (!files) return;
     const remaining = MAX_IMAGES - data.offerImages.length;
     if (remaining <= 0) return;
 
     const toProcess = Array.from(files).slice(0, remaining);
-
     const results = await Promise.allSettled(toProcess.map(fileToDataUrl));
 
     const dataUrls: string[] = [];
@@ -95,19 +136,12 @@ export const RegisterStep3 = ({ data, onChange, errors }: Props) => {
     onChange({ offerImages: data.offerImages.filter((_, i) => i !== index) });
   };
 
-  const handleCategoryChange = (opt: { id: string | number; name: string } | null) => {
-    onChange({
-      offerCategoryId: String(opt?.id ?? ''),
-      offerSubcategoryId: '',
-    });
-  };
-
   return (
     <>
       <Input
         label="Название навыка"
         value={data.offerName}
-        onChange={(e) => onChange({ offerName: e.target.value })}
+        onChange={handleOfferNameChange}
         error={errors.offerName}
         placeholder="Введите название вашего навыка"
         fullWidth
@@ -133,7 +167,7 @@ export const RegisterStep3 = ({ data, onChange, errors }: Props) => {
           placeholder="Выберите подкатегорию навыка"
           options={filteredSubcategoryOptions}
           value={selectedSubcategory}
-          onChange={(opt) => onChange({ offerSubcategoryId: String(opt?.id ?? '') })}
+          onChange={handleSubcategoryChange}
           variant="clearable"
         />
         {errors.offerSubcategoryId && (
@@ -146,7 +180,7 @@ export const RegisterStep3 = ({ data, onChange, errors }: Props) => {
         <textarea
           className={`${styles.textarea} ${errors.offerDescription ? styles.textareaError : ''}`}
           value={data.offerDescription}
-          onChange={(e) => onChange({ offerDescription: e.target.value })}
+          onChange={handleDescriptionChange}
           placeholder="Коротко опишите, чему можете научить"
           rows={4}
         />
