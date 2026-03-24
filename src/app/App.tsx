@@ -10,8 +10,7 @@ import {
   LoginPage,
   OfferPage,
 } from '@pages/index';
-
-import { selectedUser, selectedUserIsAuthChecked } from '@entities/index';
+import { fetchUsers, selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
 import { Catalog } from '@pages/catalog/ui';
 
@@ -33,12 +32,14 @@ export const App = () => {
     dispatch(getSubcategories());
     dispatch(fetchCities());
     dispatch(getOffers());
+    dispatch(fetchUsers());
   }, [dispatch]);
 
   const user = useSelector(selectedUser);
   const authChecked = useSelector(selectedUserIsAuthChecked);
   const ErrorLayout = user && authChecked ? LayoutAuth : LayoutNauth;
-
+  // const userApi = new UserApi()
+  // console.log(await userApi.hashPassword('password'));
   return (
     <>
       <Routes>

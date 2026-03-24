@@ -33,9 +33,9 @@ export const OfferPage = () => {
   if (isLoading) return <p>LOADING...</p>;
 
   return (
-    <>
+    <div className="container">
       <OfferCardInfo offer={offer} />
       <ClosestOffers offer={offer} />
-    </>
+    </div>
   );
 };
