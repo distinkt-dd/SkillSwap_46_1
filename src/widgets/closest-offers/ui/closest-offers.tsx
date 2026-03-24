@@ -12,7 +12,6 @@ import { selectedOffers } from '@entities/offers/model';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import './slider.css';
 import { getRandomItems } from '@shared/utils/randomItems';
 
 type TClosestOffers = {
@@ -36,7 +35,9 @@ export const ClosestOffers: FC<TClosestOffers> = ({ offer }) => {
     .map((item) => item.userId);
 
   const users = useSelector(selectedUsers);
-  const closeUsers = users.filter((item) => closeOffersUserIds.includes(item.id));
+  const closeUsers = users
+    .filter((item) => closeOffersUserIds.includes(item.id))
+    .filter((item) => item.id !== offer.userId);
   const randomUserOffers = getRandomItems(closeUsers, 10);
 
   const cities = useSelector(selectCities);

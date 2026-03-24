@@ -24,7 +24,7 @@
 
 /* stylelint-disable */
 
-.custom-swiper-prev,
+:global(.custom-swiper-prev),
 :global(.custom-swiper-next) {
   position: absolute;
   top: calc(50% + 30px);
