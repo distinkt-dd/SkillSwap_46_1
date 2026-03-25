@@ -38,8 +38,6 @@ export const App = () => {
   const user = useSelector(selectedUser);
   const authChecked = useSelector(selectedUserIsAuthChecked);
   const ErrorLayout = user && authChecked ? LayoutAuth : LayoutNauth;
-  // const userApi = new UserApi()
-  // console.log(await userApi.hashPassword('password'));
   return (
     <CatalogFiltersProvider>
       <Routes>

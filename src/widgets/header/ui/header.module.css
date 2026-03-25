@@ -157,6 +157,8 @@
   gap: 8px;
   color: var(--color-text);
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .userBlock:hover {
