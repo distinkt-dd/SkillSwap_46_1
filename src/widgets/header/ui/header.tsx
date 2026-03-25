@@ -222,7 +222,7 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
                       Войти
                     </Button>
                   </NavLink>
-                  <NavLink to="/register" className={styles.buttonLink}>
+                  <NavLink to="/registration" className={styles.buttonLink}>
                     <Button variant="primary" width={208}>
                       Зарегистрироваться
                     </Button>

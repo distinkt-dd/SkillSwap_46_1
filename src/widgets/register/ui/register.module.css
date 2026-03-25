@@ -54,8 +54,9 @@
 
 .registerFormColumn {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   padding: 40px 60px;
   min-width: 0;
   box-sizing: border-box;
@@ -276,7 +277,6 @@
 .buttonGroup {
   display: flex;
   gap: 12px;
-  margin-top: auto;
 }
 
 .buttonGroup > * {
