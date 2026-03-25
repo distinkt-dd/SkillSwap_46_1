@@ -28,9 +28,15 @@ export class OffersApi extends Api {
 
   async createOffer(userId: string, data: TOfferCreate): Promise<TOffer> {
     try {
-      const newOffer = { userId, ...data };
+      const newOffer = {
+        userId,
+        ...data,
+        userLikedIds: [],
+        createdAt: new Date().toISOString(),
+      };
       return await fetch(`${this.baseUrl}/${this.uri}`, {
         method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newOffer),
       }).then((response) => this.checkResponse<TOffer>(response));
     } catch (error) {
@@ -42,6 +48,7 @@ export class OffersApi extends Api {
     try {
       return await fetch(`${this.baseUrl}/${this.uri}/${data.id}`, {
         method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       }).then((response) => this.checkResponse<TOffer>(response));
     } catch (error) {
