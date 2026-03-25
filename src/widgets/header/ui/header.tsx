@@ -8,6 +8,7 @@ import type { THeaderUIProps } from './type';
 import { selectedUser } from '@entities/user';
 import { useSelector } from '@shared/store';
 import { NotificationWrapper } from '@widgets/notifications/ui/Notification';
+import { UserMenu } from '@widgets/user-menu';
 
 export const Header: FC<Partial<THeaderUIProps>> = ({
   isSkillsOpen = false,
@@ -25,11 +26,14 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
   const [isDropdownMounted, setIsDropdownMounted] = useState(isSkillsOpen);
   const [isDropdownVisible, setIsDropdownVisible] = useState(isSkillsOpen);
   const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false);
+  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState<boolean>(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const notificationRef = useRef<HTMLDivElement>(null);
   const notificationTriggerRef = useRef<HTMLDivElement>(null);
+  const accountMenuRef = useRef<HTMLDivElement>(null);
+  const accountMenuTriggerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let closeTimer: number | undefined;
@@ -107,6 +111,27 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
       document.removeEventListener('mousedown', handleClickOutsideNotification);
     };
   }, [isNotificationOpen]);
+
+  useEffect(() => {
+    const handleClickOutsideAccountMenu = (event: MouseEvent) => {
+      if (
+        accountMenuTriggerRef.current &&
+        accountMenuTriggerRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target as Node)) {
+        setIsAccountMenuOpen(false);
+      }
+    };
+
+    if (!isAccountMenuOpen) return;
+    document.addEventListener('mousedown', handleClickOutsideAccountMenu);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideAccountMenu);
+    };
+  }, [isAccountMenuOpen]);
 
   // Для дропдауна "Все навыки" не блокируем скролл страницы:
   // иначе меняется доступная ширина контента и карточки "поджимаются".
@@ -210,10 +235,16 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
                   <NavLink to="/favorites">
                     <IconUI name="like" className={styles.likeIcon} />
                   </NavLink>
-                  <NavLink to="/profile" className={styles.userBlock}>
+                  <div
+                    ref={accountMenuTriggerRef}
+                    className={styles.userBlock}
+                    onClick={() => {
+                      setIsAccountMenuOpen(!isAccountMenuOpen);
+                    }}
+                  >
                     <span className={styles.userName}>{user?.name}</span>
                     <Avatar src={user?.avatar} size="small" />
-                  </NavLink>
+                  </div>
                 </>
               ) : (
                 <>
@@ -232,6 +263,7 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
             </div>
           </div>
         </nav>
+        {isAuth && isAccountMenuOpen && <UserMenu refMenu={accountMenuRef} />}
       </div>
     </header>
   );
