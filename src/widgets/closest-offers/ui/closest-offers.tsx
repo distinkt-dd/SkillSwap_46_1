@@ -48,6 +48,60 @@ export const ClosestOffers: FC<TClosestOffers> = ({ offer }) => {
 
   if (!isLoading) {
     if (!closeUsers) return;
+
+    if (closeUsers.length < 4) {
+      return (
+        <div className={styles.closestOffers__container}>
+          <h2>Похожие предложения</h2>
+          <ul className={styles.closestOffers__list}>
+            {randomUserOffers.map((item) => {
+              const wantsSubCategories = subCategories
+                .filter((sub) => item?.subcategoriesIds.includes(sub.id))
+                .map((sub) => {
+                  const category = categories.find((cat) => cat.id === sub.categoryId);
+
+                  return {
+                    name: sub.name,
+                    type: category?.type,
+                  };
+                });
+
+              const userOffer = offers.find((of) => of.userId === item.id);
+              const canSubCategories = subCategories
+                .filter((sub) => sub.id === userOffer?.subcategoryId)
+                .map((sub) => {
+                  const category = categories.find((cat) => cat.id === sub.categoryId);
+
+                  return {
+                    name: sub.name,
+                    type: category?.type,
+                  };
+                });
+              const city = cities?.find((sub) => sub.id === item?.cityId);
+
+              return (
+                <li className={styles.closestOffers__item}>
+                  <UserCard
+                    className={styles.userCard}
+                    detailed
+                    id={item.id}
+                    name={item.name}
+                    avatar={item.avatar}
+                    location={city?.name}
+                    age={calculateAge(item.birthday)}
+                    canTeach={canSubCategories as SkillItem[]}
+                    wantsToLearn={wantsSubCategories as SkillItem[]}
+                    description={item.description}
+                    likesCount={userOffer?.userLikedIds.length}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      );
+    }
+
     return (
       <div className={styles.closestOffers__container}>
         <h2>Похожие предложения</h2>
@@ -91,7 +145,7 @@ export const ClosestOffers: FC<TClosestOffers> = ({ offer }) => {
                   };
                 });
               const city = cities?.find((sub) => sub.id === item?.cityId);
-              // console.log(wantsSubCategories)
+
               return (
                 <li className={styles.closestOffers__item}>
                   <SwiperSlide key={item.id}>
