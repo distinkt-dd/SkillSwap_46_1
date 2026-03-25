@@ -7,23 +7,26 @@ import type { CategoryWithSubcategories } from './categories/types';
 import dbData from '../../../shared/api/data/db.json';
 import { Provider } from 'react-redux';
 import { store } from '../../../app/store';
+import { CatalogFiltersProvider } from '@features/filters';
 import { setUser, clearUser } from '@entities/user';
 import type { TUser } from '@entities/user';
 
 const withBackground: Decorator = (Story) => (
   <Provider store={store}>
     <MemoryRouter>
-      <div
-        style={{
-          backgroundColor: '#F9FAF7',
-          minHeight: '200px',
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <Story />
-      </div>
+      <CatalogFiltersProvider>
+        <div
+          style={{
+            backgroundColor: '#F9FAF7',
+            minHeight: '200px',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <Story />
+        </div>
+      </CatalogFiltersProvider>
     </MemoryRouter>
   </Provider>
 );

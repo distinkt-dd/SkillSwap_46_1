@@ -55,6 +55,15 @@ const buildChips = (
     });
   }
 
+  const trimmedSearch = filters.searchQuery.trim();
+  if (trimmedSearch) {
+    chips.push({
+      key: 'search-query',
+      label: `Поиск: ${trimmedSearch}`,
+      onRemove: () => actions.setSearchQuery(''),
+    });
+  }
+
   for (const cityId of filters.cityIds) {
     const city = cities.find((c) => c.id === cityId);
     chips.push({
