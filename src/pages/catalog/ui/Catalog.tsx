@@ -6,7 +6,7 @@ import { CardSkeleton } from './CardSkeleton/CardSkeleton';
 import { CatalogList } from './CatalogList';
 import { CatalogSectionedBlocks } from './CatalogSectionedBlocks';
 import { AsideFilters } from '@widgets/aside-filters/ui';
-import { useFilters } from '@features/filters';
+import { useCatalogFilters } from '@features/filters';
 import { CatalogActiveFilterChips } from './CatalogActiveFilterChips';
 
 import { useCatalogInit } from '../model/hooks/useCatalogInit';
@@ -14,7 +14,7 @@ import { useCatalogViewModel } from '../model/hooks/useCatalogViewModel';
 
 export const Catalog: FC = () => {
   useCatalogInit();
-  const [filters, filterActions] = useFilters();
+  const { filters, actions: filterActions } = useCatalogFilters();
   const [showAllPopular, setShowAllPopular] = useState(false);
   const [showAllNew, setShowAllNew] = useState(false);
 

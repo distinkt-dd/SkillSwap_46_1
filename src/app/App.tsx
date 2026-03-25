@@ -12,6 +12,7 @@ import {
 import { fetchUsers, selectedUser, selectedUserIsAuthChecked } from '@entities/index';
 import { useSelector } from '@shared/store';
 import { Catalog } from '@pages/catalog/ui';
+import { CatalogFiltersProvider } from '@features/filters';
 
 import { TempAbout, TempRegister } from './test/temp-test-components';
 import { ProtectedRoute } from './router/ProtectedRoute';
@@ -40,7 +41,7 @@ export const App = () => {
   // const userApi = new UserApi()
   // console.log(await userApi.hashPassword('password'));
   return (
-    <>
+    <CatalogFiltersProvider>
       <Routes>
         <Route
           path="/"
@@ -157,6 +158,6 @@ export const App = () => {
           }
         />
       </Routes>
-    </>
+    </CatalogFiltersProvider>
   );
 };

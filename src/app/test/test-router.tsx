@@ -9,23 +9,28 @@ import {
 import { LayoutAuth, LayoutPure } from '@pages/index';
 import { ProtectedRoute } from '../router/ProtectedRoute'; // ← импортируем защиту
 import { Catalog } from '@pages/catalog/ui'; // ← импортируем каталог
+import { CatalogFiltersProvider } from '@features/filters';
 
 export const testRouter = createBrowserRouter([
   {
     path: '/',
     // Главная страница с каталогом
     element: (
-      <LayoutAuth>
-        <Catalog />
-      </LayoutAuth>
+      <CatalogFiltersProvider>
+        <LayoutAuth>
+          <Catalog />
+        </LayoutAuth>
+      </CatalogFiltersProvider>
     ),
   },
   {
     path: '/about',
     element: (
-      <LayoutAuth>
-        <TempAbout />
-      </LayoutAuth>
+      <CatalogFiltersProvider>
+        <LayoutAuth>
+          <TempAbout />
+        </LayoutAuth>
+      </CatalogFiltersProvider>
     ),
   },
   {
@@ -33,9 +38,11 @@ export const testRouter = createBrowserRouter([
     // Защищенный маршрут
     element: (
       <ProtectedRoute>
-        <LayoutAuth>
-          <TempDashboard />
-        </LayoutAuth>
+        <CatalogFiltersProvider>
+          <LayoutAuth>
+            <TempDashboard />
+          </LayoutAuth>
+        </CatalogFiltersProvider>
       </ProtectedRoute>
     ),
   },
@@ -44,9 +51,11 @@ export const testRouter = createBrowserRouter([
     // Защищенный маршрут
     element: (
       <ProtectedRoute>
-        <LayoutAuth>
-          <TempDashboard />
-        </LayoutAuth>
+        <CatalogFiltersProvider>
+          <LayoutAuth>
+            <TempDashboard />
+          </LayoutAuth>
+        </CatalogFiltersProvider>
       </ProtectedRoute>
     ),
   },
@@ -55,9 +64,11 @@ export const testRouter = createBrowserRouter([
     // Только для неавторизованных
     element: (
       <ProtectedRoute onlyUnAuth>
-        <LayoutPure>
-          <TempLogin />
-        </LayoutPure>
+        <CatalogFiltersProvider>
+          <LayoutPure>
+            <TempLogin />
+          </LayoutPure>
+        </CatalogFiltersProvider>
       </ProtectedRoute>
     ),
   },
@@ -66,26 +77,32 @@ export const testRouter = createBrowserRouter([
     // Только для неавторизованных
     element: (
       <ProtectedRoute onlyUnAuth>
-        <LayoutPure>
-          <TempRegister />
-        </LayoutPure>
+        <CatalogFiltersProvider>
+          <LayoutPure>
+            <TempRegister />
+          </LayoutPure>
+        </CatalogFiltersProvider>
       </ProtectedRoute>
     ),
   },
   {
     path: '/catalog',
     element: (
-      <LayoutAuth>
-        <Catalog />
-      </LayoutAuth>
+      <CatalogFiltersProvider>
+        <LayoutAuth>
+          <Catalog />
+        </LayoutAuth>
+      </CatalogFiltersProvider>
     ),
   },
   {
     path: '*',
     element: (
-      <LayoutAuth>
-        <TempNotFound />
-      </LayoutAuth>
+      <CatalogFiltersProvider>
+        <LayoutAuth>
+          <TempNotFound />
+        </LayoutAuth>
+      </CatalogFiltersProvider>
     ),
   },
 ]);

@@ -4,15 +4,14 @@
   flex-direction: column;
   gap: 20px;
   box-sizing: border-box;
-  min-width: 324px;
-  min-inline-size: 320px;
+  width: 100%;
+  min-width: 0;
+  min-inline-size: 0;
   padding: 20px;
   background: #ffffff;
   border: 1px solid #e6e6e6;
   border-radius: 12px;
 }
-
-/* Слот избранного — абсолютно в правом верхнем углу */
 
 .favoriteWrapper {
   position: absolute;
@@ -41,8 +40,6 @@
   font-size: 12px;
   line-height: 1;
 }
-
-/* User row */
 
 .header {
   display: flex;

@@ -31,6 +31,10 @@ export const useFilters = (): [FiltersState, FiltersActions] => {
     }));
   }, []);
 
+  const setSkillIds = useCallback((skillIds: string[]) => {
+    setFilters((prev) => ({ ...prev, skillIds }));
+  }, []);
+
   const toggleCategory = useCallback((categoryId: string) => {
     setFilters((prev) => ({
       ...prev,
@@ -59,6 +63,10 @@ export const useFilters = (): [FiltersState, FiltersActions] => {
     setFilters((prev) => ({ ...prev, showAllCities: !prev.showAllCities }));
   }, []);
 
+  const setSearchQuery = useCallback((query: string) => {
+    setFilters((prev) => ({ ...prev, searchQuery: query }));
+  }, []);
+
   const resetFilters = useCallback(() => {
     setFilters(initialFiltersState);
   }, []);
@@ -69,9 +77,11 @@ export const useFilters = (): [FiltersState, FiltersActions] => {
       setGender,
       toggleCity,
       toggleSkill,
+      setSkillIds,
       toggleCategory,
       toggleShowAllCategories,
       toggleShowAllCities,
+      setSearchQuery,
       resetFilters,
     }),
     [
@@ -79,9 +89,11 @@ export const useFilters = (): [FiltersState, FiltersActions] => {
       setGender,
       toggleCity,
       toggleSkill,
+      setSkillIds,
       toggleCategory,
       toggleShowAllCategories,
       toggleShowAllCities,
+      setSearchQuery,
       resetFilters,
     ]
   );
