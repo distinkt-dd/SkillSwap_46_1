@@ -66,6 +66,7 @@ export const OfferCardInfo: FC<TOfferCardInfo> = ({ offer }) => {
           wantsToLearn={wantsSubCategories as SkillItem[]}
           description={user.description}
           likesCount={offer.userLikedIds.length}
+          className={styles['offer-card-info__user-card']}
         />
         <OfferCardUI offer={offer} />
       </div>

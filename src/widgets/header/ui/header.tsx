@@ -8,6 +8,33 @@ import type { THeaderUIProps } from './type';
 import { selectedUser } from '@entities/user';
 import { useSelector } from '@shared/store';
 import { NotificationWrapper } from '@widgets/notifications/ui/Notification';
+import { useCatalogFilters } from '@features/filters';
+
+const SEARCH_DEBOUNCE_MS = 1200;
+const SEARCH_HISTORY_STORAGE_KEY = 'catalog-search-history';
+const SEARCH_HISTORY_LIMIT = 8;
+
+const readSearchHistory = (): string[] => {
+  try {
+    const raw = window.localStorage.getItem(SEARCH_HISTORY_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(
+      (item): item is string => typeof item === 'string' && item.trim().length > 0
+    );
+  } catch {
+    return [];
+  }
+};
+
+const saveSearchHistory = (history: string[]) => {
+  try {
+    window.localStorage.setItem(SEARCH_HISTORY_STORAGE_KEY, JSON.stringify(history));
+  } catch {
+    return;
+  }
+};
 import { UserMenu } from '@widgets/user-menu';
 
 export const Header: FC<Partial<THeaderUIProps>> = ({
@@ -23,6 +50,11 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
 }) => {
   const user = useSelector(selectedUser);
   const isAuth = !!user;
+  const { filters: catalogFilters, actions: catalogFilterActions } = useCatalogFilters();
+  const [searchInput, setSearchInput] = useState(catalogFilters.searchQuery);
+  const [searchHistory, setSearchHistory] = useState<string[]>(() => readSearchHistory());
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [isSearchDirty, setIsSearchDirty] = useState(false);
   const [isDropdownMounted, setIsDropdownMounted] = useState(isSkillsOpen);
   const [isDropdownVisible, setIsDropdownVisible] = useState(isSkillsOpen);
   const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false);
@@ -32,6 +64,76 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
   const triggerRef = useRef<HTMLButtonElement>(null);
   const notificationRef = useRef<HTMLDivElement>(null);
   const notificationTriggerRef = useRef<HTMLDivElement>(null);
+  const searchAreaRef = useRef<HTMLDivElement>(null);
+  const searchTimerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (searchTimerRef.current) {
+        window.clearTimeout(searchTimerRef.current);
+      }
+    };
+  }, []);
+
+  const commitSearch = (value: string) => {
+    catalogFilterActions.setSearchQuery(value);
+    setIsSearchDirty(false);
+
+    const trimmed = value.trim();
+    if (!trimmed) {
+      return;
+    }
+
+    const next = [trimmed, ...searchHistory.filter((item) => item !== trimmed)].slice(
+      0,
+      SEARCH_HISTORY_LIMIT
+    );
+    saveSearchHistory(next);
+    setSearchHistory(next);
+  };
+
+  const handleSearchChange = (value: string) => {
+    setSearchInput(value);
+    setIsSearchDirty(true);
+    setIsHistoryOpen(true);
+
+    if (searchTimerRef.current) {
+      window.clearTimeout(searchTimerRef.current);
+    }
+
+    searchTimerRef.current = window.setTimeout(() => {
+      commitSearch(value);
+    }, SEARCH_DEBOUNCE_MS);
+  };
+
+  const handleSearchBlur = () => {
+    if (searchTimerRef.current) {
+      window.clearTimeout(searchTimerRef.current);
+      searchTimerRef.current = null;
+    }
+
+    if (isSearchDirty) {
+      commitSearch(searchInput);
+    }
+
+    window.setTimeout(() => setIsHistoryOpen(false), 100);
+  };
+
+  const handleSearchFocus = () => {
+    if (searchHistory.length > 0) {
+      setIsHistoryOpen(true);
+    }
+  };
+
+  const handleHistorySelect = (value: string) => {
+    if (searchTimerRef.current) {
+      window.clearTimeout(searchTimerRef.current);
+      searchTimerRef.current = null;
+    }
+    setSearchInput(value);
+    commitSearch(value);
+    setIsHistoryOpen(false);
+  };
   const accountMenuRef = useRef<HTMLDivElement>(null);
   const accountMenuTriggerRef = useRef<HTMLDivElement>(null);
 
@@ -41,7 +143,6 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
     let closeRaf: number | undefined;
 
     if (isSkillsOpen) {
-      // Переводим setState в RAF, чтобы избежать синхронного setState внутри эффекта.
       openRaf = window.requestAnimationFrame(() => {
         setIsDropdownMounted(true);
         setIsDropdownVisible(true);
@@ -87,10 +188,8 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
     };
   }, [isSkillsOpen, onSkillsToggle]);
 
-  // Handle click outside for notification wrapper
   useEffect(() => {
     const handleClickOutsideNotification = (event: MouseEvent) => {
-      // Check if click is on notification icon wrapper
       if (
         notificationTriggerRef.current &&
         notificationTriggerRef.current.contains(event.target as Node)
@@ -98,7 +197,6 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
         return;
       }
 
-      // Check if click is inside notification wrapper
       if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
         setIsNotificationOpen(false);
       }
@@ -133,8 +231,45 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
     };
   }, [isAccountMenuOpen]);
 
-  // Для дропдауна "Все навыки" не блокируем скролл страницы:
-  // иначе меняется доступная ширина контента и карточки "поджимаются".
+  useEffect(() => {
+    const handleClickOutsideAccountMenu = (event: MouseEvent) => {
+      if (
+        accountMenuTriggerRef.current &&
+        accountMenuTriggerRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target as Node)) {
+        setIsAccountMenuOpen(false);
+      }
+    };
+
+    if (!isAccountMenuOpen) return;
+    document.addEventListener('mousedown', handleClickOutsideAccountMenu);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideAccountMenu);
+    };
+  }, [isAccountMenuOpen]);
+
+  useEffect(() => {
+    const handleClickOutsideSearch = (event: MouseEvent) => {
+      if (!searchAreaRef.current?.contains(event.target as Node)) {
+        setIsHistoryOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutsideSearch);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideSearch);
+    };
+  }, []);
+
+  const filteredHistory = searchHistory.filter((item) =>
+    searchInput.trim()
+      ? item.toLocaleLowerCase().includes(searchInput.trim().toLocaleLowerCase())
+      : true
+  );
 
   if (variant === 'pure') {
     return (
@@ -211,13 +346,37 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
             )}
           </div>
 
-          <Input
-            leftIcon={<IconUI name="search" />}
-            placeholder="Искать навык"
-            className={styles.searchInput}
-            variant="search"
-            fullWidth
-          />
+          <div className={styles.searchArea} ref={searchAreaRef}>
+            <Input
+              leftIcon={<IconUI name="search" />}
+              placeholder="Искать навык"
+              className={styles.searchInput}
+              variant="search"
+              fullWidth
+              value={isSearchDirty ? searchInput : catalogFilters.searchQuery}
+              onChange={(e) => handleSearchChange(e.target.value)}
+              onFocus={handleSearchFocus}
+              onBlur={handleSearchBlur}
+              aria-label="Поиск по категории или подкатегории навыка"
+            />
+            {isHistoryOpen && filteredHistory.length > 0 && (
+              <div className={styles.searchHistoryDropdown}>
+                {filteredHistory.map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    className={styles.searchHistoryItem}
+                    onMouseDown={(e) => {
+                      e.preventDefault();
+                      handleHistorySelect(item);
+                    }}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           <div className={`${styles.rightGroup} ${isAuth ? styles.auth : ''}`}>
             <IconUI name={isAuth ? 'sun' : 'moon'} className={styles.themeIcon} />

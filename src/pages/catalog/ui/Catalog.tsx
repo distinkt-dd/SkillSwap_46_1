@@ -6,7 +6,7 @@ import { CardSkeleton } from './CardSkeleton/CardSkeleton';
 import { CatalogList } from './CatalogList';
 import { CatalogSectionedBlocks } from './CatalogSectionedBlocks';
 import { AsideFilters } from '@widgets/aside-filters/ui';
-import { useFilters } from '@features/filters';
+import { useCatalogFilters } from '@features/filters';
 import { CatalogActiveFilterChips } from './CatalogActiveFilterChips';
 import { useDispatch } from '@shared/store';
 import { useCatalogInit } from '../model/hooks/useCatalogInit';
@@ -22,7 +22,7 @@ export const Catalog: FC = () => {
 
   //!Исправить этот хук чтобы всегда обновлял данные
   useCatalogInit();
-  const [filters, filterActions] = useFilters();
+  const { filters, actions: filterActions } = useCatalogFilters();
   const [showAllPopular, setShowAllPopular] = useState(false);
   const [showAllNew, setShowAllNew] = useState(false);
 

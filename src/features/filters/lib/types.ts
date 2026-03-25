@@ -5,8 +5,9 @@ export type FiltersState = {
   gender: 'male' | 'female' | null;
   cityIds: string[];
   skillIds: string[];
+  searchQuery: string; /** Поиск по названию категории или подкатегории (хедер) */
   expandedCategories: string[];
-  showAllCategories: boolean; // Должно быть
+  showAllCategories: boolean;
   showAllCities: boolean;
 };
 
@@ -15,9 +16,11 @@ export type FiltersActions = {
   setGender: (gender: 'male' | 'female' | null) => void;
   toggleCity: (cityId: string) => void;
   toggleSkill: (skillId: string) => void;
+  setSkillIds: (skillIds: string[]) => void;
   toggleCategory: (categoryId: string) => void;
-  toggleShowAllCategories: () => void; // Должно быть
+  toggleShowAllCategories: () => void;
   toggleShowAllCities: () => void;
+  setSearchQuery: (query: string) => void;
   resetFilters: () => void;
 };
 
@@ -26,7 +29,8 @@ export const initialFiltersState: FiltersState = {
   gender: null,
   cityIds: [],
   skillIds: [],
+  searchQuery: '',
   expandedCategories: [],
-  showAllCategories: false, // Должно быть
+  showAllCategories: false,
   showAllCities: false,
 };

@@ -2,12 +2,16 @@ import { useMemo } from 'react';
 import type { TUser } from '@entities/user';
 import type { TOffer } from '@entities/offers';
 import type { TSubCategory } from '@entities/subcategories';
+import type { TCategory } from '@entities/categories';
 import type { FiltersState } from './types';
+
+const normalize = (value: string): string => value.trim().toLowerCase();
 
 interface UseFilteredUsersProps {
   users: TUser[];
   offers: TOffer[];
   subcategories: TSubCategory[];
+  categories: TCategory[];
   filters: FiltersState;
 }
 
@@ -15,6 +19,7 @@ export const useFilteredUsers = ({
   users = [],
   offers = [],
   subcategories = [],
+  categories = [],
   filters,
 }: UseFilteredUsersProps) => {
   const filteredUsers = useMemo(() => {
@@ -22,8 +27,42 @@ export const useFilteredUsers = ({
       return [];
     }
 
+    const categoriesById = new Map(categories.map((c) => [c.id, c]));
+
+    const searchQuery = normalize(filters.searchQuery);
+    const searchMatches: string[] | null =
+      searchQuery.length > 0
+        ? subcategories
+            .filter((sub) => {
+              const cat = categoriesById.get(sub.categoryId);
+              if (!cat) return false;
+              return (
+                normalize(sub.name).includes(searchQuery) ||
+                normalize(cat.name).includes(searchQuery) ||
+                normalize(cat.type).includes(searchQuery)
+              );
+            })
+            .map((s) => s.id)
+        : null;
+
+    const skillIdSet = filters.skillIds.filter((id) => subcategories.some((sub) => sub.id === id));
+    const hasSearch = searchMatches !== null;
+    const hasSkillChips = skillIdSet.length > 0;
+
+    let effectiveSubcategoryIds: string[];
+
+    if (searchMatches !== null && hasSkillChips) {
+      const skillSet = new Set(skillIdSet);
+      effectiveSubcategoryIds = searchMatches.filter((id) => skillSet.has(id));
+    } else if (searchMatches !== null) {
+      effectiveSubcategoryIds = searchMatches;
+    } else {
+      effectiveSubcategoryIds = skillIdSet;
+    }
+
+    const hasSkillFilter = hasSearch || hasSkillChips;
+
     return users.filter((user) => {
-      // Фильтр по полу
       if (filters.gender && user.gender !== filters.gender) {
         return false;
       }
@@ -33,15 +72,15 @@ export const useFilteredUsers = ({
         return false;
       }
 
-      // Если нет фильтра по навыкам
-      if (!filters.skillIds?.length) {
+      if (!hasSkillFilter) {
         return true;
       }
 
-      // Получаем все подкатегории для выбранных навыков
-      const selectedSubcategoryIds = filters.skillIds.filter((id) =>
-        subcategories.some((sub) => sub.id === id)
-      );
+      if (effectiveSubcategoryIds.length === 0) {
+        return false;
+      }
+
+      const selectedSubcategoryIds = effectiveSubcategoryIds;
 
       // Фильтр по режиму
       switch (filters.mode) {
@@ -75,7 +114,17 @@ export const useFilteredUsers = ({
         }
       }
     });
-  }, [users, offers, subcategories, filters]);
+  }, [
+    users,
+    offers,
+    subcategories,
+    categories,
+    filters.mode,
+    filters.gender,
+    filters.cityIds,
+    filters.skillIds,
+    filters.searchQuery,
+  ]);
 
   return {
     filteredUsers,

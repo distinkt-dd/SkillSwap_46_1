@@ -26,6 +26,7 @@ export const CatalogUserCard = forwardRef<HTMLDivElement, CatalogUserCardProps>(
     return (
       <div ref={ref} className={styles.cardWrapper}>
         <UserCard
+          className={styles.catalogUserCard}
           detailed
           id={user.id}
           name={user.name}
@@ -35,7 +36,6 @@ export const CatalogUserCard = forwardRef<HTMLDivElement, CatalogUserCardProps>(
           wantsToLearn={wantsToLearn}
           canTeach={canTeach}
           likesCount={likesCount}
-          // description={user.description}
         />
       </div>
     );
