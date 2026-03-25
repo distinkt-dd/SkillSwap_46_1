@@ -84,6 +84,8 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
       return;
     }
 
+    // new
+
     const next = [trimmed, ...searchHistory.filter((item) => item !== trimmed)].slice(
       0,
       SEARCH_HISTORY_LIMIT
