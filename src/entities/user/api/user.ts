@@ -120,6 +120,7 @@ export class UserApi extends Api {
         };
         const user = await fetch(`${this.baseUrl}/${this.uri}`, {
           method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(hashedUser),
         }).then((res) => this.checkResponse<TServerUser>(res));
 
@@ -142,6 +143,7 @@ export class UserApi extends Api {
       const hashedPassword = await this.hashPassword(data.password);
       return await fetch(`${this.baseUrl}/${this.uri}/${data.id}`, {
         method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ passwordHash: hashedPassword }),
       }).then((res) => this.checkResponse<TServerUser>(res));
     } catch (error) {
@@ -153,6 +155,7 @@ export class UserApi extends Api {
     try {
       const user = await fetch(`${this.baseUrl}/${this.uri}/${data.id}`, {
         method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       }).then((res) => this.checkResponse<TServerUser>(res));
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

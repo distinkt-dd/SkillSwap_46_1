@@ -40,7 +40,6 @@ export const OfferPreviewModal = ({ isOpen, data, onEdit, onConfirm, isLoading }
       </p>
 
       <div className={styles.previewCard}>
-
         <div className={styles.previewContent}>
           <div className={styles.previewText}>
             <h3 className={styles.previewOfferName}>{data.offerName || 'Без названия'}</h3>
@@ -58,12 +57,7 @@ export const OfferPreviewModal = ({ isOpen, data, onEdit, onConfirm, isLoading }
             >
               Редактировать
             </Button>
-            <Button
-              variant="primary"
-              onClick={onConfirm}
-              disabled={isLoading}
-              loading={isLoading}
-            >
+            <Button variant="primary" onClick={onConfirm} disabled={isLoading} loading={isLoading}>
               Готово
             </Button>
           </div>
@@ -87,9 +81,7 @@ export const OfferPreviewModal = ({ isOpen, data, onEdit, onConfirm, isLoading }
                         alt={`Дополнительное изображение ${i + 2}`}
                         className={styles.previewThumb}
                       />
-                      {isLast && (
-                        <div className={styles.previewMore}>+{extraCount}</div>
-                      )}
+                      {isLast && <div className={styles.previewMore}>+{extraCount}</div>}
                     </div>
                   );
                 })}

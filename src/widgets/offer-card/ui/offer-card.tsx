@@ -7,6 +7,8 @@ import { Button, IconUI } from '@shared/index';
 import { selectedCategories } from '@entities/categories/model';
 import { CarouselUI } from '@shared/ui';
 import type { TOffer } from '@entities/offers/api/types';
+import { selectedUser } from '@entities/user';
+import { useNavigate } from 'react-router-dom';
 
 type TOfferCardUI = {
   offer: TOffer;
@@ -18,6 +20,14 @@ export const OfferCardUI: FC<TOfferCardUI> = ({ offer }) => {
   const categories = useSelector(selectedCategories);
   const subCategory = subCategories?.find((item) => item.id === offer.subcategoryId);
   const category = categories?.find((item) => item.id === subCategory?.categoryId);
+  const user = useSelector(selectedUser);
+  const navigate = useNavigate();
+  const handleOfferClick = () => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+  };
 
   return (
     <div className={styles.offerCard}>
@@ -39,7 +49,9 @@ export const OfferCardUI: FC<TOfferCardUI> = ({ offer }) => {
             {category?.name} / {subCategory?.name}
           </span>
           <p className={styles.offerCard__description}>{offer.description}</p>
-          <Button className={styles.offerCard__button}>Предложить обмен</Button>
+          <Button className={styles.offerCard__button} onClick={handleOfferClick}>
+            Предложить обмен
+          </Button>
         </div>
         <CarouselUI className={styles.offerCard__carousel} images={offer.images}></CarouselUI>
       </div>

@@ -1,10 +1,7 @@
 import * as yup from 'yup';
 
 export const step1Schema = yup.object({
-  email: yup
-    .string()
-    .required('Email обязателен')
-    .email('Введите корректный email'),
+  email: yup.string().required('Email обязателен').email('Введите корректный email'),
   password: yup
     .string()
     .required('Пароль обязателен')
@@ -23,10 +20,7 @@ export const step2Schema = yup.object({
     .required('Укажите дату рождения')
     .max(new Date(), 'Дата рождения не может быть в будущем')
     .typeError('Введите корректную дату'),
-  gender: yup
-    .string()
-    .required('Укажите пол')
-    .oneOf(['male', 'female'], 'Укажите пол'),
+  gender: yup.string().required('Укажите пол').oneOf(['male', 'female'], 'Укажите пол'),
   cityId: yup.string().required('Выберите город'),
   subcategoriesIds: yup
     .array()
@@ -44,12 +38,8 @@ export const step3Schema = yup.object({
     .required('Введите название навыка')
     .min(3, 'Название должно быть не менее 3 символов')
     .max(100, 'Название не может быть длиннее 100 символов'),
-  offerCategoryId: yup
-    .string()
-    .required('Выберите категорию навыка'),
-  offerSubcategoryId: yup
-    .string()
-    .required('Выберите подкатегорию навыка'),
+  offerCategoryId: yup.string().required('Выберите категорию навыка'),
+  offerSubcategoryId: yup.string().required('Выберите подкатегорию навыка'),
   offerDescription: yup
     .string()
     .required('Добавьте описание')

@@ -33,8 +33,7 @@ export const RegisterStep2 = ({ data, onChange, errors, onErrorChange }: Props) 
   const filteredSubcategoryOptions: DropdownOption[] = subcategories
     .filter(
       (s) =>
-        data.learnCategoryIds.length === 0 ||
-        data.learnCategoryIds.includes(String(s.categoryId))
+        data.learnCategoryIds.length === 0 || data.learnCategoryIds.includes(String(s.categoryId))
     )
     .map((s) => ({ id: s.id, name: s.name }));
 
@@ -89,11 +88,7 @@ export const RegisterStep2 = ({ data, onChange, errors, onErrorChange }: Props) 
 
     const validSubcatIds = new Set(
       subcategories
-        .filter(
-          (s) =>
-            newCategoryIds.length === 0 ||
-            newCategoryIds.includes(String(s.categoryId))
-        )
+        .filter((s) => newCategoryIds.length === 0 || newCategoryIds.includes(String(s.categoryId)))
         .map((s) => String(s.id))
     );
 
@@ -154,9 +149,7 @@ export const RegisterStep2 = ({ data, onChange, errors, onErrorChange }: Props) 
             maxDate={new Date()}
             width="100%"
           />
-          {errors.birthday && (
-            <span className={styles.fieldError}>{errors.birthday}</span>
-          )}
+          {errors.birthday && <span className={styles.fieldError}>{errors.birthday}</span>}
         </div>
 
         <div className={`${styles.rowItem} ${styles.zField50}`}>
@@ -169,9 +162,7 @@ export const RegisterStep2 = ({ data, onChange, errors, onErrorChange }: Props) 
               onChange={handleGenderChange}
               variant="clearable"
             />
-            {errors.gender && (
-              <span className={styles.fieldError}>{errors.gender}</span>
-            )}
+            {errors.gender && <span className={styles.fieldError}>{errors.gender}</span>}
           </div>
         </div>
       </div>
@@ -186,9 +177,7 @@ export const RegisterStep2 = ({ data, onChange, errors, onErrorChange }: Props) 
           searchable
           variant="clearable"
         />
-        {errors.cityId && (
-          <span className={styles.fieldError}>{errors.cityId}</span>
-        )}
+        {errors.cityId && <span className={styles.fieldError}>{errors.cityId}</span>}
       </div>
 
       <div className={`${styles.fieldGroup} ${styles.zField30}`}>

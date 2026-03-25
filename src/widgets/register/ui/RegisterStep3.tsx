@@ -40,19 +40,15 @@ export const RegisterStep3 = ({ data, onChange, errors, onErrorChange }: Props) 
   const categoryOptions = categories.map((c) => ({ id: c.id, name: c.name }));
 
   const filteredSubcategoryOptions = subcategories
-    .filter(
-      (s) =>
-        !data.offerCategoryId || String(s.categoryId) === String(data.offerCategoryId)
-    )
+    .filter((s) => !data.offerCategoryId || String(s.categoryId) === String(data.offerCategoryId))
     .map((s) => ({ id: s.id, name: s.name }));
 
   const selectedCategory =
     categoryOptions.find((c) => String(c.id) === String(data.offerCategoryId)) ?? null;
 
   const selectedSubcategory =
-    filteredSubcategoryOptions.find(
-      (s) => String(s.id) === String(data.offerSubcategoryId)
-    ) ?? null;
+    filteredSubcategoryOptions.find((s) => String(s.id) === String(data.offerSubcategoryId)) ??
+    null;
 
   const validateField = async (field: string, value: unknown) => {
     if (!onErrorChange) return;
@@ -240,9 +236,7 @@ export const RegisterStep3 = ({ data, onChange, errors, onErrorChange }: Props) 
         )}
 
         {data.offerImages.length >= MAX_IMAGES && (
-          <span className={styles.fieldHint}>
-            Достигнут лимит изображений ({MAX_IMAGES})
-          </span>
+          <span className={styles.fieldHint}>Достигнут лимит изображений ({MAX_IMAGES})</span>
         )}
       </div>
     </>
