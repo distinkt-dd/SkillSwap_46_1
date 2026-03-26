@@ -620,7 +620,11 @@
       "description": "Тестирование ",
       "subcategoryId": "10",
       "images": [
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNSAxQzMuNDYyNDQgMSAxIDMuNDYyNDUgMSA2LjVDMSAxMiA3LjUgMTcgMTEgMTguMTYzMUMxNC41IDE3IDIxIDEyIDIxIDYuNUMyMSAzLjQ2MjQ1IDE4LjUzNzUgMSAxNS41IDFDMTMuNjM5OCAxIDExLjk5NTMgMS45MjM0NSAxMSAzLjMzNjlDMTAuMDA0NyAxLjkyMzQ1IDguMzYwMTUgMSA2LjUgMVoiIGZpbGw9IiNBQkQyN0EiIHN0cm9rZT0iI0FCRDI3QSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg=="
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["eJ7RinlTVTI", "e458"],
       "createdAt": "2026-03-26T11:01:48.769Z",
@@ -632,7 +636,13 @@
       "name": "wrefafsd",
       "description": "asdasdasdasdasdasd",
       "subcategoryId": "11",
-      "images": [],
+      "images": [
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
+      ],
       "userLikedIds": ["e458"],
       "createdAt": "2026-03-26T12:24:03.487Z"
     },
@@ -644,8 +654,11 @@
       "createdAt": "2026-03-15T10:00:00.000Z",
       "description": "Разработаю эффективную маркетинговую стратегию, которая привлечет клиентов и увеличит продажи.",
       "images": [
-        "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg",
-        "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "4", "9", "s1z8"]
     },
@@ -657,8 +670,11 @@
       "createdAt": "2026-03-16T11:30:00.000Z",
       "description": "Проведу фотосессию на природе, помогу раскрепоститься перед камерой и получить живые кадры.",
       "images": [
-        "https://images.pexels.com/photos/1022930/pexels-photo-1022930.jpeg",
-        "https://images.pexels.com/photos/241555/pexels-photo-241555.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "5", "10", "l7w2"]
     },
@@ -670,8 +686,11 @@
       "createdAt": "2026-03-17T09:15:00.000Z",
       "description": "Индивидуальные тренировки на выносливость и силу. Подберу нагрузку под ваш уровень.",
       "images": [
-        "https://images.pexels.com/photos/4761792/pexels-photo-4761792.jpeg",
-        "https://images.pexels.com/photos/4164779/pexels-photo-4164779.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "14", "26", "n6c1"]
     },
@@ -683,8 +702,11 @@
       "createdAt": "2026-03-18T14:00:00.000Z",
       "description": "Научу планировать проекты, распределять ресурсы и контролировать сроки. Agile и Scrum.",
       "images": [
-        "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg",
-        "https://images.pexels.com/photos/7078922/pexels-photo-7078922.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "7", "9", "s3m0"]
     },
@@ -696,8 +718,11 @@
       "createdAt": "2026-03-19T16:20:00.000Z",
       "description": "Научу писать биты, записывать вокал и сводить треки. Для начинающих музыкантов.",
       "images": [
-        "https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg",
-        "https://images.pexels.com/photos/3394653/pexels-photo-3394653.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["11", "29", "d4h9", "u5h7"]
     },
@@ -709,8 +734,11 @@
       "createdAt": "2026-03-20T12:00:00.000Z",
       "description": "Научу готовить пасту, ризотто и тирамису. Секреты итальянских шеф-поваров.",
       "images": [
-        "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg",
-        "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["15", "19", "p1b7", "s9m2"]
     },
@@ -722,8 +750,11 @@
       "createdAt": "2026-03-21T10:45:00.000Z",
       "description": "Обучение Python для начинающих. Напишем первые программы и создадим проекты.",
       "images": [
-        "https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg",
-        "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["13", "21", "y3t9", "v6b9"]
     },
@@ -735,8 +766,11 @@
       "createdAt": "2026-03-22T15:30:00.000Z",
       "description": "Консультации по вопросам самооценки, тревожности и личностного роста.",
       "images": [
-        "https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg",
-        "https://images.pexels.com/photos/6647921/pexels-photo-6647921.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["16", "22", "27", "z2n8"]
     },
@@ -748,8 +782,11 @@
       "createdAt": "2026-03-23T09:00:00.000Z",
       "description": "Помогу упаковать идею, найти первых клиентов и подготовиться к встрече с инвесторами.",
       "images": [
-        "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
-        "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "24", "t8y6"]
     },
@@ -761,8 +798,11 @@
       "createdAt": "2026-03-24T13:15:00.000Z",
       "description": "Научу смешивать цвета, работать с заливкой и создавать легкие воздушные работы.",
       "images": [
-        "https://images.pexels.com/photos/1029617/pexels-photo-1029617.jpeg",
-        "https://images.pexels.com/photos/265865/pexels-photo-265865.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["5", "17", "25", "v2k6"]
     },
@@ -774,8 +814,11 @@
       "createdAt": "2026-03-25T17:00:00.000Z",
       "description": "Научу играть любимые песни с нуля. Аккорды, бой, перебор и основы теории.",
       "images": [
-        "https://images.pexels.com/photos/341979/pexels-photo-341979.jpeg",
-        "https://images.pexels.com/photos/3991855/pexels-photo-3991855.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "5", "29", "d4h9"]
     },
@@ -787,8 +830,11 @@
       "createdAt": "2026-03-26T11:00:00.000Z",
       "description": "Интенсивный курс разговорного английского. Преодолеем языковой барьер за 4 недели.",
       "images": [
-        "https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg",
-        "https://images.pexels.com/photos/3768894/pexels-photo-3768894.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "13", "18", "t3l4"]
     },
@@ -800,8 +846,11 @@
       "createdAt": "2026-03-27T10:30:00.000Z",
       "description": "Научу быстро читать и запоминать большие объемы информации. Эффективные техники.",
       "images": [
-        "https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg",
-        "https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "18", "21", "y3t9"]
     },
@@ -813,8 +862,11 @@
       "createdAt": "2026-03-28T08:45:00.000Z",
       "description": "Программа тренировок с учетом особенностей здоровья. Похудение, тонус, укрепление.",
       "images": [
-        "https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg",
-        "https://images.pexels.com/photos/4164779/pexels-photo-4164779.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "16", "26", "c2y5"]
     },
@@ -826,8 +878,11 @@
       "createdAt": "2026-03-29T12:15:00.000Z",
       "description": "Выполню косметический и капитальный ремонт. Электрика, сантехника, отделка.",
       "images": [
-        "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg",
-        "https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["17", "19", "e3b5", "t5x8"]
     },
@@ -839,8 +894,11 @@
       "createdAt": "2026-03-30T19:00:00.000Z",
       "description": "Практика глубокого расслабления. Снимает стресс, улучшает сон и восстанавливает ресурс.",
       "images": [
-        "https://images.pexels.com/photos/3823028/pexels-photo-3823028.jpeg",
-        "https://images.pexels.com/photos/8436585/pexels-photo-8436585.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["8", "14", "27", "w5x1"]
     },
@@ -852,8 +910,11 @@
       "createdAt": "2026-03-31T14:30:00.000Z",
       "description": "Создам стильный и функциональный дизайн-проект с учетом пожеланий и бюджета.",
       "images": [
-        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-        "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["10", "15", "25", "a7f2"]
     },
@@ -865,8 +926,11 @@
       "createdAt": "2026-04-01T18:00:00.000Z",
       "description": "Совместное чтение и обсуждение классической и современной литературы.",
       "images": [
-        "https://images.pexels.com/photos/3599931/pexels-photo-3599931.jpeg",
-        "https://images.pexels.com/photos/3784423/pexels-photo-3784423.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["12", "13", "21", "k3y0"]
     },
@@ -878,8 +942,11 @@
       "createdAt": "2026-04-02T09:30:00.000Z",
       "description": "Научу уверенно чувствовать себя в городе, парковаться и ориентироваться в сложных ситуациях.",
       "images": [
-        "https://images.pexels.com/photos/1291559/pexels-photo-1291559.jpeg",
-        "https://images.pexels.com/photos/210577/pexels-photo-210577.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "15", "t5x8", "o9p6"]
     },
@@ -891,8 +958,11 @@
       "createdAt": "2026-04-03T13:00:00.000Z",
       "description": "Научу составлять стильные букеты, работать с цветами и создавать флористические композиции.",
       "images": [
-        "https://images.pexels.com/photos/1423604/pexels-photo-1423604.jpeg",
-        "https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "10", "h7w4", "p8q0"]
     },
@@ -904,8 +974,11 @@
       "createdAt": "2026-04-04T16:15:00.000Z",
       "description": "Цикл лекций об удивительных событиях истории, археологических открытиях и личностях.",
       "images": [
-        "https://images.pexels.com/photos/235731/pexels-photo-235731.jpeg",
-        "https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "18", "l6b3"]
     },
@@ -917,8 +990,11 @@
       "createdAt": "2026-04-05T10:00:00.000Z",
       "description": "Помогу поставить звуки, развить речь и подготовиться к школе. Индивидуальный подход.",
       "images": [
-        "https://images.pexels.com/photos/3965558/pexels-photo-3965558.jpeg",
-        "https://images.pexels.com/photos/6994878/pexels-photo-6994878.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["8", "16", "z2n8", "n9f6"]
     },
@@ -930,8 +1006,11 @@
       "createdAt": "2026-04-06T11:45:00.000Z",
       "description": "Образовательные прогулки по паркам. Изучаем растения, птиц и экосистемы.",
       "images": [
-        "https://images.pexels.com/photos/1168388/pexels-photo-1168388.jpeg",
-        "https://images.pexels.com/photos/1267356/pexels-photo-1267356.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "14", "e1d4", "k2t6"]
     },
@@ -943,8 +1022,11 @@
       "createdAt": "2026-04-07T15:30:00.000Z",
       "description": "Научу основам инвестирования, разбираться в акциях, облигациях и создавать портфель.",
       "images": [
-        "https://images.pexels.com/photos/730564/pexels-photo-730564.jpeg",
-        "https://images.pexels.com/photos/53621/pexels-photo-53621.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "9", "t8y6", "s1z8"]
     },
@@ -956,8 +1038,11 @@
       "createdAt": "2026-04-08T12:00:00.000Z",
       "description": "Помогу с выбором стиля, мебели и декора. Создам функциональное и красивое пространство.",
       "images": [
-        "https://images.pexels.com/photos/1571462/pexels-photo-1571462.jpeg",
-        "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["10", "17", "a7f2", "p1n6"]
     },
@@ -969,8 +1054,11 @@
       "createdAt": "2026-04-09T08:30:00.000Z",
       "description": "Тренировки по бегу и ориентированию. Готовлю к забегам, триатлону и соревнованиям.",
       "images": [
-        "https://images.pexels.com/photos/2385771/pexels-photo-2385771.jpeg",
-        "https://images.pexels.com/photos/4761792/pexels-photo-4761792.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "14", "c2y5", "n6c1"]
     },
@@ -982,8 +1070,11 @@
       "createdAt": "2026-04-10T17:00:00.000Z",
       "description": "Консультации по работе с тревожностью, выгоранием и эмоциональным состоянием.",
       "images": [
-        "https://images.pexels.com/photos/4041393/pexels-photo-4041393.jpeg",
-        "https://images.pexels.com/photos/6647921/pexels-photo-6647921.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["8", "16", "n9c2", "l6b3"]
     },
@@ -995,8 +1086,11 @@
       "createdAt": "2026-04-11T14:15:00.000Z",
       "description": "Создам выразительные портреты в студии. Работа со светом, ракурсами и настроением кадра.",
       "images": [
-        "https://images.pexels.com/photos/2897883/pexels-photo-2897883.jpeg",
-        "https://images.pexels.com/photos/2191693/pexels-photo-2191693.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "5", "l7w2", "r2p7"]
     },
@@ -1008,8 +1102,11 @@
       "createdAt": "2026-04-12T10:30:00.000Z",
       "description": "Научу играть на фортепиано с нуля. Ноты, аккорды, любимые мелодии. Индивидуальный подход.",
       "images": [
-        "https://images.pexels.com/photos/4045561/pexels-photo-4045561.jpeg",
-        "https://images.pexels.com/photos/3359705/pexels-photo-3359705.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["5", "11", "d4h9", "w1f9"]
     },
@@ -1021,8 +1118,11 @@
       "createdAt": "2026-04-13T16:45:00.000Z",
       "description": "Научу понимать физические явления вокруг нас. Подготовка к экзаменам или для кругозора.",
       "images": [
-        "https://images.pexels.com/photos/256474/pexels-photo-256474.jpeg",
-        "https://images.pexels.com/photos/7078922/pexels-photo-7078922.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "21", "x9q4"]
     },
@@ -1034,8 +1134,11 @@
       "createdAt": "2026-04-14T11:00:00.000Z",
       "description": "Курс по постановке целей, развитию уверенности и эффективным привычкам для успешной жизни.",
       "images": [
-        "https://images.pexels.com/photos/4112359/pexels-photo-4112359.jpeg",
-        "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "j4w9"]
     },
@@ -1047,8 +1150,11 @@
       "createdAt": "2026-04-15T13:30:00.000Z",
       "description": "Помогу создать гардероб, подчеркнуть достоинства и научиться уверенно представлять себя.",
       "images": [
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
-        "https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "10", "m9k3", "h4s7"]
     },
@@ -1060,8 +1166,11 @@
       "createdAt": "2026-04-16T10:15:00.000Z",
       "description": "Обучение техникам продаж, работе с возражениями и эффективной коммуникации с клиентами.",
       "images": [
-        "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg",
-        "https://images.pexels.com/photos/6978750/pexels-photo-6978750.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "j4w9"]
     },
@@ -1073,8 +1182,11 @@
       "createdAt": "2026-04-17T15:00:00.000Z",
       "description": "Научу планировать бюджет, экономить и создавать финансовую подушку безопасности для семьи.",
       "images": [
-        "https://images.pexels.com/photos/730564/pexels-photo-730564.jpeg",
-        "https://images.pexels.com/photos/53621/pexels-photo-53621.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "24", "t8y6", "h4s7"]
     },
@@ -1086,8 +1198,11 @@
       "createdAt": "2026-04-18T09:30:00.000Z",
       "description": "Научу основам рисунка, работе с карандашом и красками. Раскроем творческий потенциал вместе.",
       "images": [
-        "https://images.pexels.com/photos/1029617/pexels-photo-1029617.jpeg",
-        "https://images.pexels.com/photos/265865/pexels-photo-265865.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["10", "17", "v2k6", "b5m9"]
     },
@@ -1099,8 +1214,11 @@
       "createdAt": "2026-04-19T14:00:00.000Z",
       "description": "Курс по основам верстки сайтов. Научимся создавать красивые и адаптивные веб-страницы.",
       "images": [
-        "https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg",
-        "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "y3t9", "v6b9"]
     },
@@ -1112,8 +1230,11 @@
       "createdAt": "2026-04-20T11:45:00.000Z",
       "description": "Научу монтировать видео, работать с переходами, цветокоррекцией и создавать эффектный контент.",
       "images": [
-        "https://images.pexels.com/photos/3861976/pexels-photo-3861976.jpeg",
-        "https://images.pexels.com/photos/7078925/pexels-photo-7078925.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "5", "d4h9", "x1r4"]
     },
@@ -1125,8 +1246,11 @@
       "createdAt": "2026-04-21T16:15:00.000Z",
       "description": "Курс английского языка с нуля. Разберем базу, научимся строить простые предложения и говорить о себе.",
       "images": [
-        "https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg",
-        "https://images.pexels.com/photos/3768894/pexels-photo-3768894.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "12", "18", "t3l4"]
     },
@@ -1138,8 +1262,11 @@
       "createdAt": "2026-04-22T10:00:00.000Z",
       "description": "Научу основам фотографии: выдержка, диафрагма, композиция. Снимаем на любую камеру.",
       "images": [
-        "https://images.pexels.com/photos/1022930/pexels-photo-1022930.jpeg",
-        "https://images.pexels.com/photos/241555/pexels-photo-241555.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "10", "28", "l7w2"]
     },
@@ -1151,8 +1278,11 @@
       "createdAt": "2026-04-10T09:00:00.000Z",
       "description": "Разработаю проект частного дома или коттеджа. Учту все пожелания и особенности участка.",
       "images": [
-        "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg",
-        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["17", "25", "p1n6", "e3b5"]
     },
@@ -1164,8 +1294,11 @@
       "createdAt": "2026-04-11T12:30:00.000Z",
       "description": "Помогу найти свой стиль, разобрать гардероб и создать образы для работы, отдыха и особых случаев.",
       "images": [
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
-        "https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "10", "32", "f5r0"]
     },
@@ -1177,8 +1310,11 @@
       "createdAt": "2026-04-12T14:15:00.000Z",
       "description": "Научу писать захватывающие сценарии и истории для кино, YouTube и соцсетей.",
       "images": [
-        "https://images.pexels.com/photos/261949/pexels-photo-261949.jpeg",
-        "https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "z9p2"]
     },
@@ -1190,8 +1326,11 @@
       "createdAt": "2026-04-13T08:30:00.000Z",
       "description": "Мягкая практика йоги для всех уровней. Учимся дышать, чувствовать тело и снимать напряжение.",
       "images": [
-        "https://images.pexels.com/photos/3823028/pexels-photo-3823028.jpeg",
-        "https://images.pexels.com/photos/8436585/pexels-photo-8436585.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["14", "16", "27", "u8l3"]
     },
@@ -1203,8 +1342,11 @@
       "createdAt": "2026-04-14T16:00:00.000Z",
       "description": "Научу работать со звуком, создавать аранжировки и готовить треки к релизу.",
       "images": [
-        "https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg",
-        "https://images.pexels.com/photos/3394653/pexels-photo-3394653.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["5", "11", "29", "u5h7"]
     },
@@ -1216,8 +1358,11 @@
       "createdAt": "2026-04-15T11:30:00.000Z",
       "description": "Научу управлять личными финансами, копить и приумножать капитал. Практические советы.",
       "images": [
-        "https://images.pexels.com/photos/730564/pexels-photo-730564.jpeg",
-        "https://images.pexels.com/photos/53621/pexels-photo-53621.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "9", "24", "s1z8"]
     },
@@ -1229,8 +1374,11 @@
       "createdAt": "2026-04-16T09:45:00.000Z",
       "description": "Научу делать ремонт самостоятельно: шпаклевка, покраска, укладка плитки, работа с гипсокартоном.",
       "images": [
-        "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg",
-        "https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["15", "1"]
     },
@@ -1242,8 +1390,11 @@
       "createdAt": "2026-04-17T14:00:00.000Z",
       "description": "Сеансы арт-терапии для снятия стресса, поиска внутренних ресурсов и самопознания. Не требуется художественных навыков.",
       "images": [
-        "https://images.pexels.com/photos/4041393/pexels-photo-4041393.jpeg",
-        "https://images.pexels.com/photos/6647921/pexels-photo-6647921.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["8", "16", "27", "z2n8"]
     },
@@ -1255,8 +1406,11 @@
       "createdAt": "2026-04-18T10:30:00.000Z",
       "description": "Помогу разработать стратегию роста бизнеса, найти новые каналы продаж и выйти на новый уровень.",
       "images": [
-        "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
-        "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "24", "t8y6"]
     },
@@ -1268,8 +1422,11 @@
       "createdAt": "2026-04-19T13:15:00.000Z",
       "description": "Разработаю проект сада, помогу с выбором растений и созданием гармоничного ландшафта на участке.",
       "images": [
-        "https://images.pexels.com/photos/1423604/pexels-photo-1423604.jpeg",
-        "https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "10", "20", "p8q0"]
     },
@@ -1281,8 +1438,11 @@
       "createdAt": "2026-04-20T08:45:00.000Z",
       "description": "Научу создавать точные чертежи и 3D-модели в AutoCAD. Подготовка к работе в проектных бюро.",
       "images": [
-        "https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg",
-        "https://images.pexels.com/photos/7078922/pexels-photo-7078922.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "30", "v6b9"]
     },
@@ -1294,8 +1454,11 @@
       "createdAt": "2026-04-21T16:30:00.000Z",
       "description": "Научу основам каллиграфии, работе с пером и кистями. Создаем открытки, плакаты и уникальные надписи.",
       "images": [
-        "https://images.pexels.com/photos/265865/pexels-photo-265865.jpeg",
-        "https://images.pexels.com/photos/2948259/pexels-photo-2948259.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["5", "10", "17", "b5m9"]
     },
@@ -1307,8 +1470,11 @@
       "createdAt": "2026-04-22T11:00:00.000Z",
       "description": "Курс по созданию интерактивных веб-приложений. Изучаем JavaScript, React, хуки и работу с API.",
       "images": [
-        "https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg",
-        "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "21", "4468"]
     },
@@ -1320,8 +1486,11 @@
       "createdAt": "2026-04-23T09:30:00.000Z",
       "description": "Научу правилам деловой переписки, ведению переговоров и протоколу для успешной карьеры.",
       "images": [
-        "https://images.pexels.com/photos/6978763/pexels-photo-6978763.jpeg",
-        "https://images.pexels.com/photos/5669602/pexels-photo-5669602.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "32", "c3v9"]
     },
@@ -1333,8 +1502,11 @@
       "createdAt": "2026-04-24T14:45:00.000Z",
       "description": "Научу выбирать зерна, настраивать оборудование и готовить эспрессо, капучино и альтернативный кофе.",
       "images": [
-        "https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg",
-        "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "15", "19", "s9m2"]
     },
@@ -1346,8 +1518,11 @@
       "createdAt": "2026-04-25T19:00:00.000Z",
       "description": "Помогу наладить режим сна, справиться с бессонницей и просыпаться бодрым. Комплексный подход.",
       "images": [
-        "https://images.pexels.com/photos/3771073/pexels-photo-3771073.jpeg",
-        "https://images.pexels.com/photos/7144319/pexels-photo-7144319.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["14", "16", "27", "w5x1"]
     },
@@ -1359,8 +1534,11 @@
       "createdAt": "2026-04-26T12:15:00.000Z",
       "description": "Научу эффективно разрешать конфликты, находить компромиссы и выстраивать конструктивный диалог.",
       "images": [
-        "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg",
-        "https://images.pexels.com/photos/6978750/pexels-photo-6978750.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "s1z8", "f5r0"]
     },
@@ -1372,8 +1550,11 @@
       "createdAt": "2026-04-27T10:00:00.000Z",
       "description": "Научу подбирать косметику, делать дневной и вечерний макияж, подчеркивающий вашу природную красоту.",
       "images": [
-        "https://images.pexels.com/photos/3768922/pexels-photo-3768922.jpeg",
-        "https://images.pexels.com/photos/4021747/pexels-photo-4021747.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "10", "32", "m9k3"]
     },
@@ -1385,8 +1566,11 @@
       "createdAt": "2026-04-28T15:30:00.000Z",
       "description": "Работа с мотивацией, страхами и психологической устойчивостью для спортсменов и активных людей.",
       "images": [
-        "https://images.pexels.com/photos/4483631/pexels-photo-4483631.jpeg",
-        "https://images.pexels.com/photos/4067990/pexels-photo-4067990.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "14", "26", "c2y5"]
     },
@@ -1398,8 +1582,11 @@
       "createdAt": "2026-04-29T13:00:00.000Z",
       "description": "Научу работать с металлом, смолой и камнями. Создаем уникальные серьги, кольца и подвески.",
       "images": [
-        "https://images.pexels.com/photos/1093518/pexels-photo-1093518.jpeg",
-        "https://images.pexels.com/photos/2665337/pexels-photo-2665337.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["5", "10", "17", "x3b8"]
     },
@@ -1411,8 +1598,11 @@
       "createdAt": "2026-04-30T09:00:00.000Z",
       "description": "Научу диагностировать неисправности, работать с электрооборудованием и обслуживать автомобиль.",
       "images": [
-        "https://images.pexels.com/photos/1291559/pexels-photo-1291559.jpeg",
-        "https://images.pexels.com/photos/210577/pexels-photo-210577.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["15", "19", "e3b5", "o9p6"]
     },
@@ -1424,8 +1614,11 @@
       "createdAt": "2026-05-01T11:45:00.000Z",
       "description": "Научу сокращать отходы, выбирать экологичные альтернативы и жить в гармонии с природой.",
       "images": [
-        "https://images.pexels.com/photos/3778615/pexels-photo-3778615.jpeg",
-        "https://images.pexels.com/photos/4913422/pexels-photo-4913422.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "14", "23", "k2t6"]
     },
@@ -1437,8 +1630,11 @@
       "createdAt": "2026-05-02T14:30:00.000Z",
       "description": "Научу работать с деревом, создавать мебель и декор своими руками. От выбора материала до финишной отделки.",
       "images": [
-        "https://images.pexels.com/photos/2082097/pexels-photo-2082097.jpeg",
-        "https://images.pexels.com/photos/2171448/pexels-photo-2171448.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["15", "17", "e3b5", "q5y1"]
     },
@@ -1450,8 +1646,11 @@
       "createdAt": "2026-05-03T10:15:00.000Z",
       "description": "Помогу составить семейное древо, найти информацию о предках и сохранить историю семьи.",
       "images": [
-        "https://images.pexels.com/photos/6457376/pexels-photo-6457376.jpeg",
-        "https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["12", "13", "18", "21"]
     },
@@ -1463,8 +1662,11 @@
       "createdAt": "2026-05-04T16:00:00.000Z",
       "description": "Научу защищать данные, распознавать фишинг и настраивать безопасность устройств.",
       "images": [
-        "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg",
-        "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "21", "v6b9"]
     },
@@ -1476,8 +1678,11 @@
       "createdAt": "2026-05-05T12:30:00.000Z",
       "description": "Индивидуальные уроки вокала. Раскрою ваш голос, научу правильно дышать и уверенно петь.",
       "images": [
-        "https://images.pexels.com/photos/4045561/pexels-photo-4045561.jpeg",
-        "https://images.pexels.com/photos/3359705/pexels-photo-3359705.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "5", "11", "29"]
     },
@@ -1489,12 +1694,14 @@
       "createdAt": "2026-05-06T17:15:00.000Z",
       "description": "Научу основам астрологии, помогу разобраться в натальной карте и понять свои сильные стороны.",
       "images": [
-        "https://images.pexels.com/photos/2886229/pexels-photo-2886229.jpeg",
-        "https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["8", "16", "27", "z2n8"]
     },
-
     {
       "id": "r7o8",
       "userId": "s9m2",
@@ -1503,8 +1710,11 @@
       "createdAt": "2026-05-07T09:45:00.000Z",
       "description": "Научу печь бисквиты, кремы и создавать десерты как в дорогих кондитерских. Для дома и бизнеса.",
       "images": [
-        "https://images.pexels.com/photos/2273230/pexels-photo-2273230.jpeg",
-        "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "15", "19", "p1b7"]
     },
@@ -1516,8 +1726,11 @@
       "createdAt": "2026-05-08T14:30:00.000Z",
       "description": "Обучение игре на гитаре для начинающих. Разбор аккордов, боя, перебора и любимых композиций.",
       "images": [
-        "https://images.pexels.com/photos/341979/pexels-photo-341979.jpeg",
-        "https://images.pexels.com/photos/3991855/pexels-photo-3991855.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "5", "11", "29"]
     },
@@ -1529,8 +1742,11 @@
       "createdAt": "2026-05-09T11:00:00.000Z",
       "description": "Консультации по воспитанию, детским кризисам и налаживанию доверительных отношений с ребенком.",
       "images": [
-        "https://images.pexels.com/photos/3965558/pexels-photo-3965558.jpeg",
-        "https://images.pexels.com/photos/6994878/pexels-photo-6994878.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["8", "16", "22", "27"]
     },
@@ -1542,8 +1758,11 @@
       "createdAt": "2026-05-10T15:15:00.000Z",
       "description": "Научу создавать 3D-модели, текстуры и анимацию в Blender. Подходит для дизайнеров и художников.",
       "images": [
-        "https://images.pexels.com/photos/7078925/pexels-photo-7078925.jpeg",
-        "https://images.pexels.com/photos/3861976/pexels-photo-3861976.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "y3t9", "v6b9"]
     },
@@ -1555,8 +1774,11 @@
       "createdAt": "2026-05-11T10:30:00.000Z",
       "description": "Правила делового общения, ведения переговоров и поведения на мероприятиях для топ-менеджеров.",
       "images": [
-        "https://images.pexels.com/photos/5669606/pexels-photo-5669606.jpeg",
-        "https://images.pexels.com/photos/6978759/pexels-photo-6978759.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "f5r0"]
     },
@@ -1568,8 +1790,11 @@
       "createdAt": "2026-05-12T08:00:00.000Z",
       "description": "Научу выращивать овощи, фрукты и зелень на участке. Органическое земледелие и уход за растениями.",
       "images": [
-        "https://images.pexels.com/photos/1207968/pexels-photo-1207968.jpeg",
-        "https://images.pexels.com/photos/1168388/pexels-photo-1168388.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "20", "23", "h7w4"]
     },
@@ -1581,8 +1806,11 @@
       "createdAt": "2026-05-13T13:45:00.000Z",
       "description": "Обучение маникюру и педикюру. Современные техники покрытия, дизайны и работа с материалами.",
       "images": [
-        "https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg",
-        "https://images.pexels.com/photos/3997412/pexels-photo-3997412.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "10", "m7h2", "v2k6"]
     },
@@ -1594,8 +1822,11 @@
       "createdAt": "2026-05-14T16:30:00.000Z",
       "description": "Научу основам пчеловодства: устройство ульев, уход за пчелами, сбор и хранение меда.",
       "images": [
-        "https://images.pexels.com/photos/588866/pexels-photo-588866.jpeg",
-        "https://images.pexels.com/photos/326391/pexels-photo-326391.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "14", "23", "e1d4"]
     },
@@ -1607,8 +1838,11 @@
       "createdAt": "2026-05-15T10:00:00.000Z",
       "description": "Советы по выбору литературы, совместному чтению и развитию читательского интереса у детей.",
       "images": [
-        "https://images.pexels.com/photos/3599931/pexels-photo-3599931.jpeg",
-        "https://images.pexels.com/photos/3784423/pexels-photo-3784423.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["12", "13", "18", "k3y0"]
     },
@@ -1620,8 +1854,11 @@
       "createdAt": "2026-05-16T12:15:00.000Z",
       "description": "Научу собирать и программировать роботов. Развиваем инженерное мышление и логику.",
       "images": [
-        "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg",
-        "https://images.pexels.com/photos/7176234/pexels-photo-7176234.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "21", "x9q4"]
     },
@@ -1633,8 +1870,11 @@
       "createdAt": "2026-05-17T14:45:00.000Z",
       "description": "Помогу организовать свадьбу мечты: выбор локации, подрядчиков, контроль бюджета и сроков.",
       "images": [
-        "https://images.pexels.com/photos/324857/pexels-photo-324857.jpeg",
-        "https://images.pexels.com/photos/2605425/pexels-photo-2605425.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "f5r0"]
     },
@@ -1646,8 +1886,11 @@
       "createdAt": "2026-05-18T09:30:00.000Z",
       "description": "Научу основам кузнечного мастерства: работа с горном, ковка, создание изделий из металла.",
       "images": [
-        "https://images.pexels.com/photos/1111130/pexels-photo-1111130.jpeg",
-        "https://images.pexels.com/photos/214966/pexels-photo-214966.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["15", "17", "e3b5", "o9p6"]
     },
@@ -1659,8 +1902,11 @@
       "createdAt": "2026-05-19T17:00:00.000Z",
       "description": "Научу танцевать в современных стилях. Развитие пластики, чувства ритма и уверенности.",
       "images": [
-        "https://images.pexels.com/photos/5854188/pexels-photo-5854188.jpeg",
-        "https://images.pexels.com/photos/6280971/pexels-photo-6280971.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "3", "11", "w1f9"]
     },
@@ -1672,8 +1918,11 @@
       "createdAt": "2026-05-20T11:30:00.000Z",
       "description": "Научу писать продающие тексты, создавать УТП и работать с возражениями клиентов.",
       "images": [
-        "https://images.pexels.com/photos/261628/pexels-photo-261628.jpeg",
-        "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "r2p7"]
     },
@@ -1685,8 +1934,11 @@
       "createdAt": "2026-05-21T13:00:00.000Z",
       "description": "Научу собирать, сушить и применять травы для здоровья. Травяные сборы, настои и чаи.",
       "images": [
-        "https://images.pexels.com/photos/1267356/pexels-photo-1267356.jpeg",
-        "https://images.pexels.com/photos/1152565/pexels-photo-1152565.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "14", "23", "k2t6"]
     },
@@ -1698,8 +1950,11 @@
       "createdAt": "2026-05-22T08:45:00.000Z",
       "description": "Научу снимать животных и природу, выбирать технику и терпеливо ждать идеальный кадр.",
       "images": [
-        "https://images.pexels.com/photos/1022930/pexels-photo-1022930.jpeg",
-        "https://images.pexels.com/photos/241555/pexels-photo-241555.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "5", "10", "28"]
     },
@@ -1711,8 +1966,11 @@
       "createdAt": "2026-05-23T15:30:00.000Z",
       "description": "Научу варить мыло, создавать кремы и уходовую косметику из натуральных ингредиентов.",
       "images": [
-        "https://images.pexels.com/photos/1093518/pexels-photo-1093518.jpeg",
-        "https://images.pexels.com/photos/2665337/pexels-photo-2665337.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["5", "10", "17", "q2z5"]
     },
@@ -1724,8 +1982,11 @@
       "createdAt": "2026-05-24T12:00:00.000Z",
       "description": "Научу готовить классические и авторские коктейли, работать с инвентарем и удивлять гостей.",
       "images": [
-        "https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg",
-        "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "15", "19", "p1b7"]
     },
@@ -1737,8 +1998,11 @@
       "createdAt": "2026-05-25T10:15:00.000Z",
       "description": "Уроки этикета для детей: поведение за столом, общение, правила вежливости и уважения.",
       "images": [
-        "https://images.pexels.com/photos/3965558/pexels-photo-3965558.jpeg",
-        "https://images.pexels.com/photos/6994878/pexels-photo-6994878.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["8", "16", "22", "z2n8"]
     },
@@ -1750,8 +2014,11 @@
       "createdAt": "2026-05-26T14:30:00.000Z",
       "description": "Введение в мир авиации: основы пилотирования, навигация и безопасность полетов.",
       "images": [
-        "https://images.pexels.com/photos/256474/pexels-photo-256474.jpeg",
-        "https://images.pexels.com/photos/7078922/pexels-photo-7078922.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "21", "x9q4"]
     },
@@ -1763,8 +2030,11 @@
       "createdAt": "2026-05-27T11:45:00.000Z",
       "description": "Обучение восточным танцам. Раскрываем женственность, развиваем пластику и чувство ритма.",
       "images": [
-        "https://images.pexels.com/photos/5854188/pexels-photo-5854188.jpeg",
-        "https://images.pexels.com/photos/6280971/pexels-photo-6280971.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["2", "3", "11", "h8n4"]
     },
@@ -1776,8 +2046,11 @@
       "createdAt": "2026-05-28T16:15:00.000Z",
       "description": "Научу разбираться в винах, выбирать идеальное сочетание с едой и правильно подавать напитки.",
       "images": [
-        "https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg",
-        "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["6", "15", "19", "m2v5"]
     },
@@ -1789,8 +2062,11 @@
       "createdAt": "2026-05-29T09:30:00.000Z",
       "description": "Научу создавать объемные композиции из бумаги. Квиллинг, оригами и другие техники.",
       "images": [
-        "https://images.pexels.com/photos/1029617/pexels-photo-1029617.jpeg",
-        "https://images.pexels.com/photos/265865/pexels-photo-265865.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["5", "10", "17", "v2k6"]
     },
@@ -1802,8 +2078,11 @@
       "createdAt": "2026-05-30T12:00:00.000Z",
       "description": "Научу основам защиты данных, распознаванию фишинговых атак и безопасному использованию интернета.",
       "images": [
-        "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg",
-        "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["7", "13", "21", "r7c4"]
     },
@@ -1815,8 +2094,11 @@
       "createdAt": "2026-05-31T10:30:00.000Z",
       "description": "Научу проводить собеседования, оценивать кандидатов и составлять эффективные вакансии.",
       "images": [
-        "https://images.pexels.com/photos/6978763/pexels-photo-6978763.jpeg",
-        "https://images.pexels.com/photos/5669602/pexels-photo-5669602.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["1", "4", "9", "32"]
     },
@@ -1828,8 +2110,11 @@
       "createdAt": "2026-06-01T15:45:00.000Z",
       "description": "Обучение базовым приемам самообороны. Развитие уверенности, реакции и физической формы.",
       "images": [
-        "https://images.pexels.com/photos/4761792/pexels-photo-4761792.jpeg",
-        "https://images.pexels.com/photos/4164779/pexels-photo-4164779.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["3", "14", "26", "n6c1"]
     },
@@ -1841,8 +2126,11 @@
       "createdAt": "2026-06-02T11:15:00.000Z",
       "description": "Научу создавать уютные и стильные интерьеры, разбираться в стилях и подбирать материалы.",
       "images": [
-        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-        "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg"
+        "https://img.freepik.com/premium-photo/cute-cat_113255-210139.jpg?semt=ais_hybrid&w=740",
+        "https://img.freepik.com/free-photo/relaxed-feline-enjoying-its-time-box_91128-3936.jpg?semt=ais_hybrid",
+        "https://img.freepik.com/premium-photo/there-is-cat-that-is-looking-up-camera-generative-ai_900958-76013.jpg?semt=ais_hybrid&w=740",
+        "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
+        "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["10", "17", "25", "a7f2"]
     }
