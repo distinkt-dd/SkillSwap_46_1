@@ -1211,6 +1211,66 @@
       "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=dij1f69z",
       "gender": "female",
       "passwordHash": "$2b$10$8tXvWep763KExyksZF2W7uGtecTbd6rFfgINvEDefO9Zi3ouBIJ3q"
+    },
+    {
+      "id": "aad5",
+      "name": "Дмитрий",
+      "email": "dpemvr@yandex.ru",
+      "gender": "male",
+      "birthday": "2005-02-20T19:00:00.000Z",
+      "cityId": "5",
+      "subcategoriesIds": ["3"],
+      "avatar": "https://api.dicebear.com/9.x/personas/svg?seed=ijtwmzly",
+      "description": "",
+      "passwordHash": "$2b$10$x2Jq.9mVOELvHcP9zULSMu8LCKvGHLjOhnK6WhEN2c7Fx/IxcTIRC"
+    },
+    {
+      "id": "ed18",
+      "name": "Иван",
+      "email": "ivan2@example.com",
+      "gender": "male",
+      "birthday": "2026-03-03T19:00:00.000Z",
+      "cityId": "4",
+      "subcategoriesIds": ["31"],
+      "avatar": "https://api.dicebear.com/9.x/personas/svg?seed=4jftzitf",
+      "description": "",
+      "passwordHash": "$2b$10$LolzFlQDENJjWWpdeignTOznaoBPbnT9w.7sNyAXcwjsBEa9N5pBu"
+    },
+    {
+      "id": "3bf0",
+      "name": "Иван3",
+      "email": "ivan3@example.com",
+      "gender": "male",
+      "birthday": "2026-03-02T19:00:00.000Z",
+      "cityId": "1",
+      "subcategoriesIds": ["9", "10"],
+      "avatar": "https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=ld0lsvyw",
+      "description": "",
+      "passwordHash": "$2b$10$e4Ffu/.26DuswQUrPbIuNOln5.oW7LDL4Xcuy/pCkXJJDC.7Vbquy"
+    },
+    {
+      "id": "4468",
+      "name": "Иван",
+      "email": "ivan4@example.com",
+      "gender": "male",
+      "birthday": "2026-03-03T19:00:00.000Z",
+      "cityId": "2",
+      "subcategoriesIds": ["25"],
+      "avatar": "https://api.dicebear.com/9.x/lorelei/svg?seed=jg7lfx43",
+      "description": "",
+      "passwordHash": "$2b$10$ooemH5MbShnuOx3aI3Z9vOWaRiyJcSMlOny2l5yJVsF1ub9Jf68fS"
+    },
+    {
+      "id": "bda2",
+      "name": "Тест Ивана",
+      "email": "ivan5@example.com",
+      "gender": "male",
+      "birthday": "2026-02-27T19:00:00.000Z",
+      "cityId": "12",
+      "subcategoriesIds": ["11"],
+      "avatar": "https://api.dicebear.com/9.x/open-peeps/svg?seed=8b95ibp0",
+      "description": "Меняю данные!",
+      "passwordHash": "$2b$10$GqMlXMkbgayH0eZDcrYlGufVVp0ALg.H/8i7iB0bNDK0L7J8KBloa"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

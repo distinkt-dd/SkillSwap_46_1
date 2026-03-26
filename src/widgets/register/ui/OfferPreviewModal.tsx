@@ -5,6 +5,8 @@ import { selectedCategories } from '@entities/categories/model';
 import { selectedSubcategories } from '@entities/subcategories';
 import type { RegisterFormData } from '../model/types';
 import styles from './register.module.css';
+import { useState } from 'react';
+import ModalInfo from '@widgets/models/models.notifications';
 
 type Props = {
   isOpen: boolean;
@@ -26,6 +28,15 @@ export const OfferPreviewModal = ({ isOpen, data, onEdit, onConfirm, isLoading }
   const hasImages = data.offerImages.length > 0;
   const thumbs = restImages.slice(0, 3);
   const extraCount = restImages.length > 3 ? restImages.length - 3 : 0;
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  const handleRegistrationReady = () => {
+    setShowModal(!showModal);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <Modal
@@ -57,7 +68,12 @@ export const OfferPreviewModal = ({ isOpen, data, onEdit, onConfirm, isLoading }
             >
               Редактировать
             </Button>
-            <Button variant="primary" onClick={onConfirm} disabled={isLoading} loading={isLoading}>
+            <Button
+              variant="primary"
+              onClick={handleRegistrationReady}
+              disabled={isLoading}
+              loading={isLoading}
+            >
               Готово
             </Button>
           </div>
@@ -96,6 +112,12 @@ export const OfferPreviewModal = ({ isOpen, data, onEdit, onConfirm, isLoading }
             <span>Изображения не добавлены</span>
           </div>
         )}
+        <ModalInfo
+          type="info"
+          onButtonClick={onConfirm}
+          onClose={handleCloseModal}
+          isOpen={showModal}
+        />
       </div>
     </Modal>
   );

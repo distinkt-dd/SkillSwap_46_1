@@ -10,7 +10,13 @@ import {
   LoginPage,
   OfferPage,
 } from '@pages/index';
-import { fetchUsers, selectedUser, selectedUserIsAuthChecked } from '@entities/index';
+import {
+  fetchUsers,
+  selectedUser,
+  selectedUserIsAuthChecked,
+  setUser,
+  type TUser,
+} from '@entities/index';
 import { useSelector } from '@shared/store';
 import { Catalog } from '@pages/catalog/ui';
 import { CatalogFiltersProvider } from '@features/filters';
@@ -28,6 +34,14 @@ import { Favorites } from '@widgets/favorites';
 
 export const App = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const user: string | null = localStorage.getItem('user');
+    if (user) {
+      const userParse: TUser = JSON.parse(user);
+      dispatch(setUser(userParse));
+    }
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getCategories());
