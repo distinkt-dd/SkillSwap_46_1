@@ -132,7 +132,7 @@
         "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
         "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
-      "userLikedIds": ["1"]
+      "userLikedIds": []
     },
     {
       "id": "3",
@@ -212,7 +212,7 @@
         "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
         "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
-      "userLikedIds": ["1", "4", "6", "8", "10", "12", "14"]
+      "userLikedIds": ["4", "6", "8", "10", "12", "14", "caa5"]
     },
     {
       "id": "8",
@@ -292,7 +292,7 @@
         "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
         "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
-      "userLikedIds": ["1", "6", "11", "15"]
+      "userLikedIds": ["6", "11", "15"]
     },
     {
       "id": "13",
@@ -388,7 +388,7 @@
         "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
         "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
-      "userLikedIds": ["1"]
+      "userLikedIds": []
     },
     {
       "id": "19",
@@ -468,7 +468,7 @@
         "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
         "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
-      "userLikedIds": ["5", "7", "9", "12", "15"]
+      "userLikedIds": ["5", "7", "9", "12", "15", "caa5"]
     },
     {
       "id": "24",
@@ -516,7 +516,7 @@
         "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
         "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
-      "userLikedIds": ["1", "4", "8"]
+      "userLikedIds": ["4", "8"]
     },
     {
       "id": "27",
@@ -833,7 +833,7 @@
       "name": "Иван",
       "email": "ivan@example.com",
       "passwordHash": "$2b$10$7YOBoGea/MGUQGaxxBfLvO2kW4zKVUFRdXL9qoJgtuCIdA41jM.ge",
-      "description": "Привет! Люблю ритм, кофе по утрам и людей, которые не боятся пробовать нов!е",
+      "description": "Привет! Люблю ритм, кофе по утрам и людей, которые не боятся пробовать новое",
       "avatar": "https://api.dicebear.com/9.x/pixel-art/svg?seed=r0qfbobo",
       "gender": "male",
       "birthday": "2000-01-02",
