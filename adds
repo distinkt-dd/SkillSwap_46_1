@@ -1,0 +1,167 @@
+[33mcommit 5d93032808172ed49a187057e4126ea23bb1757b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Merge: 3f5bfe7 5cf15ab
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 17:26:02 2026 +0500
+
+    Merge pull request #101 from PM-YandexPracticum/fix/footer
+    
+    fix(footer): исправлен компонент футера
+
+[33mcommit 3f5bfe7b77a846d26022924f4e7ee8b930867c5b[m
+Merge: a51ad02 5bb7730
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 17:25:48 2026 +0500
+
+    Merge pull request #100 from PM-YandexPracticum/fix/avatar
+    
+    fix(avatar): добавлен функционал отображения с кнопкой к компоненту аватара
+
+[33mcommit 5cf15abbfb26997c57c59da74950d520d2071cd8[m
+Author: Aleks Moraless <aleksmoraless@yandex.ru>
+Date:   Sat Mar 21 15:14:45 2026 +0300
+
+    fix(footer): исправлен компонент футера
+    
+    Исправлены стили и убрана лишняя разметка футера. Удален неиспользуемый файл стилей футера.
+
+[33mcommit 5bb773022ffd0e34ea1af4ff89401727a686f3cf[m
+Author: Aleks Moraless <aleksmoraless@yandex.ru>
+Date:   Sat Mar 21 14:13:36 2026 +0300
+
+    fix(avatar): добавлен функционал отображения с кнопкой к компоненту аватара
+    
+    Добавлен функционал в shared/ui/avatar отображения с кнопкой при передачи пропса editable, добавлена
+    новая иконка refresh. Подправлены стили формы и асайда на ограничение минимальной ширины чтобы не
+    схлопывались, изменена генерация аватарок на большее число стилей.
+
+[33mcommit a51ad020f37953faef3f810d2d988b31a3a77c5e[m
+Merge: b83f6f9 2316770
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 14:40:52 2026 +0500
+
+    Merge pull request #96 from PM-YandexPracticum/features-001
+    
+    feat: добавить фильтры
+
+[33mcommit b83f6f949a84fe79006a98608a71cc26f427420e[m
+Merge: 4f17b93 40d98d2
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 14:35:12 2026 +0500
+
+    Merge pull request #98 from PM-YandexPracticum/feature/profile-updated
+    
+    feat(pages): добавлена страница development для страниц заглушек
+
+[33mcommit 40d98d21ae6508e271ce7025943822be2a440ecc[m[33m ([m[1;31morigin/feature/profile-updated[m[33m)[m
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 14:34:07 2026 +0500
+
+    feat(pages): добавлена страница development для страниц заглушек
+
+[33mcommit 4f17b9348398e59a1956ec50875d77bbf51b2db7[m
+Merge: 0f53372 cc87b5e
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 13:30:18 2026 +0500
+
+    Merge pull request #97 from PM-YandexPracticum/feature/profile-updated
+    
+    feat(pages): добавил форму профиля на страницу с aside
+
+[33mcommit cc87b5e31770e79be3837de175a3e48e935044af[m
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 13:29:16 2026 +0500
+
+    feat(pages): добавил форму профиля на страницу с aside
+
+[33mcommit 0f53372535c002e5ecf874c6222cf2ce56dda8a1[m
+Merge: 77ff657 a0d7d3c
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 12:59:11 2026 +0500
+
+    Merge pull request #95 from PM-YandexPracticum/feature/profile
+    
+    feat(profileform): добавлен виджет профиля пользователя
+
+[33mcommit a0d7d3cc80968b26f0f7f9daa98af5bdf1336085[m
+Merge: 62452d4 77ff657
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Sat Mar 21 12:59:01 2026 +0500
+
+    Merge branch 'dev' into feature/profile
+
+[33mcommit 2316770bd740b352bc5e53704636bcf456e4d021[m[33m ([m[1;31morigin/features-001[m[33m)[m
+Author: Aleksey Rybalko <ip-alexejrybalko@yandex.ru>
+Date:   Fri Mar 20 23:09:34 2026 +0300
+
+    feat: добавить фильтры
+    
+    - Добавить компоненты фильтров: ModeTabs, CategoryFilter, GenderFilter, CityFilter
+    - Добавить хуки useFilters и useFilteredUsers для управления состоянием и фильтрации
+    - Добавить виджет AsideFilters, объединяющий все компоненты фильтров
+    - Реализовать логику фильтрации по полу, городу и навыкам
+    - Добавить функционал показа/скрытия всех категорий и всех городов
+    - Добавить отображение счетчика выбранных фильтров
+    - Стилизовать фильтры согласно макету с fallback-значениями
+    - Использовать переиспользуемые компоненты из shared (Radio, Checkbox, Button, IconUI)
+
+[33mcommit 62452d4a1ee67e142e342775c659cd2bd4fc7f8f[m
+Author: Aleks Moraless <aleksmoraless@yandex.ru>
+Date:   Fri Mar 20 20:41:37 2026 +0300
+
+    feat(profileform): добавлен виджет профиля пользователя
+    
+    Добавлен виджет профиля пользователя widgets/profile/ui/ProfileForm. Добавлена загрузка городов
+    сразу при открытии приложения   .Подправлена схема валидации юзера на поле даты, так как получаем и
+    отправляем строку на сервер. Аватар буду потом корректировать как создатут новый компонент.
+    Исправлены календарь стилистика, дропдаун испарвлены z-индексы, добавлен компонент текстАреа.
+    Загружен пакет для анимирования компонентов
+
+[33mcommit 77ff6579d1cfe3a272bbcf250e4aeb5a8f00e6aa[m
+Merge: 3c9ec12 d47bb6e
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Fri Mar 20 22:00:47 2026 +0500
+
+    Merge pull request #94 from PM-YandexPracticum/feature/profile-page
+    
+    feat(pages): добавил новый layout для страницы, а также собрал aside …
+
+[33mcommit d47bb6ec321346cc8a4965fe33fb5ab98ee21640[m
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Fri Mar 20 21:59:51 2026 +0500
+
+    feat(pages): добавил новый layout для страницы, а также собрал aside в профиле
+
+[33mcommit 3c9ec129c1a29369e34b85e7a25e7305287db41f[m
+Merge: a0b10cf d3750c7
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Fri Mar 20 08:33:16 2026 +0500
+
+    Merge pull request #92 from PM-YandexPracticum/feature/error-pages
+    
+    feat(pages): добавлены страницы ошибок 404 и 500
+
+[33mcommit a0b10cf1df833727cab6d87faa12a48361067e00[m
+Merge: 5d148e2 5e9e9e5
+Author: --Dmitriy <120382345+distinkt-dd@users.noreply.github.com>
+Date:   Fri Mar 20 08:22:30 2026 +0500
+
+    Merge pull request #93 from PM-YandexPracticum/feature/login-form
+    
+    feat(login-form): добавить форму логина
+
+[33mcommit 5e9e9e5b434984ddc32d06d587927da5d22fff11[m
+Merge: 672c06d 5d148e2
+Author: Demakov Dmitry <dpemvr@yandex.ru>
+Date:   Fri Mar 20 08:22:00 2026 +0500
+
+    fix(conflicts): исправление конфликтов с дев веткой
+
+[33mcommit 672c06d8153062ea1a08e5d7171c86d10be27d20[m
+Author: regina nightray <regi1312@gmail.com>
+Date:   Thu Mar 19 00:53:51 2026 +0300
+
+    feat(login-form): добавить форму логина
+    
+    closes #75
+
+[33mcommit d3750c78ef06d4d88c1b
