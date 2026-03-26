@@ -25,7 +25,7 @@ export const useAsideConfig = () => {
     {
       to: '/my-skills',
       icon: <IconUI name="idea" />,
-      label: 'Мои навыки',
+      label: 'Мои предложения',
     },
     {
       to: '/profile',
