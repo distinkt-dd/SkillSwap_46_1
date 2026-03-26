@@ -13,6 +13,6 @@ export interface TOffer {
 }
 
 export type TOfferCreate = Omit<TOffer, 'id' | 'userId' | 'userLikedIds'>;
-export type TOfferUpdate = Omit<Partial<Omit<TOffer, 'id'>>, 'userId' | 'userLikedIds'> & {
+export type TOfferUpdate = Omit<Partial<Omit<TOffer, 'id'>>, 'userId'> & {
   id: string;
 };

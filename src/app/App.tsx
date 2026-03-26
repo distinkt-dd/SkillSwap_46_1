@@ -24,6 +24,7 @@ import { getSubcategories, fetchCities, getOffers } from '@entities/index';
 import { getCategories } from '@entities/categories/model';
 import { LayoutProfile } from '@pages/layouts';
 import { ProfileForm } from '@widgets/profile/ui';
+import { Favorites } from '@widgets/favorites';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -137,7 +138,9 @@ export const App = () => {
           path="/favorites"
           element={
             <ProtectedRoute>
-              <LayoutProfile>Избранное</LayoutProfile>
+              <LayoutProfile>
+                <Favorites />
+              </LayoutProfile>
             </ProtectedRoute>
           }
         />

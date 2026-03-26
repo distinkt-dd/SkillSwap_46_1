@@ -394,7 +394,6 @@
 .previewOverlay {
   background: rgb(142 142 142 / 60%);
   backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
 }
 
 .previewModalBox {
