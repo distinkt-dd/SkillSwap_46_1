@@ -16,7 +16,7 @@ export const Favorites: FC = () => {
   return (
     <div className={styles.favorites}>
       {offers.map((item) => {
-        return <OfferCardUI offer={item} userId={user?.id} className={styles.favoritesCard} />;
+        return <OfferCardUI offer={item} userId={user?.id} />;
       })}
     </div>
   );

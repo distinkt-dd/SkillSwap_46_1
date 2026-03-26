@@ -31,6 +31,7 @@ import { getCategories } from '@entities/categories/model';
 import { LayoutProfile } from '@pages/layouts';
 import { ProfileForm } from '@widgets/profile/ui';
 import { Favorites } from '@widgets/favorites';
+import { MyOffers } from '@widgets/my-offers';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -139,12 +140,13 @@ export const App = () => {
           }
         />
 
-        {/* Заглушки для других разделов */}
         <Route
           path="/my-skills"
           element={
             <ProtectedRoute>
-              <LayoutProfile>Мои Навыки</LayoutProfile>
+              <LayoutProfile>
+                <MyOffers />
+              </LayoutProfile>
             </ProtectedRoute>
           }
         />
