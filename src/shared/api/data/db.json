@@ -468,7 +468,7 @@
         "https://images.wallpaperscraft.ru/image/single/enot_zhivotnoe_podvodnyj_1343115_1280x720.jpg",
         "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
-      "userLikedIds": ["5", "7", "9", "12", "15", "caa5"]
+      "userLikedIds": ["5", "7", "9", "12", "15", "caa5", "eJ7RinlTVTI"]
     },
     {
       "id": "24",
@@ -613,6 +613,18 @@
         "https://img.freepik.com/premium-photo/cheerful-tabby-cat-with-playful-expression-pink-background_1294860-45882.jpg?semt=ais_hybrid&w=740"
       ],
       "userLikedIds": ["10", "11", "32"]
+    },
+    {
+      "userId": "eJ7RinlTVTI",
+      "name": "Тестирование ",
+      "description": "Тестирование ",
+      "subcategoryId": "10",
+      "images": [
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNSAxQzMuNDYyNDQgMSAxIDMuNDYyNDUgMSA2LjVDMSAxMiA3LjUgMTcgMTEgMTguMTYzMUMxNC41IDE3IDIxIDEyIDIxIDYuNUMyMSAzLjQ2MjQ1IDE4LjUzNzUgMSAxNS41IDFDMTMuNjM5OCAxIDExLjk5NTMgMS45MjM0NSAxMSAzLjMzNjlDMTAuMDA0NyAxLjkyMzQ1IDguMzYwMTUgMSA2LjUgMVoiIGZpbGw9IiNBQkQyN0EiIHN0cm9rZT0iI0FCRDI3QSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg=="
+      ],
+      "userLikedIds": ["eJ7RinlTVTI"],
+      "createdAt": "2026-03-26T11:01:48.769Z",
+      "id": "M8MQrxY6bv4"
     }
   ],
   "subcategories": [
@@ -1271,6 +1283,18 @@
       "avatar": "https://api.dicebear.com/9.x/open-peeps/svg?seed=8b95ibp0",
       "description": "Меняю данные!",
       "passwordHash": "$2b$10$GqMlXMkbgayH0eZDcrYlGufVVp0ALg.H/8i7iB0bNDK0L7J8KBloa"
+    },
+    {
+      "name": "Дмитрий",
+      "email": "dpemvrsdf@sd.rd",
+      "gender": "male",
+      "birthday": "2026-03-18T19:00:00.000Z",
+      "cityId": "4",
+      "subcategoriesIds": ["17"],
+      "avatar": "https://api.dicebear.com/9.x/pixel-art/svg?seed=nsyeyyyl",
+      "description": "",
+      "passwordHash": "$2b$10$PLepB6xlGzyoHgTzcN43weW5uX/d/WE3vwiWYhB7hRvl03uF6Xi8y",
+      "id": "eJ7RinlTVTI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
