@@ -32,6 +32,7 @@ import { LayoutProfile } from '@pages/layouts';
 import { ProfileForm } from '@widgets/profile/ui';
 import { Favorites } from '@widgets/favorites';
 import { MyOffers } from '@widgets/my-offers';
+import { Exchanges } from '@widgets/exchanges';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -165,7 +166,7 @@ export const App = () => {
           element={
             <ProtectedRoute>
               <LayoutProfile>
-                <DevelopmentPage />
+                <Exchanges />
               </LayoutProfile>
             </ProtectedRoute>
           }

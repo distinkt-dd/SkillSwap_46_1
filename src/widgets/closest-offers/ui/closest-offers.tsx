@@ -80,7 +80,7 @@ export const ClosestOffers: FC<TClosestOffers> = ({ offer }) => {
               const city = cities?.find((sub) => sub.id === item?.cityId);
 
               return (
-                <li className={styles.closestOffers__item}>
+                <li key={item.id} className={styles.closestOffers__item}>
                   <UserCard
                     className={styles.userCard}
                     detailed

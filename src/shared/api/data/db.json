@@ -615,7 +615,7 @@
       "userLikedIds": ["10", "11", "32"]
     },
     {
-      "userId": "eJ7RinlTVTI",
+      "userId": "44",
       "name": "Тестирование ",
       "description": "Тестирование ",
       "subcategoryId": "10",
@@ -624,7 +624,7 @@
       ],
       "userLikedIds": ["eJ7RinlTVTI"],
       "createdAt": "2026-03-26T11:01:48.769Z",
-      "id": "M8MQrxY6bv4"
+      "id": "40"
     }
   ],
   "subcategories": [
@@ -1294,7 +1294,7 @@
       "avatar": "https://api.dicebear.com/9.x/pixel-art/svg?seed=nsyeyyyl",
       "description": "",
       "passwordHash": "$2b$10$PLepB6xlGzyoHgTzcN43weW5uX/d/WE3vwiWYhB7hRvl03uF6Xi8y",
-      "id": "eJ7RinlTVTI"
+      "id": "44"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
