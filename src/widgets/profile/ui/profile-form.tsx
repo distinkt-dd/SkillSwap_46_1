@@ -27,6 +27,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { useFormValidation } from '@shared/api';
 import { selectCities } from '@entities/cities';
 import { generateRandomAvatar } from '@shared/utils/avatarGenerator';
+import ModalInfo from '@widgets/models/models.notifications';
 
 export const ProfileForm: FC = () => {
   const dispatch = useDispatch();
@@ -72,6 +73,12 @@ export const ProfileForm: FC = () => {
         [name]: value,
       };
     });
+  };
+
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  const handleModalBtnClick = () => {
+    setShowModal(!showModal);
   };
 
   const passwordOnChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -138,6 +145,7 @@ export const ProfileForm: FC = () => {
 
       setIsOpenChangePass(false);
       setUserPassword('');
+      setShowModal(!showModal);
       passHook.clearErrors();
     } catch (error) {
       setFormError(error instanceof Error ? error.message : 'Ошибка сохранения');
@@ -156,6 +164,8 @@ export const ProfileForm: FC = () => {
       if (validForm) {
         dispatch(updateDateUser(localUserState));
       }
+      localStorage.setItem('user', JSON.stringify(localUserState));
+      setShowModal(!showModal);
     } catch (error) {
       setFormError(error instanceof Error ? error.message : 'Ошибка сохранения');
       setTimeout(() => {
@@ -324,6 +334,7 @@ export const ProfileForm: FC = () => {
           avatarChangeBtnClick={handleAvatarChange}
         />
       </div>
+      <ModalInfo type="dataChange" isOpen={showModal} onButtonClick={handleModalBtnClick} />
     </Form>
   );
 };
