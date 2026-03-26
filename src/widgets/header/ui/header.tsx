@@ -9,6 +9,7 @@ import { selectedUser } from '@entities/user';
 import { useSelector } from '@shared/store';
 import { NotificationWrapper } from '@widgets/notifications/ui/Notification';
 import { useCatalogFilters } from '@features/filters';
+import { useTheme } from '@app/theme/useTheme';
 
 const SEARCH_DEBOUNCE_MS = 1200;
 const SEARCH_HISTORY_STORAGE_KEY = 'catalog-search-history';
@@ -50,6 +51,7 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
 }) => {
   const user = useSelector(selectedUser);
   const isAuth = !!user;
+  const { themeMode, resolvedTheme, toggleTheme } = useTheme();
   const { filters: catalogFilters, actions: catalogFilterActions } = useCatalogFilters();
   const [searchInput, setSearchInput] = useState(catalogFilters.searchQuery);
   const [searchHistory, setSearchHistory] = useState<string[]>(() => readSearchHistory());
@@ -273,6 +275,11 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
       : true
   );
 
+  const themeLabel =
+    themeMode === 'system'
+      ? `Тема: системная, сейчас ${resolvedTheme === 'dark' ? 'темная' : 'светлая'}`
+      : `Тема: ${resolvedTheme === 'dark' ? 'темная' : 'светлая'}`;
+
   if (variant === 'pure') {
     return (
       <header className={styles.header}>
@@ -381,7 +388,18 @@ export const Header: FC<Partial<THeaderUIProps>> = ({
           </div>
 
           <div className={`${styles.rightGroup} ${isAuth ? styles.auth : ''}`}>
-            <IconUI name={isAuth ? 'sun' : 'moon'} className={styles.themeIcon} />
+            <button
+              type="button"
+              className={styles.themeButton}
+              onClick={toggleTheme}
+              aria-label={themeLabel}
+              title={themeLabel}
+            >
+              <IconUI
+                name={resolvedTheme === 'dark' ? 'sun' : 'moon'}
+                className={styles.themeIcon}
+              />
+            </button>
 
             <div className={`${styles.buttonsGroup} ${isAuth ? styles.auth : ''}`}>
               {isAuth ? (

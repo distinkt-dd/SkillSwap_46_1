@@ -43,27 +43,27 @@
 }
 
 .input:checked + .control {
-  background: #abd27a;
-  border-color: #abd27a;
+  background: var(--color-accent, #abd27a);
+  border-color: var(--color-accent, #abd27a);
 }
 
 .input:focus-visible + .control {
-  outline: 2px solid #89a963;
+  outline: 2px solid var(--color-link-button-pressed, #508826);
   outline-offset: 2px;
 }
 
 .input:checked + .control .icon {
   width: 5px;
   height: 9px;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid var(--color-card-input, #ffffff);
+  border-bottom: 2px solid var(--color-card-input, #ffffff);
   transform: rotate(45deg) translateY(-1px);
 }
 
 .subcategory .input:checked + .control .icon {
   width: 10px;
   height: 2px;
-  background: #ffffff;
+  background: var(--color-card-input, #ffffff);
   border: 0;
   border-radius: 2px;
   transform: none;
