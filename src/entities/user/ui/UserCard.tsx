@@ -4,8 +4,10 @@ import styles from './UserCard.module.css';
 import type { TCategory } from '@entities/categories';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from '@shared/store';
-import { selectedOffers } from '@entities/offers/model';
+import { selectedOffers, updateOffer } from '@entities/offers/model';
 import clsx from 'clsx';
+import { selectedUser } from '../model';
+import { useDispatch } from '@shared/store';
 
 export type CategoryType = TCategory['type'];
 
@@ -69,12 +71,35 @@ export const UserCard: React.FC<UserCardProps> = ({
   const visibleLearn = wantsToLearn.slice(0, MAX_VISIBLE_TAGS);
   const hiddenCount = wantsToLearn.length - MAX_VISIBLE_TAGS;
   const offers = useSelector(selectedOffers);
+  const currentUser = useSelector(selectedUser);
   const currentOffer = offers.find((item) => item.userId === id);
+  const dispatch = useDispatch();
 
   return (
     <div className={clsx(styles.userCard, className)}>
-      <div className={styles.likesWrapper}>
-        <IconUI name="like" className={styles.likesIcon} />
+      <div
+        className={styles.likesWrapper}
+        onClick={() => {
+          if (!currentOffer || !currentUser) return;
+
+          const usrLikes = currentOffer.userLikedIds || [];
+          const userId = currentUser.id;
+
+          if (usrLikes.includes(userId)) {
+            const temp = usrLikes.filter((item) => item !== userId);
+            dispatch(updateOffer({ ...currentOffer, userLikedIds: temp }));
+          } else {
+            const temp = [...usrLikes, userId];
+            dispatch(updateOffer({ ...currentOffer, userLikedIds: temp }));
+          }
+        }}
+      >
+        {!currentOffer?.userLikedIds.includes(currentUser?.id) ? (
+          <IconUI name="like" className={styles.likesIcon} />
+        ) : (
+          <IconUI name="likeFilled" className={styles.likesIcon} />
+        )}
+
         <span className={styles.likesCount}>{likesCount}</span>
       </div>
 

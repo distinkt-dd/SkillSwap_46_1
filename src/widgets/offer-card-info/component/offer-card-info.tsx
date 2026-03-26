@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 // import React, { useMemo, useRef, useState } from 'react';
 import styles from './offer-card-info.module.css';
-import { selectedUserIsResponse, selectedUsers, UserCard } from '@entities/user';
+import { selectedUser, selectedUserIsResponse, selectedUsers, UserCard } from '@entities/user';
 import { useSelector } from '@shared/store';
 import { selectedSubcategories } from '@entities/subcategories/model/slice';
 import { selectCities } from '@entities/cities/model/slice';
@@ -18,6 +18,7 @@ type TOfferCardInfo = {
 
 export const OfferCardInfo: FC<TOfferCardInfo> = ({ offer }) => {
   const isLoading = useSelector(selectedUserIsResponse);
+  const currentUser = useSelector(selectedUser);
 
   const user = useSelector(selectedUsers).find((item) => item.id == offer.userId);
   const subCategories = useSelector(selectedSubcategories);
@@ -68,7 +69,7 @@ export const OfferCardInfo: FC<TOfferCardInfo> = ({ offer }) => {
           likesCount={offer.userLikedIds.length}
           className={styles['offer-card-info__user-card']}
         />
-        <OfferCardUI offer={offer} />
+        <OfferCardUI offer={offer} userId={currentUser?.id} />
       </div>
     );
   }
