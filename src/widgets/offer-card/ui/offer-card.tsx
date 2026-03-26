@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import styles from './offer-card.module.css';
 
 import { useDispatch, useSelector } from '@shared/store';
@@ -18,23 +18,65 @@ type TOfferCardUI = {
   className?: string;
 };
 
+export type TSavedOffersData = Record<string, string[]>;
+
 export const OfferCardUI: FC<TOfferCardUI> = ({ offer, userId, className }) => {
-  //Memoizaieed
   const dispatch = useDispatch();
   const subCategories = useSelector(selectedSubcategories);
   const categories = useSelector(selectedCategories);
   const subCategory = subCategories?.find((item) => item.id === offer.subcategoryId);
   const category = categories?.find((item) => item.id === subCategory?.categoryId);
   const user = useSelector(selectedUser);
-  const [modalOpen, setModelOpen] = useState<boolean>(false);
 
-  const handleCloseModel = () => {
-    setModelOpen(!modalOpen);
+  const [userOffers, setUserOffers] = useState<TSavedOffersData | null>(() => {
+    try {
+      const savedOffers = localStorage.getItem('offers');
+      return savedOffers ? JSON.parse(savedOffers) : null;
+    } catch (error) {
+      console.error('Ошибка', error);
+      return null;
+    }
+  });
+
+  useEffect(() => {
+    if (userOffers) {
+      try {
+        localStorage.setItem('offers', JSON.stringify(userOffers));
+      } catch (error) {
+        console.error('Error saving to localStorage:', error);
+      }
+    }
+  }, [userOffers]);
+
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+  const isOfferAlreadyProposed = user && userOffers?.[user.id]?.includes(offer.id);
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+
+    if (user && offer) {
+      setUserOffers((prev) => {
+        const currentOffers = prev || {};
+        const userOffersList = currentOffers[user.id] || [];
+
+        if (!userOffersList.includes(offer.id)) {
+          const newOffersData: TSavedOffersData = {
+            ...currentOffers,
+            [user.id]: [...userOffersList, offer.id],
+          };
+          return newOffersData;
+        }
+
+        return currentOffers;
+      });
+    }
   };
 
   const handleOfferClick = () => {
-    setModelOpen(!modalOpen);
+    setModalOpen(true);
   };
+
   const handleLikeOffer = () => {
     if (!offer || !user) return;
 
@@ -49,6 +91,7 @@ export const OfferCardUI: FC<TOfferCardUI> = ({ offer, userId, className }) => {
       dispatch(updateOffer({ ...offer, userLikedIds: temp }));
     }
   };
+
   return (
     <div className={clsx(styles.offerCard, className)}>
       <div className={styles.offerCard__controls}>
@@ -69,6 +112,7 @@ export const OfferCardUI: FC<TOfferCardUI> = ({ offer, userId, className }) => {
           <IconUI name="moreSquare" />
         </button>
       </div>
+
       <div className={styles.offerCard__container}>
         <div className={styles.offerCard__content}>
           <h1>{offer.name}</h1>
@@ -76,16 +120,32 @@ export const OfferCardUI: FC<TOfferCardUI> = ({ offer, userId, className }) => {
             {category?.name} / {subCategory?.name}
           </span>
           <p className={styles.offerCard__description}>{offer.description}</p>
-          <Button className={styles.offerCard__button} onClick={handleOfferClick}>
-            Предложить обмен
-          </Button>
+
+          {user?.id === offer.userId ? (
+            <Button className={styles.offerCard__button} disabled>
+              Это ваше предложение
+            </Button>
+          ) : isOfferAlreadyProposed ? (
+            <Button
+              className={styles.offerCard__button}
+              icon={<IconUI name="clock" />}
+              variant="secondary"
+            >
+              Обмен предложен
+            </Button>
+          ) : (
+            <Button className={styles.offerCard__button} onClick={handleOfferClick}>
+              Предложить обмен
+            </Button>
+          )}
         </div>
-        <CarouselUI className={styles.offerCard__carousel} images={offer.images}></CarouselUI>
+        <CarouselUI className={styles.offerCard__carousel} images={offer.images} />
       </div>
+
       {user ? (
-        <ModalInfo type="success" isOpen={modalOpen} onClose={handleCloseModel} />
+        <ModalInfo type="success" isOpen={modalOpen} onClose={handleCloseModal} />
       ) : (
-        <ModalInfo type="registration" isOpen={modalOpen} onClose={handleCloseModel} />
+        <ModalInfo type="registration" isOpen={modalOpen} onClose={handleCloseModal} />
       )}
     </div>
   );

@@ -8,6 +8,7 @@ import { selectedOffers, updateOffer } from '@entities/offers/model';
 import clsx from 'clsx';
 import { selectedUser } from '../model';
 import { useDispatch } from '@shared/store';
+import type { TSavedOffersData } from '@widgets/offer-card/ui/offer-card';
 
 export type CategoryType = TCategory['type'];
 
@@ -73,33 +74,57 @@ export const UserCard: React.FC<UserCardProps> = ({
   const offers = useSelector(selectedOffers);
   const currentUser = useSelector(selectedUser);
   const currentOffer = offers.find((item) => item.userId === id);
+
+  // Исправленная работа с localStorage
+  const sendsOffers = React.useMemo(() => {
+    try {
+      const savedOffers = localStorage.getItem('offers');
+      if (savedOffers) {
+        const parsed: TSavedOffersData = JSON.parse(savedOffers);
+        return parsed;
+      }
+      return null;
+    } catch (error) {
+      console.error('Error parsing localStorage offers:', error);
+      return null;
+    }
+  }, []); // Пустой массив, так как данные загружаются только при монтировании
+
+  // Проверяем, был ли уже предложен обмен пользователю
+  // Исправляем зависимости: добавляем currentUser вместо currentUser?.id
+  const isOfferProposedToUser = React.useMemo(() => {
+    if (!sendsOffers || !currentUser) return false;
+    const userOffers = sendsOffers[currentUser.id];
+    return userOffers ? userOffers.includes(id) : false;
+  }, [sendsOffers, currentUser, id]); // Используем currentUser вместо currentUser?.id
+
   const dispatch = useDispatch();
+
+  const handleLikeClick = () => {
+    if (!currentOffer || !currentUser) return;
+
+    const usrLikes = currentOffer.userLikedIds || [];
+    const userId = currentUser.id;
+
+    if (usrLikes.includes(userId)) {
+      const temp = usrLikes.filter((item) => item !== userId);
+      dispatch(updateOffer({ ...currentOffer, userLikedIds: temp }));
+    } else {
+      const temp = [...usrLikes, userId];
+      dispatch(updateOffer({ ...currentOffer, userLikedIds: temp }));
+    }
+  };
+
+  const isLiked = currentOffer?.userLikedIds?.includes(currentUser?.id) || false;
 
   return (
     <div className={clsx(styles.userCard, className)}>
-      <div
-        className={styles.likesWrapper}
-        onClick={() => {
-          if (!currentOffer || !currentUser) return;
-
-          const usrLikes = currentOffer.userLikedIds || [];
-          const userId = currentUser.id;
-
-          if (usrLikes.includes(userId)) {
-            const temp = usrLikes.filter((item) => item !== userId);
-            dispatch(updateOffer({ ...currentOffer, userLikedIds: temp }));
-          } else {
-            const temp = [...usrLikes, userId];
-            dispatch(updateOffer({ ...currentOffer, userLikedIds: temp }));
-          }
-        }}
-      >
-        {!currentOffer?.userLikedIds.includes(currentUser?.id) ? (
+      <div className={styles.likesWrapper} onClick={handleLikeClick}>
+        {!isLiked ? (
           <IconUI name="like" className={styles.likesIcon} />
         ) : (
           <IconUI name="likeFilled" className={styles.likesIcon} />
         )}
-
         <span className={styles.likesCount}>{likesCount}</span>
       </div>
 
@@ -152,14 +177,18 @@ export const UserCard: React.FC<UserCardProps> = ({
         </div>
       )}
 
-      {detailed ? (
+      {detailed && (
         <NavLink to={`/offers/${currentOffer?.id}`}>
-          <Button variant="primary" width="100%">
-            Подробнее
-          </Button>
+          {isOfferProposedToUser ? (
+            <Button variant="secondary" icon={<IconUI name="clock" />} width="100%">
+              Обмен предложен
+            </Button>
+          ) : (
+            <Button variant="primary" width="100%">
+              Подробнее
+            </Button>
+          )}
         </NavLink>
-      ) : (
-        <div></div>
       )}
     </div>
   );
