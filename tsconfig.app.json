@@ -25,6 +25,7 @@
     "noUncheckedSideEffectImports": true,
     "paths": {
       "@app": ["./src/app/index.ts"],
+      "@app/*": ["./src/app/*"],
       "@pages/*": ["./src/pages/*"],
       "@widgets/*": ["./src/widgets/*"],
       "@shared/*": ["./src/shared/*"],
