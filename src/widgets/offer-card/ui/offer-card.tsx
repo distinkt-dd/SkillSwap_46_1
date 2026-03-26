@@ -9,7 +9,6 @@ import { CarouselUI } from '@shared/ui';
 import type { TOffer } from '@entities/offers/api/types';
 import { selectedUser } from '@entities/user';
 import ModalInfo from '@widgets/models/models.notifications';
-import { useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { updateOffer } from '@entities/offers';
 
