@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import styles from './offer-card.module.css';
 
 import { useSelector } from '@shared/store';
@@ -8,25 +8,26 @@ import { selectedCategories } from '@entities/categories/model';
 import { CarouselUI } from '@shared/ui';
 import type { TOffer } from '@entities/offers/api/types';
 import { selectedUser } from '@entities/user';
-import { useNavigate } from 'react-router-dom';
+import ModalInfo from '@widgets/models/models.notifications';
 
 type TOfferCardUI = {
   offer: TOffer;
 };
 
 export const OfferCardUI: FC<TOfferCardUI> = ({ offer }) => {
-  //Memoizaieed
   const subCategories = useSelector(selectedSubcategories);
   const categories = useSelector(selectedCategories);
   const subCategory = subCategories?.find((item) => item.id === offer.subcategoryId);
   const category = categories?.find((item) => item.id === subCategory?.categoryId);
   const user = useSelector(selectedUser);
-  const navigate = useNavigate();
+  const [modalOpen, setModelOpen] = useState<boolean>(false);
+
+  const handleCloseModel = () => {
+    setModelOpen(!modalOpen);
+  };
+
   const handleOfferClick = () => {
-    if (!user) {
-      navigate('/login');
-      return;
-    }
+    setModelOpen(!modalOpen);
   };
 
   return (
@@ -55,6 +56,11 @@ export const OfferCardUI: FC<TOfferCardUI> = ({ offer }) => {
         </div>
         <CarouselUI className={styles.offerCard__carousel} images={offer.images}></CarouselUI>
       </div>
+      {user ? (
+        <ModalInfo type="success" isOpen={modalOpen} onClose={handleCloseModel} />
+      ) : (
+        <ModalInfo type="registration" isOpen={modalOpen} onClose={handleCloseModel} />
+      )}
     </div>
   );
 };

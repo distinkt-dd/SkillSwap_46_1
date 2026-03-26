@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 52px;
-  width: 556px;
+  min-width: 556px;
   padding: 80px 60px;
   text-align: center;
 }
@@ -21,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  width: 436px;
+  max-width: 100%;
 }
 
 .text {
@@ -46,4 +46,10 @@
   font-size: 16px;
   line-height: 1.5;
   text-wrap: wrap;
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }

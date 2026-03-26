@@ -484,7 +484,6 @@ export const RegisterForm = () => {
       clearSavedData();
       setErrors({});
       setShowPreview(false);
-      navigate('/profile');
     }
   };
 
