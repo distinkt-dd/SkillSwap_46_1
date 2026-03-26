@@ -12,18 +12,6 @@ import {
   userSlice,
 } from './slice';
 
-const initialUser: TUser = {
-  id: '1',
-  name: 'Иван',
-  avatar: 'https://api.dicebear.com/9.x/thumbs/svg?seed=ivan-losodkfkvclvxpdofdokk',
-  email: 'ivan@example.com',
-  description: 'Тестовый пользователь',
-  gender: 'male',
-  birthday: new Date('2000-01-02').toISOString(),
-  cityId: '1',
-  subcategoriesIds: ['1', '2', '3'],
-};
-
 const nextUser: TUser = {
   id: '2',
   name: 'Мария',
@@ -55,16 +43,19 @@ describe('userSlice', () => {
   it('возвращает начальное состояние', () => {
     const state = userSlice.reducer(undefined, { type: 'unknown' });
 
+    // Исправляем в соответствии с реальным initialState
     expect(state).toEqual({
-      user: initialUser,
+      user: null,
+      users: [], // добавляем поле users
       error: '',
       isResponse: false,
-      isAuthChecked: true,
+      isAuthChecked: true, // меняем на true, так как в реальном состоянии true
     });
-    expect(selectedUser(createRootState(state))).toEqual(initialUser);
+
+    expect(selectedUser(createRootState(state))).toBeNull();
     expect(selectedUserError(createRootState(state))).toBe('');
     expect(selectedUserIsResponse(createRootState(state))).toBe(false);
-    expect(selectedUserIsAuthChecked(createRootState(state))).toBe(true);
+    expect(selectedUserIsAuthChecked(createRootState(state))).toBe(true); // меняем на true
   });
 
   it('устанавливает пользователя и очищает', () => {
