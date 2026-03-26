@@ -1,6 +1,7 @@
 import './App.css';
 
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import {
   DevelopmentPage,
   ErrorPage,
@@ -8,7 +9,6 @@ import {
   LayoutNauth,
   LayoutPure,
   LoginPage,
-  OfferPage,
 } from '@pages/index';
 import {
   fetchUsers,
@@ -29,10 +29,35 @@ import { useEffect } from 'react';
 import { getSubcategories, fetchCities, getOffers } from '@entities/index';
 import { getCategories } from '@entities/categories/model';
 import { LayoutProfile } from '@pages/layouts';
-import { ProfileForm } from '@widgets/profile/ui';
-import { Favorites } from '@widgets/favorites';
-import { MyOffers } from '@widgets/my-offers';
-import { Exchanges } from '@widgets/exchanges';
+
+const ProfileForm = lazy(() =>
+  import('@widgets/profile/ui').then((module) => ({ default: module.ProfileForm }))
+);
+const Favorites = lazy(() =>
+  import('@widgets/favorites').then((module) => ({ default: module.Favorites }))
+);
+const MyOffers = lazy(() =>
+  import('@widgets/my-offers').then((module) => ({ default: module.MyOffers }))
+);
+const Exchanges = lazy(() =>
+  import('@widgets/exchanges').then((module) => ({ default: module.Exchanges }))
+);
+const OfferPage = lazy(() =>
+  import('@pages/index').then((module) => ({ default: module.OfferPage }))
+);
+
+const LoadingFallback = () => (
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+    }}
+  >
+    Loading...
+  </div>
+);
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -56,150 +81,146 @@ export const App = () => {
   const user = useSelector(selectedUser);
   const authChecked = useSelector(selectedUserIsAuthChecked);
   const ErrorLayout = user && authChecked ? LayoutAuth : LayoutNauth;
+
   return (
     <CatalogFiltersProvider>
-      <Routes>
-        {/* Главная и каталог */}
-        <Route
-          path="/"
-          element={
-            <LayoutAuth>
-              <Catalog />
-            </LayoutAuth>
-          }
-        />
-        <Route
-          path="/catalog"
-          element={
-            <LayoutAuth>
-              <Catalog />
-            </LayoutAuth>
-          }
-        />
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <LayoutAuth>
+                <Catalog />
+              </LayoutAuth>
+            }
+          />
+          <Route
+            path="/catalog"
+            element={
+              <LayoutAuth>
+                <Catalog />
+              </LayoutAuth>
+            }
+          />
+          <Route
+            path="/offers/:id"
+            element={
+              <LayoutNauth>
+                <OfferPage />
+              </LayoutNauth>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <LayoutNauth>
+                <TempAbout />
+              </LayoutNauth>
+            }
+          />
 
-        {/* Оффер */}
-        <Route
-          path="/offers/:id"
-          element={
-            <LayoutNauth>
-              <OfferPage />
-            </LayoutNauth>
-          }
-        />
+          <Route
+            path="/login"
+            element={
+              <ProtectedRoute onlyUnAuth>
+                <LayoutPure>
+                  <LoginPage />
+                </LayoutPure>
+              </ProtectedRoute>
+            }
+          />
 
-        {/* Тестовые страницы */}
-        <Route
-          path="/about"
-          element={
-            <LayoutNauth>
-              <TempAbout />
-            </LayoutNauth>
-          }
-        />
+          <Route
+            path="/registration"
+            element={
+              <ProtectedRoute onlyUnAuth>
+                <Navigate to="/registration/1" replace />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/registration/:step"
+            element={
+              <ProtectedRoute onlyUnAuth>
+                <LayoutPure>
+                  <RegisterForm />
+                </LayoutPure>
+              </ProtectedRoute>
+            }
+          />
 
-        {/* Авторизация */}
-        <Route
-          path="/login"
-          element={
-            <ProtectedRoute onlyUnAuth>
-              <LayoutPure>
-                <LoginPage />
-              </LayoutPure>
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <LayoutProfile>
+                  <ProfileForm />
+                </LayoutProfile>
+              </ProtectedRoute>
+            }
+          />
 
-        {/* === ТВОЯ РЕГИСТРАЦИЯ === */}
-        <Route
-          path="/registration"
-          element={
-            <ProtectedRoute onlyUnAuth>
-              <Navigate to="/registration/1" replace />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/registration/:step"
-          element={
-            <ProtectedRoute onlyUnAuth>
-              <LayoutPure>
-                <RegisterForm />
-              </LayoutPure>
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/my-skills"
+            element={
+              <ProtectedRoute>
+                <LayoutProfile>
+                  <MyOffers />
+                </LayoutProfile>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <ProtectedRoute>
+                <LayoutProfile>
+                  <Favorites />
+                </LayoutProfile>
+              </ProtectedRoute>
+            }
+          />
 
-        {/* Профиль */}
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <LayoutProfile>
-                <ProfileForm />
-              </LayoutProfile>
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/my-exchanges"
+            element={
+              <ProtectedRoute>
+                <LayoutProfile>
+                  <Exchanges />
+                </LayoutProfile>
+              </ProtectedRoute>
+            }
+          />
 
-        <Route
-          path="/my-skills"
-          element={
-            <ProtectedRoute>
-              <LayoutProfile>
-                <MyOffers />
-              </LayoutProfile>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/favorites"
-          element={
-            <ProtectedRoute>
-              <LayoutProfile>
-                <Favorites />
-              </LayoutProfile>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/my-exchanges"
-          element={
-            <ProtectedRoute>
-              <LayoutProfile>
-                <Exchanges />
-              </LayoutProfile>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/requests"
-          element={
-            <ProtectedRoute>
-              <LayoutProfile>
-                <DevelopmentPage />
-              </LayoutProfile>
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/requests"
+            element={
+              <ProtectedRoute>
+                <LayoutProfile>
+                  <DevelopmentPage />
+                </LayoutProfile>
+              </ProtectedRoute>
+            }
+          />
 
-        {/* Ошибки */}
-        <Route
-          path="500"
-          element={
-            <ErrorLayout>
-              <ErrorPage variant="500" />
-            </ErrorLayout>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <ErrorLayout>
-              <ErrorPage variant="404" />
-            </ErrorLayout>
-          }
-        />
-      </Routes>
+          <Route
+            path="500"
+            element={
+              <ErrorLayout>
+                <ErrorPage variant="500" />
+              </ErrorLayout>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <ErrorLayout>
+                <ErrorPage variant="404" />
+              </ErrorLayout>
+            }
+          />
+        </Routes>
+      </Suspense>
     </CatalogFiltersProvider>
   );
 };

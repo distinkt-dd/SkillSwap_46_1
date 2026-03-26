@@ -16,11 +16,8 @@ export const Exchanges: FC = () => {
   }
 
   const parsed = JSON.parse(exchanges);
-  const key = Object.keys(parsed);
 
-  const filteredOffers = offers.filter((item) => parsed[key[0]]?.includes(item.id));
-
-  console.log(parsed[key[0]]);
+  const filteredOffers = offers.filter((item) => parsed[user?.id as string]?.includes(item.id));
 
   if (!filteredOffers.length) {
     return <p className={styles.noContent}>Нет доступных предложений для обмена</p>;
