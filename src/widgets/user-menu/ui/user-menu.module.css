@@ -5,10 +5,11 @@
   z-index: 999;
   inline-size: max-content;
   padding: 40px;
+  color: var(--color-text);
   font-weight: 500;
   font-size: 16px;
-  background-color: rgb(255 255 255 / 100%);
-  border: 1px solid rgb(178 185 169 / 100%);
+  background-color: var(--color-card-input);
+  border: 1px solid var(--color-toggle);
   border-radius: 12px;
 }
 
@@ -26,4 +27,5 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--color-text);
 }

@@ -10,7 +10,7 @@
   align-items: center;
   min-width: fit-content;
   padding: 24px 34px 24px 24px;
-  background: #deebc5;
+  background: var(--color-button-hover);
   border-radius: 12px;
 }
 
@@ -159,7 +159,7 @@
   padding: 8px 12px;
   color: var(--color-text, #253017);
   font-size: 14px;
-  background: #ffffff;
+  background: var(--color-card-input);
   border: none;
   border-radius: 20px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
@@ -187,7 +187,7 @@
 
 .popup .actionButton:hover {
   color: var(--color-text, #253017);
-  background: #ffffff;
+  background: var(--color-card-input);
 }
 
 .popup .actions {

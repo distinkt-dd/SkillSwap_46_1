@@ -5,6 +5,9 @@ import { App, store } from '@app';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { StrictMode } from 'react';
+import { applyTheme, getSavedThemeMode, resolveTheme } from '@app/theme/theme';
+
+applyTheme(resolveTheme(getSavedThemeMode()));
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

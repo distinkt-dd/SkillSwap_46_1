@@ -34,7 +34,8 @@
   align-items: center;
   width: 32px;
   height: 32px;
-  background: rgb(228 232 223 / 100%);
+  color: var(--color-text);
+  background: var(--color-disabled);
   border: none;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
