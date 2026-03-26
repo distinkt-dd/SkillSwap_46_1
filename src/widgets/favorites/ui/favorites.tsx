@@ -9,6 +9,10 @@ export const Favorites: FC = () => {
   const user = useSelector(selectedUser);
   const offers = useSelector(selectedOffers).filter((item) => item.userLikedIds.includes(user?.id));
 
+  if (!offers || offers.length === 0) {
+    return <p className={styles.noContent}>В избранном ничего нет</p>;
+  }
+
   return (
     <div className={styles.favorites}>
       {offers.map((item) => {
