@@ -16,7 +16,7 @@ type Props = {
 };
 
 const MAX_IMAGES = 5;
-const MAX_FILE_BYTES = 1 * 1024 * 1024;
+const MAX_FILE_BYTES = 5 * 1024 * 1024;
 
 const fileToDataUrl = (file: File): Promise<string> => {
   if (file.size > MAX_FILE_BYTES) {
