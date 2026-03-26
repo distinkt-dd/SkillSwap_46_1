@@ -61,4 +61,7 @@ export default defineConfig({
       },
     ],
   },
+  define: {
+    'process.env.PUBLIC_PATH': JSON.stringify(process.env.PUBLIC_PATH || '/'),
+  },
 });
